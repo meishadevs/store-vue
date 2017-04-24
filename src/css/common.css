@@ -1,0 +1,348 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 公共部分的CSS样式
+ */
+
+
+/* 版心 */
+.inner-c {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 头部 */
+.header {
+    width: 100% ;
+    height: 125px;
+    display: table;
+}
+
+/* 顶部通栏 */
+.header .topbar {
+    width: 100%;
+    height: 38px;
+    font: 12px/38px "宋体";
+    background-color: #f7f7f7;
+    color: #666;
+}
+
+/* 左侧区域 */
+.topbar .leftArea {
+    height: 38px;
+    padding-left: 17px;
+    background: url("../images/icon/collection.jpg") left center no-repeat;
+}
+
+/* 登录和免费注册 */
+.loginLink:hover, .registerLink:hover {
+    color: #C81623;
+}
+
+.topbar .leftArea a {
+    font-weight: bold;
+}
+
+.header .logoBar {
+    width: 100%;
+    height: 87px;
+    background-color: #1d7ad9;
+    display: table;
+}
+
+/* 网站logo */
+.logoBar .logo {
+    padding-top: 14px;
+}
+
+.logoBar .logo a {
+    width: 112px;
+    height: 59px;
+    background: url("../images/logo.png") no-repeat;
+    text-indent: -1000px;
+    float: left;
+}
+/* 搜索 */
+.search-box {
+    height: 35px;
+    line-height: 35px;
+    margin: 23px 0 0 185px;
+    position: relative;
+}
+
+/* 搜索框 */
+.search-box .search-text {
+    width: 350px;
+    height: 100%;
+    padding: 0 5px 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+/* Mozilla Firefox 4 to 18 */
+.search-text:-moz-placeholder {
+    color: #000; opacity:1;
+}
+
+/* Mozilla Firefox 19+ */
+.search-text::-moz-placeholder {
+    font-weight: normal;
+}
+
+.search-text:-ms-input-placeholder {
+    font-weight: normal;
+}
+
+.search-text::-webkit-input-placeholder {
+    font-weight: normal;
+}
+
+/* 搜索按钮 */
+.search-box .search-btn {
+    width: 69px;
+    height: 35px;
+    font: 14px/35px "微软雅黑", "microsoft yahei";
+    color: #fff;
+    background-color: #ff8c00;
+    cursor: pointer;
+    position: relative;
+}
+
+/* 搜索到的结果列表 */
+.result-list {
+    width: 358px;
+    background-color: #fff;
+    border: solid 1px #BEBEBE;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    top: 35px;
+}
+
+.result-list li {
+    height: 26px;
+    padding: 0 6px 0 5px;
+    font: bold 14px/26px "微软雅黑", "Microsoft yahei";
+    cursor: pointer;
+}
+
+.result-list em {
+    font-weight: normal;
+}
+
+.result-list li:hover {
+    background-color: #1369c0;;
+    color: #fff;
+}
+
+.result-list .proName {
+    float: left;
+}
+
+.result-list .resultNum {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+    float: right;
+}
+
+.result-list li:hover .resultNum {
+    color: #fff;
+}
+
+/* 购物车 */
+.shopCar {
+    width: 145px;
+    height: 35px;
+    margin: 23px 0 0 31px;
+    font: 14px/35px "微软雅黑", "microsoft yahei";
+    background-color: #ff8800;
+    float: left;
+}
+
+.shopCar a {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: inline-block;
+}
+
+.shopCar .shopText {
+    width: 47px;
+    height: 100%;
+    padding-left: 40px;
+    border-right: solid 1px #e27a00;
+    background: url("../images/icon/shopcar.jpg") 10px center no-repeat;
+}
+
+.shopCar .shopNum {
+    width: 27px;
+    height: 100%;
+    padding-right: 29px;
+    text-align: right;
+    border-left: solid 1px #ff9c01;
+    background: url("../images/icon/arrow.jpg") 33px center no-repeat;
+}
+/* 头部 e */
+
+/* 导航栏 s */
+.navBar {
+    width: 100%;
+    height: 35px;
+    background-color: #1369c0;
+    display: table;
+}
+
+.shopClass h3 {
+    width: 149px;
+    height: 35px;
+    padding-left: 40px;
+    background: url("../images/icon/arrow-down.png") 148px center no-repeat;
+    font: 16px/35px "微软雅黑", "microsoft yahei";
+    color: #fff;
+}
+
+.nav li {
+    width: 100px;
+    height: 35px;
+    font: 14px/35px "微软雅黑", "microsoft yahei";
+    text-align: center;
+    float: left;
+}
+
+.nav li:hover {
+    background-color: #4593fd;
+}
+
+.nav li a {
+    width: 100px;
+    height: 35px;
+    color: #fff;
+    display: block;
+}
+
+.nav li.active {
+    background-color: #4593fd;
+}
+/* 导航栏 e */
+
+/* 脚部 s */
+.footer {
+    width: 100%;
+    height: 224px;
+    margin-top: 40px;
+    background-color: #d4d4d4;
+    font-family: "新宋体";
+    color: #000;
+    text-align: center;
+    display: table;
+}
+
+.footer .info {
+    padding: 56px 0 12px 0;
+}
+
+.footer .copyright {
+    padding-bottom: 38px;
+}
+
+.footerIcon a {
+    width: 103px;
+    height: 32px;
+    background: url("../images/icon/ico_footer.png");
+    background-repeat: no-repeat;
+    text-indent: -1000px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.footerIcon .footerIcon-1 {
+    background-position: 0 -151px;
+}
+
+.footerIcon .footerIcon-2 {
+    background-position: -104px -151px;
+}
+
+.footerIcon .footerIcon-3 {
+    background-position: 0 -184px;
+}
+
+.footerIcon .footerIcon-4 {
+    background-position: -105px -184px;
+}
+
+.footerIcon .footerIcon-5 {
+    background-position: 0 -217px;
+}
+
+.footerIcon .footerIcon-6 {
+    background-position: -104px -217px;
+}
+
+.footer a {
+    color: #000;
+}
+/* 脚部 e */
+
+/* banner部分 s */
+
+.banner {
+    width: 811px;
+    height: 320px;
+    float: left;
+    position: relative;
+}
+
+/* 轮播图 */
+.banner-list li {
+    opacity: 0;
+    z-index: 2;
+    display: none;
+    position: absolute;
+}
+
+.banner-list li.active {
+    opacity: 1;
+    display: block;
+}
+
+/* 小圆圈 */
+.circle-list {
+    margin-left: -70px;
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+}
+
+.circle-list li {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.circle-list li.current {
+    background-color: #ff7700;
+}
+/* banner部分 e */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 组件的CSS样式
+ */
+
+/* 自定义select组件 s */
+.select {
+    height: 24px;
+    background-color: #fff;
+    border:solid 1px #ccc;
+    cursor: pointer;
+    text-align: center;
+    z-index: 2;
+    float: left;
+    position: relative;
+}
+
+.select-name {
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0 24px 0 7px;
+}
+
+.select-triangle {
+    width: 0;
+    height: 0;
+    border-width: 4px;
+    border-style: solid dashed dashed;
+    border-color: rgb(80, 174, 248) transparent transparent;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+}
+
+.select-options {
+    min-width: 120px;
+    max-height: 110px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: solid 1px #ccc;
+    background-color: #fff;
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 23px;
+}
+
+.select-options li {
+    height: 24px;
+    line-height: 24px;
+    padding-left: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.select-options li:hover {
+    background-color: green;
+    color: #fff;
+}
+/* 自定义select组件 e */
+
+/* 翻页组件 s */
+.rate-page {
+    margin-right: 30px;
+    font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+    text-align: right;
+    font-size: 0;
+}
+
+/* 上一页按钮 */
+.rate-page .page-prev {
+    border-width: 1px;
+}
+
+.rate-page a, .rate-page span {
+    height: 27px;
+    line-height: 27px;
+    padding: 5px 14px;
+    color: #2953a6;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    border-width: 1px 1px 1px 0;
+    vertical-align: top;
+    display: inline-block;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rate-page span {
+    color: #999;
+}
+
+.rate-page a:hover {
+    background-color: #efefef;
+}
+
+/* 三个小圆点 */
+.rate-page .rate-page-break {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    line-height: 20px;
+}
+
+/* 翻页组件 e */

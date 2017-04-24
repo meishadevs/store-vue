@@ -1,0 +1,338 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 商品筛选页的CSS样式
+ */
+
+.wrapper {
+    width: 1000px;
+    margin-top: 17px;
+}
+
+/* 页面左侧 */
+.wrapper .leftArea {
+    width: 188px;
+    border: solid 1px #d7d7d7;
+}
+
+/* 商品分类导航 s */
+.leftArea .shopClassNav {
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+/* 商品分类导航中的标题 */
+.shopClassNav h3 {
+    height: 34px;
+    text-align: center;
+    color: #000;
+    font: bold 16px/34px "微软雅黑", "microsoft yahei";
+    border-bottom: solid 1px #d7d7d7;
+}
+
+.shopClassNav .shop-item {
+    padding: 4px 0 0 10px;
+    border-bottom: dotted 1px #d7d7d7;
+}
+
+.shopClassNav .last {
+    border-bottom: solid 1px #d7d7d7;
+}
+
+.shopClassNav .shop-item dt {
+    font: bold 14px/24px "微软雅黑", "microsoft yahei";
+}
+
+.shopClassNav .shop-item li {
+    height: 22px;
+    padding-left: 12px;
+    font-size: 12px;
+    font-family: "新宋体";
+}
+
+.shopClassNav .shop-item li a {
+    color: #555;
+}
+/* 商品分类 导航 e */
+
+/* 左侧的商品列表 s */
+.leftArea .shopList {
+    width: 100%;
+    padding-top: 10px;
+}
+
+.leftArea .shopList .shop-item {
+    margin-bottom: 20px;
+}
+
+.leftArea .shopList .shop-info {
+    width: 110px;
+    margin-left: 10px;
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+.leftArea .shop-name a {
+    color: #999999
+}
+
+.leftArea .shop-price a {
+    color: #666;
+}
+/* 左侧的商品列表 e */
+
+/* 商品筛选部分 s */
+.screening-box {
+    width: 796px;
+}
+
+.screeningHeader {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: solid 1px #d9d9d9;
+}
+
+.screening-box dt {
+    width: 84px;
+    margin-right: 40px;
+    font-size: 14px;
+    color: #999999;
+    text-align: right;
+}
+
+.screeningHeader li {
+    width: 166px;
+}
+
+.screeningHeader li a {
+    color: #1d7ad9;
+}
+
+.screeningBody dl {
+    padding-top: 10px;
+    border-bottom: dashed 1px #d9d9d9;
+}
+
+/* 不限按钮 */
+.screeningBody .limit {
+    margin-right: 28px;
+}
+
+.screeningBody .limit a{
+    background-color: #1d7ad9;
+    color: #fff;
+}
+
+.screeningBody ul {
+    width: 504px;
+}
+
+.screeningBody li {
+    width: 126px;
+    height: 24px;
+    float: left;
+}
+
+.screeningBody li a {
+    color: #1d7ad9;;
+}
+
+/* 更多按钮 */
+.screeningBody .more a {
+    color: #000;
+}
+
+.screeningFooter {
+    padding: 8px 0 8px 0;
+    border-bottom: solid 1px #d9d9d9;
+}
+
+.screeningFooter dt {
+    padding: 2px 0 2px 0;
+}
+
+.screeningFooter li a {
+    display: inline-block;
+    height: 23px;
+    line-height: 23px;
+    padding: 0 7px 0 10px;
+    margin-right: 10px;
+    border: solid 1px #d9d9d9;
+}
+
+.screeningFooter li span {
+    display: inline-block;
+    width: 9px;
+    height: 7px;
+    margin-left: 5px;
+    background: url("../images/icon/down.png") center no-repeat;
+}
+/* 商品筛选部分 e */
+
+.addInfo {
+    width: 100%;
+    height: 31px;
+    background-color: #f5f5f5;
+    border: solid 1px #d9d9d9;
+}
+
+.addInfo .select {
+    margin-top: 4px;
+}
+
+.addInfo .add-text {
+    line-height: 31px;
+    padding-left: 10px;
+    padding-right: 6px;
+}
+
+.screen-text {
+    line-height: 31px;
+    margin-right: 80px;
+}
+
+.screening-box .check {
+    position: relative;
+    top: -1px;
+}
+
+.check input, .check label {
+    vertical-align: middle;
+}
+
+.shop-number {
+    position: relative;
+    _top : 4px;
+}
+
+.shop-number em {
+    color: #f00;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* 产品列表 s */
+.productList {
+    width: 736px;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+.productList .item {
+    float: left;
+    width: 200px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+}
+
+.productList li.last {
+    margin-right: 0;
+}
+
+/* 产品图片 */
+.productList .productImage {
+    height: 202px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 产品名称 */
+.productList .productName {
+    height: 44px;
+}
+
+.productList .productName a {
+    color: #000;
+}
+
+.productInfo {
+    height: 23px;
+}
+
+/* 产品价格 */
+.productList .price {
+    margin-right: 10px;
+    color: #d70057;
+}
+
+/* 产品评论 */
+.productList .comment a {
+    color: #1d7ad9;
+}
+
+.buy a {
+    display: inline-block;
+    width: 65px;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 23px;
+    border: solid 1px #c3d5e7;
+    background: url("../images/icon/car.jpg") 6px center no-repeat;
+}
+/* 产品列表 e */
+
+/* 翻页区 s */
+.page {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.page a, .page span, .page input {
+    vertical-align: middle;
+    position: relative;
+}
+
+.page a {
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 12px;
+    margin-right: 5px;
+    border: solid 1px #dddddd;
+}
+
+.page a.active {
+    background-color: #2266bb;
+    color: #fff;
+}
+
+.page .spot {
+    margin-left: 14px;
+    margin-right: 18px;
+}
+
+.pageNum em {
+    font-style: normal;
+}
+
+.gotoPage input {
+    width: 35px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border: solid 1px #c9c9c9;
+}
+
+.gotoPage button {
+    width: 44px;
+    height: 22px;
+    background-color: #e8e8e8;
+    border: solid 1px #c9c9c9;
+    outline-style: none;
+    cursor: pointer;
+}
+/* 翻页区 e */
+
+
+
+
+
+
+
+
+
+
+
+
+

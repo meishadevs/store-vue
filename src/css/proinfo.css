@@ -1,0 +1,997 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 商品信息展示页的CSS样式
+ */
+
+.gray {
+    background-color: #f0f0f0;
+}
+
+/* 用户的位置 */
+.userPosition {
+    margin: 25px 0 15px 0;
+    font-size: 0;
+}
+
+.userPosition em,
+.userPosition a,
+.userPosition span,
+.userPosition strong {
+    font-size: 12px;
+}
+
+.userPosition a:hover {
+    text-decoration: underline;
+}
+
+/* 商品描述信息 */
+.description-info {
+    background-color: #fff;
+    border: solid 1px #ccc;
+}
+
+.description-info .leftArea {
+    width: 309px;
+    float: left;
+}
+
+/* 产品图片 中等大小到的图片 */
+.middle {
+    width: 282px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+}
+
+.middle .middle-box {
+    width: 280px;
+    height: 280px;
+    border: solid 1px #ccc;
+    position: relative;
+}
+
+.middle-box img {
+    width: 280px;
+    height: auto;
+}
+
+.middle-box .magnifier {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 0, 0.4);
+    cursor: move;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 产品图片 小图 */
+.small {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.small li {
+    width: 54px;
+    height: 54px;
+    margin-right: 5px;
+    border: solid 1px #fff;
+    float: left;
+}
+
+/* 清除small下面的最后一个li标签的margin-right属性 */
+.small li:nth-last-of-type(1) {
+    margin-right: 0;
+}
+
+.small li.active {
+    border-color: #317EE7;
+}
+
+/* 承载大图的盒子 */
+.big-box {
+    width: 540px;
+    height: 540px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    display: none;
+    overflow: hidden;
+    z-index: 3;
+    position: absolute;
+    left: 296px;
+    top: 0px;
+}
+
+/* 产品图片 大图 */
+.big-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 右侧 */
+.description-info .rightArea {
+    width: 690px;
+    border-left: solid 1px #ccc;
+    float: left;
+}
+
+.des-content {
+    padding: 10px;
+}
+
+.des-content .title {
+    padding: 13px 25px;
+    font: bold 16px/22px "微软雅黑", "microsoft yahei";
+    color: #333;
+}
+
+.des-content .dl {
+    margin-bottom: 5px;
+}
+
+.des-content .dt {
+    width: 75px;
+    line-height: 25px;
+    color: #656;
+    text-indent: 17px;
+    float: left;
+}
+
+.des-content .dd {
+    padding-left: 75px;
+}
+
+.des-money {
+    font-size: 18px;
+    color: #D70000;
+}
+
+.des-money em {
+    font-size: 12px;
+}
+
+/* 换购 */
+.hg {
+    padding-top: 4px;
+    display: inline-block;
+}
+
+.hg-icon {
+    width: 55px;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 10px;
+    background: url("../images/icon/hg.jpg") left top no-repeat;
+    font-style: normal;
+    color: #fff;
+    text-indent: 16px;
+    display: inline-block;
+}
+
+.des-position {
+    padding: 15px 0;
+    background-color: #F2F2F2;
+}
+
+.theGods {
+    padding-left: 10px;
+    line-height: 24px;
+}
+
+.dl .colorSelect {
+    line-height: 35px;
+}
+.des-item {
+    padding: 9px 10px;
+    margin-right: 10px;
+    border: solid 1px #ccc;
+    background-color: #fff;
+    color: #666;
+    cursor: pointer;
+    float: left;
+}
+
+.des-item:hover {
+    border: solid 1px #317EE7;
+    color: #333;
+}
+
+.des-item-active {
+    border: solid 1px #317EE7;
+    color: #333;
+}
+
+.des-item-sm {
+    padding: 3px 7px;
+    margin-bottom: 8px;
+}
+
+.des-content .des-select-more {
+    line-height: 55px;
+}
+
+.des-number {
+    margin-right: 1px;
+    float: left;
+}
+
+.des-number div {
+    height: 32px;
+    line-height: 32px;
+    margin-left: -1px;
+    float: left;
+}
+
+.des-number .reduce,
+.des-number .plus {
+    width: 15px;
+    height: 100%;
+    border: solid 1px #B2B2B2;
+    background-color: #EFEFEF;
+    text-align: center;
+    cursor: pointer;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none; /* you could also put this in a class */
+    -webkit-user-select:none;/* and add the CSS class here instead */
+    -ms-user-select:none;
+    user-select:none;/**禁止选中文字*/
+}
+
+.des-number input {
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    background-color: #fff;
+    border: solid 1px #B2B2B2;
+}
+
+.buy-number {
+    margin-left: 12px;
+    line-height: 34px;
+    font-weight: bold;
+    color: #666666;
+    float: left;
+}
+
+.buy-number em {
+    color: #FC7700;
+}
+
+.showStyle {
+    margin: 22px 0 0 17px;
+}
+
+.showStyle .name {
+    font-weight: bold;
+    float: left;
+}
+
+.showStyle .style {
+    color: #0479CA;
+    font-weight: bold;
+    float: left;
+}
+
+.showStyle .style .line {
+    width: 2px;
+    height: 12px;
+    margin: 0 2px 0 4px;
+    background-color: #0479CA;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.des-button {
+    margin: 10px 0 0 74px;
+}
+
+.des-button a {
+    width: 136px;
+    height: 48px;
+    padding: 0px 0 0 68px;
+    background: url("../images/icon/car1.jpg") 30px center no-repeat;
+    font: 20px/48px "微软雅黑", "microsoft yahei";
+    color: #fff;
+    background-color: #F98700;
+    cursor: pointer;
+    float: left;
+}
+
+/* 立即购买按钮和加入购物车按钮之间的线段 */
+.des-button .line {
+    width: 1px;
+    height: 48px;
+    margin: 0 40px;
+    background-color: #E5E5E5;
+    float: left;
+}
+
+/* 注意事项 */
+.des-content .notice {
+    margin: 20px 0 0 20px;
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #999999;
+}
+
+.product-info {
+    margin-top: 21px;
+}
+
+.product-info .leftArea {
+    width: 188px;
+    margin-right: 24px;
+    float: left;
+}
+
+.product-info .dl {
+    margin-bottom: 10px;
+    border: solid 1px #CCCCCC;
+}
+
+.product-info .leftArea .dt {
+    height: 39px;
+    padding-left: 16px;
+    font: bold 14px/39px "新宋体";
+    border-bottom: solid 1px #ccc;
+}
+
+.product-info .leftArea .dd {
+    background-color: #fff;
+}
+
+.product-info .leftArea li {
+    padding-bottom: 22px;
+}
+
+.product-info .product-image {
+    padding: 18px 0 15px 0;
+    text-align: center;
+}
+/* 产品名称 */
+.product-info .product-name {
+    line-height: 18px;
+    padding-left: 22px;
+    font-family: "新宋体";
+}
+
+.product-info .product-name a {
+    color: #999;
+}
+
+/* 产品价格 */
+.product-info .product-price {
+    padding-left: 22px;
+    font: 12px/18px "微软雅黑", "microsoft yahei";
+    color: #DD0000;
+}
+.product-info .rightArea {
+    float: left;
+}
+
+.product-info .addBold {
+    border-top: solid 3px #1D86CF;
+}
+
+/* 上面 */
+.product-info .topArea {
+    width: 785px;
+    border: solid 1px #ccc;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.topArea ul {
+    width: 786px;
+}
+
+.topArea .nav-bar li {
+    width: 393px;
+    height: 42px;
+    font: 14px/42px "宋体", "SimSun";
+    background-color: #F3F3F3;
+    color: #000;
+    text-align: left;
+    border-bottom: solid 1px #ccc;
+    cursor: pointer;
+    float: left;
+}
+
+.topArea .nav li.active {
+    background-color: #0479CA;
+    color: #fff;
+}
+
+.topArea .intro,
+.topArea .appra {
+    width: 40px;
+    height: 35px;
+    margin: 3px 10px 0 128px;
+    float: left;
+}
+
+.topArea li .intro {
+    background: url("../images/icon/intro.png") right center no-repeat;
+}
+
+.topArea li.active .intro {
+    background: url("../images/icon/intro-active.png") right center no-repeat;
+}
+
+.topArea li .appra {
+    background: url("../images/icon/appra.png") right center no-repeat;
+}
+
+.topArea li.active .appra {
+    background: url("../images/icon/appra-active.png") right center no-repeat;
+}
+
+/* 商品介绍 s */
+.intro-box .image {
+    margin: 30px 0 30px 0;
+    text-align: center;
+}
+
+.intro-box .text-info {
+    padding: 15px;
+}
+
+.intro-box .info-title {
+    border-bottom: solid 2px #ccc;
+}
+
+.intro-box .info-title h3 {
+    width: 73px;
+    line-height: 36px;
+    margin-bottom: -2px;
+    border-bottom: solid 2px #2457A6;
+    font-size: 18px;
+    color: #2457A6;
+    float: left;
+}
+
+.intro-box .info-title h4 {
+    padding: 12px 0 0 5px;
+    color: #666666;
+    float: left;
+}
+
+.intro-box .info-content {
+    margin-top: 16px;
+    font: 14px/22px "宋体", "SimSun";
+    color: #656565;
+}
+
+.intro-box .image-info {
+    margin-left: 23px;
+}
+/* 商品介绍 e */
+
+/* 商品评价 */
+.comment-box {
+    display: none;
+    background-color: #fff;
+}
+
+.comment-top {
+    height: 160px;
+    padding-left: 10px;
+}
+
+/* 商品评价的标题 */
+.comment-top .title {
+    margin-bottom: 22px;
+    font: bold 14px/38px "新宋体";
+}
+
+/* 商品评价得分 */
+.comment-top .score {
+    font: bold 50px/25px "微软雅黑", "microsoft yahei";
+    color: #FF8F00;
+    float: left;
+}
+
+.comment-top .score em {
+    font: bold 18px/25px "微软雅黑", "microsoft yahei";
+    color: #65657D;
+}
+
+.comment-top .des-comment li {
+    float: left;
+}
+
+.des-comment {
+    width: 450px;
+    margin-left: 100px;
+    position: relative;
+}
+
+.des-comment .show-score {
+    width: 25px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    background-color: #7F7F7F;
+    color: #fff;
+    position: absolute;
+    right: 17px;
+    top: -22px;
+}
+
+/* 小三角 */
+.des-comment .show-score .triangle {
+    width: 0;
+    height: 0;
+    border-color: #7F7F7F transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+}
+
+.des-comment ul {
+    width: 450px;
+    height: 16px;
+    line-height: 16px;
+    background-color: #BDBDBD;
+    color: #fff;
+}
+
+.des-comment .comment-1 {
+    padding: 0 29px 0 26px;
+}
+
+.des-comment .comment-2 {
+    width: 82px;
+}
+
+.des-comment .comment-3 {
+    width: 76px;
+}
+
+.des-comment .comment-4 {
+    width: 65px;
+}
+
+.des-comment .comment-5 {
+    width: 112px;
+}
+
+.des-comment .comment-text {
+    padding-top: 7px;
+    font-family: "新宋体";
+    font-size: 12px;
+    color: #65657D;
+}
+
+.comment-middle {
+    padding-bottom: 20px;
+}
+
+.comment-middle .comment-nav {
+    height: 32px;
+    background-color: #F2F2F2;
+}
+
+.comment-middle .comment-navBar {
+    margin-left: 20px;
+}
+
+.comment-middle .comment-navBar li {
+    line-height: 28px;
+    padding: 0 8px;
+    margin-right: 46px;
+    float: left;
+}
+
+.comment-navBar li a {
+    color: #000;
+}
+
+.comment-navBar li.active {
+    background-color:transparent;
+    border-bottom: solid 4px #317EE7;
+}
+
+.comment-navBar li.active a {
+    color: #317EE7;
+}
+
+/* 排序按钮 */
+.scort a {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    padding-left: 6px;
+    border: solid 1px #CDCDCD;
+    border-bottom: none;
+    float: left;
+    position: relative;
+}
+
+/* 排序按钮中的小箭头 */
+.scort a .arrow {
+    width: 11px;
+    height: 12px;
+    margin-left: 5px;
+    margin-right: 6px;
+    background: url("../images/icon/xiangxia.png") center center no-repeat;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.recoScort .new {
+    width: 28px;
+    height: 16px;
+    background: url("../images/icon/new.png") no-repeat;
+    position: absolute;
+    top: -14px;
+    right: 14px;
+}
+
+/* 评论列表 */
+.comment-list {
+    margin: 20px 0 0 40px;
+}
+
+.comment-list .user-list li {
+    margin-bottom: 38px;
+}
+
+.comment-list .user-info {
+    margin-right: 25px;
+    text-align: center;
+    float: left;
+}
+
+/* 用户头像 */
+.user-info .user-image img {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+}
+
+/* 用户账号 */
+.comment-list .user-num {
+    line-height: 20px;
+    text-align: center;
+    color: #77778B;
+}
+
+/* 会员等级 */
+.comment-list .user-level {
+    font-family: "新宋体";
+    text-align: center;
+    color: #77778B;
+}
+
+/* 评论信息 */
+.comment-info {
+    float: left;
+}
+
+.comment-info .top {
+    margin-bottom: 10px;
+}
+
+/* 评论信息中的小星星 */
+.comment-info .star {
+    width: 13px;
+    height: 14px;
+    margin-right: 2px;
+    background: url("../images/star.png") center center no-repeat;
+    float: left;
+}
+
+/* 评分 */
+.comment-info .comment-score {
+    margin-left: 10px;
+    font-family: "宋体", "SimSun";
+    font-weight: bold;
+    color: #000;
+    float: left;
+}
+
+/* 评论的内容 */
+.comment-content {
+    margin-bottom: 5px;
+    font-family: "宋体", "SimSun";
+    color: #777777;
+}
+
+/* “踩”和“顶”*/
+.comment-info a {
+    font-family: "宋体", "SimSun";
+    color: #075B9B;
+}
+
+/* 评论的时间 */
+.comment-time {
+    margin-right: 66px;
+    color: #ABABAB;
+    float: right;
+}
+
+.comment-middle .page {
+    margin: 0 14px 36px 0;
+    float: right;
+}
+
+/* 上一页按钮 */
+.page .pre-page {
+    margin-right: 5px;
+    font-size: 0;
+    float: left;
+}
+
+.pre-page a {
+    height: 23px;
+    padding: 0 11px 0 7px;
+    font: 12px/23px "宋体", "SimSun";
+    border: solid 1px #D9D9D9;
+    color: #D8D8D8;
+    display: inline-block;
+}
+
+.pre-page a span {
+    width: 5px;
+    height: 9px;
+    margin-right: 6px;
+    background: url("../images/icon/pre.png") no-repeat;
+    display: inline-block;
+}
+
+.page .page-list {
+    margin-right: 5px;
+    float: left;
+}
+
+.page-list a {
+    height: 23px;
+    padding: 0 10px 0 8px;
+    font: 12px/23px "宋体", "SimSun";
+    border: solid 1px #D9D9D9;
+    color: #000;
+    display: inline-block;
+}
+
+/* 当前选中的按钮*/
+.page-list a.current {
+    background-color: #E9E9E9;
+    color: #f00;
+}
+
+.page-list a.last {
+    color: #085C9B;
+}
+
+.page-list span {
+    margin: 0 12px 0 5px;
+    color: #667DB7;
+}
+
+/* 下一页按钮 */
+.page .next-page {
+    float: left;
+}
+
+.next-page a {
+    height: 23px;
+    padding: 0 11px 0 7px;
+    font: 12px/23px "宋体", "SimSun";
+    border: solid 1px #D9D9D9;
+    color: #085C9B;
+    display: inline-block;
+}
+
+.next-page a span {
+    width: 5px;
+    height: 9px;
+    margin: 0 12px 0 2px;
+    background: url("../images/icon/next.png") no-repeat;
+    display: inline-block;
+}
+
+.change-page {
+    margin-left: 8px;
+    float: left;
+}
+
+/* 输入页数 */
+.change-page .input-page {
+    width: 28px;
+    height: 23px;
+    line-height: 23px;
+    margin: 0 6px 0 7px;
+    text-align: center;
+    border: solid 1px #D3D3D3;
+    color: #666666;
+}
+
+/* 确定按钮 */
+.change-page .button {
+    width: 37px;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 12px;
+    text-align: center;
+    background-color: #D6D6D6;
+    border: solid 1px #707070;
+    cursor: pointer;
+}
+/* 翻页 e */
+
+/* 商品咨询 */
+.consult-box {
+    width: 785px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+
+.consult-title {
+    width: 100%;
+    height: 33px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #0688BA;
+}
+
+.consult-title .all, .consult-title .send {
+    width: 132px;
+    height: 32px;
+    font: 12px/32px "微软雅黑", "microsoft yahei";
+    text-align: center;
+    border: solid 1px #0688BA;
+    border-bottom: solid 1px #fff;
+    float: left;
+}
+
+.consult-title a {
+    color: #0688BA;
+}
+
+/* 发表咨询 */
+.consult-title .send {
+    margin-right: 26px;
+    border: none;
+    text-align: right;
+    float: right;
+}
+
+.consult-box .notice {
+    width: 734px;
+    line-height: 24px;
+    padding: 5px 0 5px 20px;
+    margin: 0 0 20px 22px;
+    background-color: #F3F3F3;
+    color: #777777;
+}
+
+/* 咨询列表 */
+.consult-list {
+    margin-left: 67px;
+}
+
+.consult-list li {
+    margin-bottom: 38px;
+}
+
+/* 会员信息 */
+.member-info {
+    text-align: center;
+    float: left;
+}
+
+/* 会员账号 */
+.member-num, .member-grade {
+    height: 18px;
+    color: #777777;
+}
+
+/* 商品咨询 */
+.shop-consult {
+    margin-left: 34px;
+    float: left;
+}
+
+.shop-consult .top {
+    width: 540px;
+    height: 19px;
+    line-height: 19px;
+    margin-bottom: 15px;
+}
+
+.member-image img {
+    width: 35px;
+    height: 35px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.consult-name {
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    float: left;
+}
+
+/* 咨询的时间 */
+.consult-time {
+    font-family: "宋体", "SimSun";
+    color: #ABABAB;
+    float: right;
+}
+
+/* 提问 */
+.consult-content .question {
+    margin-bottom: 13px;
+    font-family: "宋体", "SimSun";
+    color: #777777;
+}
+
+/* 回答 */
+.answer {
+    width: 576px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    font-family: "宋体", "SimSun";
+    font-size: 12px;
+    background-color: #F1F1F1;
+    color: #777777;
+    position: relative;
+}
+
+.answer span {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* 小三角 */
+.answer .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent #F3F3F3 transparent;
+    border-width: 0 5px 5px 5px;
+    position: absolute;
+    top: -5px;
+    left: 30px;
+}
+
+
+.consult-box .page {
+    margin-right: 62px;
+    float: right;
+}
+
+.rate-paginator {
+    margin-top: 20px;
+    text-align: right;
+    background: url(//img.alicdn.com/tps/i1/T1O.q5XdVqXXXXXXXX-70-20.png) right 0 no-repeat;
+    padding: 20px 0 10px;
+    margin-right: 30px;
+}
+
+#province {
+    text-align: left;
+}
+
+#province .select-name {
+    width: 89px;
+    height: 24px;
+    overflow: hidden;
+}
+
+#province li {
+    width: 93px;
+    overflow: hidden;
+}

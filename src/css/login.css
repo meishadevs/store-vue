@@ -1,0 +1,111 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 登录页的CSS样式
+ */
+
+.header .inner-c {
+    width: 374px;
+}
+
+.logoBar h3 {
+    margin-left: 22px;
+    font: 22px/87px "微软雅黑", "microsoft yahei";
+    color: #fff;
+    float: left;
+}
+
+.loginBox {
+    width: 374px;
+    padding: 42px 0 0 86px;
+    margin: 0 auto;
+    border: solid 1px #ccc;
+    position: relative;
+}
+
+.loginBox li {
+    margin-bottom: 15px;
+}
+
+.loginBox .password {
+    margin-bottom: 26px;
+}
+
+.loginBox .checkbox {
+    margin-bottom: 20px;
+}
+
+.p-user, .p-password, .other-loginBox {
+    color: #999999;
+}
+
+/* 邮箱/用户名/已验证的手机号输入框 */
+.input-user {
+    width: 300px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 5px;
+    background: url("../images/icon/user.jpg") 278px center no-repeat;
+    border: solid 1px #ccc;
+}
+
+.loginBox .input-user::-webkit-input-placeholder {
+    color: #000;
+}
+
+.input-user::-moz-placeholder {
+    color: #000;
+}
+
+.input-user:-ms-input-placeholder {
+    color: #000;
+}
+
+/* 密码输入框 */
+.input-password {
+    width: 300px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 5px;
+    background: url("../images/icon/password.jpg") 278px center no-repeat;
+    border: solid 1px #ccc;
+}
+
+.loginBox label {
+    margin-right: 14px;
+}
+
+.loginBox .checkbox {
+    position: relative;
+    top: 2px;
+}
+
+.loginBox .button-login {
+    width: 309px;
+    height: 36px;
+    background: url("../images/login.jpg") no-repeat;
+    cursor: pointer;
+}
+
+.other-content span {
+    color: #ccc;
+}
+
+.other-content .more {
+    width: 36px;
+    height: 16px;
+    background: url("../images/icon/down.png") right center no-repeat;
+    display: inline-block;
+}
+
+/* 免费注册按钮 */
+.free-register {
+    width: 115px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #7CBE56;
+    color: #fff;
+    position: absolute;
+    right: 42px;
+    bottom: -32px;
+}

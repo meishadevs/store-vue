@@ -1,0 +1,137 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 商品分类页的CSS样式
+ */
+
+.wrapper {
+    margin-top: 17px;
+}
+
+/* 左侧的部分 s */
+.wrapper .leftArea {
+    width: 183px;
+    border: solid 1px #d7d7d7;
+    background-color: #f3f3f3;
+}
+
+.leftArea .product-title {
+    height: 34px;
+    font: bold 14px/34px "宋体";
+    text-align: center;
+    border-bottom: solid 1px #cdcdcd;
+}
+
+.leftArea .product-title a {
+    color: #555;
+}
+
+.leftArea .product-item {
+    padding: 10px 0 0 20px;
+    border-bottom: dotted 1px #cdcdcd;
+}
+
+.leftArea .product-item dt {
+    height: 30px;
+    font-family: "宋体";
+    font-weight: bold;
+    color: #555;
+}
+
+.leftArea .product-item dd {
+    font-size: 0;
+    font-family: "宋体";
+}
+.leftArea .product-item dd a {
+    width: 81px;
+    height: 25px;
+    font-size: 12px;
+    color: #555;
+    display: inline-block;
+}
+
+.product-item dd a:hover {
+    color: #c81623;
+}
+
+.leftArea dl.last {
+    border-bottom: none;
+}
+/* 左侧的部分 e */
+
+/* 轮播图 */
+.rightArea .banner {
+    float: none;
+}
+
+/* 商品类别名称*/
+.shopShow .shopClassName {
+    height: 34px;
+    border-bottom: solid 2px #ccc;
+}
+
+.shopClassName h3 {
+    width: 180px;
+    height: 34px;
+    padding-left: 10px;
+    border-bottom: solid 2px #096dba;
+    font: bold 14px/34px "宋体", "SimSun";
+}
+
+/* 商品列表 */
+.shopList {
+    width: 790px;
+    margin-left: 16px;
+}
+
+.shopItem {
+    margin: 18px 32px 30px 0;
+}
+
+/* 商品名称 */
+.shopItem .shopName {
+    width: 162px;
+    height: 50px;
+}
+
+.shopItem .shopName a {
+    color: #333333;
+}
+
+/* 商品价格 */
+.shopItem .shopPrice {
+    height: 20px;
+    color: #d4105a;
+    font-weight: bold;
+}
+
+/* 商品评论中的星星*/
+.shopItem .shopComment .star {
+    width: 14px;
+    height: 14px;
+    background: url("../images/star.png") left 1px no-repeat;
+    display: inline-block;
+}
+
+/* 商品评论的条数 */
+.shopItem .shopComment .commentNum {
+    color: #085c9b;
+}
+/* 商品展示区 e */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

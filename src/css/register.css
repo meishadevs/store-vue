@@ -1,0 +1,104 @@
+/**
+ * Created by Administrator on 2017/3/31.
+ * 注册页的CSS样式
+ */
+
+.headerBar {
+    width: 100%;
+    display: table;
+}
+
+.logoBar {
+    height: 85px;
+    background-color: #1D7AD9;
+}
+
+.logoBar .inner-c {
+    width: 630px;
+}
+
+.logoBar .logo {
+    padding-left: 41px;
+}
+
+.logoBar h3 {
+    margin-left: 22px;
+    font: 22px/87px "微软雅黑", "microsoft yahei";
+    color: #fff;
+    float: left;
+}
+
+/* 注册 */
+.registerBox {
+    width: 628px;
+    padding-top: 68px;
+    margin: 10px auto;
+    border: solid 1px #ccc;
+}
+
+.register li {
+    height: 70px;
+    vertical-align: top;
+}
+
+.register-item {
+    width: 190px;
+    height: 38px;
+    font: 14px/38px "宋体", "SimSun";
+    color: #999999;
+    text-align: right;
+    float: left;
+}
+
+.register-item i {
+    color: #FF0000;
+    font-style: normal;
+}
+
+.input-item {
+    float: left;
+}
+
+.input-item input {
+    width: 263px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 5px;
+    border: solid 1px #ccc;
+}
+
+.icon-use {
+    background: url("../images/icon/user.jpg") 245px center no-repeat;
+}
+
+.icon-password {
+    background: url("../images/icon/password.jpg") 245px center no-repeat;
+}
+
+.checkbox-item {
+    float: left;
+}
+
+.checkbox-item input {
+    position: relative;
+    top: 2px;
+}
+
+.checkbox-item label {
+    color: #333333;
+}
+
+.checkbox-item a {
+    color: #005AA0;
+}
+
+.submit-item {
+    float: left;
+}
+
+.submit-item input {
+    width: 272px;
+    height: 38px;
+    background: url("../images/icon/submit.jpg") no-repeat;
+    cursor: pointer;
+}
