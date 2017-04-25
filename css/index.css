@@ -202,11 +202,12 @@
 .productList-top .product-item a {
     width: 199px;
     height: 279px;
+    text-align: center;
     display: inline-block;
 }
 
 .productList-top .product-item img {
-    padding: 45px 0 24px 30px;
+    padding: 45px 0 24px 0;
 }
 
 /* 商品的名称 */
