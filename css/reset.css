@@ -43,7 +43,8 @@ a {
     color:#666;
 }
 
-em {
+em,
+i {
     font-style: normal;
 }
 

@@ -294,6 +294,9 @@ function showPage(data) {
     //计算一共有多少页商品咨询信息
     var totalPage = Math.ceil(data / config.advisoryAmount);
 
+    //显示商品咨询的条数
+    $(".appra-num").html(data);
+
     //计算当前显示的是第几页商品咨询信息
     var pageIndex = (config.advisoryStartIndex + config.advisoryAmount) / config.advisoryAmount;
 
