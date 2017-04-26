@@ -1,9 +1,9 @@
 /**
  * Created by Administrator on 2017/3/31.
- * ×é¼şµÄCSSÑùÊ½
+ * æ¨¡å—çš„CSSæ ·å¼
  */
 
-/* ×Ô¶¨Òåselect×é¼ş s */
+/* è‡ªå®šä¹‰selectæ ‡ç­¾ s */
 .select {
     height: 24px;
     background-color: #fff;
@@ -60,9 +60,9 @@
     background-color: green;
     color: #fff;
 }
-/* ×Ô¶¨Òåselect×é¼ş e */
+/* è‡ªå®šä¹‰selectæ ‡ç­¾ e */
 
-/* ·­Ò³×é¼ş s */
+/* ç¿»é¡µæ ‡ç­¾ s */
 .rate-page {
     margin-right: 30px;
     font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
@@ -70,7 +70,7 @@
     font-size: 0;
 }
 
-/* ÉÏÒ»Ò³°´Å¥ */
+/* ä¸Šä¸€é¡µ */
 .rate-page .page-prev {
     border-width: 1px;
 }
@@ -102,11 +102,4 @@
     background-color: #efefef;
 }
 
-/* Èı¸öĞ¡Ô²µã */
-.rate-page .rate-page-break {
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    line-height: 20px;
-}
-
-/* ·­Ò³×é¼ş e */
+/* ç¿»é¡µæ ‡ç­¾ e */

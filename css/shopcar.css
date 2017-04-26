@@ -1,13 +1,13 @@
 /**
  * Created by Administrator on 2017/3/31.
- * ¹ºÎï³µºÍ½áËãÒ³µÄCSSÑùÊ½
+ * è´­ç‰©è½¦å’Œç»“ç®—é¡µçš„CSSæ ·å¼
  */
 
 .header {
     margin-bottom: 12px;
 }
 
-/* ¹ºÎï½ø¶È */
+/* è´­ç‰©è¿›åº¦ */
 .shop-progress {
     margin-top: 25px;
     margin-right: 32px;
@@ -18,7 +18,7 @@
     margin-left: 22px;
 }
 
-/* ¹ºÎï½ø¶ÈÖĞµÄĞ¡Ô²È¦ */
+/* è´­ç‰©è¿›åº¦ä¸­çš„å°åœ†åœˆ */
 .shop-progress .circle {
     width: 18px;
     height: 18px;
@@ -30,7 +30,7 @@
     float: left;
 }
 
-/* Ğ¡Ô²È¦Ö®¼äµÄÁ¬Ïß */
+/* å°åœ†åœˆä¹‹é—´çš„è¿çº¿ */
 .shop-progress .line {
     width: 150px;
     height: 3px;
@@ -59,7 +59,7 @@
 }
 
 
-/* ÊÕ»õĞÅÏ¢ */
+/* æ”¶è´§ä¿¡æ¯ */
 .receive-info {
     border: solid 1px #CCCCCC;
 }
@@ -90,7 +90,7 @@
     float: left;
 }
 
-/* ĞÂºÅ */
+/* æ–°å· */
 .row .xing {
     margin-top: 3px;
     margin-right: 8px;
@@ -106,7 +106,7 @@
     float: left;
 }
 
-/* ×Ô¶¨Òåselect¿Ø¼ş */
+/* è‡ªå®šä¹‰selectæ§ä»¶ */
 .row .select {
     margin-right: 10px;
 }
@@ -136,7 +136,7 @@
     overflow: hidden;
 }
 
-/* ÊÕ»õÈËµØÖ·ÊäÈë¿ò */
+/* æ”¶è´§äººåœ°å€è¾“å…¥æ¡† */
 .input-address {
     width: 373px;
     height: 22px;
@@ -172,7 +172,7 @@
     top: 5px;
 }
 
-/* ÊÕ»õÈËĞÕÃûÊäÈë¿ò */
+/* æ”¶è´§äººå§“åè¾“å…¥æ¡† */
 .input-receiver {
     width: 373px;
     height: 22px;
@@ -183,7 +183,7 @@
     left: 2px;
 }
 
-/* ÊÖ»úºÅÂëÊäÈë¿ò */
+/* æ‰‹æœºå·ç è¾“å…¥æ¡† */
 .input-phone {
     width: 373px;
     height: 22px;
@@ -203,7 +203,7 @@
     font-size: 14px;
 }
 
-/* ÇøºÅÊäÈë¿ò */
+/* åŒºå·è¾“å…¥æ¡† */
 .input-area {
     width: 52px;
     height: 22px;
@@ -215,7 +215,7 @@
     left: 1px;
 }
 
-/* µç»°ºÅÂëÊäÈë¿ò */
+/* ç”µè¯å·ç è¾“å…¥æ¡† */
 .input-tel {
     width: 87px;
     height: 22px;
@@ -227,7 +227,7 @@
     left: 1px;
 }
 
-/* ·Ö»úºÅÊäÈë¿ò */
+/* åˆ†æœºå·è¾“å…¥æ¡† */
 .input-extension {
     width: 90px;
     height: 22px;
@@ -239,7 +239,7 @@
     left: 1px;
 }
 
-/* È·ÈÏÊÕ»õµØÖ·°´Å¥ */
+/* ç¡®è®¤æ”¶è´§åœ°å€æŒ‰é’® */
 .button-submit {
     width: 112px;
     height: 27px;
@@ -252,7 +252,7 @@
     cursor: pointer;
 }
 
-/* Ö§¸¶·½Ê½ */
+/* æ”¯ä»˜æ–¹å¼ */
 .pay-way {
     margin-top: 20px;
     border: solid 1px #CCCCCC;
@@ -279,7 +279,7 @@
     margin-bottom: 26px;
 }
 
-/* Î¢ĞÅÖ§¸¶ */
+/* å¾®ä¿¡æ”¯ä»˜ */
 .pay-content .row input {
     float: left;
 }
@@ -305,12 +305,12 @@
     float: left;
 }
 
-/* »õµ½¸¶¿î */
+/* è´§åˆ°ä»˜æ¬¾ */
 .cash-label {
     margin-right: 18px;
 }
 
-/* ·¢Æ±ĞÅÏ¢ */
+/* å‘ç¥¨ä¿¡æ¯ */
 .invoice-info {
     margin-top: 20px;
     border: solid 1px #CCCCCC;
@@ -392,21 +392,21 @@
     cursor: pointer;
 }
 
-/* ±£´æ°´Å¥ */
+/* ä¿å­˜æŒ‰é’® */
 .invoice-content .button .save {
     color: #ffffff;
     background-color: #4391FC;
     border: solid 1px #3784ED;
 }
 
-/* È¡Ïû°´Å¥ */
+/* å–æ¶ˆæŒ‰é’® */
 .invoice-content .button .cancel {
     color: #000;
     background-color: #F6F6F6;
     border: solid 1px #CCCCCC;
 }
 
-/* ËÍ»õÇåµ¥ */
+/* é€è´§æ¸…å• */
 .delivery-info {
     margin-top: 20px;
     border: solid 1px #ccc;
@@ -452,27 +452,27 @@
     float: left;
 }
 
-/* ÉÌÆ·Ãû³Æ */
+/* å•†å“åç§° */
 .first-row .proName {
 
 }
 
-/* µ¥¼Û */
+/* å•ä»· */
 .first-row .unit-price {
     margin-left: 393px;
 }
 
-/* ·µÏÖ */
+/* è¿”ç° */
 .first-row .cashback {
     margin-left: 112px;
 }
 
-/* ÊıÁ¿ */
+/* æ•°é‡ */
 .first-row .proNum {
     margin-left: 112px;
 }
 
-/* Ğ¡¼Æ */
+/* å°è®¡ */
 .first-row .subtotal {
     margin-left: 112px;
 }
@@ -567,17 +567,17 @@
     bottom: -2px;
 }
 
-/* ÉÌÆ·ĞÅÏ¢ */
+/* å•†å“ä¿¡æ¯ */
 .delivery-bottom .product-info {
     margin-bottom: 12px;
 }
 
-/* ÉÌÆ·Í¼Æ¬ */
+/* å•†å“å›¾ç‰‡ */
 .product-info .product-image {
     float: left;
 }
 
-/* ÉÌÆ·ÃèÊö */
+/* å•†å“æè¿° */
 .product-info .product-des {
     margin-left: 10px;
     font-size: 14px;
@@ -585,17 +585,17 @@
     float: left;
 }
 
-/* ÉÌÆ·Ãû³Æ */
+/* å•†å“åç§° */
 .product-info .product-name {
     margin-bottom: 10px;
 }
 
-/* ÉÌÆ·ÊıÁ¿ */
+/* å•†å“æ•°é‡ */
 .product-info .product-num {
     margin-bottom: 10px;
 }
 
-/* ÉÌÆ·¼Û¸ñ */
+/* å•†å“ä»·æ ¼ */
 .product-info .product-price {
     font-size: 12px;
 }
@@ -604,7 +604,7 @@
     color: #D70000;
 }
 
-/* ¶©µ¥½áËã */
+/* è®¢å•ç»“ç®— */
 .order-sett {
     margin-top: 20px;
     border: solid 1px #ccc;
@@ -629,7 +629,7 @@
     float: right;
 }
 
-/* ¼Û¸ñ×Ü¼Æ */
+/* ä»·æ ¼æ€»è®¡ */
 .order-sett .total {
     margin-bottom: 16px;
     color: #929292;
@@ -641,7 +641,7 @@
     font-size: 20px;
 }
 
-/* Ìá½»¶©µ¥°´Å¥ */
+/* æäº¤è®¢å•æŒ‰é’® */
 .order-sett .commit {
     width: 165px;
     height: 33px;
@@ -658,19 +658,3 @@
     border: none;
     float: right;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
