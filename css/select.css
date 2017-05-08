@@ -52,6 +52,11 @@
 .shopClassNav .shop-item li a {
     color: #555;
 }
+
+.shopClassNav .shop-item li a:hover {
+    color: #c81623;;
+}
+
 /* 商品分类 导航 e */
 
 /* 左侧的商品列表 s */
@@ -72,23 +77,27 @@
 }
 
 .leftArea .shop-name a {
-    color: #999999
+    color: #999;
 }
 
-.leftArea .shop-price a {
-    color: #666;
+.leftArea .shop-name a:hover {
+    color: #C81623;
 }
+
+.leftArea .shop-price {
+    color: #e4393c;
+    font-weight: 400;
+    font-family: Verdana;
+}
+
 /* 左侧的商品列表 e */
 
 /* 商品筛选部分 s */
 .screening-box {
-    width: 796px;
+    width: 780px;
 }
 
 .screeningHeader {
-    width: 100%;
-    height: 36px;
-    line-height: 36px;
     border-bottom: solid 1px #d9d9d9;
 }
 
@@ -124,7 +133,7 @@
 }
 
 .screeningBody ul {
-    width: 504px;
+    width: 655px;
 }
 
 .screeningBody li {
@@ -135,6 +144,10 @@
 
 .screeningBody li a {
     color: #1d7ad9;;
+}
+
+.screeningBody li a:hover {
+    color: #C81623;
 }
 
 /* 更多按钮 */
@@ -170,7 +183,7 @@
 /* 商品筛选部分 e */
 
 .addInfo {
-    width: 100%;
+    width: 780px;
     height: 31px;
     background-color: #f5f5f5;
     border: solid 1px #d9d9d9;

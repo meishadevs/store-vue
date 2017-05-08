@@ -369,9 +369,10 @@
 }
 
 .invoice-content .invoice-name {
-    width: 137px;
+    width: 127px;
     height: 22px;
     line-height: 22px;
+    padding-left: 10px;
     margin-left: 5px;
     border: solid 1px #ccc;
 }
