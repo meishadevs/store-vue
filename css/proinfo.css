@@ -7,23 +7,6 @@
     background-color: #f0f0f0;
 }
 
-/* 用户的位置 */
-.userPosition {
-    margin: 25px 0 15px 0;
-    font-size: 0;
-}
-
-.userPosition em,
-.userPosition a,
-.userPosition span,
-.userPosition strong {
-    font-size: 12px;
-}
-
-.userPosition a:hover {
-    text-decoration: underline;
-}
-
 /* 商品描述信息 */
 .description-info {
     background-color: #fff;

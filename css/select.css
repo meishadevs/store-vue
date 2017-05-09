@@ -3,9 +3,16 @@
  * 商品筛选页的CSS样式
  */
 
+.pp,
+.pmcc,
+.czxt,
+.yxnc,
+.wllx {
+    display: none;
+}
+
 .wrapper {
     width: 1000px;
-    margin-top: 17px;
 }
 
 /* 页面左侧 */

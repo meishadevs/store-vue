@@ -13,6 +13,9 @@ $(function () {
 function hideFilterItem() {
     $(".screeningBody a").on("click", function () {
         var className = $(this).attr("data");
+        var position = $(this).attr("position");
         $("." + className).hide();
+        $("." + position).show();
+        $("." + position + "-text").html(this.innerHTML);
     });
 }
