@@ -256,35 +256,22 @@ function zoomProductImg() {
 //展示商品的咨询信息
 var showAdvisory = function(data) {
 
-    var tag = "";
+    var tag = '';
 
     $.each(data, function(index, obj) {
 
-        tag += "<li class='clearfix'><div class='member-info'> <div class='member-image'>";
-
-        //会员头像
-        tag += "<img src='" + obj.memberimage + "' alt=''>";
-
-        //会员账号
-        tag += "</div><p class='member-num'>" + obj.membernum + "</p>";
-
-        //会员等级
-        tag += "<p class='member-grade'>" + obj.membergrade + "</p></div>";
-        tag += "<div class='shop-consult'><div class='top clearfix'><div class='consult-name'>[商品咨询]</div>";
-
-        //商品咨询的时间
-        tag += "<div class='consult-time'>" + obj.time + "</div></div>";
-        tag += "<div class='consult-content'>";
-
-        //商品咨询的问题
-        tag += "<div class='question'>" + obj.question + "</div>";
-        tag += "<div class='answer'>";
-
-        //回答
-        tag += "<span>慕课网回复：</span>" + obj.answer + "<div class='triangle'></div></div></div></div></li>";
+        //实例化商品咨询对象
+        var advisory = new Advisory();
+        advisory.memberImage = obj.memberimage;
+        advisory.memberName =  obj.membernum;
+        advisory.memberGrade = obj.membergrade;
+        advisory.advisoryTime = obj.time;
+        advisory.Question = obj.question;
+        advisory.Answer = obj.answer;
+        tag += advisory.bindDOM();
     });
 
-    $(".consult-list").html(tag);
+    $(".advisory-list").html(tag);
 }
 
 
@@ -339,8 +326,8 @@ function showPage(data) {
 
     tag += "</div>";
 
-    $(".consult-box .rate-page").remove();
-    $(".consult-box").append($(tag))
+    $(".advisory-box .rate-page").remove();
+    $(".advisory-box").append($(tag))
 
     //上一页按钮
     $(".page-prev").click(function() {

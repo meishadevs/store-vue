@@ -812,21 +812,21 @@
 /* 翻页 e */
 
 /* 商品咨询 */
-.consult-box {
+.advisory-box {
     width: 785px;
     margin-top: 15px;
     padding-bottom: 20px;
     background-color: #fff;
 }
 
-.consult-title {
+.advisory-title {
     width: 100%;
     height: 33px;
     margin-bottom: 10px;
     border-bottom: solid 1px #0688BA;
 }
 
-.consult-title .all, .consult-title .send {
+.advisory-title .all, .advisory-title .send {
     width: 132px;
     height: 32px;
     font: 12px/32px "微软雅黑", "microsoft yahei";
@@ -836,19 +836,19 @@
     float: left;
 }
 
-.consult-title a {
+.advisory-title a {
     color: #0688BA;
 }
 
 /* 发表咨询 */
-.consult-title .send {
+.advisory-title .send {
     margin-right: 26px;
     border: none;
     text-align: right;
     float: right;
 }
 
-.consult-box .notice {
+.advisory-box .notice {
     width: 734px;
     line-height: 24px;
     padding: 5px 0 5px 20px;
@@ -858,11 +858,11 @@
 }
 
 /* 咨询列表 */
-.consult-list {
+.advisory-list {
     margin-left: 67px;
 }
 
-.consult-list li {
+.advisory-list li {
     margin-bottom: 38px;
 }
 
@@ -872,19 +872,19 @@
     float: left;
 }
 
-/* 会员账号 */
-.member-num, .member-grade {
+/* 会员名称 */
+.member-name, .member-grade {
     height: 18px;
     color: #777777;
 }
 
 /* 商品咨询 */
-.shop-consult {
+.shop-advisory {
     margin-left: 34px;
     float: left;
 }
 
-.shop-consult .top {
+.shop-advisory .top {
     width: 540px;
     height: 19px;
     line-height: 19px;
@@ -898,7 +898,7 @@
     display: inline-block;
 }
 
-.consult-name {
+.advisory-name {
     font-size: 14px;
     color: #000;
     font-weight: bold;
@@ -906,14 +906,14 @@
 }
 
 /* 咨询的时间 */
-.consult-time {
+.advisory-time {
     font-family: "宋体", "SimSun";
     color: #ABABAB;
     float: right;
 }
 
 /* 提问 */
-.consult-content .question {
+.advisory-content .question {
     margin-bottom: 13px;
     font-family: "宋体", "SimSun";
     color: #777777;
@@ -951,7 +951,7 @@
 }
 
 
-.consult-box .page {
+.advisory-box .page {
     margin-right: 62px;
     float: right;
 }
