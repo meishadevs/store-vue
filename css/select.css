@@ -3,6 +3,14 @@
  * 商品筛选页的CSS样式
  */
 
+.add-style {
+    cursor: pointer;
+}
+
+.add-style:hover {
+    text-decoration: underline;
+}
+
 .pp,
 .pmcc,
 .czxt,
