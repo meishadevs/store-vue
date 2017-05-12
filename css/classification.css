@@ -97,6 +97,10 @@
     color: #333333;
 }
 
+.shopItem .shopName a:hover {
+    color: #DD0000;
+}
+
 /* 商品价格 */
 .shopItem .shopPrice {
     height: 20px;
@@ -115,6 +119,10 @@
 /* 商品评论的条数 */
 .shopItem .shopComment .commentNum {
     color: #085c9b;
+}
+
+.shopItem .shopComment .commentNum:hover {
+    color: #DD0000;
 }
 /* 商品展示区 e */
 

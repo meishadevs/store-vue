@@ -350,6 +350,22 @@
 }
 /* 用户的位置 e */
 
+/* 回到顶部按钮 */
+.goTop {
+    width: 68px;
+    height: 29px;
+    background: url(../images/top.png) no-repeat left bottom;
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    bottom: 75px;
+    display: none;
+}
+
+.goTop:hover {
+    background-position: left top;
+}
+
 
 
 

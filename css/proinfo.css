@@ -332,6 +332,10 @@
     padding-bottom: 22px;
 }
 
+.product-info .leftArea a:hover {
+    color: #d70057;
+}
+
 .product-info .product-image {
     padding: 18px 0 15px 0;
     text-align: center;
