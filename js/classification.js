@@ -10,6 +10,12 @@ $(function () {
 
     //图片轮播
     setBanner();
+
+    //存储数据
+    saveData();
+
+    //进入商品评论页
+    gotoComment();
 });
 
 
@@ -26,4 +32,17 @@ function setNav() {
     if(index >= 0 && index < length) {
         $(".nav li").eq(index).addClass("active").siblings("li").removeClass("active");
     }
+}
+
+
+//进入商品评论页
+function gotoComment() {
+    $('.commentNum').on('click', function () {
+        localStorage.setItem("flag", 1);
+        window.location = 'proinfo.html';
+    });
+}
+
+//存储数据
+function saveData() {
 }

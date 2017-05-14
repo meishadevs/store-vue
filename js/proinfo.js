@@ -34,6 +34,9 @@ $(function() {
 
     //获得商品咨询信息
     getAdvisory();
+
+    //展示商品咨询信息
+    intoAdvisory();
 });
 
 
@@ -380,6 +383,19 @@ function getAdvisory() {
     //发送get请求，获得商品咨询信息的条数
     param = {"flag": 1};
     getData(config.advisoryUrl, 'get', 'jsonp', param, showPage);
+}
+
+
+//展示商品咨询信息
+function intoAdvisory() {
+    var flag = localStorage.getItem('flag');
+    localStorage.setItem('flag', 0);
+
+    if (flag == 1) {
+        window.scrollTo(0, 725);
+        $(".topArea .nav-bar li:eq(1)").addClass("active").siblings("li").removeClass("active");
+        $(".table li:eq(1)").eq($(this).index()).css("display", "block").siblings("li").css("display", "none");
+    }
 }
 
 
