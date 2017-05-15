@@ -3,6 +3,10 @@
  * 商品筛选页的CSS样式
  */
 
+body {
+    background: #f0f0f0;
+}
+
 .add-style {
     cursor: pointer;
 }
@@ -20,19 +24,19 @@
 }
 
 .wrapper {
-    width: 1048px;
+    width: 959px;
+    margin: 0 auto;
 }
-
 /* 页面左侧 */
 .wrapper .leftArea {
     width: 188px;
+    margin-right: 15px;
+    background-color: #fff;
     border: solid 1px #d7d7d7;
 }
 
 /* 商品分类导航 s */
 .leftArea .shopClassNav {
-    width: 100%;
-    background-color: #f3f3f3;
 }
 
 /* 商品分类导航中的标题 */
@@ -108,12 +112,16 @@
 /* 左侧的商品列表 e */
 
 /* 商品筛选部分 s */
+
 .screening-box {
-    width: 780px;
+    width: 754px;
+    background-color: #fff;
+    border-top: solid 1px #d9d9d9;
 }
 
-.screeningHeader {
-    border-bottom: solid 1px #d9d9d9;
+.screening-box dl {
+    padding-top: 10px;
+    border-bottom: dashed 1px #d9d9d9;
 }
 
 .screening-box dt {
@@ -124,95 +132,109 @@
     text-align: right;
 }
 
-.screeningHeader li {
-    width: 166px;
-}
-
-.screeningHeader li a {
-    color: #1d7ad9;
-}
-
-.screeningBody dl {
-    padding-top: 10px;
-    border-bottom: dashed 1px #d9d9d9;
-}
-
 /* 不限按钮 */
-.screeningBody .limit {
+.screening-box .limit {
     margin-right: 28px;
 }
 
-.screeningBody .limit a{
+.screening-box .limit a{
     background-color: #1d7ad9;
     color: #fff;
 }
 
-.screeningBody ul {
-    width: 655px;
+.screening-box ul {
+    width: 630px;
 }
 
-.screeningBody li {
+.screening-box li {
     width: 126px;
     height: 24px;
     float: left;
 }
 
-.screeningBody li a {
+.screening-box li a {
     color: #1d7ad9;;
 }
 
-.screeningBody li a:hover {
+.screening-box li a:hover {
     color: #C81623;
 }
 
 /* 更多按钮 */
-.screeningBody .more a {
+.screening-box .more a {
     color: #000;
 }
 
 /* 商品筛选部分 e */
 
 .addInfo {
-    width: 770px;
+    width: 742px;
     height: 32px;
     line-height: 32px;
     padding-left: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
     font-size: 14px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     border: solid 1px #d9d9d9;
 }
 
 /* 商品列表 s */
-.gl-warp {
-    width: 840px;
-    height:auto;
+.product-list {
+    width: 100%;
+    height: 580px;
 }
 
-.gl-warp .gl-item {
-    width: 40px;
-    height: 466px;
-    margin-right: 40px;
-    margin-top: 10px;
+.brick-list {
+    width: 751px;
+}
+
+.brick-item {
+    width: 241px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    background: #fff;
     z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
     float: left;
     position: relative;
 }
 
-.gl-i-wrap .gl-item .gl-i-wrap {
-    width: 220px;
-    background: #fff;
-    border: 1px solid #fff;
-    padding: 38px 9px 10px;
-    -webkit-transition: border-color .1s ease;
-    -moz-transition: border-color .1s ease;
-    transition: border-color .1s ease;
-    z-index: 1;
-    position: absolute;
-    left: 0;
-    top: 0;
+.brick-list li.last {
+    margin-right: 0;
 }
 
+.brick-item:hover {
+    box-shadow: 0 4px 8px 0 rgba(7, 17, 27, .5);
+}
+
+.p-image {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.p-name {
+    padding-bottom: 3px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+
+.p-price {
+    margin-bottom: 5px;
+    text-align: center;
+    color: #ff6700;
+}
+
+.p-comment {
+    padding-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #b0b0b0;
+}
 /* 商品列表 e */
 
 
