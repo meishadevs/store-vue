@@ -182,7 +182,7 @@ body {
 /* 商品列表 s */
 .product-list {
     width: 100%;
-    height: 580px;
+    height: 536px;
 }
 
 .brick-list {
@@ -202,7 +202,7 @@ body {
     position: relative;
 }
 
-.brick-list li.last {
+.brick-list li:nth-of-type(3n) {
     margin-right: 0;
 }
 
@@ -236,6 +236,15 @@ body {
     color: #b0b0b0;
 }
 /* 商品列表 e */
+
+.wrapper .collection {
+    width: 188px;
+    height: 38px;
+    padding-left: 17px;
+    margin-right: 15px;
+    background-color: #f7f7f7;
+    background: url(../images/icon/collection.jpg) left center no-repeat;
+}
 
 
 

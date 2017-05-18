@@ -64,9 +64,8 @@
 
 /* 翻页标签 s */
 .rate-page {
-    margin-right: 30px;
     font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
-    text-align: right;
+    text-align: center;
     font-size: 0;
 }
 
@@ -75,14 +74,17 @@
     border-width: 1px;
 }
 
-.rate-page a, .rate-page span {
+.rate-page a,
+.rate-page span {
     height: 27px;
     line-height: 27px;
     padding: 5px 14px;
+    margin-right: 5px;
     color: #2953a6;
+    background-color: #fff;
     font-size: 14px;
     border: 1px solid #e5e5e5;
-    border-width: 1px 1px 1px 0;
+    border-width: 1px 1px 1px 1px;
     vertical-align: top;
     display: inline-block;
     moz-user-select: -moz-none;
@@ -95,11 +97,20 @@
 }
 
 .rate-page span {
-    color: #999;
+    color: #fff;
+    background-color: #f40;
 }
 
-.rate-page a:hover {
+.rate-page span.page-prev,
+.rate-page span.page-next {
+    color: #ccc;
     background-color: #efefef;
+}
+
+
+.rate-page a:hover {
+    color: #f40;
+    border: solid 1px #f40;
 }
 
 /* 翻页标签 e */

@@ -12,6 +12,9 @@ var config = {
     //获得商品咨询信息的url
     'advisoryUrl': 'http://localhost/dswzServer/advisory.php',
 
+    //获得商品信息的url
+    'productUrl': 'http://localhost/dswzServer/product.php',
+
     //淘宝搜索的url
     'taobaoUrl': 'https://suggest.taobao.com/sug',
 
@@ -22,5 +25,11 @@ var config = {
     'advisoryStartIndex' : 0,
 
     //每页展示商品咨询信息的条数
-    'advisoryAmount' : 6
+    'advisoryAmount' : 6,
+
+    //每页第一条商品信息的下标
+    'productStartIndex': 0,
+
+    //每页展示的商品信息的条数
+    'productAmount': 6
 };
