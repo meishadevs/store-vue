@@ -179,6 +179,31 @@ body {
     border: solid 1px #d9d9d9;
 }
 
+.addInfo .show-data {
+    margin-right: 10px;
+    color: #999;
+    font-weight: normal;
+    float: right;
+}
+
+.show-data .product-num {
+    color: #e4393c;
+}
+
+.addInfo .show-page {
+    margin-right: 50px;
+    font-weight: normal;
+    float: right;
+}
+
+.show-page .now-page {
+    color: #e4393c;
+}
+
+.show-page .slash {
+    color: #999;
+}
+
 /* 商品列表 s */
 .product-list {
     width: 100%;

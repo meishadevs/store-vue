@@ -64,15 +64,19 @@ var showProductInfo = function(data) {
 //展示分页
 function showPage(data) {
 
+    //createPage(data, config.productAmount, config.productStartIndex, 'page-box', showProductInfo);
+
     //计算一共有多少页商品信息
     var totalPage = Math.ceil(data / config.productAmount);
+    $(".total-page").html(totalPage);
 
     //显示商品的个数
-    $(".appra-num").html(data);
+    $(".product-num").html(data);
 
     //计算当前显示第几页商品信息
     var pageIndex = (config.productStartIndex + config.productAmount) / config.productAmount;
-
+    $(".now-page").html(pageIndex);
+    
     var tag = "<div class='rate-page'>";
 
     //如果当前显示的是第1页的商品信息
