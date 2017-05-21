@@ -496,7 +496,7 @@
 }
 
 .second-row .proImage {
-    margin: 10px 38px 10px 57px;
+    margin: 10px 38px 10px 32px;
     float: left;
 }
 
@@ -506,7 +506,7 @@
 
 .second-row .row-top {
     margin-top: 14px;
-    margin-bottom: 34px;
+    margin-bottom: 18px;
 }
 
 .row-top .proName {
@@ -516,7 +516,7 @@
 }
 
 .row-top .unit-price {
-    margin-left: 34px;
+    margin-left: 86px;
     font-size: 14px;
     color: #666;
     float: left;
@@ -553,7 +553,7 @@
 }
 
 .row-bottom .proNum {
-    margin-left: 432px;
+    margin-left: 436px;
     font-size: 14px;
     color: #666;
     float: left;

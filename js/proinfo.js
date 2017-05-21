@@ -37,6 +37,9 @@ $(function() {
 
     //展示商品咨询信息
     intoAdvisory();
+
+    //保存商品的信息
+    saveProductInfo();
 });
 
 
@@ -396,6 +399,18 @@ function intoAdvisory() {
         $(".topArea .nav-bar li:eq(1)").addClass("active").siblings("li").removeClass("active");
         $(".table li:eq(1)").eq($(this).index()).css("display", "block").siblings("li").css("display", "none");
     }
+}
+
+
+//保存商品的信息
+function saveProductInfo() {
+
+    $('.buy').on('click', function () {
+
+        //获得商品的数量
+        var productNum = $('.product-num').val();
+        localStorage.setItem("productNum", productNum);
+    });
 }
 
 

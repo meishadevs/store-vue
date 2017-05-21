@@ -8,6 +8,9 @@ $(function() {
     //选择收货地址
     selectAddress();
 
+    //设置商品信息
+    setProductInfo();
+
     //提交收货信息
     submitDeliveryInfo();
 
@@ -427,3 +430,20 @@ function commitOrder() {
     });
 }
 
+
+//设置商品信息
+function setProductInfo() {
+
+    //获得商品的数量
+    var productNum = parseInt(localStorage.getItem('productNum'));
+    if (isNaN(productNum)) {
+        productNum = 1;
+    }
+
+    var price = 1999;
+    var totalPrice = price * productNum;
+
+    $("#productNum").text(productNum);
+    $("#totalPrice").text(totalPrice + ".00");
+    $('.total em').text("￥" + totalPrice + ".00");
+}
