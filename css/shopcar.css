@@ -250,6 +250,17 @@
     border-bottom: none;
     color: #fff;
     cursor: pointer;
+    float: left;
+}
+
+.info-text {
+    height: 27px;
+    line-height: 27px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #e4393c;
+    display: none;
+    float: left;
 }
 
 /* 支付方式 */
@@ -405,6 +416,12 @@
     color: #000;
     background-color: #F6F6F6;
     border: solid 1px #CCCCCC;
+}
+
+.invoice-content .notice-text {
+    font-size: 16px;
+    color: #e4393c;
+    display: none;
 }
 
 /* 送货清单 */
@@ -657,5 +674,16 @@
     cursor: pointer;
     outline-style: none;
     border: none;
+    float: right;
+}
+
+.order-notice {
+    height: 33px;
+    line-height: 33px;
+    margin-top: 42px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #E50007;
+    display: none;
     float: right;
 }

@@ -702,6 +702,10 @@
     float: right;
 }
 
+.advisory-box .rate-page {
+    margin-left: 145px;
+}
+
 .rate-paginator {
     margin-top: 20px;
     text-align: right;

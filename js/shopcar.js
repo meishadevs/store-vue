@@ -16,6 +16,9 @@ $(function() {
 
     //设置发票信息
     setInvoiceInfo();
+    
+    //提交订单
+    commitOrder();
 });
 
 //获得市下面的所有区
@@ -129,6 +132,25 @@ function submitDeliveryInfo() {
         if(telNum.length != 0 && areaNum.length != 0) {
             showCheckResult("tel-phone", "input-tel", 1);
         }
+
+        $('.info-text').fadeIn();
+        $('.info-text').fadeOut(3000);
+
+        //创建Json对象，记录收货信息
+        var deliveryInfo = {
+            'province': strProvince,
+            'city': strCity,
+            'area': strArea,
+            'address': address,
+            'receiver': receiver,
+            'phoneNum': phoneNum,
+            'areaNum': areaNum,
+            'telNum': telNum,
+            'extensionNum': extensionNum
+        };
+
+        //将收货信息保存在本地
+        localStorage.setItem("deliveryInfo", JSON.stringify(deliveryInfo));
     });
 }
 
@@ -303,6 +325,12 @@ function setInvoiceInfo() {
 
     //选择发票的抬头
     selectInvoiceInfo("invoice-header");
+
+    //保存发票信息
+    saveInvoiceInfo();
+    
+    //取消发票信息
+    cancelInvoiceInfo();
 }
 
 
@@ -325,3 +353,77 @@ function selectInvoiceInfo(id) {
         $("#" + id + " .select-name")[0].innerHTML = this.innerHTML;
     });
 }
+
+
+//保存发票信息
+function saveInvoiceInfo() {
+    $(".invoice-content .save").on('click', function () {
+
+        //获取发票信息
+        getInvoiceInfo();
+
+        $('.invoice-content .notice-text').fadeIn();
+        $('.invoice-content .notice-text').fadeOut(3000);
+    });
+}
+
+
+//取消发票信息
+function cancelInvoiceInfo() {
+    $(".invoice-content .cancel").on('click', function () {
+
+        //是否需要发票
+        $("#use-invoice").attr("checked", false);
+
+        //发票的类型
+        var invoiceType = $("#invoice-type li:eq(0)").html();
+        $("#invoice-type .select-name").html(invoiceType);
+
+        //发票抬头
+        var invoiceHeader =  $("#invoice-header li:eq(0)").html();
+        $("#invoice-header .select-name").html(invoiceHeader);
+
+        //开发票人的姓名
+        var invoiceName = $(".invoice-name").val("");
+
+        getInvoiceInfo();
+    });
+}
+
+
+//获取发票信息
+function getInvoiceInfo() {
+
+    //是否需要发票
+    var flag = $('#use-invoice').is(':checked');
+
+    //获取当前选中的发票类型
+    var invoiceType = $('#invoice-type .select-name').html();
+
+    //获取发票抬头
+    var invoiceHeader = $("#invoice-header .select-name").html();
+
+    //获取开票人的姓名
+    var invoiceName = $(".invoice-name").val();
+
+    //创建Json数组，保存发票信息
+    var invoiceInfo = {
+        'flag': flag,
+        'invoiceType': invoiceType,
+        'invoiceHeader': invoiceHeader,
+        'invoiceName': invoiceName
+    };
+
+    //将发票信息保存在本地
+    localStorage.setItem('invoiceInfo', JSON.stringify(invoiceInfo));
+}
+
+
+//提交订单
+function commitOrder() {
+    $('.order-content .commit').on('click', function () {
+        $('.order-content .order-notice').fadeIn();
+        $('.order-content .order-notice').fadeOut(3000);
+    });
+}
+

@@ -76,7 +76,7 @@ function showPage(data) {
     //计算当前显示第几页商品信息
     var pageIndex = (config.productStartIndex + config.productAmount) / config.productAmount;
     $(".now-page").html(pageIndex);
-    
+
     var tag = "<div class='rate-page'>";
 
     //如果当前显示的是第1页的商品信息
