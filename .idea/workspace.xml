@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="255e08bb-6942-4232-b9a9-fa3363ca93c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/pro.jpg" afterPath="$PROJECT_DIR$/images/pro.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/shopcar.css" afterPath="$PROJECT_DIR$/css/shopcar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/proinfo.js" afterPath="$PROJECT_DIR$/js/proinfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/shopcar.js" afterPath="$PROJECT_DIR$/js/shopcar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proinfo.html" afterPath="$PROJECT_DIR$/proinfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shopcar.html" afterPath="$PROJECT_DIR$/shopcar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common.js" afterPath="$PROJECT_DIR$/js/common.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,21 +39,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shopcar.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shopcar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/shopcar.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
-              <caret line="447" column="28" lean-forward="false" selection-start-line="447" selection-start-column="28" selection-end-line="447" selection-end-column="28" />
+              <caret line="447" column="50" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="447" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-1.11.3.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/jquery/jquery-1.11.3.min.js">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="3" column="31817" lean-forward="false" selection-start-line="3" selection-start-column="31817" selection-end-line="3" selection-end-column="31817" />
+            <state relative-caret-position="202">
+              <caret line="242" column="4" lean-forward="true" selection-start-line="242" selection-start-column="4" selection-end-line="242" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -211,7 +205,6 @@
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/js/advisory.js" />
         <option value="$PROJECT_DIR$/css/classification.css" />
-        <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/css/common.css" />
         <option value="$PROJECT_DIR$/classification.html" />
@@ -231,6 +224,7 @@
         <option value="$PROJECT_DIR$/js/proinfo.js" />
         <option value="$PROJECT_DIR$/shopcar.html" />
         <option value="$PROJECT_DIR$/js/shopcar.js" />
+        <option value="$PROJECT_DIR$/js/common.js" />
       </list>
     </option>
   </component>
@@ -241,8 +235,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="101" />
+    <option name="x" value="-221" />
+    <option name="y" value="76" />
     <option name="width" value="1382" />
     <option name="height" value="635" />
   </component>
@@ -446,12 +440,12 @@
       <workItem from="1495260711471" duration="5023000" />
       <workItem from="1495282216579" duration="4409000" />
       <workItem from="1495329718721" duration="7421000" />
-      <workItem from="1495348286656" duration="4518000" />
+      <workItem from="1495348286656" duration="4972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126056000" />
+    <option name="totallyTimeSpent" value="126510000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,7 +457,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="101" width="1382" height="635" extended-state="1" />
+    <frame x="-221" y="76" width="1382" height="635" extended-state="1" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15699404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -638,13 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6570">
-          <caret line="219" column="38" lean-forward="false" selection-start-line="219" selection-start-column="38" selection-end-line="219" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -902,7 +889,15 @@
     <entry file="file://$PROJECT_DIR$/js/shopcar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
-          <caret line="447" column="28" lean-forward="false" selection-start-line="447" selection-start-column="28" selection-end-line="447" selection-end-column="28" />
+          <caret line="447" column="50" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="447" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="242" column="4" lean-forward="true" selection-start-line="242" selection-start-column="4" selection-end-line="242" selection-end-column="4" />
           <folding />
         </state>
       </provider>

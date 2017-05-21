@@ -16,6 +16,9 @@ $(function() {
 
     //回到顶部
     gotoTop();
+
+    //设置购物车上商品的数量
+    setProductNum();
 });
 
 
@@ -227,3 +230,15 @@ function gotoTop() {
     });
 }
 
+
+//设置购物车上商品的数量
+function setProductNum() {
+
+    //获得商品的数量
+    var productNum = parseInt(localStorage.getItem('productNum'));
+    if (isNaN(productNum)) {
+        productNum = 1;
+    }
+
+    $(".shopCar .shopNum").text(productNum);
+}
