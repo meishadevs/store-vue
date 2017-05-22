@@ -7,7 +7,7 @@
 var config = {
 
     //获得省、市、区数据的url
-    'addressUrl': 'http://localhost/dswzServer/data.php',
+    'addressUrl': 'http://localhost/dswzServer/place.php',
 
     //获得商品咨询信息的url
     'advisoryUrl': 'http://localhost/dswzServer/advisory.php',
