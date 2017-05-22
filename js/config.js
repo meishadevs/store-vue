@@ -25,7 +25,7 @@ var config = {
     'advisoryStartIndex' : 0,
 
     //每页展示商品咨询信息的条数
-    'advisoryAmount' : 6,
+    'advisoryAmount' : 5,
 
     //每页第一条商品信息的下标
     'productStartIndex': 0,

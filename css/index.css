@@ -29,9 +29,13 @@
 
 /* shopClass-item的active状态 */
 .shopClass-show dl.active {
+    width: 178px;
     background-color: #fff;
     border-left: solid 1px #4593fd;
+    border-right: solid 1px #fff;
     color: #000;
+    position: relative;
+    z-index: 5;
 }
 
 /* 隐藏dt的背景 */
