@@ -71,6 +71,8 @@ function selectAddress() {
 //提交收货信息
 function submitDeliveryInfo() {
 
+    var flag = 0;
+
     $(".button-submit").on("click", function(event) {
 
         //阻止事件冒泡
@@ -78,47 +80,59 @@ function submitDeliveryInfo() {
 
         $(".place .notice-icon").css("display", "inline-block");
 
-        //如果收货地址输入不正确
-        if(!checkAddress()) {
-            showCheckResult("address", "input-address", 0);
-            return;
+        //检测收货地址
+        flag = checkAddress();
 
+        if (flag == 0) {
+            showCheckResult("address", "input-address", 0, "请填写详细的收货地址");
+            return;
+        } else if (flag == 1) {
+            showCheckResult("address", "input-address", 0, "长度应为4~26个字符");
+            return;
         } else {
             showCheckResult("address", "input-address", 1);
         }
 
-        //如果收货人姓名输入不正确
-        if(!checkReceiver()) {
-            showCheckResult("receiver", "input-receiver", 0);
+        //检测收货人的姓名
+        flag = checkReceiver();
+
+        if (flag == 0) {
+            showCheckResult("receiver", "input-receiver", 0, "请填写收货人的姓名");
+            return;
+        } else if (flag == 1) {
+            showCheckResult("receiver", "input-receiver", 0, "长度应为2~10个字符");
             return;
         } else {
             showCheckResult("receiver", "input-receiver", 1);
         }
 
-        //如果手机号码输入不正确
-        if(!checkPhoneNum()) {
-            showCheckResult("phone", "input-phone", 0);
+        //检测手机号
+        flag = checkPhoneNum();
+
+        if(flag == 0) {
+            showCheckResult("phone", "input-phone", 0, "请填写您的手机号码");
+            return;
+        } else if (flag == 1) {
+            showCheckResult("phone", "input-phone", 0, "请填写正确的手机号码");
             return;
         } else {
             showCheckResult("phone", "input-phone", 1);
         }
 
-        //如果区号输入不正确
-        if(!checkAreaNum()) {
-            showCheckResult("tel-phone", "input-area", 0, "您输入的区号不正确");
-            return;
-        }
+        //检测区号/电话号码/分机号
+        flag = checkNumber();
 
-        //如果电话号码输入不正确
-        if(!checkTelNum()) {
-            showCheckResult("tel-phone", "input-tel", 0, "您输入的电话号码不正确");
+        if(flag == 1) {
+            showCheckResult("tel-phone", "input-area", 0, "区号或电话号码格式不正确");
+            showCheckResult("tel-phone", "input-tel", 0, "区号或电话号码格式不正确");
+            showCheckResult("tel-phone", "input-extension", 0, "区号或电话号码格式不正确");
             return;
-        }
+        } else if (flag == 2) {
+            showCheckResult("tel-phone", "input-area", 1);
+            showCheckResult("tel-phone", "input-tel", 1);
+            showCheckResult("tel-phone", "input-extension", 1);
+        } else if (flag == 3) {
 
-        //如果分机号输入不正确
-        if(!checkExtension()) {
-            showCheckResult("tel-phone", "input-extension", 0, "您输入的分机号码不正确");
-            return;
         }
 
         //获得用户输入的信息
@@ -161,82 +175,99 @@ function submitDeliveryInfo() {
 //检测收货地址
 function checkAddress() {
 
-    var address = $(".input-address").val();
+    //获得用户输入的收货地址
+    var address = resetData("input-address");
 
-    if(address.length >= 4 && address.length <= 26) {
-        return true;
-    } else {
-        return false;
+    if (address.length == 0) {
+        return 0
     }
+
+    if (address.length < 4 || address.length > 26) {
+        return 1;
+    }
+
+    return 2;
 }
 
 
 //检测收货人
 function checkReceiver() {
 
-    var receiver = $(".input-receiver").val();
+    //获得收货人的姓名
+    var receiver = resetData("input-receiver");
 
-    if(receiver.length >= 2 && receiver.length <= 10) {
-        return true;
-    } else {
-        return false;
+    if (receiver.length == 0) {
+        return 0
     }
+
+    if (receiver.length < 2 || receiver.length > 10) {
+        return 1;
+    }
+
+    return 2;
 }
 
 
 //检测手机号码
 function checkPhoneNum() {
-    var phoneNum = $(".input-phone").val();
 
-    if(!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneNum))){
-        return false;
-    } else {
-        return true;
+    //获得手机号码
+    var phoneNum = resetData("input-phone");
+
+    if (phoneNum.length == 0) {
+        return 0
     }
+
+    if(!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(phoneNum))) {
+        return 1;
+    }
+
+    return 2;
 }
 
 
-//检测区号
-function checkAreaNum() {
+//检测号码
+function checkNumber() {
 
-    var areaNum = $(".input-area").val();
+    //获得区号
+    var areaNum = resetData("input-area");
 
-    //区号必须是4位数字
-    if((areaNum.length == 4 || areaNum.length == 3) && !isNaN(areaNum)) {
-        return true;
-    } else {
-        return false;
+    //获得电话号码
+    var telNum = resetData("input-tel");
+
+    //获得分机号
+    var extensionNum = resetData("input-extension");
+
+    if (areaNum.length == 0 && telNum.length == 0 && extensionNum.length == 0) {
+        return 3;
     }
+
+    if ((areaNum.length >= 3 && !isNaN(areaNum)) &&
+        (telNum.length >= 5 && !isNaN(telNum)) &&
+        (extensionNum.length == 0)) {
+        return 2;
+    }
+
+    if ((areaNum.length >= 3 && !isNaN(areaNum)) &&
+        (telNum.length >= 5 && !isNaN(telNum)) &&
+        (extensionNum.length > 0 && isNaN(extensionNum))) {
+        return 2;
+    }
+
+    return 1;
 }
 
 
-//检测电话号码
-function checkTelNum() {
-    var telNum = $(".input-tel").val();
+/**
+ * 重置标签中的数据
+ * @param className 标签的类名
+ */
+function resetData(className) {
+    var data = $("." + className).val();
+    data = Tools.removeAll(data);
+    $("." + className).val(data);
 
-    //电话号码必须是7位数字
-    if(telNum.length == 7 && !isNaN(telNum)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-//检测分机号码
-function checkExtension() {
-
-    var extensionNum = $(".input-extension").val();
-
-    if(extensionNum.length == 0) {
-        return true;
-    } else {
-        if(isNaN(extensionNum)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+    return data;
 }
 
 
@@ -288,32 +319,24 @@ function recoverStatus() {
     $(document).on("click", function() {
 
         //隐藏收货地址输入错误产生的提示信息
-        if(!checkAddress()) {
+        if(checkAddress() != 2) {
             hideCheckResult("address", "input-address");
         }
 
         //隐藏收货人姓名输入错误产生的提示信息
-        if(!checkReceiver()) {
+        if(checkReceiver() != 2) {
             hideCheckResult("receiver", "input-receiver");
         }
 
         //隐藏手机号码输入错误产生的提示信息
-        if(!checkPhoneNum()) {
+        if(checkPhoneNum() != 2) {
             hideCheckResult("phone", "input-phone");
         }
 
-        //隐藏区号输入错误产生的提示信息
-        if(!checkAreaNum()) {
+        //隐藏区号/电话号码/分机号输入错误产生的提示信息
+        if(checkNumber() != 2) {
             hideCheckResult("tel-phone", "input-area");
-        }
-
-        //隐藏电话号码输入错误产生的提示信息
-        if(!checkTelNum()) {
             hideCheckResult("tel-phone", "input-tel");
-        }
-
-        //隐藏分机号输入错误产生的提示信息
-        if(!checkExtension()) {
             hideCheckResult("tel-phone", "input-extension");
         }
     });

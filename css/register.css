@@ -37,6 +37,10 @@
     vertical-align: top;
 }
 
+.register li:nth-of-type(5) {
+    height: 38px;
+}
+
 .register-item {
     width: 190px;
     height: 38px;
