@@ -5,6 +5,9 @@
 
 $(function() {
 
+    //将网站添加至收藏夹
+    collectionSite();
+    
     //获得搜索列表
     getSearchList();
 
@@ -20,6 +23,14 @@ $(function() {
     //设置购物车上商品的数量
     setProductNum();
 });
+
+
+//将网站添加至收藏夹
+function collectionSite() {
+    $(".collection").on('click', function () {
+        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏夹失败，请使用Ctrl+D添加！")
+    });
+}
 
 
 //获得搜索列表
