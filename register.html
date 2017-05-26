@@ -37,50 +37,70 @@
 
     <!-- 注册 s -->
     <section class="registerBox">
-        <form action="save.php">
+        <form>
             <ul class="register">
-                <li>
+                <li class="username">
                     <div class="item-content clearfix">
                         <div class="register-item">
                             <i>*</i>
                             用户名：
                         </div>
                         <div class="input-item">
-                            <input class="icon-use" type="text"/>
+                            <input class="icon-username input-username" type="text"/>
                         </div>
                     </div>
+                    <div class="tips">3~15个字符，可使用字母、数字、下划线，需以字母开头</div>
+                    <div class="info-notice">
+                        <span class="notice-icon"></span>
+                        <span class="notice-content">测试</span>
+                    </div>
                 </li>
-                <li>
+                <li class="password">
                     <div class="item-content clearfix">
                         <div class="register-item">
                             <i>*</i>
-                            请确认密码：
+                            密码：
                         </div>
                         <div class="input-item">
-                            <input class="icon-password" type="password"/>
+                            <input class="icon-password input-password" type="password"/>
                         </div>
                     </div>
+                    <div class="tips">6~16个字符，区分大小写</div>
+                    <div class="info-notice">
+                        <span class="notice-icon"></span>
+                        <span class="notice-content">测试</span>
+                    </div>
                 </li>
-                <li>
+                <li class="password-again">
                     <div class="item-content clearfix">
                         <div class="register-item">
                             <i>*</i>
-                            请设置密码：
+                            确认密码：
                         </div>
                         <div class="input-item">
-                            <input class="icon-password" type="password"/>
+                            <input class="icon-password input-password-again" type="password"/>
                         </div>
                     </div>
+                    <div class="tips">请再次填写密码</div>
+                    <div class="info-notice">
+                        <span class="notice-icon"></span>
+                        <span class="notice-content">测试</span>
+                    </div>
                 </li>
-                <li>
+                <li class="email">
                     <div class="item-content clearfix">
                         <div class="register-item">
                             <i>*</i>
                             邮箱：
                         </div>
                         <div class="input-item">
-                            <input type="text"/>
+                            <input type="text" class="input-email"/>
                         </div>
+                    </div>
+                    <div class="tips">6~18个字符，可使用字母、数字、下划线，需以字母开头</div>
+                    <div class="info-notice">
+                        <span class="notice-icon"></span>
+                        <span class="notice-content">测试</span>
                     </div>
                 </li>
                 <li>
@@ -98,7 +118,7 @@
                     <div class="register-item">
                     </div>
                     <div class="submit-item">
-                        <input type="submit" value=""/>
+                        <input type="button" value="立即注册" class="buttonRegister"/>
                     </div>
                 </li>
             </ul>
@@ -143,5 +163,7 @@
     </footer>
     <!-- 脚部 e -->
 
+    <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="js/register.js"></script>
 </body>
 </html>

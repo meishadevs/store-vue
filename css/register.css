@@ -67,7 +67,7 @@
     border: solid 1px #ccc;
 }
 
-.icon-use {
+.icon-username {
     background: url("../images/icon/user.jpg") 245px center no-repeat;
 }
 
@@ -97,8 +97,41 @@
 }
 
 .submit-item input {
-    width: 272px;
-    height: 38px;
-    background: url("../images/icon/submit.jpg") no-repeat;
+    width: 263px;
+    height: 52px;
+    font: 22px/52px "微软雅黑";
+    color: #fff;
+    text-align: center;
+    background: #69b946;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
     cursor: pointer;
+    display: inline-block;
+}
+
+.tips {
+    height: 14px;
+    line-height: 14px;
+    margin-left: 190px;
+    padding: 2px 0 6px;
+    color: #999;
+}
+
+.info-notice {
+    margin-top: 3px;
+    margin-left: 190px;
+    color: #3D882D;
+    display: none;
+}
+
+.info-notice .notice-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    background: url(../images/icon/warning-icon.png) -17px -100px no-repeat;
+    display: inline-block;
 }

@@ -90,7 +90,7 @@ function submitDeliveryInfo() {
             showCheckResult("address", "input-address", 0, "长度应为4~26个字符");
             return;
         } else {
-            showCheckResult("address", "input-address", 1);
+            showCheckResult("address", "input-address", 1, "");
         }
 
         //检测收货人的姓名
@@ -103,7 +103,7 @@ function submitDeliveryInfo() {
             showCheckResult("receiver", "input-receiver", 0, "长度应为2~10个字符");
             return;
         } else {
-            showCheckResult("receiver", "input-receiver", 1);
+            showCheckResult("receiver", "input-receiver", 1, "");
         }
 
         //检测手机号
@@ -116,7 +116,7 @@ function submitDeliveryInfo() {
             showCheckResult("phone", "input-phone", 0, "请填写正确的手机号码");
             return;
         } else {
-            showCheckResult("phone", "input-phone", 1);
+            showCheckResult("phone", "input-phone", 1, "");
         }
 
         //检测区号/电话号码/分机号
@@ -128,9 +128,9 @@ function submitDeliveryInfo() {
             showCheckResult("tel-phone", "input-extension", 0, "区号或电话号码格式不正确");
             return;
         } else if (flag == 2) {
-            showCheckResult("tel-phone", "input-area", 1);
-            showCheckResult("tel-phone", "input-tel", 1);
-            showCheckResult("tel-phone", "input-extension", 1);
+            showCheckResult("tel-phone", "input-area", 1, "");
+            showCheckResult("tel-phone", "input-tel", 1, "");
+            showCheckResult("tel-phone", "input-extension", 1, "");
         } else if (flag == 3) {
 
         }
@@ -146,9 +146,6 @@ function submitDeliveryInfo() {
         var telNum = $(".input-tel").val();
         var extensionNum = $(".input-extension").val();
 
-        if(telNum.length != 0 && areaNum.length != 0) {
-            showCheckResult("tel-phone", "input-tel", 1);
-        }
 
         $('.info-text').fadeIn();
         $('.info-text').fadeOut(3000);
@@ -238,6 +235,8 @@ function checkNumber() {
     //获得分机号
     var extensionNum = resetData("input-extension");
 
+    console.log("extensionNum:", extensionNum);
+
     if (areaNum.length == 0 && telNum.length == 0 && extensionNum.length == 0) {
         return 3;
     }
@@ -250,7 +249,7 @@ function checkNumber() {
 
     if ((areaNum.length >= 3 && !isNaN(areaNum)) &&
         (telNum.length >= 5 && !isNaN(telNum)) &&
-        (extensionNum.length > 0 && isNaN(extensionNum))) {
+        (extensionNum.length > 0 && !isNaN(extensionNum))) {
         return 2;
     }
 
@@ -283,22 +282,19 @@ function showCheckResult(className, inputClassName, flag, text) {
     //如果输入的信息验证失败
     if(flag == 0) {
 
+        $("." + className + " .delivery-notice").css("display", "inline-block");
         $("." + className + " ." + inputClassName).css("border-color", "#e22");
-        $("." + className + " .notice-icon").css("display", "inline-block");
-        $("." + className + " .notice-content").css("display", "inline-block");
-
-        if(text != undefined) {
-            $("." + className + " .notice-content")[0].innerHTML = text;
-        }
 
     //如果输入的信息验证成功
     } else if(flag == 1) {
 
+        $("." + className + " .delivery-notice").css("display", "inline-block");
         $("." + className + " .notice-icon").css({
-            "display" : "inline-block",
             "background-position" : "0px -117px"
         });
     }
+
+    $("." + className + " .notice-content")[0].innerHTML = text;
 }
 
 
@@ -308,9 +304,8 @@ function showCheckResult(className, inputClassName, flag, text) {
  * @param inputClassName 输入框的类名
  */
 function hideCheckResult(className, inputClassName) {
+    $("." + className + " .delivery-notice").css("display", "none");
     $("." + className + " ." + inputClassName).css("border-color", "#C2C2C2");
-    $("." + className + " .notice-icon").css("display", "none");
-    $("." + className + " .notice-content").css("display", "none");
 }
 
 

@@ -149,7 +149,7 @@
     height: 16px;
     line-height: 16px;
     color: #e22;
-    display: inline-block;
+    display: none;
 }
 
 .delivery-notice .notice-icon {
@@ -157,16 +157,13 @@
     height: 16px;
     vertical-align: top;
     background: url("../images/icon/warning-icon.png") -17px -100px no-repeat;
-    display: none;
-}
-
-.delivery-notice .notice-content {
-    display: none;
+    display: inline-block;
 }
 
 .place .notice-icon {
     display: none;
     background-position: 0px -117px;
+    display: inline-block;
     position: relative;
     left: -9px;
     top: 5px;
