@@ -15,7 +15,7 @@ $(function () {
 
 //获得注册账号时，返回的信息
 var getRegisterInfo = function (data) {
-    
+
     //注册成功
     if (data == 1) {
         var time = 3;
@@ -202,11 +202,7 @@ function checkEmail() {
         return 1;
     }
 
-    if (email.length < 6 || email.length > 18) {
-        return 2;
-    }
-
-    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+    var reg =  /^\w+([_\.\-]\w+)*@\w+([_\-\.]\w+)*\.\w+([_\.]\w+)*$/;
 
     if (!reg.test(email)) {
         return 3;
