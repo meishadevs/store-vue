@@ -21,6 +21,9 @@ var config = {
     //百度搜索的url
     'baiduUrl': 'http://www.baidu.com/s',
 
+    //注册账号的url
+    'registerUrl': 'http://localhost/dswzServer/register.php',
+
     //每页的第1条商品咨询信息的下标
     'advisoryStartIndex' : 0,
 

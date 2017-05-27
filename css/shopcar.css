@@ -145,14 +145,14 @@
     border: solid 1px #C2C2C2;
 }
 
-.delivery-notice {
+.notice-info {
     height: 16px;
     line-height: 16px;
     color: #e22;
     display: none;
 }
 
-.delivery-notice .notice-icon {
+.notice-info .notice-icon {
     width: 16px;
     height: 16px;
     vertical-align: top;

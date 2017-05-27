@@ -78,7 +78,7 @@ function submitDeliveryInfo() {
         //阻止事件冒泡
         event.stopPropagation();
 
-        $(".place .notice-icon").css("display", "inline-block");
+        $(".place .notice-info").css("display", "inline-block");
 
         //检测收货地址
         flag = checkAddress();
@@ -256,59 +256,6 @@ function checkNumber() {
     return 1;
 }
 
-
-/**
- * 重置标签中的数据
- * @param className 标签的类名
- */
-function resetData(className) {
-    var data = $("." + className).val();
-    data = Tools.removeAll(data);
-    $("." + className).val(data);
-
-    return data;
-}
-
-
-/**
- * 显示检测的结果
- * @param className 标签的类名
- * @param inputClassName 输入框的类名
- * @param flag 用于标记检测成功还是失败(0:失败 1:成功)
- * @param text 修改检测结果的内容
- */
-function showCheckResult(className, inputClassName, flag, text) {
-
-    //如果输入的信息验证失败
-    if(flag == 0) {
-
-        $("." + className + " .delivery-notice").css("display", "inline-block");
-        $("." + className + " ." + inputClassName).css("border-color", "#e22");
-
-    //如果输入的信息验证成功
-    } else if(flag == 1) {
-
-        $("." + className + " .delivery-notice").css("display", "inline-block");
-        $("." + className + " .notice-icon").css({
-            "background-position" : "0px -117px"
-        });
-    }
-
-    $("." + className + " .notice-content")[0].innerHTML = text;
-}
-
-
-/**
- * 隐藏检测结果
- * @param className 标签的类名
- * @param inputClassName 输入框的类名
- */
-function hideCheckResult(className, inputClassName) {
-    $("." + className + " .delivery-notice").css("display", "none");
-    $("." + className + " ." + inputClassName).css("border-color", "#C2C2C2");
-}
-
-
 function recoverStatus() {
 
     $(document).on("click", function() {
@@ -333,6 +280,15 @@ function recoverStatus() {
             hideCheckResult("tel-phone", "input-area");
             hideCheckResult("tel-phone", "input-tel");
             hideCheckResult("tel-phone", "input-extension");
+        }
+    });
+
+    $(".register input").on('click', function () {
+        var className = $(this).attr("data-class");
+
+        if (className != undefined) {
+            $("." + className + " .tips").show();
+            $("." + className + " .notice-info").hide();
         }
     });
 }

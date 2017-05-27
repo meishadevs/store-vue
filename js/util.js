@@ -95,7 +95,8 @@ function getData(url, method, dataType, parem, callback) {
         type: method,
         dataType: dataType,
         data: parem,
-        success:callback
+        success:callback,
+
     });
 }
 
@@ -284,5 +285,69 @@ function createPage(num, amount, startIndex, className, callback) {
                 getData(config.productUrl, 'get', 'jsonp', param, callback);
             }
         });
+    }
+}
+
+
+/**
+ * 重置标签中的数据
+ * @param className 标签的类名
+ */
+function resetData(className) {
+    var data = $("." + className).val();
+    data = Tools.removeAll(data);
+    $("." + className).val(data);
+
+    return data;
+}
+
+
+/**
+ * 显示检测的结果
+ * @param className 标签的类名
+ * @param inputClassName 输入框的类名
+ * @param flag 用于标记检测成功还是失败(0:失败 1:成功)
+ * @param text 修改检测结果的内容
+ */
+function showCheckResult(className, inputClassName, flag, text) {
+
+    //如果输入的信息验证失败
+    if(flag == 0) {
+
+        $("." + className + " .notice-info").css("display", "inline-block");
+
+        if (inputClassName.length > 0) {
+            $("." + className + " ." + inputClassName).css("border-color", "#e22");
+        }
+
+        $("." + className + " .notice-content").css("color", "#e22");
+        $("." + className + " .notice-icon").css({
+            "background-position" : "-17px -100px"
+        });
+
+        //如果输入的信息验证成功
+    } else if(flag == 1) {
+
+        $("." + className + " .notice-info").css("display", "inline-block");
+        $("." + className + " .notice-content").css("color", "#3D882D");
+        $("." + className + " .notice-icon").css({
+            "background-position" : "0px -117px"
+        });
+    }
+
+    $("." + className + " .notice-content")[0].innerHTML = text;
+}
+
+
+/**
+ * 隐藏检测结果
+ * @param className 标签的类名
+ * @param inputClassName 输入框的类名
+ */
+function hideCheckResult(className, inputClassName) {
+    $("." + className + " .notice-info").css("display", "none");
+
+    if (inputClassName.length > 0) {
+        $("." + className + " ." + inputClassName).css("border-color", "#C2C2C2");
     }
 }
