@@ -36,13 +36,27 @@ var getRegisterInfo = function (data) {
         }, 1000);
 
     //注册失败
-    } else {
+    } else if(data == 0) {
         $(".show-result")
-            .html('<span class="text">注册失败</span><button class="close-btn"><i class="fa fa-times"></i> </button>')
+            .html('<span class="text">注册失败</span><button class="close-btn"><i class="fa fa-times"></i></button>')
             .show();
 
         $(".close-btn").on("click", function () {
-            $(".show-result").hide();
+            $(".show-result")
+                .html("")
+                .hide();
+        });
+
+    //用户名已存在
+    } else if (data == 2) {
+        $(".show-result")
+            .html('<span class="text">用户名已存在</span><button class="close-btn"><i class="fa fa-times"></i></button>')
+            .show();
+
+        $(".close-btn").on("click", function () {
+            $(".show-result")
+                .html("")
+                .hide();
         });
     }
 }
