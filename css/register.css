@@ -3,6 +3,12 @@
  * 注册页的CSS样式
  */
 
+@media (max-width: 1006px) {
+    body {
+        display: table;
+    }
+}
+
 .headerBar {
     width: 100%;
     display: table;

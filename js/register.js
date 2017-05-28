@@ -86,6 +86,9 @@ function registeredAccount() {
             showCheckResult("username", "input-username", 0, "用户名必需以英文字母开头");
             return;
         } else if (flag == 4){
+            showCheckResult("username", "input-username", 0, "用户名需由字母、数字或下划线组成");
+            return;
+        } else if (flag == 5) {
             showCheckResult("username", "input-username", 1, "该用户名可注册");
         }
 
@@ -172,7 +175,12 @@ function checkUsername() {
         return 3;
     }
 
-    return 4;
+    Regx = /^[A-Za-z0-9_]*$/;
+    if (!Regx.test(username)) {
+        return 4;
+    }
+
+    return 5;
 }
 
 
@@ -237,7 +245,7 @@ function recoverStatus() {
     $(document).on("click", function() {
 
         //隐藏用户名输入错误产生的提示信息
-        if(checkUsername() != 4) {
+        if(checkUsername() != 5) {
             hideCheckResult("username", "input-username");
             showNotice("username");
         }
