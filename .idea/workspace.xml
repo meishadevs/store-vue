@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="255e08bb-6942-4232-b9a9-fa3363ca93c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/register.css" afterPath="$PROJECT_DIR$/css/register.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/register.js" afterPath="$PROJECT_DIR$/js/register.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -70,11 +68,11 @@
       <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5444">
-              <caret line="246" column="25" lean-forward="false" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
+            <state relative-caret-position="-3946">
+              <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
               <folding>
-                <marker date="1495940840106" expanded="true" signature="316:322" ph=" " />
-                <marker date="1495940840106" expanded="true" signature="349:355" ph=" " />
+                <marker date="1495942826980" expanded="true" signature="316:322" ph=" " />
+                <marker date="1495942826980" expanded="true" signature="349:355" ph=" " />
               </folding>
             </state>
           </provider>
@@ -523,12 +521,12 @@
       <workItem from="1495880436130" duration="2938000" />
       <workItem from="1495896045218" duration="2223000" />
       <workItem from="1495910135833" duration="1509000" />
-      <workItem from="1495933938136" duration="4259000" />
+      <workItem from="1495933938136" duration="6614000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208256000" />
+    <option name="totallyTimeSpent" value="210611000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,7 +538,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13392857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -958,11 +956,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5444">
-          <caret line="246" column="25" lean-forward="false" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
+        <state relative-caret-position="-3946">
+          <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
           <folding>
-            <marker date="1495940840106" expanded="true" signature="316:322" ph=" " />
-            <marker date="1495940840106" expanded="true" signature="349:355" ph=" " />
+            <marker date="1495942826980" expanded="true" signature="316:322" ph=" " />
+            <marker date="1495942826980" expanded="true" signature="349:355" ph=" " />
           </folding>
         </state>
       </provider>
