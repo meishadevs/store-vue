@@ -35,7 +35,7 @@ var getRegisterInfo = function (data) {
             }
         }, 1000);
 
-    //注册失败
+        //注册失败
     } else if(data == 0) {
         $(".show-result")
             .html('<span class="text">注册失败</span><button class="close-btn"><i class="fa fa-times"></i></button>')
@@ -47,7 +47,7 @@ var getRegisterInfo = function (data) {
                 .hide();
         });
 
-    //用户名已存在
+        //用户名已存在
     } else if (data == 2) {
         $(".show-result")
             .html('<span class="text">用户名已存在</span><button class="close-btn"><i class="fa fa-times"></i></button>')
@@ -64,47 +64,35 @@ var getRegisterInfo = function (data) {
 
 //注册账号
 function registeredAccount() {
-    var flag;
 
     $(".buttonRegister").on('click', function () {
 
         //阻止事件冒泡
         event.stopPropagation();
 
-        //隐藏用户名输入的提示信息
-        hideNotice("username");
-
-        //检测用户名
-        if (checkUsername() != 5) {
+        //显示用户名的检测结果
+        if(!showUsernameResult()) {
             return;
         }
 
-        //隐藏密码输入的提示信息
-        hideNotice("password");
-
-        //检测密码
-        if (checkPassword() != 3) {
+        //显示密码的检测结果
+        if (!showPasswordResult()) {
             return;
         }
 
-        //隐藏第二次密码输入的提示信息
-        hideNotice("password-again");
-
-        //检测第二次输入的密码
-        if (checkSecondPassword() != 3) {
+        //显示第二次输入的密码的检测结果
+        if (!showSecondPasswordResult()) {
             return;
         }
 
-        //隐藏邮箱输入的提示信息
-        hideNotice("email");
-
-        //检测邮箱
-        if (checkEmail() != 3) {
+        //显示邮箱的检测结果
+        if (!showEmailResult()) {
             return;
         }
 
-        //检测是否接受服务条款
+        //检测是否接受了服务条款
         if (isAgree() == 0) {
+            showCheckResult("clause", "", 0, "请接受服务条款");
             return;
         }
 
@@ -126,28 +114,23 @@ function checkUsername() {
     var char = username.charAt(0);
 
     if (username.length == 0) {
-        showCheckResult("username", "input-username", 0, "请填写用户名");
         return 1;
     }
 
     if (username.length < 3 || username.length > 15) {
-        showCheckResult("username", "input-username", 0, "长度应为3~15个字符");
         return 2;
     }
 
     var Regx = /^[A-Za-z]*$/;
     if (!Regx.test(char)) {
-        showCheckResult("username", "input-username", 0, "用户名必需以英文字母开头");
         return 3;
     }
 
     Regx = /^[A-Za-z0-9_]*$/;
     if (!Regx.test(username)) {
-        showCheckResult("username", "input-username", 0, "用户名需由字母、数字或下划线组成");
         return 4;
     }
 
-    showCheckResult("username", "input-username", 1, "您填写的用户名正确");
     return 5;
 }
 
@@ -157,16 +140,13 @@ function checkPassword() {
     var password = resetData("input-password");
 
     if (password.length == 0) {
-        showCheckResult("password", "input-password", 0, "请填写密码");
         return 1;
     }
 
     if (password.length < 6 || password.length > 16) {
-        showCheckResult("password", "input-password", 0, "密码长度应为6~16个字符");
         return 2;
     }
 
-    showCheckResult("password", "input-password", 1, "您的密码输入正确");
     return 3;
 }
 
@@ -177,16 +157,13 @@ function checkSecondPassword() {
     var passwordSecond = resetData("input-password-again");
 
     if (passwordSecond.length == 0) {
-        showCheckResult("password-again", "input-password-again", 0, "请再次填写密码");
         return 1;
     }
 
     if (password != passwordSecond) {
-        showCheckResult("password-again", "input-password-again", 0, "两次填写的密码不一致");
         return 2;
     }
 
-    showCheckResult("password-again", "input-password-again", 1, "您的密码输入正确");
     return 3;
 }
 
@@ -195,32 +172,22 @@ function checkEmail() {
     var email = resetData("input-email");
 
     if (email.length == 0) {
-        showCheckResult("email", "input-email", 0, "请填写您的邮箱地址");
         return 1;
     }
 
     var reg =  /^\w+([_\.\-]\w+)*@\w+([_\-\.]\w+)*\.\w+([_\.]\w+)*$/;
 
     if (!reg.test(email)) {
-        showCheckResult("email", "input-email", 0, "邮箱的格式不正确");
-        return 2;
+        return 3;
     }
 
-    showCheckResult("email", "input-email", 1, "您填写的邮箱正确");
-    return 3;
+    return 4;
 }
 
 
 //判断是否同意服务条款
 function isAgree() {
-    var checked = document.getElementById("agree").checked;
-
-    if (checked == 0) {
-        showCheckResult("clause", "", 0, "请接受服务条款");
-        return 0;
-    }
-
-    return 1
+    return document.getElementById("agree").checked;
 }
 
 
@@ -284,4 +251,93 @@ function hideNotice(className) {
  */
 function showNotice(className) {
     $("." + className + " .tips").show();
+}
+
+
+//显示用户名的检测结果
+function showUsernameResult() {
+
+    //检测用户名
+    hideNotice("username");
+    var flag = checkUsername();
+
+    if (flag ==  1) {
+        showCheckResult("username", "input-username", 0, "请填写用户名");
+        return false;
+    } else if (flag == 2) {
+        showCheckResult("username", "input-username", 0, "长度应为3~15个字符");
+        return false;
+    } else if (flag == 3) {
+        showCheckResult("username", "input-username", 0, "用户名必需以英文字母开头");
+        return false;
+    } else if (flag == 4){
+        showCheckResult("username", "input-username", 0, "用户名需由字母、数字或下划线组成");
+        return false;
+    } else if (flag == 5) {
+        showCheckResult("username", "input-username", 1, "该用户名可注册");
+        return true;
+    }
+}
+
+
+//显示密码的检测结果
+function showPasswordResult() {
+
+    //检测密码
+    hideNotice("password");
+    var flag = checkPassword();
+
+    if (flag == 1) {
+        showCheckResult("password", "input-password", 0, "请填写密码");
+        return false;
+    } else if (flag == 2) {
+        showCheckResult("password", "input-password", 0, "密码长度应为6~16个字符");
+        return false;
+    } else if (flag == 3) {
+        showCheckResult("password", "input-password", 1, "您的密码输入正确");
+        return true;
+    }
+}
+
+
+//显示第二次输入的密码的检测结果
+function showSecondPasswordResult() {
+
+    //检测第二次输入的密码
+    hideNotice("password-again");
+    var flag = checkSecondPassword();
+
+    if (flag == 1) {
+        showCheckResult("password-again", "input-password-again", 0, "请再次填写密码");
+        return false;
+    } else if (flag == 2) {
+        showCheckResult("password-again", "input-password-again", 0, "两次填写的密码不一致");
+        return false;
+    } else if (flag == 3) {
+        showCheckResult("password-again", "input-password-again", 1, "您的密码输入正确");
+        return true;
+    }
+}
+
+
+//显示邮箱的检测结果
+function showEmailResult() {
+
+    //检测邮箱
+    hideNotice("email");
+    var flag = checkEmail();
+
+    if (flag == 1) {
+        showCheckResult("email", "input-email", 0, "请填写您的邮箱地址");
+        return false;
+    } else if (flag == 2) {
+        showCheckResult("email", "input-email", 0, "长度应为6~18个字符");
+        return false;
+    } else if (flag == 3) {
+        showCheckResult("email", "input-email", 0, "邮箱的格式不正确");
+        return false;
+    } else if (flag == 4) {
+        showCheckResult("email", "input-email", 1, "您填写的邮箱正确");
+        return true;
+    }
 }
