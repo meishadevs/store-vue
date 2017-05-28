@@ -147,8 +147,8 @@ function submitDeliveryInfo() {
         var extensionNum = $(".input-extension").val();
 
 
-        $('.info-text').fadeIn();
-        $('.info-text').fadeOut(3000);
+        $('.receive-info .show-result').fadeIn();
+        $('.receive-info .show-result').fadeOut(3000);
 
         //创建Json对象，记录收货信息
         var deliveryInfo = {
@@ -283,7 +283,7 @@ function recoverStatus() {
         }
     });
 
-    $(".register input").on('click', function () {
+    $(".receive-content input").on('click', function () {
         var className = $(this).attr("data-class");
 
         if (className != undefined) {
@@ -339,8 +339,8 @@ function saveInvoiceInfo() {
         //获取发票信息
         getInvoiceInfo();
 
-        $('.invoice-content .notice-text').fadeIn();
-        $('.invoice-content .notice-text').fadeOut(3000);
+        $('.invoice-info .show-result').fadeIn();
+        $('.invoice-info .show-result').fadeOut(3000);
     });
 }
 
@@ -399,8 +399,8 @@ function getInvoiceInfo() {
 //提交订单
 function commitOrder() {
     $('.order-content .commit').on('click', function () {
-        $('.order-content .order-notice').fadeIn();
-        $('.order-content .order-notice').fadeOut(3000);
+        $('.delivery-info .show-result').fadeIn();
+        $('.delivery-info .show-result').fadeOut(3000);
     });
 }
 

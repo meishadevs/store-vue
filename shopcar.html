@@ -6,8 +6,8 @@
     <title>购物车和结算页</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
     <link rel="stylesheet" type="text/css" href="css/module.css"/>
+    <link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
 </head>
 <body>
 
@@ -82,6 +82,7 @@
     <!-- 收货信息 s -->
     <section class="receive-info inner-c">
         <div class="title">收货信息</div>
+        <div class="show-result">收货信息已保存</div>
         <div class="receive-content">
             <form>
                 <div class="row place clearfix">
@@ -119,7 +120,7 @@
                         <span class="xing">*</span>
                         <span class="name">详细地址：</span>
                     </div>
-                    <input type="text" class="input-address" maxlength="26" placeholder="长度只能在4-26个字符之间"/>
+                    <input type="text" class="input-address" maxlength="26" placeholder="长度只能在4-26个字符之间" data-class="address"/>
                     <span class="notice-info">
                         <s class="notice-icon"></s>
                         <s class="notice-content"></s>
@@ -130,7 +131,7 @@
                         <span class="xing">*</span>
                         <span class="name">收&nbsp;货&nbsp;&nbsp;人：</span>
                     </div>
-                    <input type="text" class="input-receiver" maxlength="10" placeholder="长度只能在2-10个字符之间"/>
+                    <input type="text" class="input-receiver" maxlength="10" placeholder="长度只能在2-10个字符之间" data-class="receiver"/>
                      <span class="notice-info">
                         <s class="notice-icon"></s>
                         <s class="notice-content"></s>
@@ -141,7 +142,7 @@
                         <span class="xing">*</span>
                         <span class="name">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</span>
                     </div>
-                    <input type="text" maxlength="11" class="input-phone" placeholder="如13452525625"/>
+                    <input type="text" maxlength="11" class="input-phone" placeholder="如13452525625" data-class="phone"/>
                     <span class="notice-info">
                         <s class="notice-icon"></s>
                         <s class="notice-content"></s>
@@ -152,11 +153,11 @@
                         <span class="xing">*</span>
                         <span class="name">固定电话：</span>
                     </div>
-                    <input type="text" class="input-area" placeholder="区号"/>
+                    <input type="text" class="input-area" placeholder="区号" data-class="tel-phone"/>
                     <s>-</s>
-                    <input type="text" class="input-tel" placeholder="电话号码"/>
+                    <input type="text" class="input-tel" placeholder="电话号码" data-class="tel-phone"/>
                     <s>-</s>
-                    <input type="text" class="input-extension" placeholder="分机号（可选）"/>
+                    <input type="text" class="input-extension" placeholder="分机号（可选）" data-class="tel-phone"/>
                     <span class="notice-info">
                         <s class="notice-icon"></s>
                         <s class="notice-content"></s>
@@ -195,6 +196,7 @@
     <!-- 发票信息 s -->
     <section class="invoice-info inner-c">
         <div class="title">发票信息</div>
+        <div class="show-result">发票信息已保存</div>
         <div class="invoice-content">
             <form>
                 <div class="use">
@@ -249,9 +251,10 @@
         <div class="title clearfix">
             <div class="name">送货清单</div>
             <div class="return">
-                <a href="javascript:;">返回购物车修改</a>
+                <a href="proinfo.html">返回商品详情页修改</a>
             </div>
         </div>
+        <div class="show-result">订单已提交</div>
         <div class="delivery-content">
             <div class="first-row clearfix">
                 <div class="proName">商品名称</div>
