@@ -6,6 +6,8 @@
     <title>电商网站的登录页</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/module.css">
     <link rel="stylesheet" type="text/css" href="css/login.css"/>
 </head>
 <body>
@@ -34,55 +36,62 @@
     </header>
     <!-- 头部 e -->
 
+    <div class="show-result">
+    </div>
+
     <!-- 登录模块 s -->
     <section class="loginBox">
-        <form action="save.php">
-            <ul>
-                <li class="user">
-                    <p class="p-user">邮箱/用户名/已验证手机/</p>
-                    <input type="text" class="input-user" placeholder="gywyawei@qq.com"/>
+        <form>
+            <ul class="login">
+                <li class="username">
+                    <div class="item-content clearfix">
+                        <div class="login-item">
+                            <i>*</i>
+                            用户名：
+                        </div>
+                        <div class="input-item">
+                            <input class="icon-username input-username" type="text" data-class="username">
+                        </div>
+                    </div>
+                    <div class="tips">3~15个字符，可使用字母、数字、下划线，需以字母开头</div>
+                    <div class="notice-info">
+                        <span class="notice-icon"></span>
+                        <span class="notice-content"></span>
+                    </div>
                 </li>
                 <li class="password">
-                    <p class="p-password">密码</p>
-                    <input type="password" class="input-password"/>
+                    <div class="item-content clearfix">
+                        <div class="login-item">
+                            <i>*</i>
+                            密码：
+                        </div>
+                        <div class="input-item">
+                            <input class="icon-password input-password" type="password" data-class="password">
+                        </div>
+                    </div>
+                    <div class="tips">6~16个字符，区分大小写</div>
+                    <div class="notice-info">
+                        <span class="notice-icon"></span>
+                        <span class="notice-content"></span>
+                    </div>
                 </li>
-                <li class="checkbox">
-                    <input type="checkbox" id="auto-login" class="checkbox"/>
-                    <label for="auto-login">自动登录</label>
-                    <input type="checkbox" id="safe-login" class="checkbox"/>
-                    <label for="safe-login">安全控件登录</label>
-                    <a href="javascript:;">忘记密码？</a>
+                <li class="remember-password">
+                    <div class="item-content clearfix">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">记住用户名和密码</label>
+                        </div>
+                    </div>
                 </li>
-                <li>
-                    <input type="submit" class="button-login" value=""/>
-                </li>
-                <li>
-                    <p class="other-login">使用合作网站账号登录：</p>
-                    <p class="other-content">
-                        <a href="javascript:;">QQ</a>
-                        <span>|</span>
-                        <a href="javascript:;">网易</a>
-                        <span>|</span>
-                        <a href="javascript:;">人人</a>
-                        <span>|</span>
-                        <a href="javascript:;">奇虎360</a>
-                        <span>|</span>
-                        <a href="javascript:;">开心</a>
-                        <span>|</span>
-                        <a href="javascript:;">豆瓣</a>
-                        <span>|</span>
-                        <a href="javascript:;">搜狐</a>
-                        <span>|</span>
-                        <a class="more" href="javascript:;">更多</a>
-                    </p>
+                <li class="submit">
+                    <div class="item-content">
+                        <input type="button" value="登录" class="buttonlogin">
+                    </div>
                 </li>
             </ul>
         </form>
-        <a class="free-register" href="register.html">免费注册>></a>
     </section>
     <!-- 登录模块 e -->
-
-    <section class="hr-25"></section>
 
     <!-- 脚部 s -->
     <footer class="footer">
@@ -120,5 +129,11 @@
         </div>
     </footer>
     <!-- 脚部 e -->
+
+    <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

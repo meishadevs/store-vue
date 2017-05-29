@@ -24,6 +24,9 @@ var config = {
     //注册账号的url
     'registerUrl': 'http://localhost/dswzServer/register.php',
 
+    //登录账号的url
+    'loginUrl': 'http://localhost/dswzServer/login.php',
+
     //每页的第1条商品咨询信息的下标
     'advisoryStartIndex' : 0,
 

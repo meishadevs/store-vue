@@ -351,3 +351,110 @@ function hideCheckResult(className, inputClassName) {
         $("." + className + " ." + inputClassName).css("border-color", "#C2C2C2");
     }
 }
+
+
+/**
+ * 隐藏提示信息
+ * @param className 类名
+ */
+function hideNotice(className) {
+    $("." + className + " .tips").hide();
+}
+
+
+/**
+ * 显示提示信息
+ * @param className 类名
+ */
+function showNotice(className) {
+    $("." + className + " .tips").show();
+}
+
+
+//检测用户名
+function checkUsername() {
+    var username = resetData("input-username");
+    var char = username.charAt(0);
+
+    if (username.length == 0) {
+        return 1;
+    }
+
+    if (username.length < 3 || username.length > 15) {
+        return 2;
+    }
+
+    var Regx = /^[A-Za-z]*$/;
+    if (!Regx.test(char)) {
+        return 3;
+    }
+
+    Regx = /^[A-Za-z0-9_]*$/;
+    if (!Regx.test(username)) {
+        return 4;
+    }
+
+    return 5;
+}
+
+
+//检测密码
+function checkPassword() {
+    var password = resetData("input-password");
+
+    if (password.length == 0) {
+        return 1;
+    }
+
+    if (password.length < 6 || password.length > 16) {
+        return 2;
+    }
+
+    return 3;
+}
+
+
+//显示用户名的检测结果
+function showUsernameResult() {
+
+    //检测用户名
+    hideNotice("username");
+    var flag = checkUsername();
+
+    if (flag ==  1) {
+        showCheckResult("username", "input-username", 0, "请填写用户名");
+        return false;
+    } else if (flag == 2) {
+        showCheckResult("username", "input-username", 0, "长度应为3~15个字符");
+        return false;
+    } else if (flag == 3) {
+        showCheckResult("username", "input-username", 0, "用户名必需以英文字母开头");
+        return false;
+    } else if (flag == 4){
+        showCheckResult("username", "input-username", 0, "用户名需由字母、数字或下划线组成");
+        return false;
+    } else if (flag == 5) {
+        showCheckResult("username", "input-username", 1, "用户名填写正确");
+        return true;
+    }
+}
+
+
+//显示密码的检测结果
+function showPasswordResult() {
+
+    //检测密码
+    hideNotice("password");
+    var flag = checkPassword();
+
+    if (flag == 1) {
+        showCheckResult("password", "input-password", 0, "请填写密码");
+        return false;
+    } else if (flag == 2) {
+        showCheckResult("password", "input-password", 0, "密码长度应为6~16个字符");
+        return false;
+    } else if (flag == 3) {
+        showCheckResult("password", "input-password", 1, "您的密码输入正确");
+        return true;
+    }
+}
