@@ -33,13 +33,12 @@
     background: url("../images/icon/collection.jpg") left center no-repeat;
 }
 
-/* 登录和免费注册 */
-.loginLink:hover, .registerLink:hover {
-    color: #C81623;
-}
-
 .topbar .leftArea a {
     font-weight: bold;
+}
+
+.topbar .rightArea a:hover {
+    color: #C81623;
 }
 
 .header .logoBar {

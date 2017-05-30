@@ -7,7 +7,10 @@ $(function() {
 
     //将网站添加至收藏夹
     collectionSite();
-    
+
+    //检查用户状态
+    checkUserStatus();
+
     //获得搜索列表
     getSearchList();
 
@@ -30,6 +33,27 @@ function collectionSite() {
     $(".collection").on('click', function () {
         alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏夹失败，请使用Ctrl+D添加！")
     });
+}
+
+
+//检查用户状态
+function checkUserStatus() {
+    var username = localStorage.getItem("username");
+
+    //如果用户名不为空
+    if (username != null) {
+        var tag = '';
+        tag += '<a class="showUsername" href="javascript:;">' + username + '</a>';
+        tag += '<a class="exit" href="javascript:;">[退出]</a>';
+        $(".topbar .fore").html(tag);
+
+    } else {
+
+        var tag = '';
+        tag += '<a class="loginLink" href="login.html">[登录]</a>';
+        tag += '<a class="registerLink" href="register.html">[免费注册]</a>';
+        $(".topbar .fore").html(tag);
+    }
 }
 
 

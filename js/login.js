@@ -61,6 +61,8 @@ var getLoginInfo = function (data) {
 
             if (time == 0) {
                 clearInterval(timer);
+
+                localStorage.setItem("username", $(".input-username").val());
                 window.location = "index.html";
             }
         }, 1000);
