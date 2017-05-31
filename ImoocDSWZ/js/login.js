@@ -19,8 +19,6 @@ $(function () {
 //获得登录账号时返回的信息
 var getLoginInfo = function (data) {
 
-    console.log("data:", data);
-
     //用户名不存在
     if (data == 1) {
         $(".show-result")

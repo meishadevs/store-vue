@@ -38,10 +38,12 @@ function collectionSite() {
 
 //检查用户状态
 function checkUserStatus() {
+
     var username = localStorage.getItem("username");
 
     //如果用户名存在
-    if (username != null) {
+    if (username.length >= 3) {
+
         var tag = '欢迎';
         tag += '<a class="showUsername" href="javascript:;">' + username + '</a>';
         tag += '来到慕课网&nbsp;';
