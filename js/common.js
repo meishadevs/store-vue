@@ -40,19 +40,29 @@ function collectionSite() {
 function checkUserStatus() {
     var username = localStorage.getItem("username");
 
-    //如果用户名不为空
+    //如果用户名存在
     if (username != null) {
-        var tag = '';
+        var tag = '欢迎';
         tag += '<a class="showUsername" href="javascript:;">' + username + '</a>';
+        tag += '来到慕课网&nbsp;';
         tag += '<a class="exit" href="javascript:;">[退出]</a>';
-        $(".topbar .fore").html(tag);
+        $(".topbar .rightArea").html(tag);
 
+        //点击退出按钮
+        $(".topbar .exit").on('click', function () {
+            var tag = '欢迎来到慕课网&nbsp;';
+            tag += '<a class="loginLink" href="login.html">[登录]</a>&nbsp;';
+            tag += '<a class="registerLink" href="register.html">[免费注册]</a>';
+            $(".topbar .rightArea").html(tag);
+        });
+
+    //如果用户名不存在
     } else {
 
-        var tag = '';
-        tag += '<a class="loginLink" href="login.html">[登录]</a>';
+        var tag = '欢迎来到慕课网&nbsp;';
+        tag += '<a class="loginLink" href="login.html">[登录]</a>&nbsp;';
         tag += '<a class="registerLink" href="register.html">[免费注册]</a>';
-        $(".topbar .fore").html(tag);
+        $(".topbar .rightArea").html(tag);
     }
 }
 
