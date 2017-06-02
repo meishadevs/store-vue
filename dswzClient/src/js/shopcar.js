@@ -235,8 +235,6 @@ function checkNumber() {
     //获得分机号
     var extensionNum = resetData("input-extension");
 
-    console.log("extensionNum:", extensionNum);
-
     if (areaNum.length == 0 && telNum.length == 0 && extensionNum.length == 0) {
         return 3;
     }

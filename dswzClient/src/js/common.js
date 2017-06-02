@@ -41,8 +41,16 @@ function checkUserStatus() {
 
     var username = localStorage.getItem("username");
 
-    //如果用户名存在
-    if (username.length >= 3) {
+    //如果用户名不存在
+    if (username == null || username == 'null') {
+
+        var tag = '欢迎来到慕课网&nbsp;';
+        tag += '<a class="loginLink" href="login.html">[登录]</a>&nbsp;';
+        tag += '<a class="registerLink" href="register.html">[免费注册]</a>';
+        $(".topbar .rightArea").html(tag);
+
+    //用户名存在
+    } else {
 
         var tag = '欢迎';
         tag += '<a class="showUsername" href="javascript:;">' + username + '</a>';
@@ -56,15 +64,9 @@ function checkUserStatus() {
             tag += '<a class="loginLink" href="login.html">[登录]</a>&nbsp;';
             tag += '<a class="registerLink" href="register.html">[免费注册]</a>';
             $(".topbar .rightArea").html(tag);
+
+            localStorage.setItem("username", null);
         });
-
-    //如果用户名不存在
-    } else {
-
-        var tag = '欢迎来到慕课网&nbsp;';
-        tag += '<a class="loginLink" href="login.html">[登录]</a>&nbsp;';
-        tag += '<a class="registerLink" href="register.html">[免费注册]</a>';
-        $(".topbar .rightArea").html(tag);
     }
 }
 

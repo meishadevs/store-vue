@@ -21,9 +21,6 @@ function hideFilterItem() {
     $(".screening-box a").on("click", function () {
         var className = $(this).attr("data");
         var position = $(this).attr("position");
-        console.log("className:", className);
-        console.log("position:", position);
-        console.log(this.innerHTML);
         $("." + className).hide();
         $("." + position).show();
         $("." + position + "-text").html(this.innerHTML);

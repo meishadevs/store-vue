@@ -267,6 +267,7 @@ body {
     height: 38px;
     padding-left: 17px;
     margin-right: 15px;
+    font-weight: bold;
     background-color: #f7f7f7;
     background: url(../images/icon/collection.jpg) left center no-repeat;
 }
