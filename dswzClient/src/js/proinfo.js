@@ -344,6 +344,7 @@ function showPage(data) {
             //向上翻一页
             pageIndex--;
             config.advisoryStartIndex = config.advisoryAmount * pageIndex - config.advisoryAmount;
+            window.scrollTo(0, 1050);
             getAdvisory();
         }
     });
@@ -357,6 +358,7 @@ function showPage(data) {
             //向下翻一页
             pageIndex++;
             config.advisoryStartIndex = config.advisoryAmount * pageIndex - config.advisoryAmount;
+            window.scrollTo(0, 1050);
             getAdvisory();
         }
     });
@@ -369,6 +371,7 @@ function showPage(data) {
             if(this.nodeName == "A") {
                 pageIndex = this.innerHTML;
                 config.advisoryStartIndex = config.advisoryAmount * pageIndex - config.advisoryAmount;
+                window.scrollTo(0, 1050);
                 getAdvisory();
             }
         });
