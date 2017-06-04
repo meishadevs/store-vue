@@ -1,13 +1,9 @@
-## 自己做的一个电商网站
-### 这个电商网站是自己跟着慕课网的教程学着做的
-- **这个是教程的链接[http://www.imooc.com/learn/100](http://www.imooc.com/learn/100)**
+# 简易版电商网站
+这个电商网站是根据慕课网上的[手把手教你实现电商网站开发](http://www.imooc.com/learn/100)这套视频教程一步一步实现的，并且在其基础上做了比较大面积的改进和扩展
 
-### 网站的各个页面
-- **网站的首页[https://meishadevs.github.io/ImoocDSWZ/](https://meishadevs.github.io/ImoocDSWZ/)**
-- **网站的商品分类页[https://meishadevs.github.io/ImoocDSWZ/ classification.html](https://meishadevs.github.io/ImoocDSWZ/classification.html)** 
-- **网站的商品筛选页[https://meishadevs.github.io/ImoocDSWZ/select.html](https://meishadevs.github.io/ImoocDSWZ/select.html)**
-- **电商网站的商品介绍页[https://meishadevs.github.io/ImoocDSWZ/proinfo.html](https://meishadevs.github.io/ImoocDSWZ/proinfo.html)**
-- **电商网站的商品评价页[https://meishadevs.github.io/ImoocDSWZ/comment.html](https://meishadevs.github.io/ImoocDSWZ/comment.html)**
-- **电商网站的购物车和结算页[https://meishadevs.github.io/ImoocDSWZ/shopcar.html](https://meishadevs.github.io/ImoocDSWZ/shopcar.html)**
-- **电商网站的登录页[https://meishadevs.github.io/ImoocDSWZ/login.html](https://meishadevs.github.io/ImoocDSWZ/login.html)**
-- **电商网站的注册页[https://meishadevs.github.io/ImoocDSWZ/register.html](https://meishadevs.github.io/ImoocDSWZ/register.html)**
+## 网站的地址
+
+
+## 网站的展示视频
+由于网站中的页面和网页效果较多，特此录制了一个视频展示网站
+

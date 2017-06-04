@@ -277,26 +277,3 @@ gulp.task('jsTask', ['indexJs', 'classJs', 'loginJs', 'proinfoJs', 'registerJs',
 
 //默认任务
 gulp.task('defaultTask', ['copyImage', 'copyFont', 'copyLib', 'cssTask', 'jsTask', 'htmlTask']);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
