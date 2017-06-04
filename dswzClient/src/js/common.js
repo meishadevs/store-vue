@@ -79,14 +79,14 @@ function getSearchList() {
 
     //鼠标离开搜索区域，清除搜索结果列表
     $(".search-box").mouseleave(function() {
-        $(".search-box ul").remove();
+        $(".search-box ul").hide();
     });
 
     //当松开键盘上的按键后,调用此方法
     $(".search-text").keyup(function() {
 
         //每当产生新的搜索结果之前，删除以前的搜索结果
-        $(".search-box ul").remove();
+        $(".search-box ul li").remove();
 
         //获得用户输入的关键字
         var key = $(".search-text").val();
@@ -128,10 +128,15 @@ function showSearchList(array, keyWord) {
 
     //如果没有搜索到数据，就不创建搜索结果列表
     if(array.length <= 0) {
+        $(".search-box ul").hide();
         return;
     }
 
-    var tag = "<ul class='result-list'>";
+    $(".search-box ul")
+        .css('height', array.length * 26 + "px")
+        .show();
+
+    var tag = "";
 
     //遍历搜索结果
     $.each(array, function(index, result) {
@@ -184,9 +189,7 @@ function showSearchList(array, keyWord) {
         tag += "</li>"
     });
 
-    tag += "</ul>";
-
-    $(".search-box").append(tag);
+    $(".search-box .result-list").append(tag);
 }
 
 
@@ -206,7 +209,8 @@ function selectResult(array) {
             var value = $(this).attr("value");
 
             //清除搜索结果列表
-            $(".search-box ul").remove();
+            $(".search-box ul li").remove();
+            $(".search-box ul").hide();
 
             //获得当前选中的搜索结果，并且将搜索结果设置到搜索框中
             $(".search-text").val(array[value][0]);

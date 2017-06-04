@@ -114,9 +114,11 @@
 /* 搜索到的结果列表 */
 .result-list {
     width: 358px;
+    height: 260px;
     background-color: #fff;
     border: solid 1px #BEBEBE;
     z-index: 5;
+    display: none;
     position: absolute;
     left: 0;
     top: 35px;
