@@ -25,13 +25,16 @@ $(function() {
 
     //设置购物车上商品的数量
     setProductNum();
+    
+    //隐藏将网站添加到收藏夹的对话框
+    hideDialog();
 });
 
 
 //将网站添加至收藏夹
 function collectionSite() {
     $(".collection").on('click', function () {
-        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏夹失败，请使用Ctrl+D添加！")
+        $('.cover').show();
     });
 }
 
@@ -290,4 +293,12 @@ function setProductNum() {
     }
 
     $(".shopCar .shopNum").text(productNum);
+}
+
+
+//隐藏将网站添加到收藏夹的对话框
+function hideDialog() {
+    $('.hide-dialog').on('click', function () {
+        $('.cover').hide();
+    });
 }

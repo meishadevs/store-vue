@@ -61,7 +61,8 @@ gulp.task('copyLib', function () {
 
 //处理网站首页的CSS样式
 gulp.task('indexCss', function() {
-    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/index.css'])
+    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/index.css',
+        'src/css/module.css'])
         .pipe(concat('index.min.css')) //CSS文件合并
         .pipe(minifyCss()) //压缩CSS文件
         .pipe(gulp.dest('dist/css')) //文件的输出路径
@@ -73,7 +74,8 @@ gulp.task('indexCss', function() {
 
 //处理商品分类页的CSS样式
 gulp.task('classCss', function() {
-    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/classification.css'])
+    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/classification.css',
+        'src/css/module.css'])
         .pipe(concat('classification.min.css')) //CSS文件合并
         .pipe(minifyCss()) //压缩CSS文件
         .pipe(gulp.dest('dist/css')) //文件的输出路径
@@ -97,7 +99,8 @@ gulp.task('loginCss', function() {
 
 //处理商品信息展示页的CSS样式
 gulp.task('proinfoCss', function() {
-    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/module.css', 'src/css/proinfo.css'])
+    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/module.css',
+        'src/css/proinfo.css',  'src/css/module.css'])
         .pipe(concat('proinfo.min.css')) //CSS文件合并
         .pipe(minifyCss()) //压缩CSS文件
         .pipe(gulp.dest('dist/css')) //文件的输出路径
@@ -121,7 +124,8 @@ gulp.task('registerCss', function() {
 
 //处理商品筛选页的CSS样式
 gulp.task('selectCss', function() {
-    gulp.src(['src/css/reset.css', 'src/css/common.css',  'src/css/module.css', 'src/css/select.css'])
+    gulp.src(['src/css/reset.css', 'src/css/common.css',  'src/css/module.css',
+        'src/css/select.css', 'src/css/module.css'])
         .pipe(concat('select.min.css')) //CSS文件合并
         .pipe(minifyCss()) //压缩CSS文件
         .pipe(gulp.dest('dist/css')) //文件的输出路径
@@ -133,7 +137,8 @@ gulp.task('selectCss', function() {
 
 //处理购物车与结算页的CSS样式
 gulp.task('shopcarCss', function() {
-    gulp.src(['src/css/reset.css', 'src/css/common.css',  'src/css/module.css', 'src/css/shopcar.css'])
+    gulp.src(['src/css/reset.css', 'src/css/common.css',  'src/css/module.css',
+        'src/css/shopcar.css', 'src/css/module.css'])
         .pipe(concat('shopcar.min.css')) //CSS文件合并
         .pipe(minifyCss()) //压缩CSS文件
         .pipe(gulp.dest('dist/css')) //文件的输出路径
@@ -259,9 +264,9 @@ gulp.task('server', function() {
         console.log(bs.options.getIn(["urls", "local"]));
     });
 
-    gulp.watch('src/css/*.css',['cssTask']);
-    gulp.watch('src/js/*.js',['jsTask']);
-    gulp.watch('src/*.html',['htmlTask']);
+    gulp.watch('src/css/*.css', ['cssTask']);
+    gulp.watch('src/js/*.js', ['jsTask']);
+    gulp.watch('src/*.html', ['htmlTask']);
 });
 
 //处理CSS样式的任务
