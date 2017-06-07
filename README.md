@@ -28,7 +28,7 @@
 		    ├── images/               // 存放网站的图片
 		    ├── js/                   // 存放网站的JS脚本
 		    ├── lib/                  // 存放引用的第三方库
-		    └── classification.html   // 商品分类页的HTML
+		    ├── classification.html   // 商品分类页的HTML
 			├── index.html            // 网站首页的HTML
 		    ├── login.html            // 登录页的HTML
 		    ├── proinfo.html          // 商品信息展示页的HTML
