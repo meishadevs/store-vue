@@ -1,5 +1,5 @@
 # 简易版电商网站
-> ImoocDSWZ是一个简易版的电商网站，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品介绍、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
+> ImoocDSWZ是一个简易版的电商网站，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品简介、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
 
 ## 网站的地址
 **网站[http://meishadevs.com/ImoocDSWZ/](http://meishadevs.com/ImoocDSWZ/)**
@@ -14,9 +14,9 @@
 - **数据库：** MySQL
 
 ## 项目简介
-- **项目描述** 整个项目的文件由dswzClient、dswzServer、sql三个文件夹组成，其中dswzClient存放网站的前端代码、dswzServer中存放的是网站的后台代码，sql中存放的是网站的数据库文件
+**项目描述：** 整个项目的文件由dswzClient、dswzServer、sql三个文件夹组成，其中dswzClient存放网站的前端代码、dswzServer中存放的是网站的后台代码，sql中存放的是网站的数据库文件
 
-- **dswzClient的目录结构**
+**dswzClient的目录结构**
 
 		├── src     
 		├── .gitignore                // 设置上传到GitHub上时忽略上传的文件
@@ -60,7 +60,7 @@ gulp defaultTask
 
 执行完`gulp defaultTask`任务后，会在dswzClient自动创建一个dist文件夹，dist文件夹下存放的是编译后生成的文件
 
-**执行Gulp任务，运行项目**
+**执行Gulp任务，运行项目**  
 ```
 gulp server
 ```
