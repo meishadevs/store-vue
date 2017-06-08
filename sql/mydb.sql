@@ -20,14 +20,14 @@ USE `mydb`;
 
 CREATE TABLE IF NOT EXISTS `advisory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `memberimage` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `membernum` varchar(512) COLLATE utf8_bin DEFAULT NULL,
-  `membergrade` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `question` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `answer` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `memberimage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `membernum` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `membergrade` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `question` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `answer` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
 
 --
 -- 转存表中的数据 `advisory`
@@ -73,11 +73,11 @@ INSERT INTO `advisory` (`id`, `memberimage`, `membernum`, `membergrade`, `questi
 
 CREATE TABLE IF NOT EXISTS `area` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(6) COLLATE utf8_bin NOT NULL,
-  `name` varchar(20) COLLATE utf8_bin NOT NULL,
-  `citycode` varchar(6) COLLATE utf8_bin NOT NULL,
+  `code` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `citycode` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3166 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3166 ;
 
 --
 -- 转存表中的数据 `area`
@@ -3260,11 +3260,11 @@ INSERT INTO `area` (`id`, `code`, `name`, `citycode`) VALUES
 
 CREATE TABLE IF NOT EXISTS `city` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(6) COLLATE utf8_bin NOT NULL,
-  `name` varchar(20) COLLATE utf8_bin NOT NULL,
-  `provincecode` varchar(6) COLLATE utf8_bin NOT NULL,
+  `code` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `provincecode` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=347 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=347 ;
 
 --
 -- 转存表中的数据 `city`
@@ -3626,12 +3626,12 @@ INSERT INTO `city` (`id`, `code`, `name`, `provincecode`) VALUES
 
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `productimage` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `productname` varchar(512) COLLATE utf8_bin DEFAULT NULL,
-  `productprice` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `commentnum` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `productimage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `productname` varchar(512) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `productprice` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `commentnum` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=56 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=56 ;
 
 --
 -- 转存表中的数据 `product`
@@ -3701,10 +3701,10 @@ INSERT INTO `product` (`id`, `productimage`, `productname`, `productprice`, `com
 
 CREATE TABLE IF NOT EXISTS `province` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(6) COLLATE utf8_bin NOT NULL,
-  `name` varchar(20) COLLATE utf8_bin NOT NULL,
+  `code` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=35 ;
 
 --
 -- 转存表中的数据 `province`
@@ -3754,9 +3754,9 @@ INSERT INTO `province` (`id`, `code`, `name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
