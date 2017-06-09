@@ -77,7 +77,7 @@ function checkUserStatus() {
 //获得搜索列表
 function getSearchList() {
 
-    //鼠标离开搜索区域，清除搜索结果列表
+    //鼠标离开搜索区域，隐藏搜索结果列表
     $(".search-box").mouseleave(function() {
         $(".search-box ul").hide();
     });

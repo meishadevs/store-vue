@@ -2,7 +2,7 @@
 > ImoocDSWZ是一个简易版的电商网站，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品简介、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
 
 ## 项目的一些链接
-**网站地址：[http://meishadevs.com/ImoocDSWZ/](http://meishadevs.com/ImoocDSWZ/)**
+**网站地址：[http://dswz.sc2yun.com/dswzClient/](http://dswz.sc2yun.com/dswzClient/)**
 
 **网站的视频演示地址：[http://oqdvwkahb.bkt.clouddn.com/video.mp4](http://oqdvwkahb.bkt.clouddn.com/video.mp4)**
 
@@ -84,7 +84,7 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 ![](table.PNG)
 
 **第六步：部署服务器端代码**  
-关闭phpMyAdmin，回到第一步的操作，再次点击绿色的小图标，在弹出的列表项中选择www directory，将dswzServer文件夹拷贝到打开的目录下，此时一个电商网站的后台就部署完成了，可以正常的使用网站中的注册、登录、省市区三级联动、商品翻页等功能
+关闭phpMyAdmin，回到第一步的操作，再次点击绿色的小图标，在弹出的列表项中选择www directory，将dswzServer文件夹拷贝到打开的目录下，此时一个电商网站的后台就部署完成了，可以正常的使用网站中的注册、登录、省市区三级联动、商品翻页等功能  
 ![](folder.PNG)
 
 ## 特别说明
