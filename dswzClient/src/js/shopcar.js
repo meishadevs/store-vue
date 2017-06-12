@@ -73,6 +73,9 @@ function submitDeliveryInfo() {
 
     var flag = 0;
 
+    //移除保存在本地的收货信息
+    localStorage.setItem("deliveryInfo", '');
+
     $(".button-submit").on("click", function(event) {
 
         //阻止事件冒泡
@@ -397,8 +400,40 @@ function getInvoiceInfo() {
 //提交订单
 function commitOrder() {
     $('.order-content .commit').on('click', function () {
-        $('.delivery-info .show-result').fadeIn();
-        $('.delivery-info .show-result').fadeOut(3000);
+
+        if (localStorage.getItem("deliveryInfo") == '') {
+            $('.delivery-info .show-result')
+                .html('<span class="text">请填写收货信息</span><button class="close-btn"><i class="fa fa-times"></i></button>')
+                .show();
+
+            $(".close-btn").on("click", function () {
+                $(".delivery-info .show-result")
+                    .html("")
+                    .hide();
+            });
+
+            return;
+        }
+
+        //没有选择支付方式
+        if (getPayment() == 0) {
+            $('.delivery-info .show-result')
+                .html('<span class="text">请选择支付方式</span><button class="close-btn"><i class="fa fa-times"></i></button>')
+                .show();
+
+            $(".close-btn").on("click", function () {
+                $(".delivery-info .show-result")
+                    .html("")
+                    .hide();
+            });
+
+            return;
+        }
+
+        $('.delivery-info .show-result')
+            .html("订单已提交")
+            .fadeIn()
+            .fadeOut(3000);
     });
 }
 
@@ -418,4 +453,26 @@ function setProductInfo() {
     $("#productNum").text(productNum);
     $("#totalPrice").text(totalPrice + ".00");
     $('.total em').text("￥" + totalPrice + ".00");
+}
+
+/**
+ * 获得支付方式
+ * @returns  1:微信支付、2:货到付款、0:没有选择支付方式
+ */
+function getPayment() {
+
+    //微信支付
+    var weixinPay = $('.weixin-radio').get(0).checked;
+    if (weixinPay) {
+        return 1;
+    }
+
+    //货到付款
+    var cashPay = $('.cash-radio').get(0).checked;
+    if (cashPay) {
+        return 2;
+    }
+
+    //没有选择支付方式
+    return 0;
 }
