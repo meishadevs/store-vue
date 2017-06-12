@@ -4,7 +4,7 @@
  */
 
 //服务器端的url
-var serverUrl = 'http://localhost/dswzServer/';
+var serverUrl = 'http://dswz.sc2yun.com/dswzServer/';
 
 //存放一些网站的配置信息
 var config = {
