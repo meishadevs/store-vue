@@ -2,11 +2,8 @@
 > ImoocDSWZ是一个简易版的电商网站，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品简介、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
 
 ## 项目的一些链接
-<<<<<<< HEAD
 **网站地址：[http://dswz.sc2yun.com/dswzClient/](http://dswz.sc2yun.com/dswzClient/)**
-=======
 **网站地址：[http://dswz.sc2yun.com/dswzClient](http://dswz.sc2yun.com/dswzClient)**
->>>>>>> f0e2e87013730795add67dfb4f89b25d8031d157
 
 **网站的视频演示地址：[http://oqdvwkahb.bkt.clouddn.com/video.mp4](http://oqdvwkahb.bkt.clouddn.com/video.mp4)**
 
