@@ -284,8 +284,6 @@ var showAdvisory = function(data) {
 //展示分页
 function showPage(data) {
 
-    console.log('data:', data);
-
     //计算一共有多少页商品咨询信息
     var totalPage = Math.ceil(data / config.advisoryAmount);
 
