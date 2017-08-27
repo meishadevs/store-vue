@@ -77,7 +77,7 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 ![](database.PNG)
 
 **第四步：将网站需要用到的数据导入数据库中**  
-选择导入，然后会弹出下图所示的界面，单击界面上的Choose File按钮，选择导入的文件为sql文件夹下的mydb.sql，将文件字符集设置为utf-8，格式选为SQL，设置完成后点击执行
+选择导入，然后会弹出下图所示的界面，单击界面上的Choose File按钮，选择导入的文件为sql文件夹下的dswzdb.sql，将文件字符集设置为utf-8，格式选为SQL，设置完成后点击执行  
 ![](insert.PNG)
 
 **第五步：执行后的效果**  
@@ -138,23 +138,34 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 当你的数据库的设置和我的默认设置不同的时候，可以修改**ImoocDSWZ\dswzServer下的connect.php文件
 
 	<?php
+	
 	//主机名
 	$host = "localhost";
+	
 	//用户名
 	$db_user = "root";
+	
 	//密码
 	$db_pass = "";
+	
 	//数据库名 
-	$db_name = "mydb";
+	$db_name = "dswzdb";
+	
 	//时区 
 	$timezone = "Asia/Shanghai";
-	//链接数据库 
+	
+	//连接数据库
 	$link = mysql_connect($host,$db_user,$db_pass);
+	
 	//选择数据库
 	mysql_select_db($db_name, $link);
+	
 	//执行一条数据库查询语句
 	mysql_query("SET names UTF8");
+	
+	//设置响应头
 	header("Content-Type: text/html; charset=utf-8");
+	
 	//设置时区 
 	date_default_timezone_set($timezone);
 	?>
