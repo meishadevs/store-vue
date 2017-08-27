@@ -10,7 +10,7 @@ $db_user = "root";
 $db_pass = "";
 
 //数据库名 
-$db_name = "mydb";
+$db_name = "dswzdb";
 
 //时区 
 $timezone = "Asia/Shanghai";
