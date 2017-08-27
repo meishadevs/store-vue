@@ -168,6 +168,7 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 	
 	//设置时区 
 	date_default_timezone_set($timezone);
+	
 	?>
 
 
