@@ -7,10 +7,10 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- 数据库: `mydb`
+-- 数据库: `dswzdb`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `mydb`;
+CREATE DATABASE IF NOT EXISTS `dswzdb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `dswzdb`;
 
 -- --------------------------------------------------------
 
