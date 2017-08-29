@@ -3,7 +3,7 @@
 
 ## 项目的一些链接
 
-**网站地址：[http://dswz.sc2yun.com/dswzClient/](http://dswz.sc2yun.com/dswzClient/)**
+**网站地址：[http://meishadevs.com/ImoocDSWZ/index.html](http://meishadevs.com/ImoocDSWZ/index.html)**
 
 **网站的视频演示地址：[http://oqdvwkahb.bkt.clouddn.com/video.mp4](http://oqdvwkahb.bkt.clouddn.com/video.mp4)**
 
