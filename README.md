@@ -17,7 +17,7 @@
 
 **dswzClient的目录结构**
 
-	├── .gitignore                // 设置上传到GitHub上时忽略上传的文件
+	├── .gitignore                // 提交到git上时，忽略提交的文件和文件夹
 	├── gulpfile.js               // Gulp编译脚本
 	├── package.json              // 项目配置文件
 	├── src                       // 生产目录
