@@ -8,7 +8,7 @@
 **网站的视频演示地址：[http://oqdvwkahb.bkt.clouddn.com/video.mp4](http://oqdvwkahb.bkt.clouddn.com/video.mp4)**
 
 ## 用到的技术
-- **前台：** jQuery Ajax HTML5 CSS3 LocalStorage
+- **前端：** jQuery Ajax HTML5 CSS3 LocalStorage
 - **构建工具：** Gulp
 - **后台：** PHP
 - **数据库：** MySQL
