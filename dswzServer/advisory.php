@@ -1,70 +1,70 @@
 <?php
 
-//�������ݿ�
+//连接数据库
 require_once('connect.php');
 
-//���λ���������ֲ�ѯ������
+//标记位，用来区分查询的数据
 $flag = $_GET['flag'];
 
-//��ûص�����
+//获得回调函数
 $callback = $_GET['callback'];
 
-//$flag == 1��ʾ��ѯ������һ���ж�������Ʒ��ѯ��Ϣ
+//$flag == 1表示查询数据中一共有多少条商品咨询信息
 if ($flag == 1) {
 
 	$squery = mysql_query("select count(*) from advisory");
     $result = mysql_result($squery, 0);
 	echo $callback.'('.$result.')';
 
-//$flag == 2��ʾ��ѯ��Ʒ��ѯ����Ϣ
+//$flag == 2表示查询商品咨询的信息
 } else if ($flag == 2) {
 
-	//���͵�������е���ѯ��Ϣ����ʼλ��
+	//发送到浏览器中的咨询信息的起始位置
 	$startIndex = $_GET['startIndex'];
 
-	//���͵�������е���ѯ��Ϣ������
+	//发送到浏览器中的咨询信息的条数
 	$amount = $_GET['amount'];
 
-	//ִ��SQL��䣬�����ݿ��л����Ʒ��ѯ��Ϣ
+	//执行SQL语句，从数据库中获得商品咨询信息
 	$query = mysql_query("select * from advisory order by id asc limit ".$startIndex.", ".$amount);
 
-	//���������ݿ��л�ȡ����Ʒ��ѯ��Ϣ
+	//遍历从数据库中获取的商品咨询信息
 	while ($row = mysql_fetch_array($query)) {
 
-		//��ʾ��ѯ��������
+		//表示查询到了数据
 		$flag = 3;
 
-		//�������飬��������ݿ��л�ȡ����Ʒ��ѯ��Ϣ
+		//创建数组，储存从数据库中获取的商品咨询信息
 		$sayList[] = array(
 
 			//id
 			'id'=>$row['id'],
 
-			//�û�ͷ������ӵ�ַ
+			//用户头像的链接地址
 			'memberimage'=>$row['memberimage'],
 
-			//�û��Ļ�Ա�˺�
+			//用户的会员账号
 			'membernum'=>$row['membernum'],
 
-			//�û��Ļ�Ա�ȼ�
+			//用户的会员等级
 			'membergrade'=>$row['membergrade'],
 
-			//��ѯ������
+			//咨询的问题
 			'question'=>$row['question'],
 
-			//����Ĵ�
+			//问题的答案
 			'answer'=>$row['answer'],
 
-			//��ѯ��ʱ��
+			//咨询的时间
 			'time'=>$row['time']
 	      );
 	}
 
 
-	//��������ݿ��в�ѯ��������
+	//如果从数据库中查询到了数据
 	if ($flag == 3) {
 
-		//������ת����Json���󣬲��ҷ��͵������
+		//将数组转换成Json对象，并且发送到浏览器
 		echo $callback.'('.json_encode($sayList).')';
 	} else {
 		echo $callback.'('.'null'.')';

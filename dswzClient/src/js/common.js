@@ -28,6 +28,9 @@ $(function() {
     
     //隐藏将网站添加到收藏夹的对话框
     hideDialog();
+
+    //进入购物车页面
+    intoShopCar();
 });
 
 
@@ -306,3 +309,30 @@ function hideDialog() {
         $('.cover').hide();
     });
 }
+
+
+//进入购物车页
+function intoShopCar() {
+    $('.shopCar a, .des-button a').on('click', function () {
+        var username = localStorage.getItem('username');
+
+        if (username != 'null') {
+            window.location.href="../shopcar.html";
+        } else  {
+           window.location.href="../login.html";
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
