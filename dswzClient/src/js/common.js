@@ -72,6 +72,9 @@ function checkUserStatus() {
             $(".topbar .rightArea").html(tag);
 
             localStorage.setItem("username", null);
+
+            //回到首页
+            window.location.href="../index.html";
         });
     }
 }
