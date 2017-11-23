@@ -1,5 +1,27 @@
 # 电商网站的服务器
-> 整个网站的服务器端使用的是PHP，数据库使用的是MySQL，服务器端我使用的是一个叫WampServer的软件，因为WampServer中同时集成了PHP和MySQL，下面的介绍的操作步骤也是使用WampServer
+> 整个网站的服务器使用的是PHP，数据库使用的是MySQL，服务器端我使用的是一个叫WampServer的软件，因为WampServer中同时集成了PHP和MySQL，在后面的操作中会介绍使用WampServer配置网址服务器
+
+## 将服务器端代码克隆到本地
+
+**第一步：创建一个server文件夹**
+
+	mkdir server
+
+**第二步：进入server文件夹下**
+
+	cd server
+
+**第三步：初始化一个本地Git仓库**
+
+	git init
+
+**第四步：将本地Git仓库关联到远程Git仓库**
+
+	git remote add origin https://github.com/meishadevs/ImoocDSWZ.git
+
+**第五步：拉取位于远程仓库上server分支中的代码到本地**
+
+	git pull origin server
 
 ## 配置电商网站的服务器
 
