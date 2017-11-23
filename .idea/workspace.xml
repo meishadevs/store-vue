@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64448c30-4936-4d93-a711-a0c274167d46" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dswzServer/advisory.php" afterPath="$PROJECT_DIR$/dswzServer/advisory.php" />
-    </list>
+    <list default="true" id="a5e31d58-8360-4f71-9d1b-a7f27e6a0cee" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +15,40 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/dist/js/index.min.js">
+      <file leaf-file-name="proinfo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/proinfo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1503801587751" expanded="true" signature="5934:5938" ph="&lt;" />
+                <marker date="1503801587751" expanded="true" signature="5938:5942" ph="&lt;" />
+                <marker date="1503801587751" expanded="true" signature="6072:6076" ph="&lt;" />
+                <marker date="1503801587751" expanded="true" signature="6076:6080" ph="&lt;" />
+                <marker date="1503801587751" expanded="true" signature="6441:6445" ph="&gt;" />
+                <marker date="1503801587751" expanded="true" signature="6445:6449" ph="&gt;" />
+                <marker date="1503801587751" expanded="true" signature="6581:6585" ph="&gt;" />
+                <marker date="1503801587751" expanded="true" signature="6585:6589" ph="&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding>
+                <marker date="1503801587750" expanded="true" signature="1134:1140" ph=" " />
+                <marker date="1503801587750" expanded="true" signature="1167:1173" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -27,8 +57,87 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classification.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/classification.html">
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2160">
+              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding>
+                <marker date="1511338403842" expanded="true" signature="786:792" ph=" " />
+                <marker date="1511338403842" expanded="true" signature="1359:1365" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classification.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/classification.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proinfo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proinfo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7980">
+              <caret line="266" column="34" lean-forward="false" selection-start-line="266" selection-start-column="24" selection-end-line="266" selection-end-column="34" />
+              <folding>
+                <element signature="e#3501#3507#0" expanded="true" />
+                <element signature="e#3507#3511#0" expanded="true" />
+                <element signature="e#3511#3517#0" expanded="true" />
+                <element signature="e#3578#3584#0" expanded="true" />
+                <element signature="e#3584#3588#0" expanded="true" />
+                <element signature="e#3588#3594#0" expanded="true" />
+                <element signature="e#3656#3662#0" expanded="true" />
+                <element signature="e#3662#3666#0" expanded="true" />
+                <element signature="e#3666#3672#0" expanded="true" />
+                <element signature="e#3733#3739#0" expanded="true" />
+                <element signature="e#3739#3743#0" expanded="true" />
+                <element signature="e#3743#3749#0" expanded="true" />
+                <element signature="e#8372#8378#0" expanded="true" />
+                <element signature="e#8378#8384#0" expanded="true" />
+                <element signature="e#18510#18516#0" expanded="true" />
+                <element signature="e#18528#18534#0" expanded="true" />
+                <element signature="e#18540#18546#0" expanded="true" />
+                <element signature="e#18546#18552#0" expanded="true" />
+                <element signature="e#18552#18558#0" expanded="true" />
+                <element signature="e#18572#18578#0" expanded="true" />
+                <element signature="e#18578#18584#0" expanded="true" />
+                <element signature="e#18584#18590#0" expanded="true" />
+                <element signature="e#18606#18612#0" expanded="true" />
+                <element signature="e#18612#18618#0" expanded="true" />
+                <element signature="e#18618#18624#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="animate.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/animate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advisory.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/advisory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -38,117 +147,145 @@
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/index.html">
+        <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proinfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/proinfo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/select.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shopcar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/shopcar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dswzClient/src/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dswzClient/dist/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2040">
-              <caret line="0" column="346" lean-forward="false" selection-start-line="0" selection-start-column="346" selection-end-line="0" selection-end-column="346" />
-              <folding>
-                <element signature="e#18911#18917#0" expanded="true" />
-                <element signature="e#18929#18935#0" expanded="true" />
-                <element signature="e#18941#18947#0" expanded="true" />
-                <element signature="e#18947#18953#0" expanded="true" />
-                <element signature="e#18953#18959#0" expanded="true" />
-                <element signature="e#18973#18979#0" expanded="true" />
-                <element signature="e#18979#18985#0" expanded="true" />
-                <element signature="e#18985#18991#0" expanded="true" />
-                <element signature="e#19007#19013#0" expanded="true" />
-                <element signature="e#19013#19019#0" expanded="true" />
-                <element signature="e#19019#19025#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>购物车</find>
+      <find>shopcar</find>
+      <find>shopcar.html</find>
+      <find>exit</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dswzServer/advisory.php" />
+        <option value="$PROJECT_DIR$/src/register.html" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/classification.html" />
+        <option value="$PROJECT_DIR$/src/proinfo.html" />
+        <option value="$PROJECT_DIR$/src/js/common.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>copyImage</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>copyFont</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>copyLib</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>indexCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>classCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>loginCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>proinfoCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>registerCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>selectCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>shopcarCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>indexJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>classJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>loginJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>proinfoJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>registerJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>selectJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>shopcarJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>htmlTask</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>server</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="indexCss" />
+              <dependency value="classCss" />
+              <dependency value="loginCss" />
+              <dependency value="proinfoCss" />
+              <dependency value="registerCss" />
+              <dependency value="selectCss" />
+              <dependency value="shopcarCss" />
+            </dependencies>
+            <task-name>cssTask</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="indexJs" />
+              <dependency value="classJs" />
+              <dependency value="loginJs" />
+              <dependency value="proinfoJs" />
+              <dependency value="registerJs" />
+              <dependency value="selectJs" />
+              <dependency value="shopcarJs" />
+            </dependencies>
+            <task-name>jsTask</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="copyImage" />
+              <dependency value="copyFont" />
+              <dependency value="copyLib" />
+              <dependency value="cssTask" />
+              <dependency value="jsTask" />
+              <dependency value="htmlTask" />
+            </dependencies>
+            <task-name>defaultTask</task-name>
+          </GulpTaskState>
+        </tasks>
+      </GulpfileState>
+    </gulpfiles>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/dswzClient/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -171,27 +308,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ImoocDSWZ" />
+              <option name="myItemId" value="dswzClient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImoocDSWZ" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImoocDSWZ" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImoocDSWZ" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dswzClient" />
@@ -200,32 +322,30 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ImoocDSWZ" />
+              <option name="myItemId" value="dswzClient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImoocDSWZ" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dswzClient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="ignore_missing_gitignore" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="D:/develop/nodejs/node" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="D:\develop\nodejs\node_modules\gulp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -240,6 +360,61 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="false" name="defaultTask" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>defaultTask</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="server" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>server</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="selectJs" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>selectJs</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="jsTask" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>jsTask</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="cssTask" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>cssTask</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -306,38 +481,81 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.defaultTask" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.server" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.selectJs" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.jsTask" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.cssTask" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.server" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.selectJs" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.cssTask" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.jsTask" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.defaultTask" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="64448c30-4936-4d93-a711-a0c274167d46" name="Default" comment="" />
-      <created>1509348391226</created>
+      <changelist id="a5e31d58-8360-4f71-9d1b-a7f27e6a0cee" name="Default" comment="" />
+      <created>1503802959278</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1509348391226</updated>
-      <workItem from="1509348393626" duration="1034000" />
-      <workItem from="1510556796953" duration="494000" />
+      <updated>1503802959278</updated>
+      <workItem from="1503802971862" duration="1256000" />
+      <workItem from="1504148726643" duration="1034000" />
+      <workItem from="1504774121794" duration="660000" />
+      <workItem from="1504834181250" duration="15000" />
+      <workItem from="1505616308593" duration="2524000" />
+      <workItem from="1505627862520" duration="895000" />
+      <workItem from="1506075216511" duration="648000" />
+      <workItem from="1506136171681" duration="597000" />
+      <workItem from="1506149604098" duration="154000" />
+      <workItem from="1509347626399" duration="541000" />
+      <workItem from="1509421894458" duration="97000" />
+      <workItem from="1510021368320" duration="58000" />
+      <workItem from="1510021469900" duration="32000" />
+      <workItem from="1510842917762" duration="3495000" />
+      <workItem from="1510882212261" duration="600000" />
+      <workItem from="1511335268689" duration="1772000" />
+      <workItem from="1511401013825" duration="248000" />
+      <workItem from="1511401273746" duration="631000" />
+      <workItem from="1511402160508" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1528000" />
+    <option name="totallyTimeSpent" value="15267000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18824404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18303572" sideWeight="0.5245098" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18303572" sideWeight="0.47549018" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18303572" sideWeight="0.5816994" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -358,286 +576,469 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sql/dswzdb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insert.PNG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icon.PNG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/connect.php">
+    <entry file="file://$PROJECT_DIR$/src/select.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/advisory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icon.PNG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/dswzdb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insert.PNG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzServer/advisory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/shopcar.html">
+    <entry file="file://$PROJECT_DIR$/src/proinfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2581#2587#0" expanded="true" />
-            <element signature="e#2588#2594#0" expanded="true" />
-            <element signature="e#2594#2600#0" expanded="true" />
-            <element signature="e#2931#2937#0" expanded="true" />
-            <element signature="e#2937#2943#0" expanded="true" />
-            <element signature="e#2943#2949#0" expanded="true" />
-            <element signature="e#2949#2955#0" expanded="true" />
-            <element signature="e#2955#2961#0" expanded="true" />
-            <element signature="e#2961#2967#0" expanded="true" />
-            <element signature="e#7320#7326#0" expanded="true" />
-            <element signature="e#7338#7344#0" expanded="true" />
-            <element signature="e#7350#7356#0" expanded="true" />
-            <element signature="e#7356#7362#0" expanded="true" />
-            <element signature="e#7362#7368#0" expanded="true" />
-            <element signature="e#7382#7388#0" expanded="true" />
-            <element signature="e#7388#7394#0" expanded="true" />
-            <element signature="e#7394#7400#0" expanded="true" />
-            <element signature="e#7416#7422#0" expanded="true" />
-            <element signature="e#7422#7428#0" expanded="true" />
-            <element signature="e#7428#7434#0" expanded="true" />
+            <element signature="e#3501#3507#0" expanded="true" />
+            <element signature="e#3507#3511#0" expanded="true" />
+            <element signature="e#3511#3517#0" expanded="true" />
+            <element signature="e#3578#3584#0" expanded="true" />
+            <element signature="e#3584#3588#0" expanded="true" />
+            <element signature="e#3588#3594#0" expanded="true" />
+            <element signature="e#3656#3662#0" expanded="true" />
+            <element signature="e#3662#3666#0" expanded="true" />
+            <element signature="e#3666#3672#0" expanded="true" />
+            <element signature="e#3733#3739#0" expanded="true" />
+            <element signature="e#3739#3743#0" expanded="true" />
+            <element signature="e#3743#3749#0" expanded="true" />
+            <element signature="e#8372#8378#0" expanded="true" />
+            <element signature="e#8378#8384#0" expanded="true" />
+            <element signature="e#18510#18516#0" expanded="true" />
+            <element signature="e#18528#18534#0" expanded="true" />
+            <element signature="e#18540#18546#0" expanded="true" />
+            <element signature="e#18546#18552#0" expanded="true" />
+            <element signature="e#18552#18558#0" expanded="true" />
+            <element signature="e#18572#18578#0" expanded="true" />
+            <element signature="e#18578#18584#0" expanded="true" />
+            <element signature="e#18584#18590#0" expanded="true" />
+            <element signature="e#18606#18612#0" expanded="true" />
+            <element signature="e#18612#18618#0" expanded="true" />
+            <element signature="e#18618#18624#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/select.html">
+    <entry file="file://$PROJECT_DIR$/src/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="98" column="104" lean-forward="false" selection-start-line="98" selection-start-column="86" selection-end-line="98" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proinfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1916#1922#0" expanded="true" />
-            <element signature="e#1922#1926#0" expanded="true" />
-            <element signature="e#1926#1932#0" expanded="true" />
-            <element signature="e#2008#2014#0" expanded="true" />
-            <element signature="e#2014#2018#0" expanded="true" />
-            <element signature="e#2018#2024#0" expanded="true" />
-            <element signature="e#2153#2159#0" expanded="true" />
-            <element signature="e#2159#2163#0" expanded="true" />
-            <element signature="e#2163#2169#0" expanded="true" />
-            <element signature="e#2302#2308#0" expanded="true" />
-            <element signature="e#2308#2312#0" expanded="true" />
-            <element signature="e#2312#2318#0" expanded="true" />
-            <element signature="e#2455#2461#0" expanded="true" />
-            <element signature="e#2461#2465#0" expanded="true" />
-            <element signature="e#2465#2471#0" expanded="true" />
-            <element signature="e#2597#2603#0" expanded="true" />
-            <element signature="e#2603#2607#0" expanded="true" />
-            <element signature="e#2607#2613#0" expanded="true" />
-            <element signature="e#8536#8542#0" expanded="true" />
-            <element signature="e#8579#8585#0" expanded="true" />
-            <element signature="e#8998#9004#0" expanded="true" />
-            <element signature="e#9016#9022#0" expanded="true" />
-            <element signature="e#9028#9034#0" expanded="true" />
-            <element signature="e#9034#9040#0" expanded="true" />
-            <element signature="e#9040#9046#0" expanded="true" />
-            <element signature="e#9060#9066#0" expanded="true" />
-            <element signature="e#9066#9072#0" expanded="true" />
-            <element signature="e#9072#9078#0" expanded="true" />
-            <element signature="e#9094#9100#0" expanded="true" />
-            <element signature="e#9100#9106#0" expanded="true" />
-            <element signature="e#9106#9112#0" expanded="true" />
+            <element signature="e#3501#3507#0" expanded="true" />
+            <element signature="e#3507#3511#0" expanded="true" />
+            <element signature="e#3511#3517#0" expanded="true" />
+            <element signature="e#3578#3584#0" expanded="true" />
+            <element signature="e#3584#3588#0" expanded="true" />
+            <element signature="e#3588#3594#0" expanded="true" />
+            <element signature="e#3656#3662#0" expanded="true" />
+            <element signature="e#3662#3666#0" expanded="true" />
+            <element signature="e#3666#3672#0" expanded="true" />
+            <element signature="e#3733#3739#0" expanded="true" />
+            <element signature="e#3739#3743#0" expanded="true" />
+            <element signature="e#3743#3749#0" expanded="true" />
+            <element signature="e#8372#8378#0" expanded="true" />
+            <element signature="e#8378#8384#0" expanded="true" />
+            <element signature="e#18510#18516#0" expanded="true" />
+            <element signature="e#18528#18534#0" expanded="true" />
+            <element signature="e#18540#18546#0" expanded="true" />
+            <element signature="e#18546#18552#0" expanded="true" />
+            <element signature="e#18552#18558#0" expanded="true" />
+            <element signature="e#18572#18578#0" expanded="true" />
+            <element signature="e#18578#18584#0" expanded="true" />
+            <element signature="e#18584#18590#0" expanded="true" />
+            <element signature="e#18606#18612#0" expanded="true" />
+            <element signature="e#18612#18618#0" expanded="true" />
+            <element signature="e#18618#18624#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/register.html">
+    <entry file="file://$PROJECT_DIR$/src/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="98" column="104" lean-forward="false" selection-start-line="98" selection-start-column="86" selection-end-line="98" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proinfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2696#2702#0" expanded="true" />
-            <element signature="e#2714#2720#0" expanded="true" />
-            <element signature="e#2726#2732#0" expanded="true" />
-            <element signature="e#2732#2738#0" expanded="true" />
-            <element signature="e#2738#2744#0" expanded="true" />
-            <element signature="e#2758#2764#0" expanded="true" />
-            <element signature="e#2764#2770#0" expanded="true" />
-            <element signature="e#2770#2776#0" expanded="true" />
-            <element signature="e#2792#2798#0" expanded="true" />
-            <element signature="e#2798#2804#0" expanded="true" />
-            <element signature="e#2804#2810#0" expanded="true" />
+            <element signature="e#3501#3507#0" expanded="true" />
+            <element signature="e#3507#3511#0" expanded="true" />
+            <element signature="e#3511#3517#0" expanded="true" />
+            <element signature="e#3578#3584#0" expanded="true" />
+            <element signature="e#3584#3588#0" expanded="true" />
+            <element signature="e#3588#3594#0" expanded="true" />
+            <element signature="e#3656#3662#0" expanded="true" />
+            <element signature="e#3662#3666#0" expanded="true" />
+            <element signature="e#3666#3672#0" expanded="true" />
+            <element signature="e#3733#3739#0" expanded="true" />
+            <element signature="e#3739#3743#0" expanded="true" />
+            <element signature="e#3743#3749#0" expanded="true" />
+            <element signature="e#8372#8378#0" expanded="true" />
+            <element signature="e#8378#8384#0" expanded="true" />
+            <element signature="e#18510#18516#0" expanded="true" />
+            <element signature="e#18528#18534#0" expanded="true" />
+            <element signature="e#18540#18546#0" expanded="true" />
+            <element signature="e#18546#18552#0" expanded="true" />
+            <element signature="e#18552#18558#0" expanded="true" />
+            <element signature="e#18572#18578#0" expanded="true" />
+            <element signature="e#18578#18584#0" expanded="true" />
+            <element signature="e#18584#18590#0" expanded="true" />
+            <element signature="e#18606#18612#0" expanded="true" />
+            <element signature="e#18612#18618#0" expanded="true" />
+            <element signature="e#18618#18624#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/proinfo.html">
+    <entry file="file://$PROJECT_DIR$/src/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="98" column="104" lean-forward="false" selection-start-line="98" selection-start-column="86" selection-end-line="98" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="72" column="1" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="72" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proinfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1919#1925#0" expanded="true" />
-            <element signature="e#1925#1929#0" expanded="true" />
-            <element signature="e#1929#1935#0" expanded="true" />
-            <element signature="e#1980#1986#0" expanded="true" />
-            <element signature="e#1986#1990#0" expanded="true" />
-            <element signature="e#1990#1996#0" expanded="true" />
-            <element signature="e#2042#2048#0" expanded="true" />
-            <element signature="e#2048#2052#0" expanded="true" />
-            <element signature="e#2052#2058#0" expanded="true" />
-            <element signature="e#2103#2109#0" expanded="true" />
-            <element signature="e#2109#2113#0" expanded="true" />
-            <element signature="e#2113#2119#0" expanded="true" />
-            <element signature="e#4602#4608#0" expanded="true" />
-            <element signature="e#4608#4614#0" expanded="true" />
-            <element signature="e#8852#8858#0" expanded="true" />
-            <element signature="e#8870#8876#0" expanded="true" />
-            <element signature="e#8882#8888#0" expanded="true" />
-            <element signature="e#8888#8894#0" expanded="true" />
-            <element signature="e#8894#8900#0" expanded="true" />
-            <element signature="e#8914#8920#0" expanded="true" />
-            <element signature="e#8920#8926#0" expanded="true" />
-            <element signature="e#8926#8932#0" expanded="true" />
-            <element signature="e#8948#8954#0" expanded="true" />
-            <element signature="e#8954#8960#0" expanded="true" />
-            <element signature="e#8960#8966#0" expanded="true" />
+            <element signature="e#3501#3507#0" expanded="true" />
+            <element signature="e#3507#3511#0" expanded="true" />
+            <element signature="e#3511#3517#0" expanded="true" />
+            <element signature="e#3578#3584#0" expanded="true" />
+            <element signature="e#3584#3588#0" expanded="true" />
+            <element signature="e#3588#3594#0" expanded="true" />
+            <element signature="e#3656#3662#0" expanded="true" />
+            <element signature="e#3662#3666#0" expanded="true" />
+            <element signature="e#3666#3672#0" expanded="true" />
+            <element signature="e#3733#3739#0" expanded="true" />
+            <element signature="e#3739#3743#0" expanded="true" />
+            <element signature="e#3743#3749#0" expanded="true" />
+            <element signature="e#8372#8378#0" expanded="true" />
+            <element signature="e#8378#8384#0" expanded="true" />
+            <element signature="e#18510#18516#0" expanded="true" />
+            <element signature="e#18528#18534#0" expanded="true" />
+            <element signature="e#18540#18546#0" expanded="true" />
+            <element signature="e#18546#18552#0" expanded="true" />
+            <element signature="e#18552#18558#0" expanded="true" />
+            <element signature="e#18572#18578#0" expanded="true" />
+            <element signature="e#18578#18584#0" expanded="true" />
+            <element signature="e#18584#18590#0" expanded="true" />
+            <element signature="e#18606#18612#0" expanded="true" />
+            <element signature="e#18612#18618#0" expanded="true" />
+            <element signature="e#18618#18624#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/login.html">
+    <entry file="file://$PROJECT_DIR$/src/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="98" column="104" lean-forward="true" selection-start-line="98" selection-start-column="86" selection-end-line="98" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2940">
+          <caret line="98" column="104" lean-forward="false" selection-start-line="98" selection-start-column="86" selection-end-line="98" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/font-awesome.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/login.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/index.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/css/register.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9720">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/shopcar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3780">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/proinfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1832#1838#0" expanded="true" />
-            <element signature="e#1850#1856#0" expanded="true" />
-            <element signature="e#1862#1868#0" expanded="true" />
-            <element signature="e#1868#1874#0" expanded="true" />
-            <element signature="e#1874#1880#0" expanded="true" />
-            <element signature="e#1894#1900#0" expanded="true" />
-            <element signature="e#1900#1906#0" expanded="true" />
-            <element signature="e#1906#1912#0" expanded="true" />
-            <element signature="e#1928#1934#0" expanded="true" />
-            <element signature="e#1934#1940#0" expanded="true" />
-            <element signature="e#1940#1946#0" expanded="true" />
+            <marker date="1503801587751" expanded="true" signature="5934:5938" ph="&lt;" />
+            <marker date="1503801587751" expanded="true" signature="5938:5942" ph="&lt;" />
+            <marker date="1503801587751" expanded="true" signature="6072:6076" ph="&lt;" />
+            <marker date="1503801587751" expanded="true" signature="6076:6080" ph="&lt;" />
+            <marker date="1503801587751" expanded="true" signature="6441:6445" ph="&gt;" />
+            <marker date="1503801587751" expanded="true" signature="6445:6449" ph="&gt;" />
+            <marker date="1503801587751" expanded="true" signature="6581:6585" ph="&gt;" />
+            <marker date="1503801587751" expanded="true" signature="6585:6589" ph="&gt;" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/classification.html">
+    <entry file="file://$PROJECT_DIR$/src/proinfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3330">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="7980">
+          <caret line="266" column="34" lean-forward="false" selection-start-line="266" selection-start-column="24" selection-end-line="266" selection-end-column="34" />
           <folding>
-            <element signature="e#11989#11995#0" expanded="true" />
-            <element signature="e#12007#12013#0" expanded="true" />
-            <element signature="e#12019#12025#0" expanded="true" />
-            <element signature="e#12025#12031#0" expanded="true" />
-            <element signature="e#12031#12037#0" expanded="true" />
-            <element signature="e#12051#12057#0" expanded="true" />
-            <element signature="e#12057#12063#0" expanded="true" />
-            <element signature="e#12063#12069#0" expanded="true" />
-            <element signature="e#12085#12091#0" expanded="true" />
-            <element signature="e#12091#12097#0" expanded="true" />
-            <element signature="e#12097#12103#0" expanded="true" />
+            <element signature="e#3501#3507#0" expanded="true" />
+            <element signature="e#3507#3511#0" expanded="true" />
+            <element signature="e#3511#3517#0" expanded="true" />
+            <element signature="e#3578#3584#0" expanded="true" />
+            <element signature="e#3584#3588#0" expanded="true" />
+            <element signature="e#3588#3594#0" expanded="true" />
+            <element signature="e#3656#3662#0" expanded="true" />
+            <element signature="e#3662#3666#0" expanded="true" />
+            <element signature="e#3666#3672#0" expanded="true" />
+            <element signature="e#3733#3739#0" expanded="true" />
+            <element signature="e#3739#3743#0" expanded="true" />
+            <element signature="e#3743#3749#0" expanded="true" />
+            <element signature="e#8372#8378#0" expanded="true" />
+            <element signature="e#8378#8384#0" expanded="true" />
+            <element signature="e#18510#18516#0" expanded="true" />
+            <element signature="e#18528#18534#0" expanded="true" />
+            <element signature="e#18540#18546#0" expanded="true" />
+            <element signature="e#18546#18552#0" expanded="true" />
+            <element signature="e#18552#18558#0" expanded="true" />
+            <element signature="e#18572#18578#0" expanded="true" />
+            <element signature="e#18578#18584#0" expanded="true" />
+            <element signature="e#18584#18590#0" expanded="true" />
+            <element signature="e#18606#18612#0" expanded="true" />
+            <element signature="e#18612#18618#0" expanded="true" />
+            <element signature="e#18618#18624#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/js/classification.min.js">
+    <entry file="file://$PROJECT_DIR$/src/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/advisory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -645,7 +1046,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/js/index.min.js">
+    <entry file="file://$PROJECT_DIR$/src/js/animate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -653,7 +1054,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/classification.html">
+    <entry file="file://$PROJECT_DIR$/src/js/classification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -661,78 +1070,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/proinfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/select.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/shopcar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/src/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dswzClient/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2040">
-          <caret line="0" column="346" lean-forward="false" selection-start-line="0" selection-start-column="346" selection-end-line="0" selection-end-column="346" />
+        <state relative-caret-position="2160">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <element signature="e#18911#18917#0" expanded="true" />
-            <element signature="e#18929#18935#0" expanded="true" />
-            <element signature="e#18941#18947#0" expanded="true" />
-            <element signature="e#18947#18953#0" expanded="true" />
-            <element signature="e#18953#18959#0" expanded="true" />
-            <element signature="e#18973#18979#0" expanded="true" />
-            <element signature="e#18979#18985#0" expanded="true" />
-            <element signature="e#18985#18991#0" expanded="true" />
-            <element signature="e#19007#19013#0" expanded="true" />
-            <element signature="e#19013#19019#0" expanded="true" />
-            <element signature="e#19019#19025#0" expanded="true" />
+            <marker date="1511338403842" expanded="true" signature="786:792" ph=" " />
+            <marker date="1511338403842" expanded="true" signature="1359:1365" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <marker date="1503801587750" expanded="true" signature="1134:1140" ph=" " />
+            <marker date="1503801587750" expanded="true" signature="1167:1173" ph=" " />
           </folding>
         </state>
       </provider>
