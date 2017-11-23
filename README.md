@@ -32,26 +32,35 @@
 	    └── shopcar.html          // 购物车和结算页的HTML
             
 ## 启动项目
+> 因为电商网站客户端代码不在master分支下，所以不能直接使用 `git clone https://github.com/meishadevs/ImoocDSWZ.git` 将代码克隆到本地，将项目代码克隆到本地的方式如下
 
-**第一步：克隆项目**  
+**第一步：创建一个dswzClient文件夹**  
 
-	git clone https://github.com/meishadevs/ImoocDSWZ.git  
+	  mkdir dswzClient
 
-**第二步：进入存放网站文件的目录下**  
+**第二步：进入到dswzClient文件夹下**  
 
 	cd dswzClient
 
-**第三步：安装项目的依赖包**  
+**第三步：将本地git仓库关联到远程git仓库**  
+
+	git remote add origin https://github.com/meishadevs/ImoocDSWZ.git
+
+**第四步：拉取位于远程仓库上jQuery分支中的代码到本地**
+	
+	git pull origin jQuery
+
+**第五步：安装依赖**
 
 	npm install
 
-**第四步：执行Gulp任务，编译项目**  
+**第六步：执行Gulp任务，编译项目**  
 
 	gulp defaultTask
 
 执行完`gulp defaultTask`任务后，会在dswzClient目录下自动创建一个dist文件夹，dist文件夹下存放的是编译后生成的文件
 
-**第五步：执行Gulp任务，运行项目**  
+**第七步：执行Gulp任务，运行项目**  
 
 	gulp server
 
