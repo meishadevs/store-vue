@@ -41,30 +41,34 @@
 **第二步：进入到dswzClient文件夹下**  
 
 	cd dswzClient
+	
+**第三步：初始化一个本地Git仓库**
 
-**第三步：将本地git仓库关联到远程git仓库**  
+	git init
+	
+**第四步：将本地Git仓库关联到远程Git仓库**  
 
 	git remote add origin https://github.com/meishadevs/ImoocDSWZ.git
 
-**第四步：拉取位于远程仓库上jQuery分支中的代码到本地**
+**第五步：拉取位于远程仓库上jQuery分支中的代码到本地**
 	
 	git pull origin jQuery
 
-**第五步：安装依赖**
+**第六步：安装依赖**
 
 	npm install
 
-**第六步：执行Gulp任务，编译项目**  
+**第七步：执行Gulp任务，编译项目**  
 
 	gulp defaultTask
 
 执行完`gulp defaultTask`任务后，会在dswzClient目录下自动创建一个dist文件夹，dist文件夹下存放的是编译后生成的文件
 
-**第七步：执行Gulp任务，运行项目**  
+**第八步：执行Gulp任务，运行项目**  
 
 	gulp server
 
-执行	`gulp server`任务后会自动使用默认浏览器打开网页，当修改了src文件夹下的文件后，会立即编译，并且将编译生成的文件存在在dist目录下，网页也会src目录下的修改做出相应的改变
+执行`gulp server`任务后会自动使用默认浏览器打开网页，当修改了src文件夹下的文件后，会立即编译，并且将编译生成的文件存在在dist目录下，网页也会src目录下的修改做出相应的改变
 
 ## 配置网站的服务器
 网站服务器端配置请移步到server分支：[https://github.com/meishadevs/ImoocDSWZ/tree/server](https://github.com/meishadevs/ImoocDSWZ/tree/server)
