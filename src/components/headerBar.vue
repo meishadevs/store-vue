@@ -11,6 +11,7 @@
       <div class="search-box clearfix">
         <input
           class="search-text"
+          spellcheck="false"
           type="text"
           placeholder="女神的衣柜必备"
           v-model="keyWord"
