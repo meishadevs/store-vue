@@ -51,6 +51,10 @@ module.exports = {
     //不检测代码块
     'padded-blocks': 0,
 
-    'operator-linebreak': 0
+    'operator-linebreak': 0,
+
+    'quotes': 0,
+
+    'no-useless-return': 0
   }
 }

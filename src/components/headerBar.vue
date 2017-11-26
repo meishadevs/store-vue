@@ -14,9 +14,33 @@
           type="text"
           placeholder="女神的衣柜必备"
           v-model="keyWord"
-          v-on:keyup="getSearchResultList()">
-        <input class="search-btn" type="button" value="搜索">
-        <ul class="result-list" v-show="isShowResultList"></ul>
+          v-on:keyup="getSearchResult()">
+        <input class="search-btn" type="button" value="搜索" @click="searchData()">
+        <ul class="result-list"
+            v-show="arrayResult.length > 0"
+            v-bind:style="{height: arrayResult.length * 26 + 'px'}"
+            @mouseleave="arrayResult = []">
+          <li class="clearfix"
+              v-for="(result, index) in arrayResult"
+              v-bind:value="index"
+              ref = 'li'
+              @click="setKeyWord($event)">
+            <!-- 如果搜索结果中不存在用户输入的关键字 s -->
+            <p class="proName"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == -1">{{ result[0] }}</p>
+            <!-- 如果搜索结果中不存在用户输入的关键字 e -->
+            <!-- 如果关键字位于搜索结果的起始位置 s -->
+            <p class="proName"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == 0"><em>{{ keyWord }}</em>{{ result[0].substring(keyWord.length) }}</p>
+            <!-- 如果关键字位于搜索结果的起始位置 e -->
+            <!-- 如果关键字位于搜索结果的结束位置 s -->
+            <p class="proName"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">{{ result[0].substring(0, result[0].length - keyWord.length) }}<em v-bind:value="index">{{ keyWord }}</em></p>
+            <!-- 如果关键字位于搜索结果的结束位置 e -->
+            <!-- 关键字位于搜索结果的中间 s -->
+            <p class="proName" v-else>
+            </p>
+            <!-- 关键字位于搜索结果的中间 e -->
+            <p class="resultNum"  v-bind:value="index">约{{ result[1] }}个商品</p>
+          </li>
+        </ul>
       </div>
       <div class="shopCar clearfix">
         <a href="javascript:;">
@@ -38,11 +62,12 @@
 
     data() {
       return {
-        //标记是否显示搜索结果列表
-        isShowResultList: false,
 
         //关键字
-        keyWord: ''
+        keyWord: '',
+
+        //保存搜索结果
+        arrayResult: []
       };
     },
 
@@ -56,17 +81,32 @@
 
     methods: {
 
-      //获取搜索结果列表
-      getSearchResultList: function () {
+      //获取搜索结果
+      getSearchResult: function () {
 
         //发送get请求，搜索商品
-        this.jsonp(this.taobaoUrl + this.keyWord, null, function (err, data) {
+        this.jsonp(this.taobaoUrl + this.keyWord, null, (err, data) => {
           if (err) {
-            console.error(err.message);
+            console.error("error:", err.message);
           } else {
-            console.log(data.result);
+            this.arrayResult = data.result;
           }
         });
+      },
+
+      //设置关键字
+      setKeyWord: function (event) {
+        //获得当前选中的标签的value属性值
+        var currentIndex = event.target.getAttribute('value');
+
+        //重置关键字的值
+        this.keyWord = this.arrayResult[currentIndex][0];
+        this.arrayResult = [];
+      },
+
+      //搜索数据
+      searchData: function () {
+        window.location = this.baiduUrl + "?wd=" + this.keyWord;
       }
     }
   };
@@ -130,6 +170,33 @@
     position: absolute;
     left: 0;
     top: 35px;
+  }
+
+  .result-list li {
+    height: 26px;
+    padding: 0px 6px 0px 5px;
+    font: bold 14px/26px 微软雅黑, "Microsoft yahei";
+    cursor: pointer;
+  }
+
+  .result-list li:hover {
+    background-color: #1d7ad9;
+    color: #fff;
+  }
+
+  .result-list .proName {
+    float: left;
+  }
+
+  .result-list em {
+    font-weight: normal;
+  }
+
+  .result-list .resultNum {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    float: right;
   }
 
   .shopCar {
