@@ -9,9 +9,14 @@
         </a>
       </div>
       <div class="search-box clearfix">
-        <input class="search-text" type="text" placeholder="女神的衣柜必备">
+        <input
+          class="search-text"
+          type="text"
+          placeholder="女神的衣柜必备"
+          v-model="keyWord"
+          v-on:keyup="getSearchResultList()">
         <input class="search-btn" type="button" value="搜索">
-        <ul class="result-list"></ul>
+        <ul class="result-list" v-show="isShowResultList"></ul>
       </div>
       <div class="shopCar clearfix">
         <a href="javascript:;">
@@ -31,12 +36,39 @@
     //组件名称
     name: 'headerBar',
 
+    data() {
+      return {
+        //标记是否显示搜索结果列表
+        isShowResultList: false,
+
+        //关键字
+        keyWord: ''
+      };
+    },
+
+    //计算属性
     computed: mapState([
 
       //商品的数量
       //映射 this.productNum 为 store.state.productNum
       'productNum'
-    ])
+    ]),
+
+    methods: {
+
+      //获取搜索结果列表
+      getSearchResultList: function () {
+
+        //发送get请求，搜索商品
+        this.jsonp(this.taobaoUrl + this.keyWord, null, function (err, data) {
+          if (err) {
+            console.error(err.message);
+          } else {
+            console.log(data.result);
+          }
+        });
+      }
+    }
   };
 </script>
 
@@ -95,7 +127,6 @@
     background-color: #fff;
     border: solid 1px #BEBEBE;
     z-index: 5;
-    display: none;
     position: absolute;
     left: 0;
     top: 35px;

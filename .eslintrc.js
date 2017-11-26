@@ -49,6 +49,8 @@ module.exports = {
     'no-trailing-spaces': 0,
 
     //不检测代码块
-    'padded-blocks': 0
+    'padded-blocks': 0,
+
+    'operator-linebreak': 0
   }
 }
