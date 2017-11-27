@@ -20,5 +20,10 @@ export default {
   //设置用户名
   setUsername: function (state, username) {
     state.username = username;
+  },
+
+  //改变当前选中的导航项的索引
+  changeNavIndex: function (state, currentIndex) {
+    state.currentNavIndex = currentIndex;
   }
 };

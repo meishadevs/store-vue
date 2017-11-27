@@ -19,5 +19,10 @@ export default {
   //设置用户名
   setUsername({ commit }, username) {
     commit('setUsername', username);
+  },
+
+  //改变当前选中的导航项的索引
+  changeNavIndex({ commit }, currentIndex) {
+    commit('changeNavIndex', currentIndex);
   }
 };

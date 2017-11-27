@@ -1,12 +1,13 @@
-<!-- 头部通栏组件 -->
+<!-- 头部组件 -->
 
 <template>
   <div class="headerBar">
     <div class="inner-c clearfix">
       <div class="logo">
-        <a href="index.html">
-          慕课网
-        </a>
+        <!--<a href="index.html">-->
+          <!--慕课网-->
+        <!--</a>-->
+        <router-link to="/">慕课网</router-link>
       </div>
       <div class="search-box clearfix">
         <input

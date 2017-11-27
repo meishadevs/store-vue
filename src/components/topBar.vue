@@ -14,7 +14,7 @@
         <!-- 如果用户登录了 e -->
         <!-- 如果用户没有登录 s-->
         <div v-else>
-          欢迎来到慕课网&nbsp;<a class="loginLink" href="login.html">[登录]</a>&nbsp;<a class="registerLink" href="register.html">[免费注册]</a>
+          欢迎来到慕课网&nbsp;<a class="loginLink" href="javascript:;">[登录]</a>&nbsp;<a class="registerLink" href="javascript:;">[免费注册]</a>
         </div>
         <!-- 如果用户没有登录 e -->
       </div>
