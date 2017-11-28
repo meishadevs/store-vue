@@ -8,7 +8,7 @@
     <dl class="product-item" v-for="item in classInfo.classList">
       <dt>{{ item.classTitle }}</dt>
       <dd>
-        <a href="javascript:;" v-for="content in item.classContent">{{ content }}</a>
+        <router-link to="/select" v-for="content in item.classContent" :key="item.id">{{ content }}</router-link>
       </dd>
     </dl>
   </div>

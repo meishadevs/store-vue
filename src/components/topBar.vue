@@ -3,10 +3,10 @@
 <template>
   <div class="topbar">
     <div class="inner-c clearfix">
-      <div class="leftArea">
+      <div class="left-area">
         <a href="javascript:;" class="collection" @click="showMask()">收藏慕课</a>
       </div>
-      <div class="rightArea">
+      <div class="right-area">
         <!-- 如果用户登录了 e -->
         <div v-if="isLogin">
           欢迎<a class="showUsername" href="javascript:;">{{ username }}</a>来到慕课网&nbsp;<a class="exit" href="javascript:;" @click="exit()">[退出]</a>
@@ -67,27 +67,27 @@
   .topbar {
     width: 100%;
     height: 38px;
-    font: 12px/38px "宋体";
+    font: 12px/38px "宋体", 'SimSun';
     background-color: #f7f7f7;
     color: #666;
   }
 
-  .topbar .leftArea {
-    height: 38px;
-    padding-left: 17px;
-    background: url(../assets/images/icon/collection.jpg) left center no-repeat;
+  .topbar .left-area {
     float: left;
   }
 
-  .topbar .leftArea a {
+  .topbar .left-area .collection {
+    padding-left: 17px;
+    background: url(../assets/images/icon/collection.jpg) left center no-repeat;
+    font-size: 12px;
     font-weight: bold;
   }
 
-  .rightArea {
+  .right-area {
     float: right;
   }
 
-  .rightArea .showUsername {
+  .right-area .showUsername {
     color: #C81623;
   }
 </style>
