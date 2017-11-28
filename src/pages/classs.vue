@@ -2,6 +2,7 @@
 
 <template>
   <div id="classs">
+    <collSite></collSite>
     <topBar></topBar>
     <headerBar></headerBar>
     <navBar></navBar>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+  import collSite from '../components/collSite';
   import topBar from '../components/topBar';
   import headerBar from '../components/headerBar';
   import navBar from '../components/navBar';
@@ -34,6 +36,7 @@
     name: 'classs',
 
     components: {
+      collSite,
       topBar,
       headerBar,
       navBar,
