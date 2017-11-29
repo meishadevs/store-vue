@@ -1,11 +1,11 @@
 <!-- 商品分类导航组件 -->
 
 <template>
-  <div class="shopClassBar" @mouseleave="selectIndex = 0">
+  <div class="shop-class-bar" @mouseleave="selectIndex = 0">
 
     <!-- 商品类别列表 s -->
-    <div class="shopClass-show">
-      <dl class="shopClass-item" @mouseenter="selectIndex = 1" v-bind:class="{current: selectIndex == 1}">
+    <div class="shop-class-show">
+      <dl class="shop-class-item" @mouseenter="selectIndex = 1" v-bind:class="{current: selectIndex == 1}">
         <dt>
           <router-link to="/select">手机</router-link>
            <router-link to="/select">数码</router-link>
@@ -17,7 +17,7 @@
           <router-link to="/select">智能设备</router-link>
         </dd>
       </dl>
-      <dl class="shopClass-item" @mouseenter="selectIndex = 2" v-bind:class="{current: selectIndex == 2}">
+      <dl class="shop-class-item" @mouseenter="selectIndex = 2" v-bind:class="{current: selectIndex == 2}">
         <dt>
           <router-link to="/select">电脑</router-link>
           <router-link to="/select">硬件外设</router-link>
@@ -30,7 +30,7 @@
           <router-link to="/select"> 平板</router-link>
         </dd>
       </dl>
-      <dl class="shopClass-item" @mouseenter="selectIndex = 3" v-bind:class="{current: selectIndex == 3}">
+      <dl class="shop-class-item" @mouseenter="selectIndex = 3" v-bind:class="{current: selectIndex == 3}">
         <dt>
           <router-link to="/select">大家电</router-link>
         </dt>
@@ -41,7 +41,7 @@
           <router-link to="/select">洗衣机</router-link>
         </dd>
       </dl>
-      <dl class="shopClass-item" @mouseenter="selectIndex = 4" v-bind:class="{current: selectIndex == 4}">
+      <dl class="shop-class-item" @mouseenter="selectIndex = 4" v-bind:class="{current: selectIndex == 4}">
         <dt>
           <router-link to="/select">厨房电器</router-link>
           <router-link to="/select">生活电器</router-link>
@@ -52,7 +52,7 @@
           <router-link to="/select">取暖设备</router-link>
         </dd>
       </dl>
-      <dl class="shopClass-item" @mouseenter="selectIndex = 5" v-bind:class="{current: selectIndex == 5}">
+      <dl class="shop-class-item" @mouseenter="selectIndex = 5" v-bind:class="{current: selectIndex == 5}">
         <dt>
           <router-link to="/select">食品</router-link>
           <router-link to="/select">饮料</router-link>
@@ -70,9 +70,9 @@
     <!-- 商品类别列表 e -->
 
     <!-- 商品列表 s -->
-    <div class="shopClass-list">
+    <div class="shop-class-list">
       <div class="cate-item" v-bind:style="{display: selectIndex == 1 ? 'block' : 'none'}">
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">手机通讯</dt>
           <dd>
             <router-link to="/select">手机</router-link>
@@ -81,7 +81,7 @@
             <router-link to="/select">手机维修</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">运营商</dt>
           <dd>
             <router-link to="/select">充话费/流量</router-link>
@@ -95,7 +95,7 @@
             <router-link to="/select">中国电信</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">手机配件</dt>
           <dd>
             <router-link to="/select">手机壳</router-link>
@@ -115,7 +115,7 @@
             <router-link to="/select">拍照配件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">摄影摄像</dt>
           <dd>
             <router-link to="/select">数码相机</router-link>
@@ -131,7 +131,7 @@
             <router-link to="/select">数码相框</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">数码配件</dt>
           <dd>
             <router-link to="/select">存储卡</router-link>
@@ -146,7 +146,7 @@
             <router-link to="/select">电池/充电器</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">影音娱乐</dt>
           <dd>
              <router-link to="/select">耳机/耳麦</router-link>
@@ -160,14 +160,14 @@
         </dl>
 
         <!-- 商品列表底部的两个按钮 s -->
-        <div class="shopList-links">
+        <div class="shop-list-links">
           <router-link to="/select">手机频道<span></span></router-link>
           <router-link to="/select">配件选购频道<span></span></router-link>
         </div>
         <!-- 商品列表底部的两个按钮 e -->
       </div>
       <div class="cate-item" v-bind:style="{display: selectIndex == 2 ? 'block' : 'none'}">
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">电脑整机</dt>
           <dd>
             <router-link to="/select">笔记本</router-link>
@@ -177,7 +177,7 @@
             <router-link to="/select">台式机</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">装机配件</dt>
           <dd>
             <router-link to="/select">CPU</router-link>
@@ -198,7 +198,7 @@
             <router-link to="/select">DIY小附件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">整机附件</dt>
           <dd>
             <router-link to="/select">电脑包</router-link>
@@ -216,7 +216,7 @@
             <router-link to="/select">电脑线材</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">电脑外设</dt>
           <dd>
             <router-link to="/select">鼠标</router-link>
@@ -230,7 +230,7 @@
             <router-link to="/select">手写板/绘图板</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">网络设备</dt>
           <dd>
             <router-link to="/select">路由器</router-link>
@@ -242,7 +242,7 @@
             <router-link to="/select">正版软件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">音频设备</dt>
           <dd>
             <router-link to="/select">音箱</router-link>
@@ -255,14 +255,14 @@
         </dl>
 
         <!-- 商品列表底部的两个按钮 s -->
-        <div class="shopList-links">
+        <div class="shop-list-links">
           <router-link to="/select">电脑整机频道<span></span></router-link>
           <router-link to="/select">硬件外设频道<span></span></router-link>
         </div>
         <!-- 商品列表底部的两个按钮 e -->
       </div>
       <div class="cate-item" v-bind:style="{display: selectIndex == 3 ? 'block' : 'none'}">
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">电视</dt>
           <dd>
             <router-link to="/select">合资品牌</router-link>
@@ -270,7 +270,7 @@
             <router-link to="/select">互联网品牌</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">空调</dt>
           <dd>
             <router-link to="/select">壁挂式空调</router-link>
@@ -279,7 +279,7 @@
             <router-link to="/select">空调配件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">冰箱</dt>
           <dd>
             <router-link to="/select">多门</router-link>
@@ -291,7 +291,7 @@
             <router-link to="/select">冰箱配件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">洗衣机</dt>
           <dd>
             <router-link to="/select">滚筒洗衣机</router-link>
@@ -301,7 +301,7 @@
             <router-link to="/select">洗衣机配件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">厨卫大电</dt>
           <dd>
             <router-link to="/select">油烟机</router-link>
@@ -314,7 +314,7 @@
             <router-link to="/select">嵌入式厨电</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">厨房小电</dt>
           <dd>
             <router-link to="/select">电饭煲</router-link>
@@ -339,14 +339,14 @@
         </dl>
 
         <!-- 商品列表底部的两个按钮 s -->
-        <div class="shopList-links">
+        <div class="shop-list-links">
           <router-link to="/select">家电频道<span></span></router-link>
           <router-link to="/select">智能生活频道<span></span></router-link>
         </div>
         <!-- 商品列表底部的两个按钮 e -->
       </div>
       <div class="cate-item" v-bind:style="{display: selectIndex == 4 ? 'block' : 'none'}">
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">生活电器 </dt>
           <dd>
             <router-link to="/select">取暖电器</router-link>
@@ -368,7 +368,7 @@
             <router-link to="/select">生活电器配件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">个护健康</dt>
           <dd>
             <router-link to="/select">剃须刀</router-link>
@@ -385,7 +385,7 @@
             <router-link to="/select">其它健康电器</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">家庭影音</dt>
           <dd>
             <router-link to="/select">家庭影院</router-link>
@@ -394,13 +394,13 @@
             <router-link to="/select">电视影音配件</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">进口电器</dt>
           <dd>
             <router-link to="/select">进口电器</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">厨具</dt>
           <dd>
             <router-link to="/select">烹饪锅具</router-link>
@@ -412,7 +412,7 @@
             <router-link to="/select">保温杯</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">厨房卫浴</dt>
           <dd>
             <router-link to="/select">水槽</router-link>
@@ -427,14 +427,14 @@
         </dl>
 
         <!-- 商品列表底部的两个按钮 s -->
-        <div class="shopList-links">
+        <div class="shop-list-links">
           <router-link to="/select">厨房电器频道<span></span></router-link>
           <router-link to="/select">生活电器频道<span></span></router-link>
         </div>
         <!-- 商品列表底部的两个按钮 e -->
       </div>
       <div class="cate-item" v-bind:style="{display: selectIndex == 5 ? 'block' : 'none'}">
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">新鲜水果</dt>
           <dd>
             <router-link to="/select">苹果</router-link>
@@ -451,7 +451,7 @@
             <router-link to="/select">进口水果</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">蔬菜蛋品</dt>
           <dd>
             <router-link to="/select">蛋品</router-link>
@@ -466,7 +466,7 @@
             <router-link to="/select">萝卜</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">精选肉类</dt>
           <dd>
             <router-link to="/select">猪肉</router-link>
@@ -482,7 +482,7 @@
             <router-link to="/select">鸡翅</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">海鲜水产</dt>
           <dd>
             <router-link to="/select">鱼类</router-link>
@@ -498,7 +498,7 @@
             <router-link to="/select">海产礼品</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">冷饮冻食</dt>
           <dd>
             <router-link to="/select">水饺/混沌</router-link>
@@ -512,7 +512,7 @@
             <router-link to="/select">低温乳品</router-link>
           </dd>
         </dl>
-        <dl class="shopList-item clearfix">
+        <dl class="shop-list-item clearfix">
           <dt class="fl">进口食品</dt>
           <dd>
             <router-link to="/select">牛奶</router-link>
@@ -525,7 +525,7 @@
         </dl>
 
         <!-- 商品列表底部的两个按钮 s -->
-        <div class="shopList-links">
+        <div class="shop-list-links">
           <router-link to="/select">
             食品饮料频道<span></span>
           </router-link>
@@ -544,7 +544,7 @@
   export default {
 
     //组件名称
-    name: 'shopClassBar',
+    name: 'shop-class-bar',
 
     data() {
       return {
@@ -557,20 +557,20 @@
 </script>
 
 <style scoped>
-  .shopClassBar {
+  .shop-class-bar {
     width: 189px;
     height: 320px;
     position: relative;
   }
 
-  .shopClass-show {
+  .shop-class-show {
     width: 100%;
     position: absolute;
     left: 0;
     top: 0;
   }
 
-  .shopClass-show .shopClass-item {
+  .shop-class-show .shop-class-item {
     width: 179px;
     height: 47px;
     padding: 15px 0 0 10px;
@@ -579,17 +579,17 @@
     border-bottom: solid 1px #3487f2;
   }
 
-  .shopClass-item dt {
+  .shop-class-item dt {
     height: 25px;
     background: url(../assets/images/icon/arrow-right.png) 162px center no-repeat;
     font-size: 14px;
   }
 
-  .shopClass-item dt a {
+  .shop-class-item dt a {
     color: #fff;
   }
 
-  .shopClass-item dt .aLink {
+  .shop-class-item dt .aLink {
     width: 48px;
     height: 20px;
     line-height: 20px;
@@ -600,16 +600,16 @@
     display: inline-block;
   }
 
-  .shopClass-item dd {
+  .shop-class-item dd {
     font-family: 宋体, SimSun;
     font-size: 12px;
   }
 
-  .shopClass-item dd a {
+  .shop-class-item dd a {
     color: #c2d9f8;
   }
 
-  .shopClass-show dl.current {
+  .shop-class-show dl.current {
     width: 178px;
     background-color: #fff;
     border-left: solid 1px #4593fd;
@@ -619,21 +619,21 @@
     position: relative;
   }
 
-  .shopClass-show dl.current dt {
+  .shop-class-show dl.current dt {
     background: none;
   }
 
-  .shopClass-show dl.current a {
+  .shop-class-show dl.current a {
     color: #000;
   }
 
-  .shopClass-show dl.current .aLink {
+  .shop-class-show dl.current .aLink {
     text-decoration: none;
     color: #fff;
   }
 
-  .shopClass-show dl a:hover,
-  .shopClass-show dl .aLink:hover {
+  .shop-class-show dl a:hover,
+  .shop-class-show dl .aLink:hover {
     color: #c81623;
   }
 
@@ -656,20 +656,20 @@
     border-bottom: 1px solid rgb(229, 229, 229);
   }
 
-  .shopList-item dt {
+  .shop-list-item dt {
     width: 68px;
     height: 27px;
     font-weight: bold;
     color: #4b88da;
   }
 
-  .shopList-item dd a {
+  .shop-list-item dd a {
     height: 26px;
     color: #666666;
     display: inline-block;
   }
 
-  .shopList-links a {
+  .shop-list-links a {
     padding: 0px 14px 0px 8px;
     margin: 6px 10px 6px 0px;
     background-color: rgb(39, 133, 230);
@@ -678,7 +678,7 @@
     display: inline-block;
   }
 
-  .shopList-links a span {
+  .shop-list-links a span {
     width: 5px;
     height: 8px;
     margin-left: 8px;
@@ -690,7 +690,7 @@
     color: #c81623;
   }
 
-  .shopList-links a:hover {
+  .shop-list-links a:hover {
     color: #fff;
   }
 </style>

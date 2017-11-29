@@ -3,32 +3,14 @@
 <template>
   <div class="banner" @mouseenter="stopPlay()" @mouseleave="play()">
     <ul class="banner-list">
-      <li v-bind:class="{fadeIn: currentIndex == 1}">
-        <a href="javascript:;">
-          <img src="../assets/images/banner/banner1.jpg" alt="轮播图">
-        </a>
-      </li>
-      <li v-bind:class="{fadeIn: currentIndex == 2}">
-        <a href="javascript:;">
-          <img src="../assets/images/banner/banner2.jpg" alt="轮播图">
-        </a>
-      </li>
-      <li v-bind:class="{fadeIn: currentIndex == 3}">
-        <a href="javascript:;">
-          <img src="../assets/images/banner/banner3.jpg" alt="轮播图">
-        </a>
-      </li>
-      <li v-bind:class="{fadeIn: currentIndex == 4}">
-        <a href="javascript:;">
-          <img src="../assets/images/banner/banner4.jpg" alt="轮播图">
+      <li v-for="(item, index) in bannerData" v-bind:class="{ fadeIn: currentIndex == index + 1 }">
+        <a v-bind:href = "item.url">
+          <img v-bind:src="item.image" alt="轮播图">
         </a>
       </li>
     </ul>
     <ol class="circle-list">
-      <li v-bind:class="{current: currentIndex == 1}" @click="currentIndex = 1"></li>
-      <li v-bind:class="{current: currentIndex == 2}" @click="currentIndex = 2"></li>
-      <li v-bind:class="{current: currentIndex == 3}" @click="currentIndex = 3"></li>
-      <li v-bind:class="{current: currentIndex == 4}" @click="currentIndex = 4"></li>
+      <li v-for="(item, index) in bannerData" v-bind:class="{ current: currentIndex == index + 1 }" @click="currentIndex = index + 1"></li>
     </ol>
   </div>
 </template>
@@ -41,8 +23,31 @@
 
     data() {
       return {
+
+        //当前选中的轮播图索引
         currentIndex: 1,
-        timer: null
+
+        //定时器
+        timer: null,
+
+        bannerData: [
+          {
+            image: '../src/assets/images/banner/banner1.jpg',
+            url: 'javascript:;'
+          },
+          {
+            image: '../src/assets/images/banner/banner2.jpg',
+            url: 'javascript:;'
+          },
+          {
+            image: '../src/assets/images/banner/banner3.jpg',
+            url: 'javascript:;'
+          },
+          {
+            image: '../src/assets/images/banner/banner4.jpg',
+            url: 'javascript:;'
+          }
+        ]
       };
     },
 
