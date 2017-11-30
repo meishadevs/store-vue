@@ -2,7 +2,7 @@
 <!-- 脚部组件 -->
 
 <template>
-  <footer class="footer">
+  <footer class="foot">
     <div class="inner-c">
 
       <!-- 网站信息 s -->
@@ -24,13 +24,13 @@
       <!-- 版权信息 e -->
 
       <!-- 底部小图标 s -->
-      <div class="footerIcon">
-        <a href="javascript:;" class="footerIcon-1">经营性网站备案中心</a>
-        <a href="javascript:;" class="footerIcon-2">可信网站信用评估</a>
-        <a href="javascript:;" target="_blank" class="footerIcon-3">网络警察提醒您</a>
-        <a href="javascript:;" class="footerIcon-4">诚信网站</a>
-        <a href="javascript:;" target="_blank" class="footerIcon-5">中国互联网举报中心</a>
-        <a href="javascript::" target="_blank" class="footerIcon-6">网络举报APP下载</a>
+      <div class="foot-icon">
+        <a href="javascript:;" class="foot-icon-1">经营性网站备案中心</a>
+        <a href="javascript:;" class="foot-icon-2">可信网站信用评估</a>
+        <a href="javascript:;" target="_blank" class="foot-icon-3">网络警察提醒您</a>
+        <a href="javascript:;" class="foot-icon-4">诚信网站</a>
+        <a href="javascript:;" target="_blank" class="foot-icon-5">中国互联网举报中心</a>
+        <a href="javascript:;" target="_blank" class="foot-icon-6">网络举报APP下载</a>
       </div>
       <!-- 底部小图标 e -->
 
@@ -42,12 +42,12 @@
   export default {
 
     //组件名称
-    name: 'footerBar'
+    name: 'foot'
   };
 </script>
 
 <style scoped>
-  .footer {
+  .foot {
     width: 100%;
     height: 224px;
     margin-top: 40px;
@@ -58,15 +58,15 @@
     display: table;
   }
 
-  .footer .info {
+  .foot .info {
     padding: 56px 0 12px 0;
   }
 
-  .footer .copyright {
+  .foot .copyright {
     padding-bottom: 38px;
   }
 
-  .footerIcon a {
+  .foot-icon a {
     width: 103px;
     height: 32px;
     background: url("../assets/images/icon/ico_footer.png");
@@ -76,31 +76,31 @@
     display: inline-block;
   }
 
-  .footerIcon .footerIcon-1 {
+  .foot-icon .foot-icon-1 {
     background-position: 0 -151px;
   }
 
-  .footerIcon .footerIcon-2 {
+  .foot-icon .foot-icon-2 {
     background-position: -104px -151px;
   }
 
-  .footerIcon .footerIcon-3 {
+  .foot-icon .foot-icon-3 {
     background-position: 0 -184px;
   }
 
-  .footerIcon .footerIcon-4 {
+  .foot-icon .foot-icon-4 {
     background-position: -105px -184px;
   }
 
-  .footerIcon .footerIcon-5 {
+  .foot-icon .foot-icon-5 {
     background-position: 0 -217px;
   }
 
-  .footerIcon .footerIcon-6 {
+  .foot-icon .foot-icon-6 {
     background-position: -104px -217px;
   }
 
-  .footer a {
+  .foot a {
     color: #000;
   }
 </style>

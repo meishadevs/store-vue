@@ -4,11 +4,11 @@
   <div id="index">
     <collSite></collSite>
     <topBar></topBar>
-    <headerBar></headerBar>
+    <myHead></myHead>
     <navBar></navBar>
-    <section class="shopclass-banner inner-c clearfix">
-      <div class="shopclass-box">
-        <shopClassBar></shopClassBar>
+    <section class="product-cate-banner inner-c clearfix">
+      <div class="product-cate-box">
+        <productCateNav></productCateNav>
       </div>
       <div class="banner-box">
         <banner></banner>
@@ -16,19 +16,19 @@
     </section>
     <indexShowProduct v-bind:productInfo="indexProductList[0]"></indexShowProduct>
     <indexShowProduct v-bind:productInfo="indexProductList[1]"></indexShowProduct>
-    <footerBar></footerBar>
+    <foot></foot>
   </div>
 </template>
 
 <script>
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
-  import headerBar from '../components/headerBar';
+  import myHead from '../components/myHead';
   import navBar from '../components/navBar';
-  import shopClassBar from '../components/shopClassBar';
+  import productCateNav from '../components/productCateNav';
   import banner from '../components/banner';
   import indexShowProduct from '../components/indexShowProduct';
-  import footerBar from '../components/footerBar';
+  import foot from '../components/foot';
   import {mapState, mapActions} from 'vuex';
 
   export default {
@@ -148,12 +148,12 @@
     components: {
       collSite,
       topBar,
-      headerBar,
+      myHead,
       navBar,
-      shopClassBar,
+      productCateNav,
       banner,
       indexShowProduct,
-      footerBar
+      foot
     },
 
     //计算属性
@@ -178,6 +178,7 @@
     mounted: function () {
       this.$nextTick(function () {
         document.title = '电商网站首页';
+        document.body.style.backgroundColor = '#fff';
         this.changeNavIndex(1);
       });
     }
@@ -185,11 +186,11 @@
 </script>
 
 <style scoped>
-  .shopclass-banner .shopclass-box {
+  .product-cate-banner .product-cate-box {
     float: left;
   }
 
-  .shopclass-banner .banner-box {
+  .product-cate-banner .banner-box {
     float: left;
   }
 </style>

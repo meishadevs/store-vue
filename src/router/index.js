@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import index from '../pages/index';
-import classs from '../pages/classs';
+import cate from '../pages/cate';
 import select from '../pages/select';
 
 Vue.use(VueRouter);
@@ -14,9 +14,9 @@ export default new VueRouter({
       component: index
     },
     {
-      path: '/classs',
-      name: 'classs',
-      component: classs
+      path: '/cate',
+      name: 'cate',
+      component: cate
     },
     {
       path: '/select',

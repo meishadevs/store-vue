@@ -1,12 +1,9 @@
 <!-- 头部组件 -->
 
 <template>
-  <div class="headerBar">
+  <header class="head">
     <div class="inner-c clearfix">
       <div class="logo">
-        <!--<a href="index.html">-->
-          <!--慕课网-->
-        <!--</a>-->
         <router-link to="/">慕课网</router-link>
       </div>
       <div class="search-box clearfix">
@@ -28,30 +25,30 @@
               ref = 'li'
               @click="setKeyWord($event)">
             <!-- 如果搜索结果中不存在用户输入的关键字 s -->
-            <p class="proName"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == -1">{{ result[0] }}</p>
+            <p class="product-name"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == -1">{{ result[0] }}</p>
             <!-- 如果搜索结果中不存在用户输入的关键字 e -->
             <!-- 如果关键字位于搜索结果的起始位置 s -->
-            <p class="proName"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == 0"><em>{{ keyWord }}</em>{{ result[0].substring(keyWord.length) }}</p>
+            <p class="product-name"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == 0"><em>{{ keyWord }}</em>{{ result[0].substring(keyWord.length) }}</p>
             <!-- 如果关键字位于搜索结果的起始位置 e -->
             <!-- 如果关键字位于搜索结果的结束位置 s -->
-            <p class="proName"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">{{ result[0].substring(0, result[0].length - keyWord.length) }}<em v-bind:value="index">{{ keyWord }}</em></p>
+            <p class="product-name"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">{{ result[0].substring(0, result[0].length - keyWord.length) }}<em v-bind:value="index">{{ keyWord }}</em></p>
             <!-- 如果关键字位于搜索结果的结束位置 e -->
             <!-- 关键字位于搜索结果的中间 s -->
-            <p class="proName" v-else>
+            <p class="product-name" v-else>
             </p>
             <!-- 关键字位于搜索结果的中间 e -->
-            <p class="resultNum"  v-bind:value="index">约{{ result[1] }}个商品</p>
+            <p class="result-num"  v-bind:value="index">约{{ result[1] }}个商品</p>
           </li>
         </ul>
       </div>
-      <div class="shopCar clearfix">
+      <div class="shop-cart clearfix">
         <a href="javascript:;">
-          <span class="shopText">购物车</span>
-          <span class="shopNum">{{ productNum }}</span>
+          <span class="shop-text">购物车</span>
+          <span class="shop-num">{{ productNum }}</span>
         </a>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -60,7 +57,7 @@
   export default {
 
     //组件名称
-    name: 'headerBar',
+    name: 'myHead',
 
     data() {
       return {
@@ -115,18 +112,18 @@
 </script>
 
 <style scoped>
-  .headerBar {
+  .head {
     width: 100%;
     height: 87px;
     background-color: #1d7ad9;
     display: table;
   }
 
-  .headerBar .logo {
+  .head .logo {
     padding-top: 14px;
   }
 
-  .headerBar .logo a {
+  .head .logo a {
     width: 112px;
     height: 59px;
     background: url(../assets/images/logo.png) no-repeat;
@@ -186,7 +183,7 @@
     color: #fff;
   }
 
-  .result-list .proName {
+  .result-list .product-name {
     float: left;
   }
 
@@ -194,14 +191,14 @@
     font-weight: normal;
   }
 
-  .result-list .resultNum {
+  .result-list .result-num {
     font-size: 12px;
     font-weight: normal;
     color: #999;
     float: right;
   }
 
-  .shopCar {
+  .shop-cart {
     width: 145px;
     height: 35px;
     margin: 23px 0px 0px 31px;
@@ -210,23 +207,23 @@
     float: left;
   }
 
-  .shopCar a {
+  .shop-cart a {
     width: 100%;
     height: 100%;
     color: #fff;
     display: inline-block;
   }
 
-  .shopCar .shopText {
+  .shop-cart .shop-text {
     width: 47px;
     height: 100%;
     padding-left: 40px;
     border-right: solid 1px #e27a00;
-    background: url(../assets/images/icon/shopcar.jpg) 10px center no-repeat;
+    background: url(../assets/images/icon/shopcart.jpg) 10px center no-repeat;
     float: left;
   }
 
-  .shopCar .shopNum {
+  .shop-cart .shop-num {
     width: 27px;
     height: 100%;
     padding-right: 29px;

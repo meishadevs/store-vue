@@ -1,14 +1,14 @@
 <!-- 分类菜单组件 -->
 
 <template>
-  <div class="class-menu">
+  <div class="cate-menu">
     <h3 class="product-title">
-      <a href="javascript:;" v-for="title in classInfo.headTitle">{{ title }}、</a>
+      <a href="javascript:;" v-for="title in cateData.headTitle">{{ title }}、</a>
     </h3>
-    <dl class="product-item" v-for="item in classInfo.classList">
-      <dt>{{ item.classTitle }}</dt>
+    <dl class="product-item" v-for="item in cateData.cateList">
+      <dt>{{ item.cateTitle }}</dt>
       <dd>
-        <router-link to="/select" v-for="content in item.classContent" :key="item.id">{{ content }}</router-link>
+        <router-link to="/select" v-for="content in item.cateContent" :key="item.id">{{ content }}</router-link>
       </dd>
     </dl>
   </div>
@@ -18,18 +18,18 @@
   export default {
 
     //组件名称
-    name: 'classMenu',
+    name: 'cateMenu',
 
     data() {
       return {
 
-        //商品分类信息
-        classInfo: {
+        //商品分类数据
+        cateData: {
           'headTitle': ['手机', '相机', '数码'],
-          'classList': [
+          'cateList': [
             {
-              'classTitle': '手机通讯',
-              'classContent': [
+              'cateTitle': '手机通讯',
+              'cateContent': [
                 '全部手机',
                 '1080P高清',
                 '双卡手机',
@@ -40,8 +40,8 @@
               ]
             },
             {
-              'classTitle': '数码相机',
-              'classContent': [
+              'cateTitle': '数码相机',
+              'cateContent': [
                 '卡片机',
                 '中长焦',
                 '专业便',
@@ -51,8 +51,8 @@
               ]
             },
             {
-              'classTitle': '单反',
-              'classContent': [
+              'cateTitle': '单反',
+              'cateContent': [
                 '全部',
                 '佳能',
                 '尼康',
@@ -61,15 +61,15 @@
               ]
             },
             {
-              'classTitle': '镜头',
-              'classContent': [
+              'cateTitle': '镜头',
+              'cateContent': [
                 '单反镜头',
                 '微单镜头'
               ]
             },
             {
-              'classTitle': '摄像机',
-              'classContent': [
+              'cateTitle': '摄像机',
+              'cateContent': [
                 '全部',
                 '索尼',
                 '松下',
@@ -78,8 +78,8 @@
               ]
             },
             {
-              'classTitle': '摄像配件',
-              'classContent': [
+              'cateTitle': '摄像配件',
+              'cateContent': [
                 '相机包',
                 '相机电池',
                 '贴膜',
@@ -94,15 +94,15 @@
               ]
             },
             {
-              'classTitle': '数码存储',
-              'classContent': [
+              'cateTitle': '数码存储',
+              'cateContent': [
                 '刻录盘片',
                 '盘片附件'
               ]
             },
             {
-              'classTitle': '电子教育',
-              'classContent': [
+              'cateTitle': '电子教育',
+              'cateContent': [
                 '电子书',
                 '盒电子词典',
                 '幼儿教育',
@@ -118,40 +118,40 @@
 </script>
 
 <style scoped>
-  .class-menu {
+  .cate-menu {
     width: 183px;
     border: solid 1px #d7d7d7;
     background-color: #f3f3f3;
   }
 
-  .class-menu .product-title {
+  .cate-menu .product-title {
     height: 34px;
     font: bold 14px/34px "宋体";
     text-align: center;
     border-bottom: solid 1px #cdcdcd;
   }
 
-  .class-menu .product-title a {
+  .cate-menu .product-title a {
     color: #555;
   }
 
-  .class-menu .product-item {
+  .cate-menu .product-item {
     padding: 10px 0 0 20px;
     border-bottom: dotted 1px #cdcdcd;
   }
 
-  .class-menu .product-item dt {
+  .cate-menu .product-item dt {
     height: 30px;
     font-family: "宋体";
     font-weight: bold;
     color: #555;
   }
 
-  .class-menu .product-item dd {
+  .cate-menu .product-item dd {
     font-size: 0;
     font-family: "宋体";
   }
-  .class-menu .product-item dd a {
+  .cate-menu .product-item dd a {
     width: 81px;
     height: 25px;
     font-size: 12px;
@@ -163,7 +163,7 @@
     color: #c81623;
   }
 
-  .class-menu dl:nth-last-child(1){
+  .cate-menu dl:nth-last-child(1){
     border-bottom: none;
   }
 </style>

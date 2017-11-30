@@ -22,7 +22,22 @@ const state = {
   productNum: 0,
 
   //当前选中的导航项的索引
-  currentNavIndex: 1
+  currentNavIndex: 1,
+
+  //品牌
+  brand: '品牌',
+
+  //屏幕尺寸
+  screenSize: '屏幕尺寸',
+
+  //操作系统
+  operatingSystem: '操作系统',
+
+  //运行内存
+  runningMemory: '运行内容',
+
+  //网络类型
+  networkType: '网络类型'
 };
 
 export default new Vuex.Store({

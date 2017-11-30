@@ -1,55 +1,55 @@
 <!-- 商品分类页 -->
 
 <template>
-  <div id="classs">
+  <div id="cate">
     <collSite></collSite>
     <topBar></topBar>
-    <headerBar></headerBar>
+    <myHead></myHead>
     <navBar></navBar>
     <section class="wrapper inner-c clearfix">
       <div class="left-area">
-        <classMenu></classMenu>
+        <cateMenu></cateMenu>
       </div>
       <div class="right-area">
         <banner></banner>
-        <classShowProduct v-bind:productList="classProductList[0]"></classShowProduct>
-        <classShowProduct v-bind:productList="classProductList[1]"></classShowProduct>
+        <cateShowProduct v-bind:productList="cateProductList[0]"></cateShowProduct>
+        <cateShowProduct v-bind:productList="cateProductList[1]"></cateShowProduct>
       </div>
     </section>
-    <footerBar></footerBar>
+    <foot></foot>
   </div>
 </template>
 
 <script>
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
-  import headerBar from '../components/headerBar';
+  import myHead from '../components/myHead';
   import navBar from '../components/navBar';
-  import classMenu from '../components/classMenu';
+  import cateMenu from '../components/cateMenu';
   import banner from '../components/banner';
-  import footerBar from '../components/footerBar';
-  import classShowProduct from '../components/classShowProduct';
+  import cateShowProduct from '../components/cateShowProduct';
+  import foot from '../components/foot';
 
   export default {
 
     //组件名称
-    name: 'classs',
+    name: 'cate',
 
     components: {
       collSite,
       topBar,
-      headerBar,
+      myHead,
       navBar,
-      classMenu,
+      cateMenu,
       banner,
-      classShowProduct,
-      footerBar
+      cateShowProduct,
+      foot
     },
 
     data() {
       return {
         //商品分类页的商品列表
-        classProductList: [
+        cateProductList: [
           {
             'title': '数码影像',
             'content': [
@@ -180,6 +180,7 @@
     mounted: function () {
       this.$nextTick(function () {
         document.title = '商品分类页';
+        document.body.style.backgroundColor = '#fff';
       });
     }
   };

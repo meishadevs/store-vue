@@ -12,12 +12,12 @@
       </div>
     </div>
     <div class="product-content clearfix">
-      <div class="leftArea fl">
+      <div class="left-area fl">
         <a href="javascript:;">
           <img v-bind:src="productInfo.leftImage" alt="">
         </a>
       </div>
-      <div class="rightArea">
+      <div class="right-area">
         <ul class="productList-top">
           <li class="product-item" v-for="product in productInfo.topProduct">
             <a href="javascript:;">
@@ -55,7 +55,6 @@
     //初始化
     mounted: function () {
       this.$nextTick(function () {
-        console.log('productInfo:', this.productInfo);
       });
     }
   };
@@ -91,7 +90,7 @@
     text-decoration: underline;
   }
 
-  .product-content .rightArea {
+  .product-content .right-area {
     width: 810px;
     border-bottom: solid 3px #ff7201;
     float: left;
@@ -171,11 +170,11 @@
     color: #000;
   }
 
-  .rightArea li:nth-child(1) {
+  .right-area li:nth-child(1) {
     margin-left: 0;
   }
 
-  .rightArea li:nth-last-child(1) {
+  .right-area li:nth-last-child(1) {
     width: 208px;
   }
 
@@ -185,9 +184,9 @@
     position: relative;
   }
 
-  .rightArea .product-item:hover h3,
-  .rightArea .product-item:hover p,
-  .rightArea .product-item:hover span {
+  .right-area .product-item:hover h3,
+  .right-area .product-item:hover p,
+  .right-area .product-item:hover span {
     color: #c81623;
   }
 </style>
