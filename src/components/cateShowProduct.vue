@@ -87,7 +87,7 @@
   .product-item .product-comment .star {
     width: 13px;
     height: 12px;
-    background: url("../assets/images/star.png");
+    background: url("../../static/images/star.png");
     display: inline-block;
   }
 

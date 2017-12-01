@@ -32,19 +32,19 @@
 
         bannerData: [
           {
-            image: '../src/assets/images/banner/banner1.jpg',
+            image: '../static/images/banner/banner1.jpg',
             url: 'javascript:;'
           },
           {
-            image: '../src/assets/images/banner/banner2.jpg',
+            image: '../static/images/banner/banner2.jpg',
             url: 'javascript:;'
           },
           {
-            image: '../src/assets/images/banner/banner3.jpg',
+            image: '../static/images/banner/banner3.jpg',
             url: 'javascript:;'
           },
           {
-            image: '../src/assets/images/banner/banner4.jpg',
+            image: '../static/images/banner/banner4.jpg',
             url: 'javascript:;'
           }
         ]

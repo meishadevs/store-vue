@@ -126,7 +126,7 @@
   .head .logo a {
     width: 112px;
     height: 59px;
-    background: url(../assets/images/logo.png) no-repeat;
+    background: url(../../static/images/logo.png) no-repeat;
     text-indent: -1000px;
     float: left;
   }
@@ -219,7 +219,7 @@
     height: 100%;
     padding-left: 40px;
     border-right: solid 1px #e27a00;
-    background: url(../assets/images/icon/shopcart.jpg) 10px center no-repeat;
+    background: url(../../static/images/icon/shopcart.jpg) 10px center no-repeat;
     float: left;
   }
 
@@ -229,7 +229,7 @@
     padding-right: 29px;
     text-align: right;
     border-left: solid 1px #ff9c01;
-    background: url(../assets/images/icon/arrow.jpg) 33px center no-repeat;
+    background: url(../../static/images/icon/arrow.jpg) 33px center no-repeat;
     float: left;
   }
 </style>

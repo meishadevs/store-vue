@@ -69,7 +69,7 @@
   .foot-icon a {
     width: 103px;
     height: 32px;
-    background: url("../assets/images/icon/ico_footer.png");
+    background: url("../../static/images/icon/ico_footer.png");
     background-repeat: no-repeat;
     text-indent: -1000px;
     overflow: hidden;

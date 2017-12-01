@@ -100,7 +100,7 @@
   .mask .top .close-dialog {
     width: 20px;
     height: 20px;
-    background: url(../assets/images/icon/cls.gif) no-repeat 0 0;
+    background: url(../../static/images/icon/cls.gif) no-repeat 0 0;
     display: inline-block;
   }
 
@@ -110,7 +110,7 @@
     margin: 0 10px 10px;
     padding-left: 50px;
     font-size: 14px;
-    background: url(../assets/images/icon/info.gif) left center no-repeat;
+    background: url(../../static/images/icon/info.gif) left center no-repeat;
   }
 
   .mask .bottom {

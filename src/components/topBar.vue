@@ -78,7 +78,7 @@
 
   .topbar .left-area .collection {
     padding-left: 17px;
-    background: url(../assets/images/icon/collection.jpg) left center no-repeat;
+    background: url(../../static/images/icon/collection.jpg) left center no-repeat;
     font-size: 12px;
     font-weight: bold;
   }

@@ -72,7 +72,7 @@
     height: 35px;
     padding-left: 40px;
     color: rgb(255, 255, 255);
-    background: url(../assets/images/icon/arrow-down.png) 148px center no-repeat;
+    background: url(../../static/images/icon/arrow-down.png) 148px center no-repeat;
     font: 16px/35px 微软雅黑, "microsoft yahei";
   }
 

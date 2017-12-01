@@ -276,7 +276,7 @@
 
   .product-cate-item dt {
     height: 25px;
-    background: url(../assets/images/icon/arrow-right.png) 162px center no-repeat;
+    background: url(../../static/images/icon/arrow-right.png) 162px center no-repeat;
     font-size: 14px;
   }
 
@@ -288,7 +288,7 @@
     width: 48px;
     height: 20px;
     line-height: 20px;
-    background: url(../assets/images/icon/aLink.png) left center no-repeat;
+    background: url(../../static/images/icon/aLink.png) left center no-repeat;
     text-align: center;
     text-decoration: underline;
     font-size: 12px;
@@ -378,7 +378,7 @@
     width: 5px;
     height: 8px;
     margin-left: 8px;
-    background: url(../assets/images/icon/arrow.png) left center no-repeat;
+    background: url(../../static/images/icon/arrow.png) left center no-repeat;
     display: inline-block;
   }
 
