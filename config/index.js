@@ -12,17 +12,19 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {},
 
-    // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    //设置主机名
+    host: 'localhost',
+
+    //设置端口号
+    port: 8080,
+
+    //是否自动启动浏览器
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    // Use Eslint Loader?
-    // If true, your code will be linted during bundling and
-    // linting errors and warnings will be shown in the console.
+    //是否使用Eslint
     useEslint: true,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.

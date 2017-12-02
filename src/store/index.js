@@ -25,19 +25,19 @@ const state = {
   currentNavIndex: 1,
 
   //品牌
-  brand: '品牌',
+  brand: null,
 
   //屏幕尺寸
-  screenSize: '屏幕尺寸',
+  screenSize: null,
 
   //操作系统
-  operatingSystem: '操作系统',
+  operatingSystem: null,
 
   //运行内存
-  runningMemory: '运行内容',
+  runningMemory: null,
 
   //网络类型
-  networkType: '网络类型'
+  networkType: null
 };
 
 export default new Vuex.Store({

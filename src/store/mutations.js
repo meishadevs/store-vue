@@ -25,5 +25,30 @@ export default {
   //改变当前选中的导航项的索引
   changeNavIndex: function (state, currentIndex) {
     state.currentNavIndex = currentIndex;
+  },
+
+  //设置品牌
+  setBrand: function (state, brand) {
+    state.brand = brand;
+  },
+
+  //设置屏幕尺寸
+  setScreenSize: function (state, screenSize) {
+    state.screenSize = screenSize;
+  },
+
+  //设置操作系统
+  setOperatingSystem: function (state, operatingSystem) {
+    state.operatingSystem = operatingSystem;
+  },
+
+  //设置运行内存
+  setRunningMemory: function (state, runningMemory) {
+    state.runningMemory = runningMemory;
+  },
+
+  //设置网络类型
+  setNetworkType: function (state, networkType) {
+    state.networkType = networkType;
   }
 };

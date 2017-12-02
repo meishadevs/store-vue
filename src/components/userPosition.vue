@@ -1,3 +1,4 @@
+
 <!-- 用户位置组件 -->
 
 <template>
@@ -12,25 +13,25 @@
           手机
         </strong>
       </div>
-      <div class="brand">
+      <div class="brand" v-if="brand != null">
         <span>&nbsp;&gt;&nbsp;</span>
-        <a href="javascript:;">品牌：<em>{{ brand }}</em></a>
+        <a href="javascript:;" @click="setBrand(null)">品牌：<em>{{ brand }}</em></a>
       </div>
-      <div class="screen-size">
+      <div class="screen-size" v-if="screenSize != null">
         <span>&nbsp;&gt;&nbsp;</span>
-        <a href="javascript:;">屏幕尺寸：<em>{{ screenSize }}</em></a>
+        <a href="javascript:;" @click="setScreenSize(null)">屏幕尺寸：<em>{{ screenSize }}</em></a>
       </div>
-      <div class="operating-system">
+      <div class="operating-system" v-if="operatingSystem != null">
         <span>&nbsp;&gt;&nbsp;</span>
-        <a href="javascript:;">操作系统：<em>Android</em></a>
+        <a href="javascript:;" @click="setOperatingSystem(null)">操作系统：<em>{{ operatingSystem }}</em></a>
       </div>
-      <div class="running-memory">
+      <div class="running-memory" v-if="runningMemory != null">
         <span>&nbsp;&gt;&nbsp;</span>
-        <a href="javascript:;">运行内存：<em>{{ runningMemory }}</em></a>
+        <a href="javascript:;" @click="setRunningMemory(null)">运行内存：<em>{{ runningMemory }}</em></a>
       </div>
-      <div class="network-type">
+      <div class="network-type" v-if="networkType != null">
         <span>&nbsp;&gt;&nbsp;</span>
-        <a href="javascript:;">网络类型：<em>{{ networkType }}</em></a>
+        <a href="javascript:;" @click="setNetworkType(null)">网络类型：<em>{{ networkType }}</em></a>
       </div>
     </div>
   </section>
@@ -48,7 +49,17 @@
       'operatingSystem',
       'runningMemory',
       'networkType'
-    ])
+    ]),
+
+    methods: {
+      ...mapActions([
+        'setBrand',
+        'setScreenSize',
+        'setOperatingSystem',
+        'setRunningMemory',
+        'setNetworkType'
+      ])
+    }
   };
 </script>
 
@@ -86,7 +97,7 @@
   .operating-system,
   .running-memory,
   .network-type {
-    display: none;
+    /*display: none;*/
   }
 
   .user-position a:hover {
