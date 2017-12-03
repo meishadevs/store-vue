@@ -15,15 +15,17 @@
       <div class="right-area">
         <productFilter></productFilter>
         <div class="hr-15"></div>
-        <div class="add-info">
-          全部商品
-          <div class="show-page">
-            <span class="now-page">{{ curPage }}</span>
-            <span class="slash">/</span>
-            <span class="total-page">{{ totalPage }}</span>
-          </div>
-          <div class="show-data">
-            共&nbsp;<span class="product-num">{{ totalProduct }}</span>&nbsp;件商品
+        <div class="add-info clearfix">
+          <p class="left-title">全部商品</p>
+          <div class="right-content">
+            <div class="show-data">
+              共&nbsp;<span class="product-num">{{ totalProduct }}</span>&nbsp;件商品
+            </div>
+            <div class="show-page">
+              <span class="now-page">{{ curPage }}</span>
+              <span class="slash">/</span>
+              <span class="total-page">{{ totalPage }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -32,6 +34,7 @@
 </template>
 
 <script>
+  import Vue from 'vue';
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
   import myHead from '../components/myHead';
@@ -74,6 +77,9 @@
       this.$nextTick(function () {
         document.title = '商品选择页';
         document.body.style.backgroundColor = '#f0f0f0';
+
+        var bus = new Vue();
+
       });
     }
   };
@@ -109,21 +115,29 @@
     border: solid 1px #d9d9d9;
   }
 
-  .add-info .show-data {
-    margin-right: 10px;
-    color: #999;
-    font-weight: normal;
+  .add-info .left-title {
+    float: left;
+  }
+
+  .add-info .right-content {
     float: right;
+  }
+
+  .right-content .show-data {
+    margin-right: 10px;
+    font-weight: normal;
+    color: #999;
+    float: left;
   }
 
   .show-data .product-num {
     color: #e4393c;
   }
 
-  .add-info .show-page {
+  .right-content .show-page {
     margin-right: 50px;
     font-weight: normal;
-    float: right;
+    float: left;
   }
 
   .show-page .now-page {

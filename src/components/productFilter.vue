@@ -82,7 +82,7 @@
           },
           {
             'type': '运行内存',
-            'content': ['2G', '3G', '4G', '6G', '无']
+            'content': ['2G', '3G', '4G', '6G', '8G']
           },
           {
             'type': '网络类型',
@@ -128,8 +128,8 @@
     width: 84px;
     margin-right: 40px;
     font-size: 14px;
-    color: #999999;
     text-align: right;
+    color: #999999;
   }
 
   .product-filter ul {
