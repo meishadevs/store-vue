@@ -28,6 +28,7 @@
             </div>
           </div>
         </div>
+        <selectShowProduct></selectShowProduct>
       </div>
     </section>
   </div>
@@ -43,6 +44,7 @@
   import productCate from '../components/productCate';
   import selectProductList from '../components/selectProductList';
   import productFilter from '../components/productFilter';
+  import selectShowProduct from '../components/selectShowProduct';
 
   export default {
 
@@ -55,7 +57,8 @@
       userPosition,
       productCate,
       selectProductList,
-      productFilter
+      productFilter,
+      selectShowProduct
     },
 
     data() {

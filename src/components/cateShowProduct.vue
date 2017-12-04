@@ -8,7 +8,7 @@
     </div>
     <ul class="product-list clearfix">
       <li class="product-item" v-for="product in productList.content">
-        <div class="shopImg">
+        <div class="product-image">
           <a href="javascript:;">
             <img v-bind:src="product.image" alt="商品">
           </a>
@@ -36,7 +36,6 @@
 
     data() {
       return {
-        dataV: ''
       };
     }
   };

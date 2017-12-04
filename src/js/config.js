@@ -15,7 +15,7 @@ export default {
     Vue.prototype.advisoryUrl = Vue.prototype.serverUrl + 'advisory.php';
 
     //获得商品信息的url
-    Vue.prototype.productUrl = Vue.prototype.serverUrl + 'product.php';
+    Vue.prototype.productInfoUrl = Vue.prototype.serverUrl + 'product.php?flag=2&amount=';
 
     //注册账号的url
     Vue.prototype.registerUrl = Vue.prototype.serverUrl + 'register.php';
@@ -34,11 +34,5 @@ export default {
 
     //每页展示商品咨询信息的条数
     Vue.prototype.advisoryAmount = 5;
-
-    //每页第一条商品信息的下标
-    Vue.prototype.productStartIndex = 0;
-
-    //每页展示的商品信息的条数
-    Vue.prototype.productAmount = 6;
   }
 };

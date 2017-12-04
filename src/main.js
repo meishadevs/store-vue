@@ -17,6 +17,7 @@ Vue.config.productionTip = false;
 Vue.prototype.axios = axios;
 Vue.prototype.qs = qs;
 Vue.prototype.jsonp = jsonp;
+Vue.prototype.bus = new Vue({});
 
 //创建一个Vue实例
 let vm = new Vue({
