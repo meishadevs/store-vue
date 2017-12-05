@@ -19,7 +19,12 @@
 
 <script>
   export default {
+
+    //组件名称
     name: 'selectShowProduct',
+
+    //父组件传递过来的数据
+    props: ['curPage', 'numProduct'],
 
     data() {
       return {
@@ -30,11 +35,8 @@
         //每页第一条商品信息的下标
         productStartIndex: 0,
 
-        //每页展示的商品信息的条数
-        productAmount: 6,
-
-        //当前展示的是第几页商品
-        curPage: 1
+        //当前展示的是第indexPage页商品信息
+        indexPage: 0
       };
     },
 
@@ -42,9 +44,27 @@
     mounted: function () {
       this.$nextTick(function () {
 
+        this.indexPage = this.curPage;
+
         //获得商品信息
         this.getProductInfo();
+
+        //监听翻页组件中传递过来的事件
+        this.bus.$on('change-page', (data) => {
+          this.indexPage = data;
+        });
       });
+    },
+
+    //监听器
+    watch: {
+
+      //如果indexPage发生改变，这个函数就会调用
+      indexPage: function () {
+
+        //获得商品信息
+        this.getProductInfo();
+      }
     },
 
     methods: {
@@ -53,10 +73,10 @@
       getProductInfo: function () {
 
         //计算每页展示的第一条商品信息的下标
-        this.productStartIndex = (this.curPage - 1) * this.productAmount;
+        this.productStartIndex = (this.indexPage - 1) * this.numProduct;
 
         //发送get请求，获得商品信息
-        this.jsonp(this.productInfoUrl + this.productAmount + '&startIndex=' + this.productStartIndex, null, (err, data) => {
+        this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productStartIndex, null, (err, data) => {
           if (err) {
             console.error("error:", err.message);
           } else {

@@ -14,6 +14,9 @@ export default {
     //获得商品咨询信息的url
     Vue.prototype.advisoryUrl = Vue.prototype.serverUrl + 'advisory.php';
 
+    //获得商品数量的url
+    Vue.prototype.productNumUrl = Vue.prototype.serverUrl + 'product.php?flag=1';
+
     //获得商品信息的url
     Vue.prototype.productInfoUrl = Vue.prototype.serverUrl + 'product.php?flag=2&amount=';
 

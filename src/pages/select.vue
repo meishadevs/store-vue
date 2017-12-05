@@ -1,4 +1,5 @@
-<!-- 商品筛选页 -->
+
+<!-- 商品选择页 -->
 
 <template>
   <div class="select">
@@ -28,9 +29,11 @@
             </div>
           </div>
         </div>
-        <selectShowProduct></selectShowProduct>
+        <selectShowProduct v-bind:curPage="curPage" v-bind:numProduct="numProduct"></selectShowProduct>
+        <ratePage v-bind:totalPage="totalPage" v-bind:curPage="curPage"></ratePage>
       </div>
     </section>
+    <foot></foot>
   </div>
 </template>
 
@@ -45,6 +48,8 @@
   import selectProductList from '../components/selectProductList';
   import productFilter from '../components/productFilter';
   import selectShowProduct from '../components/selectShowProduct';
+  import ratePage from '../components/ratePage';
+  import foot from '../components/foot';
 
   export default {
 
@@ -58,17 +63,22 @@
       productCate,
       selectProductList,
       productFilter,
-      selectShowProduct
+      selectShowProduct,
+      ratePage,
+      foot
     },
 
     data() {
       return {
 
         //商品总数
-        totalProduct: 54,
+        totalProduct: 0,
+
+        //每页展示的商品数量
+        numProduct: 6,
 
         //一共有多少页商品
-        totalPage: 9,
+        totalPage: 0,
 
         //当前展示的第几页商品
         curPage: 1
@@ -81,9 +91,35 @@
         document.title = '商品选择页';
         document.body.style.backgroundColor = '#f0f0f0';
 
-        var bus = new Vue();
+        //获得商品信息
+        this.getProductInfo();
 
+        //监听翻页组件中传递过来的事件
+        this.bus.$on('change-page', (data) => {
+          this.curPage = data;
+        });
       });
+    },
+
+    methods: {
+
+      //获得商品信息
+      getProductInfo: function () {
+
+        //发送get请求，获得商品数量
+        this.jsonp(this.productNumUrl, null, (err, data) => {
+          if (err) {
+            console.error("error:", err.message);
+          } else {
+
+            //获得商品的总数
+            this.totalProduct = data;
+
+            //计算一共有多少页
+            this.totalPage = this.totalProduct / this.numProduct;
+          }
+        });
+      }
     }
   };
 </script>

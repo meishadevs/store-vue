@@ -1,0 +1,127 @@
+
+<!-- 翻页组件 -->
+
+<template>
+  <!-- 如果当前处于第一页 s -->
+  <div class="rate-page" v-if="indexPage == 1">
+    <span class="page-prev">&lt;&lt;上一页</span>
+    <span>1</span>
+    <a href="javascript:;" v-for="page in createArrNum(2, totalPage)" @click="changePage(page)">{{ page }}</a>
+    <a href="javascript:;" class="page-next" @click="changePage(++indexPage)">下一页&gt;&gt;</a>
+  </div>
+  <!-- 如果当前处于第一页 e -->
+  <!-- 如果当前处于最后一页 s -->
+  <div class="rate-page" v-else-if="indexPage == totalPage">
+    <a href="javascript:;" class="page-prev" @click="changePage(--indexPage)">&lt;&lt;上一页</a>
+    <a href="javascript:;" v-for="page in createArrNum(1, totalPage)" @click="changePage(page)">{{ page }}</a>
+    <span>{{ totalPage }}</span>
+    <span class="page-next">下一页&gt;&gt;</span>
+  </div>
+  <!-- 如果当前处于最后一页 e -->
+  <!-- 如果当前即不处于第一页也不处于最后一页 s -->
+  <div class="rate-page" v-else>
+    <a class="page-prev" href="javascript:;" @click="changePage(--indexPage)">&lt;&lt;上一页</a>
+    <a href="javascript:;" v-for="page in createArrNum(1, indexPage)" @click="changePage(page)">{{ page }}</a>
+    <span>{{ indexPage }}</span>
+    <a href="javascript:;" v-for="page in createArrNum(indexPage + 1, totalPage - indexPage + 1)" @click="changePage(page)">{{ page }}</a>
+    <a class="page-next" href="javascript:;" @click="changePage(++indexPage)">下一页&gt;&gt;</a>
+  </div>
+  <!-- 如果当前即不处于第一页也不处于最后一页 e -->
+</template>
+
+<script>
+  export default {
+
+    //组件名称
+    name: 'ratePage',
+
+    //父组件传递过来的数据
+    props: ['totalPage', 'curPage'],
+
+    data() {
+      return {
+        //当前展示的是第indexPage数据
+        indexPage: 1
+      };
+    },
+
+    //初始化
+    mounted: function () {
+      this.$nextTick(function () {
+        this.indexPage = this.curPage;
+      });
+    },
+
+    //计算属性
+    methods: {
+
+      //创建数组,保存分页按钮上的数字
+      createArrNum: function (value, totalPage) {
+        var arr = [];
+        for (let i = 0; i < totalPage - 1; i++) {
+          arr[i] = value + i;
+        }
+
+        return arr;
+      },
+
+      //实现翻页逻辑
+      changePage: function (indexPage) {
+        this.indexPage = indexPage;
+
+        //触发翻页组件中的事件
+        this.bus.$emit('change-page', this.indexPage);
+      }
+    }
+  };
+</script>
+
+<style scoped>
+  .rate-page {
+    font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+    text-align: center;
+    font-size: 0;
+  }
+
+  .rate-page .page-prev {
+    border-width: 1px;
+  }
+
+  .rate-page a,
+  .rate-page span {
+    height: 27px;
+    line-height: 27px;
+    padding: 5px 14px;
+    margin-right: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    border-width: 1px 1px 1px 1px;
+    vertical-align: top;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #2953a6;
+    display: inline-block;
+  }
+
+  .rate-page span {
+    color: #fff;
+    background-color: #f40;
+  }
+
+  .rate-page span.page-prev,
+  .rate-page span.page-next {
+    color: #ccc;
+    background-color: #efefef;
+  }
+
+  .rate-page a:hover {
+    color: #f40;
+    border: solid 1px #f40;
+  }
+</style>
