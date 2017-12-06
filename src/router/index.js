@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import index from '../pages/index';
 import cate from '../pages/cate';
 import select from '../pages/select';
+import proinfo from '../pages/proinfo';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ export default new VueRouter({
       path: '/select',
       name: 'select',
       component: select
+    },
+    {
+      path: '/proinfo',
+      name: 'proinfp',
+      component: proinfo
     }
   ]
 });

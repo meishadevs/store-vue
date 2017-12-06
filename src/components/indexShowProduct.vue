@@ -9,34 +9,34 @@
       </div>
       <h3 class="fl">{{ productInfo.title }}</h3>
       <div class="more fr">
-        <a href="javascript:;">{{ productInfo.more }}&gt;&gt;</a>
+        <router-link to="/select">{{ productInfo.more }}&gt;&gt;</router-link>
       </div>
     </div>
     <div class="product-content clearfix">
       <div class="left-area fl">
-        <a href="javascript:;">
+        <router-link to="/proinfo">
           <img v-bind:src="productInfo.leftImage" alt="">
-        </a>
+        </router-link>
       </div>
       <div class="right-area">
         <ul class="productList-top">
           <li class="product-item" v-for="product in productInfo.topProduct">
-            <a href="javascript:;">
+            <router-link to="/proinfo">
               <img v-bind:src="product.image" alt="手机">
               <h3 class="product-name">{{ product.name }}</h3>
               <p class="price">{{ product.price }}元</p>
-            </a>
+            </router-link>
           </li>
         </ul>
         <ol class="productList-bottom">
           <li class="product-item" v-for="product in productInfo.bottomProduct">
-            <a class="fl" href="javascript:;">
+            <router-link class="fl" to="/proinfo">
               <img v-bind:src="product.image" alt="三星手机">
               <div class="product-info fl">
                 <p class="name">{{ product.name }}</p>
                 <p class="price">￥<span>{{ product.price }}</span></p>
               </div>
-            </a>
+            </router-link>
           </li>
         </ol>
       </div>

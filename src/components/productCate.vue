@@ -9,7 +9,7 @@
       <dd>
         <ul>
           <li v-for="content in cate.cateContent">
-            <router-link to="javascript:;">{{ content }}</router-link>
+            <router-link to="/proinfo">{{ content }}</router-link>
           </li>
         </ul>
       </dd>

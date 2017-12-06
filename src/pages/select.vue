@@ -2,7 +2,7 @@
 <!-- 商品选择页 -->
 
 <template>
-  <div class="select">
+  <div id="select">
     <collSite></collSite>
     <topBar></topBar>
     <myHead></myHead>
@@ -34,6 +34,7 @@
       </div>
     </section>
     <foot></foot>
+    <goTop></goTop>
   </div>
 </template>
 
@@ -50,6 +51,7 @@
   import selectShowProduct from '../components/selectShowProduct';
   import ratePage from '../components/ratePage';
   import foot from '../components/foot';
+  import goTop from '../components/goTop';
 
   export default {
 
@@ -65,7 +67,8 @@
       productFilter,
       selectShowProduct,
       ratePage,
-      foot
+      foot,
+      goTop
     },
 
     data() {
@@ -90,6 +93,7 @@
       this.$nextTick(function () {
         document.title = '商品选择页';
         document.body.style.backgroundColor = '#f0f0f0';
+        document.body.scrollTop = '0px';
 
         //获得商品信息
         this.getProductInfo();

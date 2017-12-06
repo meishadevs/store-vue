@@ -27,7 +27,7 @@ export default {
     Vue.prototype.loginUrl = Vue.prototype.serverUrl + 'login.php';
 
     //淘宝搜索的url
-    Vue.prototype.taobaoUrl = 'https://suggest.taobao.com/sug?callback=jQuery111309159938665821359_1511661036976&code=utf-8&_ksTS=1490839958568_2749&jsonpCallback=jsonp2750&area=b2c&k=1&bucketid=7&src=tmall_pc&_=1511661037004&callback=__jp5&q=';
+    Vue.prototype.taobaoUrl = 'https://suggest.taobao.com/sug?q=';
 
     //百度搜索的url
     Vue.prototype.baiduUrl = 'http://www.baidu.com/s';

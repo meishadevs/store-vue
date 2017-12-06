@@ -17,6 +17,7 @@
     <indexShowProduct v-bind:productInfo="indexProductList[0]"></indexShowProduct>
     <indexShowProduct v-bind:productInfo="indexProductList[1]"></indexShowProduct>
     <foot></foot>
+    <goTop></goTop>
   </div>
 </template>
 
@@ -29,6 +30,7 @@
   import banner from '../components/banner';
   import indexShowProduct from '../components/indexShowProduct';
   import foot from '../components/foot';
+  import goTop from '../components/goTop.vue';
   import {mapState, mapActions} from 'vuex';
 
   export default {
@@ -153,7 +155,8 @@
       productCateNav,
       banner,
       indexShowProduct,
-      foot
+      foot,
+      goTop
     },
 
     //计算属性
@@ -179,6 +182,9 @@
       this.$nextTick(function () {
         document.title = '电商网站首页';
         document.body.style.backgroundColor = '#fff';
+        document.body.scrollTop = '0px';
+
+        //改变当前选中的导航项的索引
         this.changeNavIndex(1);
       });
     }

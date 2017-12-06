@@ -4,14 +4,14 @@
   <div class="select-show-product">
     <ul class="brick-list clearfix">
       <li class="brick-item" v-for="product in productListData">
-        <a href="proinfo.html">
+        <router-link to="/proinfo">
           <div class="p-image">
-            <img v-bind:src="product.productimage" width="150" height="150" alt="">
+            <img v-bind:src="product.productimage" alt="商品图片">
           </div>
           <div class="p-name">{{ product.productname }}</div>
           <div class="p-price"><span class="num">{{ product.productprice }}</span>元</div>
           <p class="p-comment">{{ product.commentnum }}人评价</p>
-        </a>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -125,6 +125,12 @@
     padding-top: 10px;
     margin-bottom: 10px;
     text-align: center;
+  }
+
+  .p-image img {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
   }
 
   .p-name {

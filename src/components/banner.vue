@@ -5,9 +5,9 @@
   <div class="banner" @mouseenter="stopPlay()" @mouseleave="play()">
     <ul class="banner-list">
       <li v-for="(item, index) in bannerData" v-bind:class="{ fadeIn: currentIndex == index + 1 }">
-        <a v-bind:href = "item.url">
+        <router-link v-bind:to="item.url">
           <img v-bind:src="item.image" alt="轮播图">
-        </a>
+        </router-link>
       </li>
     </ul>
     <ol class="circle-list">
@@ -34,19 +34,19 @@
         bannerData: [
           {
             image: '../static/images/banner/banner1.jpg',
-            url: 'javascript:;'
+            url: '/proinfo'
           },
           {
             image: '../static/images/banner/banner2.jpg',
-            url: 'javascript:;'
+            url: '/proinfo'
           },
           {
             image: '../static/images/banner/banner3.jpg',
-            url: 'javascript:;'
+            url: '/proinfo'
           },
           {
             image: '../static/images/banner/banner4.jpg',
-            url: 'javascript:;'
+            url: '/proinfo'
           }
         ]
       };

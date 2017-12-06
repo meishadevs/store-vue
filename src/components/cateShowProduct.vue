@@ -9,12 +9,12 @@
     <ul class="product-list clearfix">
       <li class="product-item" v-for="product in productList.content">
         <div class="product-image">
-          <a href="javascript:;">
+          <router-link to="/proinfo">
             <img v-bind:src="product.image" alt="商品">
-          </a>
+          </router-link>
         </div>
         <div class="product-name">
-          <a href="javascript:;">{{ product.name }}</a>
+          <router-link to="/proinfo">{{ product.name }}</router-link>
         </div>
         <p class="product-price">￥{{ product.price }}</p>
         <p class="product-comment">
