@@ -13,6 +13,7 @@
         <productImage></productImage>
       </div>
       <div class="right-area">
+        <showProinfo></showProinfo>
       </div>
     </div>
     <foot></foot>
@@ -27,6 +28,7 @@
   import navBar from '../components/navBar';
   import productPosition from '../components/productPosition';
   import productImage from '../components/productImage';
+  import showProinfo from '../components/showProinfo';
   import foot from '../components/foot';
   import goTop from '../components/goTop';
 
@@ -42,6 +44,7 @@
       navBar,
       productPosition,
       productImage,
+      showProinfo,
       foot,
       goTop
     },
@@ -69,7 +72,6 @@
 
   .description-info .right-area {
     width: 690px;
-    height: 378px;
     border-left: solid 1px #ccc;
     float: left;
   }

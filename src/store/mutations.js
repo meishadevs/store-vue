@@ -22,6 +22,11 @@ export default {
     state.username = username;
   },
 
+  //设置商品数量
+  setProductNum: function (state, productNum) {
+    state.productNum = productNum;
+  },
+
   //改变当前选中的导航项的索引
   changeNavIndex: function (state, currentIndex) {
     state.currentNavIndex = currentIndex;

@@ -59,5 +59,7 @@ module.exports = {
 
     //不检测是否是用了三元运算符
     'no-unneeded-ternary': 0,
+
+    'handle-callback-err': 0,
   }
 }
