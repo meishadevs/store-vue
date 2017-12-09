@@ -2,13 +2,13 @@
 <!-- 导航栏组件 -->
 
 <template>
-  <nav class="navBar">
+  <nav class="nav-bar">
 
     <!-- 版心 s -->
     <div class="inner-c clearfix">
 
       <!-- 商品分类 s -->
-      <div class="shopClass fl">
+      <div class="product-cate fl">
         <h3>全部商品分类</h3>
       </div>
       <!-- 商品分类 e -->
@@ -36,7 +36,7 @@
   export default {
 
     //组件名称
-    name: 'navBar',
+    name: 'nav-bar',
 
     computed: mapState([
       //当前选中的导航项的索引
@@ -57,18 +57,18 @@
 </script>
 
 <style scoped>
-  .navBar {
+  .nav-bar {
     width: 100%;
     height: 35px;
     background-color: #1369c0;
     display: table;
   }
 
-  .shopClass {
+  .product-cate {
     float: left;
   }
 
-  .shopClass h3 {
+  .product-cate h3 {
     width: 149px;
     height: 35px;
     padding-left: 40px;

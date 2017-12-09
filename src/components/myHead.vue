@@ -2,7 +2,7 @@
 <!-- 头部组件 -->
 
 <template>
-  <header class="head">
+  <header class="my-head">
     <div class="inner-c clearfix">
       <div class="logo">
         <router-link to="/">慕课网</router-link>
@@ -113,18 +113,18 @@
 </script>
 
 <style scoped>
-  .head {
+  .my-head {
     width: 100%;
     height: 87px;
     background-color: #1d7ad9;
     display: table;
   }
 
-  .head .logo {
+  .my-head .logo {
     padding-top: 14px;
   }
 
-  .head .logo a {
+  .my-head .logo a {
     width: 112px;
     height: 59px;
     background: url(../../static/images/logo.png) no-repeat;

@@ -34,9 +34,11 @@
       </div>
       <div class="dl clearfix">
         <div class="dt colorSelect">选择颜色</div>
-        <!-- 颜色选择组件 s -->
-        <selectColor></selectColor>
-        <!-- 颜色选择组件 e -->
+        <div class="dd">
+          <!-- 颜色选择组件 s -->
+          <selectColor></selectColor>
+          <!-- 颜色选择组件 e -->
+        </div>
       </div>
       <div class="dl clearfix">
         <div class="dt des-select-more">选择规格</div>
@@ -49,14 +51,10 @@
       <div class="dl">
         <div class="dt">数量</div>
         <div class="dd clearfix">
-          <div class="des-number clearfix">
-            <div class="reduce">-</div>
-            <div class="input-number">
-              <input type="text" value="1" class="product-num">
-            </div>
-            <div class="plus">+</div>
-          </div>
-          <span class="buy-number">限购<em>9</em>件</span>
+          <!-- 设置商品数量的组件 s -->
+          <setProductNum v-bind:limitProductNum="limitProductNum"></setProductNum>
+          <!-- 设置商品数量的组件 e -->
+          <span class="buy-number">限购<em>{{ limitProductNum }}</em>件</span>
         </div>
       </div>
     </div>
@@ -89,6 +87,7 @@
   import selectAddress from '../components/selectAddress';
   import selectColor from '../components/selectColor';
   import selectStyle from '../components/selectStyle';
+  import setProductNum from '../components/setProductNum';
 
   export default {
 
@@ -97,7 +96,8 @@
     components: {
       selectAddress,
       selectColor,
-      selectStyle
+      selectStyle,
+      setProductNum
     },
 
     data() {
@@ -109,7 +109,13 @@
           productPrice: '1999.00',
           productColor: '白色',
           productStyle: 'WIFI 16G'
-        }
+        },
+
+        //商品限购的数量
+        limitProductNum: 200,
+
+        //购物车中商品的数量
+        productNum: 0
       };
     },
 
@@ -124,8 +130,12 @@
 
         //在showProinfo组件创建的钩子函数中监听select-style事件
         this.bus.$on('select-style', style => {
-          console.log('调用');
           this.productInfo.productStyle = style;
+        });
+
+        this.bus.$on('change-num', productNum => {
+          this.productNum = productNum;
+          console.log('productNum:', this.productNum);
         });
       });
     }
@@ -201,43 +211,6 @@
 
   .show-proinfo .des-select-more {
     line-height: 55px;
-  }
-
-  .des-number {
-    margin-right: 1px;
-    float: left;
-  }
-
-  .des-number div {
-    height: 32px;
-    line-height: 32px;
-    margin-left: -1px;
-    float: left;
-  }
-
-  .des-number .reduce,
-  .des-number .plus {
-    width: 15px;
-    height: 100%;
-    border: solid 1px #B2B2B2;
-    background-color: #EFEFEF;
-    text-align: center;
-    cursor: pointer;
-    moz-user-select: -moz-none;
-    -moz-user-select: none;
-    -o-user-select:none;
-    -khtml-user-select:none;
-    -webkit-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
-  }
-
-  .des-number input {
-    width: 50px;
-    height: 100%;
-    text-align: center;
-    background-color: #fff;
-    border: solid 1px #B2B2B2;
   }
 
   .buy-number {

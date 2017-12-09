@@ -147,21 +147,6 @@
 
     methods: {
 
-      /**
-       * 获得地址数据
-       * @param flag 标记位，1表示省，2表示市，3表示区
-       * @param addressCode 地址编码
-       * @param callback 回调函数
-       */
-      getAddressData: function (flag, addressCode, callback) {
-
-        //请求参数
-        let param = this.addressUrl + "?flag=" + flag + "&citycode=" + addressCode;
-
-        //发送get请求，获得省份数据
-        this.jsonp(param, null, callback);
-      },
-
       //选择省份
       selectProvince(provinceName, provinceCode) {
         this.provinceName = provinceName;
@@ -181,6 +166,21 @@
         this.areaName = areaName;
         this.areaCode = areaCode;
         this.isShowArea = false;
+      },
+
+      /**
+       * 获得地址数据
+       * @param flag 标记位，1表示省，2表示市，3表示区
+       * @param addressCode 地址编码
+       * @param callback 回调函数
+       */
+      getAddressData: function (flag, addressCode, callback) {
+
+        //请求参数
+        let param = this.addressUrl + "?flag=" + flag + "&citycode=" + addressCode;
+
+        //发送get请求，获得省份数据
+        this.jsonp(param, null, callback);
       }
     }
   };

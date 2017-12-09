@@ -2,7 +2,7 @@
 <!-- 网站首页的商品展示组件 -->
 
 <template>
-  <section class="product inner-c">
+  <section class="index-show-product inner-c">
     <div class="product-title">
       <div class="product-icon fl">
         <img v-bind:src="productInfo.icon" alt="">
@@ -19,7 +19,7 @@
         </router-link>
       </div>
       <div class="right-area">
-        <ul class="productList-top">
+        <ul class="product-list-top">
           <li class="product-item" v-for="product in productInfo.topProduct">
             <router-link to="/proinfo">
               <img v-bind:src="product.image" alt="手机">
@@ -28,7 +28,7 @@
             </router-link>
           </li>
         </ul>
-        <ol class="productList-bottom">
+        <ol class="product-list-bottom">
           <li class="product-item" v-for="product in productInfo.bottomProduct">
             <router-link class="fl" to="/proinfo">
               <img v-bind:src="product.image" alt="三星手机">
@@ -62,32 +62,32 @@
 </script>
 
 <style scoped>
-  .product .product-title {
+  .index-show-product .product-title {
     width: 100%;
     height: 75px;
   }
 
-  .product .product-icon {
+  .index-show-product .product-icon {
     margin: 15px 14px 0 0;
   }
 
-  .product .product-title h3 {
+  .index-show-product .product-title h3 {
     height: 75px;
     line-height: 75px;
     font: 24px/75px "微软雅黑", "microsoft yahei";
   }
 
-  .product .more {
+  .index-show-product .more {
     margin: 48px 21px 0 0;
     font-family: "新宋体";
     font-size: 12px;
   }
 
-  .product .more a {
+  .index-show-product .more a {
     color: #000;
   }
 
-  .product .more a:hover {
+  .index-show-product .more a:hover {
     text-decoration: underline;
   }
 
@@ -97,7 +97,7 @@
     float: left;
   }
 
-  .productList-top .product-item {
+  .product-list-top .product-item {
     width: 199px;
     height: 280px;
     margin-left: -1px;
@@ -109,31 +109,31 @@
     float: left;
   }
 
-  .productList-top .product-item a {
+  .product-list-top .product-item a {
     width: 199px;
     height: 279px;
     text-align: center;
     display: inline-block;
   }
 
-  .productList-top .product-item img {
+  .product-list-top .product-item img {
     padding: 45px 0 24px 0;
   }
 
-  .productList-top  .product-item .product-name {
+  .product-list-top  .product-item .product-name {
     margin-bottom: 8px;
     font-size: 16px;
     text-align: center;
     color: #000;
   }
 
-  .productList-top .product-item .price {
+  .product-list-top .product-item .price {
     font-size: 14px;
     text-align: center;
     color: #ff7300;
   }
 
-  .productList-bottom .product-item {
+  .product-list-bottom .product-item {
     width: 199px;
     height: 114px;
     margin: -1px 0 0 -1px;
@@ -141,18 +141,18 @@
     float: left;
   }
 
-  .productList-bottom .product-item a {
+  .product-list-bottom .product-item a {
     width: 199px;
     height: 116px;
     display: inline-block;
   }
 
-  .productList-bottom .product-item img {
+  .product-list-bottom .product-item img {
     padding: 20px 22px 0 31px;
     float: left;
   }
 
-  .productList-bottom .product-item .product-info {
+  .product-list-bottom .product-item .product-info {
     width: 83px;
     padding-top: 44px;
   }
