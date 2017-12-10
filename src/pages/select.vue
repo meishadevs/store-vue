@@ -95,20 +95,20 @@
         document.body.style.backgroundColor = '#f0f0f0';
         document.body.scrollTop = '0px';
 
-        //获得商品信息
-        this.getProductInfo();
+        //获得商品的数量
+        this.getProductNum();
 
         //监听翻页组件中传递过来的事件
-        this.bus.$on('change-page', (data) => {
-          this.curPage = data;
+        this.bus.$on('change-page', (page) => {
+          this.curPage = page;
         });
       });
     },
 
     methods: {
 
-      //获得商品信息
-      getProductInfo: function () {
+      //获得商品的数量
+      getProductNum: function () {
 
         //发送get请求，获得商品数量
         this.jsonp(this.productNumUrl, null, (err, data) => {

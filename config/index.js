@@ -26,6 +26,7 @@ module.exports = {
 
     //是否使用Eslint
     useEslint: true,
+
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,

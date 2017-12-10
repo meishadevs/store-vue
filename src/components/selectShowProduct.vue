@@ -34,7 +34,7 @@
         productListData: [],
 
         //每页第一条商品信息的下标
-        productStartIndex: 0,
+        productFirstIndex: 0,
 
         //当前展示的是第indexPage页商品信息
         indexPage: 0
@@ -43,8 +43,9 @@
 
     //初始化
     mounted: function () {
-      this.$nextTick(function () {
+      this.$nextTick(() => {
 
+        //获得当前展示的是第几页商品信息
         this.indexPage = this.curPage;
 
         //获得商品信息
@@ -74,10 +75,10 @@
       getProductInfo: function () {
 
         //计算每页展示的第一条商品信息的下标
-        this.productStartIndex = (this.indexPage - 1) * this.numProduct;
+        this.productFirstIndex = (this.indexPage - 1) * this.numProduct;
 
         //发送get请求，获得商品信息
-        this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productStartIndex, null, (err, data) => {
+        this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productFirstIndex, null, (err, data) => {
           if (err) {
             console.error("error:", err.message);
           } else {
