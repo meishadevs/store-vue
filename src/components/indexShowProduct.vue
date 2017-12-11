@@ -55,7 +55,7 @@
 
     //初始化
     mounted: function () {
-      this.$nextTick(function () {
+      this.$nextTick(() => {
       });
     }
   };

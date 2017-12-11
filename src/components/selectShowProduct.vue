@@ -53,6 +53,7 @@
 
         //监听翻页组件中传递过来的事件
         this.bus.$on('change-page', (data) => {
+          window.scrollTo(0, 459);
           this.indexPage = data;
         });
       });

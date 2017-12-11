@@ -11,7 +11,7 @@
           v-bind:class="{current: selectIndex == index + 1}">
         <dt>
           <router-link to="/select" v-for="title in leftCate.title" :key="title.id">{{ title }}</router-link>
-          <router-link class="aLink" to="/select" v-if="leftCate.selectTitle != null" :key="leftCate.selectTitle.id">{{ leftCate.selectTitle }}</router-link>
+          <router-link class="alink" to="/select" v-if="leftCate.selectTitle != null" :key="leftCate.selectTitle.id">{{ leftCate.selectTitle }}</router-link>
         </dt>
         <dd>
           <router-link to="/select" v-for="item in leftCate.content" :key="item.id">{{ item }}</router-link>
@@ -285,11 +285,11 @@
     color: #fff;
   }
 
-  .product-cate-item dt .aLink {
+  .product-cate-item dt .alink {
     width: 48px;
     height: 20px;
     line-height: 20px;
-    background: url(../../static/images/icon/aLink.png) left center no-repeat;
+    background: url(../../static/images/icon/alink.png) left center no-repeat;
     text-align: center;
     text-decoration: underline;
     font-size: 12px;
@@ -323,13 +323,13 @@
     color: #000;
   }
 
-  .product-cate-show dl.current .aLink {
+  .product-cate-show dl.current .alink {
     text-decoration: none;
     color: #fff;
   }
 
   .product-cate-show dl a:hover,
-  .product-cate-show dl .aLink:hover {
+  .product-cate-show dl .alink:hover {
     color: #c81623;
   }
 

@@ -98,7 +98,6 @@
         //监听翻页组件中传递过来的事件
         this.bus.$on('change-page', (page) => {
           this.curPage = page;
-          console.log('curPage:', this.curPage);
         });
 
       });

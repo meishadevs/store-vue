@@ -35,12 +35,12 @@
 
         //商品图片数据
         prodImgData: {
-          bigImage: ['static/images/bigpad1.jpg', 'static/images/bigpad2.jpg', 'static/images/bigpad3.jpg',
-            'static/images/bigpad4.jpg', 'static/images/bigpad5.jpg'],
-          middleImage: ['static/images/middlepad1.jpg', 'static/images/middlepad2.jpg', 'static/images/middlepad3.jpg',
+          bigImage: ['./static/images/bigpad1.jpg', './static/images/bigpad2.jpg', './static/images/bigpad3.jpg',
+            './static/images/bigpad4.jpg', './static/images/bigpad5.jpg'],
+          middleImage: ['./static/images/middlepad1.jpg', './static/images/middlepad2.jpg', './static/images/middlepad3.jpg',
             'static/images/middlepad4.jpg', 'static/images/middlepad5.jpg'],
-          smallImage: ['static/images/smallipad1.jpg', 'static/images/smallipad2.jpg', 'static/images/smallipad3.jpg',
-            'static/images/smallipad4.jpg', 'static/images/smallipad5.jpg']
+          smallImage: ['./static/images/smallipad1.jpg', './static/images/smallipad2.jpg', './static/images/smallipad3.jpg',
+            './static/images/smallipad4.jpg', './static/images/smallipad5.jpg']
         },
 
         //当前选中的索引
