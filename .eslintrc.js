@@ -55,11 +55,12 @@ module.exports = {
 
     'quotes': 0,
 
-    'no-useless-return': 0,
-
-    //不检测是否是用了三元运算符
+    //允许使用三元运算符
     'no-unneeded-ternary': 0,
 
     'handle-callback-err': 0,
+
+    //允许使用new Object()
+    'no-new-object': 0,
   }
 }

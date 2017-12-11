@@ -4,6 +4,7 @@ import index from '../pages/index';
 import cate from '../pages/cate';
 import select from '../pages/select';
 import proinfo from '../pages/proinfo';
+import cart from '../pages/cart';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ export default new VueRouter({
       path: '/proinfo',
       name: 'proinfp',
       component: proinfo
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
     }
   ]
 });

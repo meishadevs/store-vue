@@ -82,6 +82,10 @@ i {
     display: none;
 }
 
+.hr-12 {
+  height: 12px;
+}
+
 .hr-15 {
     height: 15px;
 }

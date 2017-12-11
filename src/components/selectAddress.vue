@@ -48,13 +48,13 @@
         areaCode: 0,
 
         //当前显示的省的名称
-        provinceName: '',
+        provinceName: null,
 
         //当前显示的市的名称
-        cityName: '',
+        cityName: null,
 
         //当前显示的区的名称
-        areaName: '',
+        areaName: null,
 
         //省的数据
         provinceData: [],
@@ -88,13 +88,18 @@
     mounted: function () {
       this.$nextTick(function () {
 
-        //获得省的数据
-        this.getAddressData(1, this.provinceCode, (err, data) => {
-          this.provinceData = data;
-          this.provinceName = this.provinceData[0].name;
-          this.provinceCode = this.provinceData[0].code;
-        });
+          //获得省的数据
+          this.getAddressData(1, this.provinceCode, (err, data) => {
+            this.provinceData = data;
+            this.provinceName = this.provinceData[0].name;
+            this.provinceCode = this.provinceData[0].code;
+          });
       });
+    },
+
+    //销毁
+    destroyed: function () {
+      this.saveAddress();
     },
 
     //监听器
@@ -108,17 +113,7 @@
           this.cityData = data;
           this.cityName = this.cityData[0].name;
           this.cityCode = this.cityData[0].code;
-
-          //如果市的个数小于6个，不显示竖直滚动条
-          if (this.cityData.length < 6) {
-            this.ulStyle = 'inherit';
-            this.liStyle = '100%';
-
-          //如果市的个数大于或等于6个，显示竖直滚动条
-          } else {
-            this.ulStyle = 'scroll';
-            this.liStyle = '93px';
-          }
+          this.isShowScroll1();
         });
       },
 
@@ -130,17 +125,7 @@
           this.areaData = data;
           this.areaName = this.areaData[0].name;
           this.areaCode = this.areaData[0].code;
-
-          //如果区的个数小于6个，不显示竖直滚动条
-          if (this.areaData.length < 6) {
-            this.ulStyle1 = 'inherit';
-            this.liStyle1 = '100%';
-
-            //如果区的个数大于或等于6个，显示竖直滚动条
-          } else {
-            this.ulStyle1 = 'scroll';
-            this.liStyle1 = '93px';
-          }
+          this.isShowScroll2();
         });
       }
     },
@@ -166,6 +151,66 @@
         this.areaName = areaName;
         this.areaCode = areaCode;
         this.isShowArea = false;
+      },
+
+      //保存地址
+      saveAddress: function () {
+        localStorage.setItem('provinceName', this.provinceName);
+        localStorage.setItem('cityName', this.cityName);
+        localStorage.setItem('areaName', this.areaName);
+        localStorage.setItem('provinceCode', this.provinceCode);
+        localStorage.setItem('cityCode', this.cityCode);
+        localStorage.setItem('areaCode', this.areaCode);
+      },
+
+      //读取地址
+      readAddress: function () {
+        this.provinceName = localStorage.getItem('provinceName');
+        this.cityName = localStorage.getItem('cityName');
+        this.areaName = localStorage.getItem('areaName');
+        this.provinceCode = localStorage.getItem('provinceCode');
+        this.cityCode = localStorage.getItem('cityCode');
+        this.areaCode = localStorage.getItem('areaCode');
+
+        if ((this.provinceName === null) || (this.provinceName === 'null') ||
+          (this.provinceName === '') || (this.provinceName === undefined)) {
+          this.provinceCode = 110000;
+            this.cityCode = 110100;
+            this.areaCode = 110101;
+            this.provinceName = '北京市';
+            this.cityName = '北京市';
+            this.areaName = '东城区';
+        }
+      },
+
+      //是否显示滚动条
+      isShowScroll1: function () {
+
+        //如果市的个数小于6个，不显示竖直滚动条
+        if (this.cityData.length < 6) {
+          this.ulStyle = 'inherit';
+          this.liStyle = '100%';
+
+          //如果市的个数大于或等于6个，显示竖直滚动条
+        } else {
+          this.ulStyle = 'scroll';
+          this.liStyle = '93px';
+        }
+      },
+
+      //是否显示滚动条
+      isShowScroll2: function () {
+
+        //如果区的个数小于6个，不显示竖直滚动条
+        if (this.areaData.length < 6) {
+          this.ulStyle1 = 'inherit';
+          this.liStyle1 = '100%';
+
+          //如果区的个数大于或等于6个，显示竖直滚动条
+        } else {
+          this.ulStyle1 = 'scroll';
+          this.liStyle1 = '93px';
+        }
       },
 
       /**

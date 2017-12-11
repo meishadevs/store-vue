@@ -74,9 +74,9 @@
     <!-- 显示已经选好的手机的属性 e -->
 
     <div class="des-button clearfix">
-      <a href="javascript:;" class="buy">加入购物车</a>
+      <router-link to="/cart"  class="buy">加入购物车</router-link>
       <span class="line"></span>
-      <a href="javascript:;" class="buy">立即购买</a>
+      <router-link to="/cart" class="buy">立即购买</router-link>
     </div>
 
     <p class="notice">注意：此商品可提供普通发票，不提供增值税发票。</p>
