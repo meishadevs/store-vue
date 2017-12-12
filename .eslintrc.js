@@ -62,5 +62,8 @@ module.exports = {
 
     //允许使用new Object()
     'no-new-object': 0,
+
+    //允许使用return时后面可以不带返回值
+    'no-useless-return': 0,
   }
 }

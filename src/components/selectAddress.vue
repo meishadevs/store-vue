@@ -94,6 +94,8 @@
             this.provinceName = this.provinceData[0].name;
             this.provinceCode = this.provinceData[0].code;
           });
+
+          this.bus.$emit('select-address');
       });
     },
 
@@ -137,6 +139,7 @@
         this.provinceName = provinceName;
         this.provinceCode = provinceCode;
         this.isShowProvince = false;
+        this.bus.$emit('select-address');
       },
 
       //选择市
@@ -144,6 +147,7 @@
         this.cityName = cityName;
         this.cityCode = cityCode;
         this.isShowCity = false;
+        this.bus.$emit('select-address');
       },
 
       //选择区
@@ -151,6 +155,7 @@
         this.areaName = areaName;
         this.areaCode = areaCode;
         this.isShowArea = false;
+        this.bus.$emit('select-address');
       },
 
       //保存地址
@@ -163,23 +168,36 @@
         localStorage.setItem('areaCode', this.areaCode);
       },
 
-      //读取地址
-      readAddress: function () {
+      //读取省的数据
+      readProvinceData: function () {
         this.provinceName = localStorage.getItem('provinceName');
-        this.cityName = localStorage.getItem('cityName');
-        this.areaName = localStorage.getItem('areaName');
         this.provinceCode = localStorage.getItem('provinceCode');
+
+        if ((this.provinceName === null) || (this.provinceName === 'null')) {
+          this.provinceName = '北京市';
+          this.provinceCode = 110000;
+        }
+      },
+
+      //读取市的数据
+      readCityData: function () {
+        this.cityName = localStorage.getItem('cityName');
         this.cityCode = localStorage.getItem('cityCode');
+
+        if ((this.cityName === null) || (this.cityName === 'null')) {
+          this.cityName = '北京市';
+          this.cityCode = 110100;
+        }
+      },
+
+      //读取区的数据
+      readAreaData: function () {
+        this.areaName = localStorage.getItem('areaName');
         this.areaCode = localStorage.getItem('areaCode');
 
-        if ((this.provinceName === null) || (this.provinceName === 'null') ||
-          (this.provinceName === '') || (this.provinceName === undefined)) {
-          this.provinceCode = 110000;
-            this.cityCode = 110100;
-            this.areaCode = 110101;
-            this.provinceName = '北京市';
-            this.cityName = '北京市';
-            this.areaName = '东城区';
+        if ((this.areaName === null) || (this.areaName === 'null')) {
+          this.areaName = '东城区';
+          this.areaCode = 110101;
         }
       },
 

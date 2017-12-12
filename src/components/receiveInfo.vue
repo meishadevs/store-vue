@@ -1,7 +1,8 @@
+
 <!-- 收货信息组件 -->
 
 <template>
-  <section class="receive-info inner-c">
+  <section class="receive-info inner-c" @click="recoverStatus()">
     <div class="title">收货信息</div>
     <div class="show-result">收货信息已保存</div>
     <div class="receive-content">
@@ -14,67 +15,101 @@
           <!-- 地址选择组件 s -->
           <selectAddress></selectAddress>
           <!-- 地址选择组件 e -->
-          <span class="notice-info">
-                        <s class="notice-icon"></s>
-                        <s class="notice-content"></s>
-                    </span>
+          <span class="right-icon" v-if="noticeStatus1 == 1"></span>
         </div>
         <div class="row address clearfix">
           <div class="content clearfix">
             <span class="xing">*</span>
             <span class="name">详细地址：</span>
           </div>
-          <input type="text" class="input-address" maxlength="26" placeholder="长度只能在4-26个字符之间" data-class="address"
-                 style="border-color: rgb(194, 194, 194);">
-          <span class="notice-info" style="display: none;">
-                        <s class="notice-icon"></s>
-                        <s class="notice-content"></s>
-                    </span>
+          <!-- 如果收货地址验证失败输入框上显示一个红色的边框 s -->
+          <input class="input-address"
+                 maxlength="26"
+                 placeholder="长度只能在4-26个字符之间"
+                 v-model="address"
+                 v-bind:class="{border: noticeStatus2 == 2}">
+          <!-- 如果收货地址验证失败输入框上显示一个红色的边框 e -->
+          <!-- 如果收货地址验证成功，显示一个蓝色的小圆圈 s -->
+          <span class="right-icon" v-if="noticeStatus2 == 1"></span>
+          <!-- 如果收货地址验证成功，显示一个蓝色的小圆圈 e -->
+          <!-- 如果收货地址验证失败，显示一个红色的小圆圈 s -->
+          <div class="notice-info" v-if="noticeStatus2 == 2">
+            <span class="error-icon"></span>
+            <span class="notice-text">{{ noticeContent2 }}</span>
+          </div>
+          <!-- 如果收货地址验证失败，显示一个红色的小圆圈 e -->
         </div>
         <div class="row receiver clearfix">
           <div class="content clearfix">
             <span class="xing">*</span>
             <span class="name">收&nbsp;货&nbsp;&nbsp;人：</span>
           </div>
-          <input type="text" class="input-receiver" maxlength="10" placeholder="长度只能在2-10个字符之间" data-class="receiver"
-                 style="border-color: rgb(194, 194, 194);">
-          <span class="notice-info" style="display: none;">
-                        <s class="notice-icon"></s>
-                        <s class="notice-content"></s>
-                    </span>
+          <!-- 如果收货人的姓名验证失败，输入框上显示一个红色的边框 s -->
+          <input class="input-receiver"
+                 maxlength="10"
+                 placeholder="长度只能在2-10个字符之间"
+                 v-model="receiver"
+                v-bind:class="{border: noticeStatus3 == 2}">
+          <!-- 如果收货人的姓名验证失败，输入框上显示一个红色的边框 e -->
+          <!-- 如果收货人的姓名验证成功，显示一个蓝色的小圆圈 s -->
+          <span class="right-icon" v-if="noticeStatus3 == 1"></span>
+          <!-- 如果收货人的姓名验证成功，显示一个蓝色的小圆圈 e -->
+          <!-- 如果收货人的姓名验证失败，显示一个红色的小圆圈 s -->
+          <div class="notice-info" v-if="noticeStatus3 == 2">
+            <span class="error-icon"></span>
+            <span class="notice-text">{{ noticeContent3 }}</span>
+          </div>
+          <!-- 如果收货人的姓名验证失败，显示一个红色的小圆圈 e -->
         </div>
         <div class="row phone clearfix">
           <div class="content clearfix">
             <span class="xing">*</span>
             <span class="name">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</span>
           </div>
-          <input type="text" maxlength="11" class="input-phone" placeholder="如13452525625" data-class="phone"
-                 style="border-color: rgb(194, 194, 194);">
-          <span class="notice-info" style="display: none;">
-                        <s class="notice-icon"></s>
-                        <s class="notice-content"></s>
-                    </span>
+          <!-- 如果用户输入的手机号码的格式不正确，会显示一个红色的边框 s -->
+          <input maxlength="11"
+                 class="input-phone"
+                 placeholder="如13452525625"
+                 v-model="phoneNum"
+                  v-bind:class="{border: noticeStatus4 == 2}">
+          <!-- 如果用户输入的手机号码的格式不正确，会显示一个红色的边框 e -->
+          <!-- 如果用户输入的手机号码验证成功，显示一个蓝色的小圆圈 s -->
+          <span class="right-icon" v-if="noticeStatus4 == 1"></span>
+          <!-- 如果用户输入的手机号码验证成功，显示一个蓝色的小圆圈 e -->
+          <!-- 如果用户输入的手机号码验证失败，显示一个红色的小圆圈 s -->
+          <div class="notice-info" v-if="noticeStatus4 == 2">
+            <span class="error-icon"></span>
+            <span class="notice-text">{{ noticeContent4 }}</span>
+          </div>
+          <!-- 如果用户输入的手机号码验证失败，显示一个红色的小圆圈 e -->
         </div>
         <div class="row tel-phone clearfix">
           <div class="content clearfix">
             <span class="xing">*</span>
             <span class="name">固定电话：</span>
           </div>
-          <input type="text" class="input-area" placeholder="区号" data-class="tel-phone"
-                 style="border-color: rgb(194, 194, 194);">
+          <input class="input-area"
+                 placeholder="区号"
+                 v-model="areaNum"
+                  v-bind:class="{border: noticeStatus5 == 2}">
           <s>-</s>
-          <input type="text" class="input-tel" placeholder="电话号码" data-class="tel-phone"
-                 style="border-color: rgb(194, 194, 194);">
+          <input class="input-tel"
+                 placeholder="电话号码"
+                 v-model="telNum"
+                v-bind:class="{border: noticeStatus5 == 2}">
           <s>-</s>
-          <input type="text" class="input-extension" placeholder="分机号（可选）" data-class="tel-phone"
-                 style="border-color: rgb(194, 194, 194);">
-          <span class="notice-info" style="display: none;">
-                        <s class="notice-icon"></s>
-                        <s class="notice-content"></s>
-                    </span>
+          <input class="input-extension"
+                 placeholder="分机号（可选）"
+                 v-model="extensionNum"
+                  v-bind:class="{border: noticeStatus5 == 2}">
+          <span class="right-icon" v-if="noticeStatus5 == 1"></span>
+          <div class="notice-info" v-if="noticeStatus5 == 2">
+            <span class="error-icon"></span>
+            <span class="notice-text">{{ noticeContent5 }}</span>
+          </div>
         </div>
         <div class="row clearfix">
-          <input type="button" class="button-submit" value="确认收货地址">
+          <input type="button" class="button-submit" value="确认收货信息" @click.stop="submitReceiveInfo()">
           <p class="info-text">收货信息填写正确</p>
         </div>
       </form>
@@ -93,12 +128,186 @@
       selectAddress
     },
 
+    data() {
+      return {
+        //记录详细地址
+        address: null,
+
+        //收货人
+        receiver: null,
+
+        //手机号码
+        phoneNum: '',
+
+        //区号
+        areaNum: '',
+
+        //电话号码
+        telNum: '',
+
+        //分机号码
+        extensionNum: '',
+
+        //提示信息的状态（0：隐藏提示信息，1：显示验证成功的提示信息，2：显示验证失败的提示信息）
+        noticeStatus1: 0,
+        noticeStatus2: 0,
+        noticeStatus3: 0,
+        noticeStatus4: 0,
+        noticeStatus5: 0,
+
+        //提示信息的内容
+        noticeContent1: null,
+        noticeContent2: null,
+        noticeContent3: null,
+        noticeContent4: null,
+        noticeContent5: null
+      };
+    },
+
     //初始化
     mounted: function () {
       this.$nextTick(() => {
         document.title = '购物车和结算页';
         document.body.style.backgroundColor = '#fff';
+
+        //获得并且处理从selectAddress组件传递过来的自定义事件
+        this.bus.$on('select-address', () => {
+          this.noticeStatus1 = 0;
+        });
       });
+    },
+
+    methods: {
+
+      //提交收货信息
+      submitReceiveInfo: function () {
+
+        this.noticeStatus1 = 1;
+
+        //检测用户输入的收货地址是否正确
+        if (this.checkAddress() !== 2) {
+          return;
+        }
+
+        //检测用户输入的收货人的姓名是否正确
+        if (this.checkReceiver() !== 2) {
+          return;
+        }
+
+        //检测用户输入的手机号码是否正确
+        if (this.checkPhoneNum() !== 2) {
+          return;
+        }
+
+        //检测电话号码、区号、分机号
+        this.checkNumber();
+      },
+
+      //恢复状态
+      recoverStatus: function () {
+
+        if (this.checkAddress() !== 2) {
+          this.noticeStatus2 = 0;
+          this.noticeContent2 = '';
+        }
+
+        if (this.checkReceiver() !== 2) {
+          this.noticeStatus3 = 0;
+          this.noticeContent3 = '';
+        }
+
+        if (this.checkPhoneNum() !== 2) {
+          this.noticeStatus4 = 0;
+          this.noticeContent4 = '';
+        }
+      },
+
+      //检测收货地址
+      checkAddress: function () {
+
+        //如果用户没有输入收货地址
+        if (this.address === null || this.address === '') {
+          this.noticeStatus2 = 2;
+          this.noticeContent2 = '请填写详细的收货地址';
+          return 0;
+        }
+
+        //如果用户输入的收货地址不符合规则
+        if (this.address.length < 4 || this.address.length > 26) {
+          this.noticeStatus2 = 2;
+          this.noticeContent2 = '收货地址的长度应该为4~26个字符';
+          return 1;
+        }
+
+        this.noticeStatus2 = 1;
+        this.noticeContent2 = '';
+        return 2;
+      },
+
+      //检测收货人
+      checkReceiver: function () {
+
+        //如果用户没有输入收货人的姓名
+        if (this.receiver === null || this.receiver === '') {
+          this.noticeStatus3 = 2;
+          this.noticeContent3 = '请填写收货人的姓名';
+          return 0;
+        }
+
+        //如果用户输入的收货人的姓名不符合规则
+        if (this.receiver.length < 2 || this.receiver.length > 10) {
+          this.noticeStatus3 = 2;
+          this.noticeContent3 = '收货人姓名的长度应该为2~10个字符';
+          return 1;
+        }
+
+        this.noticeStatus3 = 1;
+        this.noticeContent3 = '';
+        return 2;
+      },
+
+      //检测手机号码
+      checkPhoneNum: function () {
+
+        //如果用户没有输入手机号码
+        if (this.phoneNum === null || this.phoneNum === '') {
+          this.noticeStatus4 = 2;
+          this.noticeContent4 = '请输入您的手机号码';
+          return 0;
+        }
+
+        if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(this.phoneNum))) {
+          this.noticeStatus4 = 2;
+          this.noticeContent4 = '您输入的手机号码的格式不正确';
+          return 1;
+        }
+
+        this.noticeStatus4 = 1;
+        this.noticeContent4 = '';
+        return 2;
+      },
+
+      //检测电话号码/区号/分机号
+      checkNumber: function () {
+
+        console.log('telNum:', this.telNum);
+        console.log('areaNum:', this.areaNum);
+        console.log('extensionNum:', this.extensionNum.length);
+        console.log('telNum length:', this.telNum.length);
+        console.log('areaNum length:', this.areaNum.length);
+        console.log('extensionNum length:', this.extensionNum.length);
+
+        //如果没有输入区号、电话号码、分机号
+        if (this.telNum.length === 0 && this.areaNum.length === 0 && this.extensionNum.length === 0) {
+          this.noticeStatus5 = 0;
+          this.noticeContent5 = '';
+          return;
+        }
+
+        if () {
+
+        }
+      }
     }
   };
 </script>
@@ -127,6 +336,7 @@
 
   .row {
     margin-bottom: 16px;
+    position: relative;
   }
 
   .row .content {
@@ -160,28 +370,39 @@
     border: solid 1px #C2C2C2;
   }
 
+  /* 验证正确显示的图标 */
+  .right-icon {
+    width: 16px;
+    height: 16px;
+    background: url("../../static/images/icon/warning-icon.png") no-repeat;
+    background-position: 0px -117px;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 476px;
+    top: 50%;
+  }
+
+  /* 验证错误显示的图标 */
+  .error-icon {
+    width: 18px;
+    height: 16px;
+    background: url("../../static/images/icon/warning-icon.png") no-repeat;
+    background-position: -17px -100px;
+    float: left;
+  }
+
   .notice-info {
     height: 16px;
     line-height: 16px;
     color: #e22;
-    display: none;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 476px;
+    top: 50%;
   }
 
-  .notice-info .notice-icon {
-    width: 16px;
-    height: 16px;
-    vertical-align: top;
-    background: url("../../static/images/icon/warning-icon.png") -17px -100px no-repeat;
-    display: inline-block;
-  }
-
-  .place .notice-icon {
-    display: none;
-    background-position: 0px -117px;
-    display: inline-block;
-    position: relative;
-    left: -9px;
-    top: 5px;
+  .notice-info .notice-text {
+    float: left;
   }
 
   /* 收货人姓名输入框 */
@@ -285,5 +506,9 @@
     background-color: #ff6d28;
     display: none;
     position: relative;
+  }
+
+  .border {
+    border-color: rgb(238, 34, 34);
   }
 </style>
