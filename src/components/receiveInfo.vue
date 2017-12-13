@@ -4,7 +4,9 @@
 <template>
   <section class="receive-info inner-c" @click="recoverStatus()">
     <div class="title">收货信息</div>
-    <div class="show-result">收货信息已保存</div>
+    <transition name="fade">
+      <div class="show-result" v-if="isShowResult">收货信息已保存</div>
+    </transition>
     <div class="receive-content">
       <form>
         <div class="row place clearfix">
@@ -88,20 +90,11 @@
             <span class="xing">*</span>
             <span class="name">固定电话：</span>
           </div>
-          <input class="input-area"
-                 placeholder="区号"
-                 v-model="areaNum"
-                  v-bind:class="{border: noticeStatus5 == 2}">
-          <s>-</s>
           <input class="input-tel"
-                 placeholder="电话号码"
+                 placeholder="只能是7位或者8位数字(可不填)"
+                 maxlength="8"
                  v-model="telNum"
                 v-bind:class="{border: noticeStatus5 == 2}">
-          <s>-</s>
-          <input class="input-extension"
-                 placeholder="分机号（可选）"
-                 v-model="extensionNum"
-                  v-bind:class="{border: noticeStatus5 == 2}">
           <span class="right-icon" v-if="noticeStatus5 == 1"></span>
           <div class="notice-info" v-if="noticeStatus5 == 2">
             <span class="error-icon"></span>
@@ -139,14 +132,8 @@
         //手机号码
         phoneNum: '',
 
-        //区号
-        areaNum: '',
-
         //电话号码
         telNum: '',
-
-        //分机号码
-        extensionNum: '',
 
         //提示信息的状态（0：隐藏提示信息，1：显示验证成功的提示信息，2：显示验证失败的提示信息）
         noticeStatus1: 0,
@@ -160,7 +147,9 @@
         noticeContent2: null,
         noticeContent3: null,
         noticeContent4: null,
-        noticeContent5: null
+        noticeContent5: null,
+
+        isShowResult: false
       };
     },
 
@@ -185,40 +174,53 @@
         this.noticeStatus1 = 1;
 
         //检测用户输入的收货地址是否正确
-        if (this.checkAddress() !== 2) {
+        if (!this.checkAddress()) {
           return;
         }
 
         //检测用户输入的收货人的姓名是否正确
-        if (this.checkReceiver() !== 2) {
+        if (!this.checkReceiver()) {
           return;
         }
 
         //检测用户输入的手机号码是否正确
-        if (this.checkPhoneNum() !== 2) {
+        if (!this.checkPhoneNum()) {
           return;
         }
 
-        //检测电话号码、区号、分机号
-        this.checkNumber();
+        //检测电话号码
+        if (!this.checkTelNumber()) {
+          return;
+        }
+
+        this.isShowResult = true;
+
+        setTimeout(() => {
+          this.isShowResult = false;
+        }, 3000);
       },
 
       //恢复状态
       recoverStatus: function () {
 
-        if (this.checkAddress() !== 2) {
+        if (this.checkAddress() !== 1) {
           this.noticeStatus2 = 0;
           this.noticeContent2 = '';
         }
 
-        if (this.checkReceiver() !== 2) {
+        if (this.checkReceiver() !== 1) {
           this.noticeStatus3 = 0;
           this.noticeContent3 = '';
         }
 
-        if (this.checkPhoneNum() !== 2) {
+        if (this.checkPhoneNum() !== 1) {
           this.noticeStatus4 = 0;
           this.noticeContent4 = '';
+        }
+
+        if (this.checkTelNumber() !== 1) {
+          this.noticeStatus5 = 0;
+          this.noticeContent5 = '';
         }
       },
 
@@ -236,12 +238,12 @@
         if (this.address.length < 4 || this.address.length > 26) {
           this.noticeStatus2 = 2;
           this.noticeContent2 = '收货地址的长度应该为4~26个字符';
-          return 1;
+          return 0;
         }
 
         this.noticeStatus2 = 1;
         this.noticeContent2 = '';
-        return 2;
+        return 1;
       },
 
       //检测收货人
@@ -258,12 +260,12 @@
         if (this.receiver.length < 2 || this.receiver.length > 10) {
           this.noticeStatus3 = 2;
           this.noticeContent3 = '收货人姓名的长度应该为2~10个字符';
-          return 1;
+          return 0;
         }
 
         this.noticeStatus3 = 1;
         this.noticeContent3 = '';
-        return 2;
+        return 1;
       },
 
       //检测手机号码
@@ -276,37 +278,35 @@
           return 0;
         }
 
-        if (!(/^1[3|4|5|7|8][0-9]\d{4,8}$/.test(this.phoneNum))) {
+        if (!(/^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/.test(this.phoneNum))) {
           this.noticeStatus4 = 2;
           this.noticeContent4 = '您输入的手机号码的格式不正确';
-          return 1;
+          return 0;
         }
 
         this.noticeStatus4 = 1;
         this.noticeContent4 = '';
-        return 2;
+        return 1;
       },
 
-      //检测电话号码/区号/分机号
-      checkNumber: function () {
+      //检测电话号码
+      checkTelNumber: function () {
 
-        console.log('telNum:', this.telNum);
-        console.log('areaNum:', this.areaNum);
-        console.log('extensionNum:', this.extensionNum.length);
-        console.log('telNum length:', this.telNum.length);
-        console.log('areaNum length:', this.areaNum.length);
-        console.log('extensionNum length:', this.extensionNum.length);
-
-        //如果没有输入区号、电话号码、分机号
-        if (this.telNum.length === 0 && this.areaNum.length === 0 && this.extensionNum.length === 0) {
+        if (this.telNum === null || this.telNum === '') {
           this.noticeStatus5 = 0;
           this.noticeContent5 = '';
-          return;
+          return 1;
         }
 
-        if () {
-
+        if (this.telNum.length < 7 || isNaN(this.telNum)) {
+          this.noticeStatus5 = 2;
+          this.noticeContent5 = '您输入的电话号码的格式不正确';
+          return 0;
         }
+
+        this.noticeStatus5 = 1;
+        this.noticeContent5 = '';
+        return 1;
       }
     }
   };
@@ -436,36 +436,12 @@
     font-size: 14px;
   }
 
-  /* 区号输入框 */
-  .input-area {
-    width: 52px;
-    height: 22px;
-    line-height: 22px;
-    padding-left: 10px;
-    border: solid 1px #C2C2C2;
-    color: #000;
-    position: relative;
-    left: 1px;
-  }
-
   /* 电话号码输入框 */
   .input-tel {
-    width: 87px;
+    width: 373px;
     height: 22px;
     line-height: 22px;
     padding-left: 10px;
-    border: solid 1px #C2C2C2;
-    color: #000;
-    position: relative;
-    left: 1px;
-  }
-
-  /* 分机号输入框 */
-  .input-extension {
-    width: 90px;
-    height: 22px;
-    line-height: 22px;
-    padding: 0 10px;
     border: solid 1px #C2C2C2;
     color: #000;
     position: relative;
@@ -504,11 +480,20 @@
     color: #fff;
     font-size: 16px;
     background-color: #ff6d28;
-    display: none;
     position: relative;
   }
 
   .border {
     border-color: rgb(238, 34, 34);
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
   }
 </style>
