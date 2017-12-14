@@ -10,6 +10,8 @@
     <receiveInfo></receiveInfo>
     <div class="hr-20"></div>
     <payMethod></payMethod>
+    <div class="hr-20"></div>
+    <invoiceInfo></invoiceInfo>
     <goTop></goTop>
     <foot></foot>
   </div>
@@ -21,6 +23,7 @@
   import cartHeader from '../components/cartHeader';
   import receiveInfo from '../components/receiveInfo';
   import payMethod from '../components/payMethod';
+  import invoiceInfo from '../components/invoiceInfo';
   import goTop from '../components/goTop';
   import foot from '../components/foot';
 
@@ -34,6 +37,7 @@
       cartHeader,
       receiveInfo,
       payMethod,
+      invoiceInfo,
       goTop,
       foot
     },
