@@ -8,6 +8,8 @@
     <cartHeader></cartHeader>
     <div class="hr-12"></div>
     <receiveInfo></receiveInfo>
+    <div class="hr-20"></div>
+    <payMethod></payMethod>
     <goTop></goTop>
     <foot></foot>
   </div>
@@ -18,6 +20,7 @@
   import topBar from '../components/topBar';
   import cartHeader from '../components/cartHeader';
   import receiveInfo from '../components/receiveInfo';
+  import payMethod from '../components/payMethod';
   import goTop from '../components/goTop';
   import foot from '../components/foot';
 
@@ -30,6 +33,7 @@
       topBar,
       cartHeader,
       receiveInfo,
+      payMethod,
       goTop,
       foot
     },
