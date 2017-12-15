@@ -8,7 +8,7 @@
       <div class="dt">慕课价</div>
       <div class="dd">
         <span class="des-money">
-          <em>￥</em>{{ productInfo.productPrice }}
+          <em>￥</em>{{ productInfo.productPrice | formatMoney }}
         </span>
       </div>
     </div>
@@ -51,10 +51,10 @@
       <div class="dl">
         <div class="dt">数量</div>
         <div class="dd clearfix">
-          <!-- 设置商品数量的组件 s -->
-          <setProductNum v-bind:limitProductNum="limitProductNum"></setProductNum>
-          <!-- 设置商品数量的组件 e -->
-          <span class="buy-number">限购<em>{{ limitProductNum }}</em>件</span>
+          <!-- 改变商品数量的组件 s -->
+          <changeProductNum v-bind:limitProductNum="productInfo.limitProductNum"></changeProductNum>
+          <!-- 改变商品数量的组件 e -->
+          <span class="buy-number">限购<em>{{ productInfo.limitProductNum }}</em>件</span>
         </div>
       </div>
     </div>
@@ -87,7 +87,8 @@
   import selectAddress from '../components/selectAddress';
   import selectColor from '../components/selectColor';
   import selectStyle from '../components/selectStyle';
-  import setProductNum from '../components/setProductNum';
+  import changeProductNum from '../components/changeProductNum';
+  import {mapState, mapActions} from 'vuex';
 
   export default {
 
@@ -97,7 +98,7 @@
       selectAddress,
       selectColor,
       selectStyle,
-      setProductNum
+      changeProductNum
     },
 
     data() {
@@ -105,18 +106,73 @@
 
         //商品信息
         productInfo: {
+
+          //商品的名称
           productName: '全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货',
-          productPrice: '1999.00',
+
+          //商品的价格
+          productPrice: 1999.1,
+
+          //商品的数量
+          productNum: 1,
+
+          //商品的颜色
           productColor: '白色',
-          productStyle: 'WIFI 16G'
-        },
 
-        //商品限购的数量
-        limitProductNum: 200,
+          //商品的规格
+          productStyle: 'WIFI 16G',
 
-        //购物车中商品的数量
-        productNum: 0
+          //商品限制购买的数量
+          limitProductNum: 200
+        }
       };
+    },
+
+    //计算属性
+    computed: mapState([
+      'productNum',
+      'productPrice'
+    ]),
+
+    //过滤器
+    filters: {
+      formatMoney: function (value) {
+
+        //如果value是一个整数
+        if (parseInt(value) === value) {
+          return value + '.00';
+        //如果value是一个小数
+        } else {
+
+          //获得小数点后的位数
+          var num = String(value).length - String(value).indexOf('.') - 1;
+          console.log('value:', value);
+          console.log('num:', num);
+
+          //如果小数点后有一位数字
+          if (num === 1) {
+            return String(value) + '0';
+
+          //如果小数点后有两位数字
+          } else if (num === 2) {
+            return value;
+
+          //如果小数点后有三位或者三位以上数字
+          } else if (num >= 3) {
+
+            //将数字转换成字符串
+            var str = String(value);
+
+            //将字符串以小数点为切割点，切割成数组
+            var arr = str.split('.');
+
+            //将小数点后面的数字切割成字符串
+            var arr1 = arr[1].split('');
+
+            return arr[0] + '.' + arr1[0] + arr1[1];
+          }
+        }
+      }
     },
 
     //初始化
@@ -133,11 +189,22 @@
           this.productInfo.productStyle = style;
         });
 
-        this.bus.$on('change-num', productNum => {
-          this.productNum = productNum;
-          console.log('productNum:', this.productNum);
-        });
+        //设置商品的数量
+        this.setProductNum(this.productInfo.productNum);
+
+        //设置商品的价格
+        this.setProductPrice(this.productInfo.productPrice);
+
+        this.bus.$emit('change-num', this.productNum);
       });
+    },
+
+    methods: {
+
+      ...mapActions([
+        'setProductNum',
+        'setProductPrice'
+      ])
     }
   };
 </script>

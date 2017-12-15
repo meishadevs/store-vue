@@ -1,4 +1,3 @@
-
 <!-- 头部组件 -->
 
 <template>
@@ -23,29 +22,33 @@
           <li class="clearfix"
               v-for="(result, index) in arrayResult"
               v-bind:value="index"
-              ref = 'li'
+              ref='li'
               @click="setKeyWord($event)">
             <!-- 如果搜索结果中不存在用户输入的关键字 s -->
-            <p class="product-name"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == -1">{{ result[0] }}</p>
+            <p class="product-name" v-bind:value="index" v-if="result[0].indexOf(keyWord) == -1">{{ result[0] }}</p>
             <!-- 如果搜索结果中不存在用户输入的关键字 e -->
             <!-- 如果关键字位于搜索结果的起始位置 s -->
-            <p class="product-name"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == 0"><em>{{ keyWord }}</em>{{ result[0].substring(keyWord.length) }}</p>
+            <p class="product-name" v-bind:value="index" v-if="result[0].indexOf(keyWord) == 0"><em>{{ keyWord
+              }}</em>{{ result[0].substring(keyWord.length) }}</p>
             <!-- 如果关键字位于搜索结果的起始位置 e -->
             <!-- 如果关键字位于搜索结果的结束位置 s -->
-            <p class="product-name"  v-bind:value="index" v-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">{{ result[0].substring(0, result[0].length - keyWord.length) }}<em v-bind:value="index">{{ keyWord }}</em></p>
+            <p class="product-name" v-bind:value="index"
+               v-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">
+              {{ result[0].substring(0, result[0].length - keyWord.length) }}<em v-bind:value="index">{{ keyWord }}</em>
+            </p>
             <!-- 如果关键字位于搜索结果的结束位置 e -->
             <!-- 关键字位于搜索结果的中间 s -->
             <p class="product-name" v-else>
             </p>
             <!-- 关键字位于搜索结果的中间 e -->
-            <p class="result-num"  v-bind:value="index">约{{ result[1] }}个商品</p>
+            <p class="result-num" v-bind:value="index">约{{ result[1] }}个商品</p>
           </li>
         </ul>
       </div>
       <div class="shop-cart clearfix">
         <a href="javascript:;">
           <span class="shop-text">购物车</span>
-          <span class="shop-num">{{ productNum }}</span>
+          <span class="shop-num">{{ proNum }}</span>
         </a>
       </div>
     </div>
@@ -53,7 +56,7 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import { mapState, mapActions } from 'vuex';
 
   export default {
 
@@ -71,13 +74,25 @@
       };
     },
 
-    //计算属性
-    computed: mapState([
+    computed: {
 
-      //商品的数量
-      //映射 this.productNum 为 store.state.productNum
-      'productNum'
-    ]),
+      ...mapState([
+        'productNum',
+        'isLogin'
+      ]),
+
+      proNum: function () {
+
+        //如果用户登录了
+        if (this.isLogin) {
+          return this.productNum;
+
+          //如果用户没登录
+        } else {
+          return 0;
+        }
+      }
+    },
 
     methods: {
 

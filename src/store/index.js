@@ -21,6 +21,9 @@ const state = {
   //商品的数量
   productNum: 0,
 
+  //商品价格
+  productPrice: 0,
+
   //当前选中的导航项的索引
   currentNavIndex: 1,
 

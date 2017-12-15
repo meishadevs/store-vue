@@ -26,6 +26,11 @@ export default {
     commit('setProductNum', productNum);
   },
 
+  //设置商品价格
+  setProductPrice({ commit }, productPrice) {
+    commit('setProductPrice', productPrice);
+  },
+
   //改变当前选中的导航项的索引
   changeNavIndex({ commit }, currentIndex) {
     commit('changeNavIndex', currentIndex);
