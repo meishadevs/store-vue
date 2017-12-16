@@ -13,6 +13,8 @@
     <div class="hr-20"></div>
     <invoiceInfo></invoiceInfo>
     <deliveryInfo></deliveryInfo>
+    <div class="hr-20"></div>
+    <orderSett></orderSett>
     <goTop></goTop>
     <foot></foot>
   </div>
@@ -26,6 +28,7 @@
   import payMethod from '../components/payMethod';
   import invoiceInfo from '../components/invoiceInfo';
   import deliveryInfo from '../components/deliveryInfo';
+  import orderSett from '../components/orderSett';
   import goTop from '../components/goTop';
   import foot from '../components/foot';
 
@@ -41,6 +44,7 @@
       payMethod,
       invoiceInfo,
       deliveryInfo,
+      orderSett,
       goTop,
       foot
     },
@@ -50,6 +54,7 @@
       this.$nextTick(() => {
         document.title = '购物车和结算页';
         document.body.style.backgroundColor = '#fff';
+        document.body.scrollTop = '0';
       });
     }
   };

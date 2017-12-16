@@ -185,7 +185,7 @@
       this.$nextTick(function () {
         document.title = '商品分类页';
         document.body.style.backgroundColor = '#fff';
-        document.body.scrollTop = '0px';
+        document.body.scrollTop = '0';
       });
     }
   };

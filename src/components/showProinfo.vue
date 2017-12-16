@@ -8,7 +8,7 @@
       <div class="dt">慕课价</div>
       <div class="dd">
         <span class="des-money">
-          <em>￥</em>{{ productInfo.productPrice | formatMoney }}
+          <em>￥</em>{{ productInfo.productPrice | formateMoney }}
         </span>
       </div>
     </div>
@@ -84,11 +84,12 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  import {mapState, mapActions} from 'vuex';
   import selectAddress from '../components/selectAddress';
   import selectColor from '../components/selectColor';
   import selectStyle from '../components/selectStyle';
   import changeProductNum from '../components/changeProductNum';
-  import {mapState, mapActions} from 'vuex';
 
   export default {
 
@@ -111,7 +112,7 @@
           productName: '全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货',
 
           //商品的价格
-          productPrice: 1999.1,
+          productPrice: 1999,
 
           //商品的数量
           productNum: 1,
@@ -123,7 +124,9 @@
           productStyle: 'WIFI 16G',
 
           //商品限制购买的数量
-          limitProductNum: 200
+          limitProductNum: 200,
+
+          formateMoney: null
         }
       };
     },
@@ -133,47 +136,6 @@
       'productNum',
       'productPrice'
     ]),
-
-    //过滤器
-    filters: {
-      formatMoney: function (value) {
-
-        //如果value是一个整数
-        if (parseInt(value) === value) {
-          return value + '.00';
-        //如果value是一个小数
-        } else {
-
-          //获得小数点后的位数
-          var num = String(value).length - String(value).indexOf('.') - 1;
-          console.log('value:', value);
-          console.log('num:', num);
-
-          //如果小数点后有一位数字
-          if (num === 1) {
-            return String(value) + '0';
-
-          //如果小数点后有两位数字
-          } else if (num === 2) {
-            return value;
-
-          //如果小数点后有三位或者三位以上数字
-          } else if (num >= 3) {
-
-            //将数字转换成字符串
-            var str = String(value);
-
-            //将字符串以小数点为切割点，切割成数组
-            var arr = str.split('.');
-
-            //将小数点后面的数字切割成字符串
-            var arr1 = arr[1].split('');
-
-            return arr[0] + '.' + arr1[0] + arr1[1];
-          }
-        }
-      }
-    },
 
     //初始化
     mounted: function () {
@@ -196,6 +158,9 @@
         this.setProductPrice(this.productInfo.productPrice);
 
         this.bus.$emit('change-num', this.productNum);
+
+        //获得已经注册的过滤器
+        this.formateMoney = Vue.filter('formateMoney');
       });
     },
 

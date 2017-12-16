@@ -34,11 +34,5 @@ export default {
 
     //百度搜索的url
     Vue.prototype.baiduUrl = 'http://www.baidu.com/s';
-
-    //每页的第1条商品咨询信息的下标
-    Vue.prototype.advisoryStartIndex = 0;
-
-    //每页展示商品咨询信息的条数
-    Vue.prototype.advisoryAmount = 5;
   }
 };

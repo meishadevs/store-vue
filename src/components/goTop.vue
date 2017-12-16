@@ -15,24 +15,22 @@
         leader: 0,
         target: 0,
         timer: null,
-
-        //是否显示回到顶部按钮
         isShow: false
       };
     },
 
     //初始化
     mounted: function () {
-      this.$nextTick(function () {
+      this.$nextTick(() => {
 
         //监听浏览器的滚动事件
-        window.onscroll = () => {
+        window.onscroll = function() {
 
           //如果在竖直方向上滚动了网页，显示回到顶部按钮
-          this.isShow = document.body.scrollTop > 0 ? true : false;
+          this.isShow = document.documentElement.scrollTop > 0;
 
           //记录网页在竖直方向上滚动的距离
-          this.leader = document.body.scrollTop;
+          this.leader = document.documentElement.scrollTop;
         };
       });
     },

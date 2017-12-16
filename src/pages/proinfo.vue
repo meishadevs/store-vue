@@ -132,7 +132,7 @@
       this.$nextTick(function () {
         document.title = '商品信息展示页';
         document.body.style.backgroundColor = '#f0f0f0';
-        document.body.scrollTop = '0px';
+        document.body.scrollTop = '0';
 
         this.bus.$on('select-nav', (index) => {
           this.selectIndex = index;

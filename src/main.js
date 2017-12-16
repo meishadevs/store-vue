@@ -7,6 +7,7 @@ import config from './js/config';
 import axios from 'axios';
 import qs from 'qs';
 import jsonp from 'jsonp';
+import filter from './filter';
 
 //使用插件
 Vue.use(config);
@@ -24,6 +25,7 @@ let vm = new Vue({
   el: '#app',
   router,
   store,
+  filter,
   template: '<App/>',
   components: { App }
 });

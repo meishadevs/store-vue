@@ -25,10 +25,10 @@
         <div class="row-right">
           <div class="row-top clearfix">
             <div class="pro-name">Apple 苹果 iPad mini 16G wifi版 平板电脑</div>
-            <div class="unit-price">￥1999.00</div>
+            <div class="unit-price">￥{{ productPrice | formateMoney }}</div>
             <div class="cashback">￥0.00</div>
-            <div class="pro-num">1</div>
-            <div class="subtotal">1999.00</div>
+            <div class="pro-num">{{ productNum }}</div>
+            <div class="subtotal">{{ productPrice * productNum | formateMoney }}</div>
           </div>
           <div class="row-bottom clearfix">
             <div class="pro-name">[赠品]保鲜盒抽真空保鲜盒-海信冰洗赠品</div>
@@ -64,7 +64,30 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  import {mapState, mapActions} from 'vuex';
 
+  export default {
+
+    name: 'deliveryInfo',
+
+    computed: mapState([
+      'productNum',
+      'productPrice'
+    ]),
+
+    data() {
+      return {
+        formateMoney: null
+      };
+    },
+
+    mounted: function () {
+      this.$nextTick(() => {
+        this.formateMoney = Vue.filter('formateMoney');
+      });
+    }
+  };
 </script>
 
 <style scoped>
@@ -155,31 +178,35 @@
   }
 
   .row-top .unit-price {
-    margin-left: 86px;
+    width: 128px;
     font-size: 14px;
+    text-align: right;
     color: #666;
     float: left;
   }
 
   .row-top .cashback {
-    margin-left: 74px;
+    width: 136px;
     font-size: 14px;
+    text-align: right;
     color: #666;
     float: left;
   }
 
   .row-top .pro-num {
-    margin-left: 114px;
+    width: 122px;
     font-size: 14px;
+    text-align: right;
     color: #666;
     float: left;
   }
 
   .row-top .subtotal {
-    margin-left: 120px;
+    width: 175px;
     font-size: 14px;
-    color: #D70000;
     font-weight: bold;
+    text-align: right;
+    color: #D70000;
     float: left;
   }
 
@@ -188,7 +215,7 @@
   }
 
   .row-bottom .pro-num {
-    margin-left: 436px;
+    margin-left: 432px;
     font-size: 14px;
     color: #666;
     float: left;
