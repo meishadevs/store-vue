@@ -93,7 +93,7 @@
       this.$nextTick(function () {
         document.title = '商品选择页';
         document.body.style.backgroundColor = '#f0f0f0';
-        document.body.scrollTop = '0';
+        window.scrollTo(0, 0);
 
         //获得商品的数量
         this.getProductNum();

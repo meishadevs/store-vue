@@ -1,4 +1,3 @@
-
 <!-- 回到顶部按钮组件 -->
 
 <template>
@@ -24,13 +23,16 @@
       this.$nextTick(() => {
 
         //监听浏览器的滚动事件
-        window.onscroll = function() {
+        window.onscroll = () => {
+
+          //获得竖直方向上的滚动条到浏览器顶部的距离
+          var scrollTop = this.getScrollTop();
 
           //如果在竖直方向上滚动了网页，显示回到顶部按钮
-          this.isShow = document.documentElement.scrollTop > 0;
+          this.isShow = scrollTop > 0;
 
           //记录网页在竖直方向上滚动的距离
-          this.leader = document.documentElement.scrollTop;
+          this.leader = scrollTop;
         };
       });
     },
@@ -56,6 +58,27 @@
             clearInterval(this.timer);
           }
         }, 10);
+      },
+
+      //获取滚动条到浏览器顶部的距离
+      getScrollTop: function () {
+
+        var scrollPos;
+
+        if (window.pageYOffset) {
+
+          scrollPos = window.pageYOffset;
+
+        } else if (document.compatMode && document.compatMode !== 'BackCompat') {
+
+          scrollPos = document.documentElement.scrollTop;
+
+        } else if (document.body) {
+
+          scrollPos = document.body.scrollTop;
+        }
+
+        return scrollPos;
       }
     }
   };

@@ -182,7 +182,7 @@
       this.$nextTick(function () {
         document.title = '电商网站首页';
         document.body.style.backgroundColor = '#fff';
-        document.body.scrollTop = '0';
+        window.scrollTo(0, 0);
 
         //改变当前选中的导航项的索引
         this.changeNavIndex(1);
