@@ -158,49 +158,6 @@
         this.bus.$emit('select-address');
       },
 
-      //保存地址
-      saveAddress: function () {
-        localStorage.setItem('provinceName', this.provinceName);
-        localStorage.setItem('cityName', this.cityName);
-        localStorage.setItem('areaName', this.areaName);
-        localStorage.setItem('provinceCode', this.provinceCode);
-        localStorage.setItem('cityCode', this.cityCode);
-        localStorage.setItem('areaCode', this.areaCode);
-      },
-
-      //读取省的数据
-      readProvinceData: function () {
-        this.provinceName = localStorage.getItem('provinceName');
-        this.provinceCode = localStorage.getItem('provinceCode');
-
-        if ((this.provinceName === null) || (this.provinceName === 'null')) {
-          this.provinceName = '北京市';
-          this.provinceCode = 110000;
-        }
-      },
-
-      //读取市的数据
-      readCityData: function () {
-        this.cityName = localStorage.getItem('cityName');
-        this.cityCode = localStorage.getItem('cityCode');
-
-        if ((this.cityName === null) || (this.cityName === 'null')) {
-          this.cityName = '北京市';
-          this.cityCode = 110100;
-        }
-      },
-
-      //读取区的数据
-      readAreaData: function () {
-        this.areaName = localStorage.getItem('areaName');
-        this.areaCode = localStorage.getItem('areaCode');
-
-        if ((this.areaName === null) || (this.areaName === 'null')) {
-          this.areaName = '东城区';
-          this.areaCode = 110101;
-        }
-      },
-
       //是否显示滚动条
       isShowScroll1: function () {
 

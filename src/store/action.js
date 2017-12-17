@@ -59,5 +59,30 @@ export default {
   //设置网络类型
   setNetworkType({ commit }, networkType) {
     commit('setNetworkType', networkType);
+  },
+
+  //改变收货信息的状态
+  changeReceiveStatus({ commit }, receiveStatus) {
+    commit('changeReceiveStatus', receiveStatus);
+  },
+
+  //设置支付方式
+  setPayMethod({ commit }, payMethod) {
+    commit('setPayMethod', payMethod);
+  },
+
+  //改变发票的状态
+  changeInvoiceStatus({ commit }, invoiceStatus) {
+    commit('changeInvoiceStatus', invoiceStatus);
+  },
+
+  //改变检测结果的状态
+  changeCheckStatus({ commit }, checkStatus) {
+    commit('changeCheckStatus', checkStatus);
+  },
+
+  //设置检测结果中显示的内容
+  setCheckContent({ commit }, checkContent) {
+    commit('setCheckContent', checkContent);
   }
 };

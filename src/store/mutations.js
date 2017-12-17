@@ -60,5 +60,30 @@ export default {
   //设置网络类型
   setNetworkType: function (state, networkType) {
     state.networkType = networkType;
+  },
+
+  //改变收货信息的状态
+  changeReceiveStatus: function (state, receiveStatus) {
+    state.isReceive = receiveStatus;
+  },
+
+  //设置支付方式
+  setPayMethod: function (state, payMethod) {
+    state.payMethod = payMethod;
+  },
+
+  //改变发票的状态
+  changeInvoiceStatus: function (state, isInvoice) {
+    state.isInvoice = isInvoice;
+  },
+
+  //改变检测结果的状态
+  changeCheckStatus: function (state, checkStatus) {
+    state.checkStatus = checkStatus;
+  },
+
+  //设置检测结果中显示的内容
+  setCheckContent: function (state, checkContent) {
+    state.checkContent = checkContent;
   }
 };

@@ -6,7 +6,13 @@
     <div class="title">支付方式</div>
     <div class="pay-content">
       <div class="row clearfix">
-        <input class="weixin-radio" name="pay" id="weixin" type="radio" value="1" v-model="pay">
+        <input class="weixin-radio"
+               name="pay"
+               id="weixin"
+               type="radio"
+               value="1"
+               v-model="pay"
+                @click="changePayMethod(1)">
         <label class="weixin-label" for="weixin">微信支付</label>
         <div class="image">
           <img src="/static/images/icon/weixin.jpg" alt="">
@@ -14,7 +20,13 @@
         <p class="info">用微信扫一扫就能支付!</p>
       </div>
       <div class="row clearfix">
-        <input class="cash-radio" name="pay" id="cash" type="radio" value="2" v-model="pay">
+        <input class="cash-radio"
+               name="pay"
+               id="cash"
+               type="radio"
+               value="2"
+               v-model="pay"
+                @click="changePayMethod(2)">
         <label class="cash-label" for="cash">货到付款</label>
         <p class="info">送货上门后再付款，使用现金或刷银行卡。</p>
       </div>
@@ -23,15 +35,31 @@
 </template>
 
 <script>
+  import {mapState, mapActions} from 'vuex';
+
   export default {
     name: 'payMethod',
 
     data() {
       return {
-
-        //标记用户选择的支付方式，1表示微信支付，2表示现金支付
-        pay: null
+        pay: 0
       };
+    },
+
+    computed: mapState([
+      'payMethod'
+    ]),
+
+    methods: {
+
+      ...mapActions([
+        'setPayMethod'
+      ]),
+
+      //改变支付方式
+      changePayMethod: function (pay) {
+        this.setPayMethod(pay);
+      }
     }
   };
 </script>

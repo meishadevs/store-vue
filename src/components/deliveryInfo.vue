@@ -9,7 +9,15 @@
         <router-link to="/proinfo">返回商品详情页修改</router-link>
       </div>
     </div>
-    <div class="show-result">订单已提交</div>
+    <transition name="fade">
+      <div class="show-result" v-if="checkStatus == 1">{{ checkContent }}</div>
+      <div class="show-result" v-if="checkStatus == 2">
+        <span class="text">{{ checkContent }}</span>
+        <button class="close-btn" @click="closeDialog()">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+    </transition>
     <div class="delivery-content">
       <div class="first-row clearfix">
         <div class="pro-name">商品名称</div>
@@ -73,13 +81,27 @@
 
     computed: mapState([
       'productNum',
-      'productPrice'
+      'productPrice',
+      'checkStatus',
+      'checkContent'
     ]),
 
     data() {
       return {
         formateMoney: null
       };
+    },
+
+    methods: {
+      ...mapActions([
+        'changeCheckStatus',
+        'setCheckContent'
+      ]),
+
+      closeDialog: function () {
+        this.changeCheckStatus(0);
+        this.setCheckContent('');
+      }
     },
 
     mounted: function () {
@@ -326,4 +348,25 @@
   .show-result .close-btn i::before {
     content: "\f00d";
   }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>
+
+
+
+
+
+
+
+
+
+
+

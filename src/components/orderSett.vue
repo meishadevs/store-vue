@@ -32,19 +32,56 @@
 
     computed: mapState([
       'productNum',
-      'productPrice'
+      'productPrice',
+      'isReceive',
+      'payMethod',
+      'checkStatus',
+      'checkContent'
     ]),
 
     mounted: function () {
       this.$nextTick(() => {
         this.formateMoney = Vue.filter('formateMoney');
+        this.changeCheckStatus(0);
+        this.setCheckContent('');
       });
     },
 
     methods: {
 
+      ...mapActions([
+        'changeCheckStatus',
+        'setCheckContent'
+      ]),
+
       //提交订单
       commitOrder: function () {
+
+        window.scrollTo(0, 872);
+
+        console.log('isReceive:', this.isReceive);
+
+        //如果用户没有填写收货信息
+        if (!this.isReceive) {
+          this.changeCheckStatus(2);
+          this.setCheckContent('请填写收货信息');
+          return;
+        }
+
+        //如果用户没有选择支付方式
+        if (this.payMethod === 0) {
+          this.changeCheckStatus(2);
+          this.setCheckContent('请选择支付方式');
+          return;
+        }
+
+        this.changeCheckStatus(1);
+        this.setCheckContent('订单已提交');
+
+        setTimeout(() => {
+          this.changeCheckStatus(0);
+          this.setCheckContent('');
+        }, 3000);
       }
     }
   };

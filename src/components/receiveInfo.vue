@@ -111,6 +111,7 @@
 </template>
 
 <script>
+  import {mapState, mapActions} from 'vuex';
   import selectAddress from '../components/selectAddress';
 
   export default {
@@ -166,7 +167,15 @@
       });
     },
 
+    computed: mapState([
+      'isReceive'
+    ]),
+
     methods: {
+
+      ...mapActions([
+        'changeReceiveStatus'
+      ]),
 
       //提交收货信息
       submitReceiveInfo: function () {
@@ -193,7 +202,10 @@
           return;
         }
 
+        console.log('调用');
         this.isShowResult = true;
+        this.changeReceiveStatus(true);
+        console.log('收货信息的状态:', this.isReceive);
 
         setTimeout(() => {
           this.isShowResult = false;
