@@ -84,5 +84,10 @@ export default {
   //设置检测结果中显示的内容
   setCheckContent({ commit }, checkContent) {
     commit('setCheckContent', checkContent);
+  },
+
+  //切换登录的状态
+  changeLoginStatus({ commit }, isLogin) {
+    commit('changeLoginStatus', isLogin);
   }
 };

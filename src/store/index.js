@@ -10,13 +10,13 @@ Vue.use(Vuex);
 const state = {
 
   //用户名是否登录了
-  isLogin: true,
+  isLogin: false,
 
   //是否显示蒙版
   isShowMask: false,
 
   //用户名
-  username: 'meishadevs',
+  username: null,
 
   //商品的数量
   productNum: 0,

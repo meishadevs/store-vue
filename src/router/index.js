@@ -5,6 +5,8 @@ import cate from '../pages/cate';
 import select from '../pages/select';
 import proinfo from '../pages/proinfo';
 import cart from '../pages/cart';
+import register from '../pages/register';
+import login from '../pages/login';
 
 Vue.use(VueRouter);
 
@@ -34,6 +36,16 @@ export default new VueRouter({
       path: '/cart',
       name: 'cart',
       component: cart
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     }
   ]
 });

@@ -10,12 +10,14 @@
       <div class="right-area">
         <!-- 如果用户登录了 e -->
         <div v-if="isLogin">
-          欢迎<a class="showUsername" href="javascript:;">{{ username }}</a>来到慕课网&nbsp;<a class="exit" href="javascript:;" @click="exit()">[退出]</a>
+          欢迎<a class="show-username" href="javascript:;">{{ username }}</a>来到慕课网&nbsp;<a class="exit" href="javascript:;" @click="exit()">[退出]</a>
         </div>
         <!-- 如果用户登录了 e -->
         <!-- 如果用户没有登录 s-->
         <div v-else>
-          欢迎来到慕课网&nbsp;<a class="loginLink" href="javascript:;">[登录]</a>&nbsp;<a class="registerLink" href="javascript:;">[免费注册]</a>
+          欢迎来到慕课网
+          <router-link class="login-link" to="/login">[登录]</router-link>
+          <router-link class="register-link" to="/register">[免费注册]</router-link>
         </div>
         <!-- 如果用户没有登录 e -->
       </div>
@@ -88,7 +90,7 @@
     float: right;
   }
 
-  .right-area .showUsername {
+  .right-area .show-username {
     color: #C81623;
   }
 </style>
