@@ -101,7 +101,6 @@
 
     //销毁
     destroyed: function () {
-      this.saveAddress();
     },
 
     //监听器
