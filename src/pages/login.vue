@@ -91,7 +91,6 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
   import loginHeader from '../components/loginHeader';
   import foot from '../components/foot';
 
@@ -108,6 +107,7 @@
     mounted: function () {
       this.$nextTick(() => {
         document.title = '电商网站的登录页';
+        document.body.style.backgroundColor = '#fff';
         this.readUserInfo();
       });
     },
@@ -146,11 +146,6 @@
     },
 
     methods: {
-
-      ...mapActions([
-        'setUsername',
-        'changeLoginStatus'
-      ]),
 
       //登录
       login: function () {
@@ -197,8 +192,8 @@
           } else if (res.data === 3) {
 
             this.resultStatus = 1;
-            this.setUsername(this.username);
-            this.changeLoginStatus(true);
+            sessionStorage.setItem('isLogin', 1);
+            sessionStorage.setItem('username', this.username);
 
             let timer = setInterval(() => {
 

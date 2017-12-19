@@ -8,9 +8,10 @@
         <a href="javascript:;" class="collection" @click="showMask()">收藏慕课</a>
       </div>
       <div class="right-area">
-        <!-- 如果用户登录了 e -->
+        <!-- 如果用户登录了 s -->
         <div v-if="isLogin">
-          欢迎<a class="show-username" href="javascript:;">{{ username }}</a>来到慕课网&nbsp;<a class="exit" href="javascript:;" @click="exit()">[退出]</a>
+          欢迎<a class="show-username" href="javascript:;">{{ username }}</a>来到慕课网
+          <a class="exit" href="javascript:;" @click="exit()">[退出]</a>
         </div>
         <!-- 如果用户登录了 e -->
         <!-- 如果用户没有登录 s-->
@@ -33,19 +34,28 @@
     //设置组件名称
     name: 'topBar',
 
-    data() {
-      return {
-      };
+    //初始化
+    mounted: function () {
+      this.$nextTick(() => {
+        let isLogin = parseInt(sessionStorage.getItem('isLogin'));
+        let username = sessionStorage.getItem('username');
+
+        if (isNaN(isLogin)) {
+          isLogin = 0;
+          username = '';
+        }
+
+        this.changeLoginStatus(isLogin);
+        this.setUsername(username);
+      });
     },
 
     computed: mapState([
 
       //用户名
-      //映射 this.username 为 store.state.username
       'username',
 
       //是否登录了
-      //映射 this.isLogin 为 stote.state.isLogin
       'isLogin'
     ]),
 
@@ -60,7 +70,9 @@
         'exit',
 
         //设置用户名
-        'setUsername'
+        'setUsername',
+
+        'changeLoginStatus'
       ])
     }
   };

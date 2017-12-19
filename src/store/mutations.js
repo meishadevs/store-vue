@@ -15,6 +15,8 @@ export default {
   exit: function (state) {
     state.isLogin = false;
     state.username = '';
+    sessionStorage.setItem('isLogin', 0);
+    sessionStorage.setItem('username', '');
   },
 
   //设置用户名
