@@ -91,6 +91,7 @@
 </template>
 
 <script>
+  import {mapState, mapActions} from 'vuex';
   import loginHeader from '../components/loginHeader';
   import foot from '../components/foot';
 
@@ -147,6 +148,11 @@
 
     methods: {
 
+      ...mapActions([
+        'changeLoginStatus',
+        'setUsername'
+      ]),
+
       //登录
       login: function () {
 
@@ -192,8 +198,8 @@
           } else if (res.data === 3) {
 
             this.resultStatus = 1;
-            sessionStorage.setItem('isLogin', 1);
-            sessionStorage.setItem('username', this.username);
+            this.changeLoginStatus(true);
+            this.setUsername(this.username);
 
             let timer = setInterval(() => {
 
@@ -201,7 +207,7 @@
 
               if (this.numTime <= 0) {
                 clearInterval(timer);
-                window.location = '/';
+                this.$router.push('/');
               }
             }, 1000);
           }

@@ -270,11 +270,12 @@
           if (res.data === 1) {
             this.resultStatus = 1;
             let timer = setInterval(() => {
+
               this.numTime--;
 
               if (this.numTime <= 0) {
                 clearInterval(timer);
-                window.location = '/login';
+                this.$router.push('/login');
               }
             }, 1000);
 

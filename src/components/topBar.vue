@@ -37,16 +37,6 @@
     //初始化
     mounted: function () {
       this.$nextTick(() => {
-        let isLogin = parseInt(sessionStorage.getItem('isLogin'));
-        let username = sessionStorage.getItem('username');
-
-        if (isNaN(isLogin)) {
-          isLogin = 0;
-          username = '';
-        }
-
-        this.changeLoginStatus(isLogin);
-        this.setUsername(username);
       });
     },
 
