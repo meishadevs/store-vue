@@ -11,7 +11,7 @@
         <!-- 如果用户登录了 s -->
         <div v-if="isLogin">
           欢迎<a class="show-username" href="javascript:;">{{ username }}</a>来到慕课网
-          <a class="exit" href="javascript:;" @click="exit()">[退出]</a>
+          <a class="exit" href="javascript:;" @click="exitAccount()">[退出]</a>
         </div>
         <!-- 如果用户登录了 e -->
         <!-- 如果用户没有登录 s-->
@@ -33,12 +33,6 @@
 
     //设置组件名称
     name: 'topBar',
-
-    //初始化
-    mounted: function () {
-      this.$nextTick(() => {
-      });
-    },
 
     computed: mapState([
 
@@ -63,7 +57,13 @@
         'setUsername',
 
         'changeLoginStatus'
-      ])
+      ]),
+
+      //退出账户
+      exitAccount: function () {
+        this.exit();
+        this.$router.push('/');
+      }
     }
   };
 </script>

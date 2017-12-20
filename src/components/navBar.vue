@@ -15,12 +15,24 @@
 
       <!-- 水平导航条 -->
       <ul class="nav fl clearfix">
-        <li v-bind:class="{active: currentNavIndex == 1}" @click="changeNavIndex(1)"><router-link to="/cate">数码城</router-link></li>
-        <li v-bind:class="{active: currentNavIndex == 2}" @click="changeNavIndex(2)"><router-link to="/cate">天黑黑</router-link></li>
-        <li v-bind:class="{active: currentNavIndex == 3}" @click="changeNavIndex(3)"><router-link to="/cate">团购</router-link></li>
-        <li v-bind:class="{active: currentNavIndex == 4}" @click="changeNavIndex(4)"><router-link to="/cate">发现</router-link></li>
-        <li v-bind:class="{active: currentNavIndex == 5}" @click="changeNavIndex(5)"><router-link to="/cate">二手卖</router-link></li>
-        <li v-bind:class="{active: currentNavIndex == 6}" @click="changeNavIndex(6)"><router-link to="/cate">名品会</router-link></li>
+        <li v-bind:class="{active: currentNavIndex == 1}" @click="changeNavIndex(1)">
+          <router-link to="/cate">数码城</router-link>
+        </li>
+        <li v-bind:class="{active: currentNavIndex == 2}" @click="changeNavIndex(2)">
+          <router-link to="/cate">天黑黑</router-link>
+        </li>
+        <li v-bind:class="{active: currentNavIndex == 3}" @click="changeNavIndex(3)">
+          <router-link to="/cate">团购</router-link>
+        </li>
+        <li v-bind:class="{active: currentNavIndex == 4}" @click="changeNavIndex(4)">
+          <router-link to="/cate">发现</router-link>
+        </li>
+        <li v-bind:class="{active: currentNavIndex == 5}" @click="changeNavIndex(5)">
+          <router-link to="/cate">二手卖</router-link>
+        </li>
+        <li v-bind:class="{active: currentNavIndex == 6}" @click="changeNavIndex(6)">
+          <router-link to="/cate">名品会</router-link>
+        </li>
       </ul>
       <!-- 水平导航条 s -->
 

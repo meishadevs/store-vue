@@ -73,11 +73,21 @@
     </div>
     <!-- 显示已经选好的手机的属性 e -->
 
-    <div class="des-button clearfix">
+    <!-- 如果用户已经登录了，直接进入购物车 s -->
+    <div class="des-button clearfix" v-if="isLogin">
       <router-link to="/cart"  class="buy">加入购物车</router-link>
       <span class="line"></span>
       <router-link to="/cart" class="buy">立即购买</router-link>
     </div>
+    <!-- 如果用户已经登录了，直接进入购物车 e -->
+
+    <!-- 如果用户没有登录，先登录 s -->
+    <div class="des-button clearfix" v-else>
+      <router-link to="/login/1"  class="buy">加入购物车</router-link>
+      <span class="line"></span>
+      <router-link to="/login/1" class="buy">立即购买</router-link>
+    </div>
+    <!-- 如果用户没有登录，先登录 e -->
 
     <p class="notice">注意：此商品可提供普通发票，不提供增值税发票。</p>
   </div>
@@ -134,7 +144,8 @@
     //计算属性
     computed: mapState([
       'productNum',
-      'productPrice'
+      'productPrice',
+      'isLogin'
     ]),
 
     //初始化

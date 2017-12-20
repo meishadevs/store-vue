@@ -46,6 +46,11 @@ export default new VueRouter({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/login/:isCart',
+      name: 'login',
+      component: login
     }
   ]
 });

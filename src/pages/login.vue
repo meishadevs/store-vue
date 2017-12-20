@@ -8,7 +8,7 @@
     <div class="show-result" v-if="resultStatus == 1">
       登录成功
       <span class="time">{{ numTime }}</span>
-      秒后跳转到网站首页
+      秒后跳转到{{ content }}
     </div>
     <!-- 注册成功时显示注册结果 e -->
     <!-- 登录失败时，显示注册结果 s -->
@@ -142,7 +142,9 @@
 
         resultContent: null,
 
-        numTime: 3
+        numTime: 3,
+
+        content: '网站首页'
       };
     },
 
@@ -201,13 +203,36 @@
             this.changeLoginStatus(true);
             this.setUsername(this.username);
 
+            //登录成功后是否进入购物车页
+            let isCart = parseInt(this.$route.params.isCart);
+
+            //登录成功后进入购物车页
+            if (isCart) {
+              this.content = '购物车和结算页';
+
+              //登录成功后进入网站首页
+            } else {
+              this.content = '网站首页';
+            }
+
+            //创建定时器
             let timer = setInterval(() => {
 
               this.numTime--;
 
               if (this.numTime <= 0) {
                 clearInterval(timer);
-                this.$router.push('/');
+
+                //登录成功后进入购物车页
+                if (isCart) {
+                  this.content = '购物车和结算页';
+                  this.$router.push('/cart');
+
+                //登录成功后进入网站首页
+                } else {
+                  this.content = '网站首页';
+                  this.$router.push('/');
+                }
               }
             }, 1000);
           }
