@@ -11,15 +11,15 @@
 
 	cd server
 
-**第三步：初始化一个本地Git仓库**
+**第三步：初始化一个本地git仓库**
 
 	git init
 
-**第四步：将本地Git仓库关联到远程Git仓库**
+**第四步：将本地git仓库关联到远程git仓库**
 
-	git remote add origin https://github.com/meishadevs/ImoocDSWZ.git
+	git remote add origin https://github.com/meishadevs/dswz.git
 
-**第五步：拉取位于远程仓库上server分支中的代码到本地**
+**第五步：拉取位于远程git仓库上server分支中的代码到本地**
 
 	git pull origin server
 
