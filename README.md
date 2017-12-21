@@ -15,11 +15,11 @@
 ## 项目的目录结构
 
 ```
-├── build                      // 项目构建相关的代码       
-├── config                      // 项目开发环境相关配置                   
-├── src       			                      // 源码目录
-│   ├── assets                 // 项目的资源目录    
-│   ├── components                    // Vue公共组件
+├── build                          // 项目构建相关的代码       
+├── config                         // 项目开发环境相关配置                   
+├── src       			               // 源码目录
+│   ├── assets                     // 项目的资源目录    
+│   ├── components                 // Vue公共组件
 │   │   ├── advisoryList.vue       // 商品咨询列表组件
 │   │   ├── banner.vue             // 轮播图组件
 │   │   ├── cartHeader.vue         // 购物车页上的头部组件
@@ -56,39 +56,39 @@
 │   │   ├── selectStyle.vue        // 商品规格选择组件
 │   │   ├── showProinfo.vue        // 商品信息展示组件
 │   │   ├── topBar.vue             // 顶部通栏组件
-│    │ 	  └── userPosition.vue     // 用户位置组件  
-│   ├──  css                         // 网站的CSS样式
-│   │   └── reset.css         // 重置标签的CSS样式
-│   ├──  filter                      // 过滤器
-│   │   └── index.js           // 创建的一些全局过滤器
-│   ├──  js                          // js脚本
-│   │   └── config.js           // 网站与服务器端交互的Url
-│   ├── pages                       // 网站的页面
-│   │   ├── cart.vue             // 购物车和商品结算页
-│   │   ├── cate.vue             // 商品分类页
-│   │   ├── index.vue            // 网站首页
-│   │   ├── login.vue            // 登录页
-│   │   ├── proinfo.vue          // 商品信息展示页
-│   │   ├── register.vue         // 注册页
-│   │   ├── select.vue           // 商品选择页
-│   ├── router               // vue-router路由
-│    │ 	  └── index.js         // 项目的路由
-│   ├── store                       // vuex状态管理器
-│   │   ├── action.js            // 加载各种action模块
-│   │   ├── index.vue            // 记录网站的状态
-│    │ 	  └── mutations.js      // 加载各种mutations模块
-│    ├── App.vue                     // 页面入口文件
-│     └── index.js                    // 程序入口文件
-├── static                             // 存放一些静态文件
-│    ├── fonts	                      // 存放网站的字体
-│    ├── images                       // 存放网站的图片
-│ 	  └── .gitkeep		                  // 只是一个占位符，一个假文件
-├── .babelrc			                      // babel编译的一些配置
-├── .editorconfig    		              // 编辑器的配置
-├── .gitignore                         // 提交到git上时，忽略提交的文件和文件夹
-├── .postcssrc.js                      // 自动加载配置为PostCSS
-├── index.html                         // 入口HTML文件
-└── package.json                // 项目配置文件
+│   │ 	└── userPosition.vue       // 用户位置组件  
+│   ├── css                       // 网站的CSS样式
+│   │   └── reset.css              // 重置标签的CSS样式
+│   ├── filter                     // 过滤器
+│   │   └── index.js               // 创建的一些全局过滤器
+│   ├── js                         // js脚本
+│   │   └── config.js              // 网站与服务器端交互的Url
+│   ├── pages                      // 网站的页面
+│   │   ├── cart.vue               // 购物车和商品结算页
+│   │   ├── cate.vue               // 商品分类页
+│   │   ├── index.vue              // 网站首页
+│   │   ├── login.vue              // 登录页
+│   │   ├── proinfo.vue            // 商品信息展示页
+│   │   ├── register.vue           // 注册页
+│   │   ├── select.vue             // 商品选择页
+│   ├── router                     // vue-router路由
+│   │ 	└── index.js               // 项目的路由
+│   ├── store                      // vuex状态管理器
+│   │   ├── action.js              // 加载各种action模块
+│   │   ├── index.vue              // 记录网站的状态
+│   │ 	└── mutations.js           // 加载各种mutations模块
+│    ├── App.vue                   // 页面入口文件
+│    └── index.js                 // 程序入口文件
+├── static                         // 存放一些静态文件
+│    ├── fonts	                   // 存放网站的字体
+│    ├── images                    // 存放网站的图片
+│ 	 └── .gitkeep		               // 只是一个占位符，一个假文件
+├── .babelrc			                 // babel编译的一些配置
+├── .editorconfig    		           // 编辑器的配置
+├── .gitignore                     // 提交到git上时，忽略提交的文件和文件夹
+├── .postcssrc.js                  // 自动加载配置为PostCSS
+├── index.html                     // 入口HTML文件
+└── package.json                   // 项目配置文件
 ```
 
 
