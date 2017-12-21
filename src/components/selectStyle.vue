@@ -1,5 +1,5 @@
 
-<!-- 选择规格组件 -->
+<!-- 商品规格选择组件 -->
 
 <template>
   <div class="select-style clearfix">
