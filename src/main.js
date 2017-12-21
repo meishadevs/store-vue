@@ -8,6 +8,7 @@ import axios from 'axios';
 import qs from 'qs';
 import jsonp from 'jsonp';
 import filter from './filter';
+import './css/reset.css';
 
 //使用插件
 Vue.use(config);

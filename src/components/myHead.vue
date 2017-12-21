@@ -46,10 +46,14 @@
         </ul>
       </div>
       <div class="shop-cart clearfix">
-        <a href="javascript:;">
+        <router-link to="/cart" v-if="isLogin">
           <span class="shop-text">购物车</span>
           <span class="shop-num">{{ proNum }}</span>
-        </a>
+        </router-link>
+        <router-link to="/login/1" v-else>
+          <span class="shop-text">购物车</span>
+          <span class="shop-num">{{ proNum }}</span>
+        </router-link>
       </div>
     </div>
   </header>
