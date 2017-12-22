@@ -50,52 +50,6 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 ![](folder.PNG)
 
 ## 特别说明
-当你的服务器地址和我设置的服务器端地址不同时，可以修改**ImoocDSWZ\dswzClient\src\js**下的config.js文件
-
-	/**
-	 * Created by Administrator on 2017/4/10.
-	 * 用于处理一些网站的配置信息
-	 */
-
-	//存放一些网站的配置信息
-	var config = {
-
-    //获得省、市、区数据的url
-    'addressUrl': 'http://localhost/dswzServer/place.php',
-
-    //获得商品咨询信息的url
-    'advisoryUrl': 'http://localhost/dswzServer/advisory.php',
-
-    //获得商品信息的url
-    'productUrl': 'http://localhost/dswzServer/product.php',
-
-    //淘宝搜索的url
-    'taobaoUrl': 'https://suggest.taobao.com/sug',
-
-    //百度搜索的url
-    'baiduUrl': 'http://www.baidu.com/s',
-
-    //注册账号的url
-    'registerUrl': 'http://localhost/dswzServer/register.php',
-
-    //登录账号的url
-    'loginUrl': 'http://localhost/dswzServer/login.php',
-
-    //每页的第1条商品咨询信息的下标
-    'advisoryStartIndex' : 0,
-
-    //每页展示商品咨询信息的条数
-    'advisoryAmount' : 5,
-
-    //每页第一条商品信息的下标
-    'productStartIndex': 0,
-
-    //每页展示的商品信息的条数
-    'productAmount': 6
-	};
-
-修改完成后再在命令行中执行一次`gulp defaultTask`命令，会重新编译打包，或者执行`gulp server`命令，当src文件夹下有文件改变的时候，会自动编译打包到dist文件夹下
-
 当你的数据库的设置和我的默认设置不同的时候，可以修改**ImoocDSWZ\dswzServer下的connect.php文件
 
 	<?php
