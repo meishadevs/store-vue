@@ -74,7 +74,7 @@
 网站服务器端配置请移步到server分支：[https://github.com/meishadevs/dswz/tree/server](https://github.com/meishadevs/dswz/tree/server)
 
 ## 特别说明
-当你的服务器地址和我设置的服务器端地址不同时，可以修改**ImoocDSWZ\dswzClient\src\js**下的config.js文件
+当你的服务器地址和我设置的服务器端地址不同时，可以修改dswzClient\src\js下的config.js文件
 
 	/**
 	 * Created by Administrator on 2017/4/10.
