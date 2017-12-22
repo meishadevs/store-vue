@@ -15,7 +15,7 @@
                 @click="changePayMethod(1)">
         <label class="weixin-label" for="weixin">微信支付</label>
         <div class="image">
-          <img src="/static/images/icon/weixin.jpg" alt="">
+          <img v-bind:src="wxIcon" alt="">
         </div>
         <p class="info">用微信扫一扫就能支付!</p>
       </div>
@@ -42,7 +42,10 @@
 
     data() {
       return {
-        pay: 0
+        pay: 0,
+
+        //微信图标
+        wxIcon: './static/images/icon/weixin.jpg'
       };
     },
 

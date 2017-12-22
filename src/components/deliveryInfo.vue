@@ -28,7 +28,7 @@
       </div>
       <div class="second-row clearfix">
         <div class="pro-image">
-          <img src="/static/images/pro.jpg" width="50" alt="">
+          <img v-bind:src="productImage[0]" width="50" alt="">
         </div>
         <div class="row-right">
           <div class="row-top clearfix">
@@ -55,7 +55,7 @@
       <div class="product-info clearfix">
         <!-- 商品图片 s -->
         <div class="product-image">
-          <img src="/static/images/pro1.jpg" alt="">
+          <img v-bind:src="productImage[1]" alt="">
         </div>
         <!-- 商品图片 e -->
         <!-- 商品描述 s -->
@@ -88,7 +88,10 @@
 
     data() {
       return {
-        formateMoney: null
+        formateMoney: null,
+
+        //商品图片
+        productImage: ['./static/images/pro.jpg', './static/images/pro1.jpg']
       };
     },
 

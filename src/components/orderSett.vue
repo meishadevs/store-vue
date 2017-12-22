@@ -59,8 +59,6 @@
 
         window.scrollTo(0, 872);
 
-        console.log('isReceive:', this.isReceive);
-
         //如果用户没有填写收货信息
         if (!this.isReceive) {
           this.changeCheckStatus(2);
