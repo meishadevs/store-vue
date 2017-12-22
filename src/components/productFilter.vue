@@ -92,6 +92,17 @@
       };
     },
 
+    //初始化
+    mounted: function () {
+      this.$nextTick(() => {
+        this.setBrand(null);
+        this.setScreenSize(null);
+        this.setOperatingSystem(null);
+        this.setRunningMemory(null);
+        this.setNetworkType(null);
+      });
+    },
+    
     computed: mapState([
       'brand',
       'screenSize',
