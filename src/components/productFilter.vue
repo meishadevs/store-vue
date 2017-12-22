@@ -102,7 +102,7 @@
         this.setNetworkType(null);
       });
     },
-    
+
     computed: mapState([
       'brand',
       'screenSize',
