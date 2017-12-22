@@ -50,7 +50,7 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 ![](folder.PNG)
 
 ## 特别说明
-当你的数据库的设置和我的默认设置不同的时候，可以修改**ImoocDSWZ\dswzServer下的connect.php文件
+当你的数据库的设置和我的默认设置不同的时候，可以修改dswzServer下的connect.php文件
 
 	<?php
 	
