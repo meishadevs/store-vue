@@ -17,6 +17,7 @@
         <cateShowProduct v-bind:productList="cateProductList[1]"></cateShowProduct>
       </div>
     </section>
+    <div class="hr-40"></div>
     <foot></foot>
     <goTop></goTop>
   </div>

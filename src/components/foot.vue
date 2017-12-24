@@ -50,7 +50,6 @@
   .foot {
     width: 100%;
     height: 224px;
-    margin-top: 40px;
     background-color: #d4d4d4;
     font-family: "新宋体";
     text-align: center;

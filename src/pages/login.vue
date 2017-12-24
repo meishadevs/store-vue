@@ -86,6 +86,7 @@
         </ul>
       </form>
     </section>
+    <div class="hr-40"></div>
     <foot></foot>
   </div>
 </template>

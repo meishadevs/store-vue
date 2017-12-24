@@ -16,6 +16,7 @@
     </section>
     <indexShowProduct v-bind:productInfo="indexProductList[0]"></indexShowProduct>
     <indexShowProduct v-bind:productInfo="indexProductList[1]"></indexShowProduct>
+    <div class="hr-40"></div>
     <foot></foot>
     <goTop></goTop>
   </div>

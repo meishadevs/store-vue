@@ -29,6 +29,7 @@
         </div>
       </div>
     </section>
+    <div class="hr-40"></div>
     <foot></foot>
     <goTop></goTop>
   </div>

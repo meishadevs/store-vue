@@ -91,6 +91,11 @@
     text-decoration: underline;
   }
 
+  .product-content .left-area a {
+    height: 400px;
+    display: block;
+  }
+
   .product-content .right-area {
     width: 810px;
     border-bottom: solid 3px #ff7201;
