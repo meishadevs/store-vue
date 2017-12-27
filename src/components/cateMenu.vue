@@ -26,11 +26,11 @@
 
         //商品分类数据
         cateData: {
-          'headTitle': ['手机', '相机', '数码'],
-          'cateList': [
+          "headTitle": ['手机', '相机', '数码'],
+          "cateList": [
             {
-              'cateTitle': '手机通讯',
-              'cateContent': [
+              "cateTitle": '手机通讯',
+              "cateContent": [
                 '全部手机',
                 '1080P高清',
                 '双卡手机',
@@ -41,8 +41,8 @@
               ]
             },
             {
-              'cateTitle': '数码相机',
-              'cateContent': [
+              "cateTitle": '数码相机',
+              "cateContent": [
                 '卡片机',
                 '中长焦',
                 '专业便',
@@ -52,8 +52,8 @@
               ]
             },
             {
-              'cateTitle': '单反',
-              'cateContent': [
+              "cateTitle": '单反',
+              "cateContent": [
                 '全部',
                 '佳能',
                 '尼康',
@@ -62,15 +62,15 @@
               ]
             },
             {
-              'cateTitle': '镜头',
-              'cateContent': [
+              "cateTitle": '镜头',
+              "cateContent": [
                 '单反镜头',
                 '微单镜头'
               ]
             },
             {
-              'cateTitle': '摄像机',
-              'cateContent': [
+              "cateTitle": '摄像机',
+              "cateContent": [
                 '全部',
                 '索尼',
                 '松下',
@@ -79,8 +79,8 @@
               ]
             },
             {
-              'cateTitle': '摄像配件',
-              'cateContent': [
+              "cateTitle": '摄像配件',
+              "cateContent": [
                 '相机包',
                 '相机电池',
                 '贴膜',
@@ -95,15 +95,15 @@
               ]
             },
             {
-              'cateTitle': '数码存储',
-              'cateContent': [
+              "cateTitle": '数码存储',
+              "cateContent": [
                 '刻录盘片',
                 '盘片附件'
               ]
             },
             {
-              'cateTitle': '电子教育',
-              'cateContent': [
+              "cateTitle": '电子教育',
+              "cateContent": [
                 '电子书',
                 '盒电子词典',
                 '幼儿教育',

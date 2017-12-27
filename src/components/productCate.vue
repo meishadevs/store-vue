@@ -25,19 +25,19 @@
       return {
         //商品分类数据
         productCateData: {
-          'title': '产品分类',
-          'cateList': [
+          "title": '产品分类',
+          "cateList": [
             {
-              'cateTitle': '手机通讯',
-              'cateContent': ['手机', '对讲机']
+              "cateTitle": '手机通讯',
+              "cateContent": ['手机', '对讲机']
             },
             {
-              'cateTitle': '运营商',
-              'cateContent': ['购机送费', '0元购机', '选号入网']
+              "cateTitle": '运营商',
+              "cateContent": ['购机送费', '0元购机', '选号入网']
             },
             {
-              'cateTitle': '手机配件',
-              'cateContent': ['手机电池', '蓝牙耳机', '充电器/数据线', '手机耳机', '手机贴膜',
+              "cateTitle": '手机配件',
+              "cateContent": ['手机电池', '蓝牙耳机', '充电器/数据线', '手机耳机', '手机贴膜',
               '手机存储卡', '手机保护套', '车载配件', 'iPhone配件']
             }
           ]
