@@ -95,6 +95,7 @@
   import {mapState, mapActions} from 'vuex';
   import loginHeader from '../components/loginHeader';
   import foot from '../components/foot';
+  import Util from '../js/Util';
 
   export default {
 
@@ -159,13 +160,19 @@
       //登录
       login: function () {
 
+        this.usernameStatus = Util.checkUsername(this.username).usernameStatus;
+        this.usernameNotice = Util.checkUsername(this.username).usernameNotice;
+
         //如果用户名检测失败，不往下执行
-        if (!this.checkUsername()) {
+        if (!Util.checkUsername(this.username).flag) {
           return;
         }
 
+        this.passwordStatus = Util.checkPassword(this.password).passwordStatus;
+        this.passwordNotice = Util.checkPassword(this.password).passwordNotice;
+
         //如果密码检测失败，不往下执行
-        if (!this.checkPassword()) {
+        if (!Util.checkPassword(this.password).flag) {
           return;
         }
 
@@ -252,65 +259,6 @@
           this.passwordStatus = 0;
           this.passwordNotice = '';
         }
-      },
-
-      //检测用户名
-      checkUsername: function () {
-
-        //如果用户没有输入用户名
-        if (this.username === null || this.username === '') {
-          this.usernameStatus = 2;
-          this.usernameNotice = '请填写用户名';
-          return false;
-        }
-
-        //检测用户名的长度是否合法
-        if (this.username.length < 3 || this.username.length > 15) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '长度应为3~15个字符';
-          return false;
-        }
-
-        //检测用户名的首字母是不是英文字母
-        if (!(/^[A-Za-z]/).test(this.username)) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '用户名必须以英文字母开头';
-          return false;
-        }
-
-        //检测用户名是否合法
-        if (!(/^[A-Za-z0-9_]+$/).test(this.username)) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '用户名须由字母、数字或下划线组成';
-          return false;
-        }
-
-        //验证成功
-        this.usernameStatus = 1;
-        this.usernameNotice = '用户名填写成功';
-        return true;
-      },
-
-      //检测密码
-      checkPassword: function () {
-
-        //如果用户没有输入密码
-        if (this.password === null || this.password === null) {
-          this.passwordStatus = 2;
-          this.passwordNotice = '请填写密码';
-          return false;
-        }
-
-        //如果用户输入的密码的长度不合法
-        if (this.password.length < 6 || this.password.length > 16) {
-          this.passwordStatus = 2;
-          this.passwordNotice = '密码的长度应为6~16个字符';
-          return false;
-        }
-
-        this.passwordStatus = 1;
-        this.passwordNotice = '您的密码输入正确';
-        return true;
       },
 
       //保存用户信息

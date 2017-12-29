@@ -149,6 +149,7 @@
 <script>
   import registerHeader from '../components/registerHeader';
   import foot from '../components/foot';
+  import Util from '../js/Util';
 
   export default {
     name: 'register',
@@ -228,28 +229,47 @@
       //注册账号
       registerAccount: function () {
 
+        this.usernameStatus = Util.checkUsername(this.username).usernameStatus;
+        this.usernameNotice = Util.checkUsername(this.username).usernameNotice;
+
         //如果用户名检测失败，不往下执行
-        if (!this.checkUsername()) {
+        if (!Util.checkUsername(this.username).flag) {
           return;
         }
+
+        this.passwordStatus = Util.checkPassword(this.password).passwordStatus;
+        this.passwordNotice = Util.checkPassword(this.password).passwordNotice;
 
         //如果密码检测失败，不往下执行
-        if (!this.checkPassword()) {
+        if (!Util.checkPassword(this.password).flag) {
           return;
         }
+
+        this.secondPasswordStatus = Util.checkSecondPassword(this.password, this.secondPassword).secondPasswordStatus;
+        this.secondPasswordNotice = Util.checkSecondPassword(this.password, this.secondPassword).secondPasswordNotice;
 
         //如果用户第二次输入的密码检测失败，不往下执行
-        if (!this.checkSecondPassword()) {
+        if (!Util.checkSecondPassword(this.password, this.secondPassword).flag) {
           return;
         }
+
+        this.emailStatus = Util.checkEmail(this.email).emailStatus;
+        this.emailNotice = Util.checkEmail(this.email).emailNotice;
 
         //如果用户输入的邮箱检测失败，不往下执行
-        if (!this.checkEmail()) {
+        if (!Util.checkEmail(this.email).flag) {
           return;
         }
 
+        console.log('isAccept:', this.isAccept);
+
+        this.acceptStatus = Util.checkAccept(this.isAccept).acceptStatus;
+        this.acceptNotice = Util.checkAccept(this.isAccept).acceptNotice;
+
+        console.log('flag:', Util.checkAccept(this.isAccept).flag);
+
         //如果用户没有接受服务条款，不往下执行
-        if (!this.checkAccept()) {
+        if (!Util.checkAccept(this.isAccept).flag) {
           return;
         }
 
@@ -291,128 +311,6 @@
             this.resultContent = '用户名已存在';
           }
         });
-      },
-
-      //检测用户名
-      checkUsername: function () {
-
-        //如果用户没有输入用户名
-        if (this.username === '' || this.username === null) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '请填写用户名';
-          return false;
-        }
-
-        //如果用户名的长度不符合规则
-        if (this.username.length < 3 || this.username.length > 15) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '长度应为3~15个字符';
-          return false;
-        }
-
-        //如果用户名的首字母不是英文字母
-        if (!(/^[A-Za-z]/.test(this.username))) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '用户名必须以英文字母开头';
-          return false;
-        }
-
-        //检测用户名不符合规则
-        if (!(/^[a-zA-Z0-9_]*$/.test(this.username))) {
-          this.usernameStatus = 2;
-          this.usernameNotice = '用户名须由字母数字下划线组成';
-          return false;
-        }
-
-        //用户名验证成功
-        this.usernameStatus = 1;
-        this.usernameNotice = '用户名填写成功';
-        return true;
-      },
-
-      //检测密码
-      checkPassword: function () {
-
-        //如果用户没有输入密码
-        if (this.password === null || this.password === '') {
-          this.passwordStatus = 2;
-          this.passwordNotice = '请填写密码';
-          return false;
-        }
-
-        //如果密码的长度不符合规则
-        if (this.password.length < 6 || this.password.length > 16) {
-          this.passwordStatus = 2;
-          this.passwordNotice = '密码长度应为6~16个字符';
-          return false;
-        }
-
-        //密码验证成功
-        this.passwordStatus = 1;
-        this.passwordNotice = '密码验证成功';
-        return true;
-      },
-
-      //检测用户第二次输入的密码
-      checkSecondPassword: function () {
-
-        //如果用户没有输入密码
-        if (this.secondPassword === null || this.secondPassword === '') {
-          this.secondPasswordStatus = 2;
-          this.secondPasswordNotice = '请再次填写密码';
-          return false;
-        }
-
-        //如果用户两次输入的密码不一样
-        if (this.password !== this.secondPassword) {
-          this.secondPasswordStatus = 2;
-          this.secondPasswordNotice = '两次填写的密码不一致';
-          return false;
-        }
-
-        this.secondPasswordStatus = 1;
-        this.secondPasswordNotice = "您的密码输入正确";
-        return true;
-      },
-
-      //检测邮箱
-      checkEmail: function () {
-
-        //如果用户没有输入邮箱
-        if (this.email === null || this.email === '') {
-          this.emailStatus = 2;
-          this.emailNotice = '请填写您的邮箱地址';
-          return false;
-        }
-
-        let reg = /^\w+([_\.\-]\w+)*@\w+([_\-\.]\w+)*\.\w+([_\.]\w+)*$/;
-
-        if (!reg.test(this.email)) {
-          this.emailStatus = 2;
-          this.emailNotice = '邮箱格式不正确';
-          return false;
-        }
-
-        this.emailStatus = 1;
-        this.emailNotice = '您填写的邮箱格式正确';
-        return true;
-      },
-
-      //检测是否接受服务条款
-      checkAccept: function () {
-
-        //如果用户没有接受服务条款
-        if (!this.isAccept) {
-          this.acceptStatus = 2;
-          this.acceptNotice = '请接受服务条款';
-          return false;
-
-        //如果用户接受了服务条款
-        } else {
-          this.acceptStatus = 1;
-          this.acceptNotice = '';
-          return true;
-        }
       },
 
       //恢复状态
