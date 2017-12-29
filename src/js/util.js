@@ -1,6 +1,6 @@
 /**
  * Created by Administrator on 2017/12/29.
- * 一些通用的代码
+ * 一些通用代码
  */
 
 export default {

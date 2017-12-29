@@ -176,11 +176,6 @@
           return;
         }
 
-        //记住用户名和密码
-        if (this.isRemember) {
-          this.saveUserInfo();
-        }
-
         //使用axios发送post请求，登录
         this.axios({
           method: 'post',
@@ -207,6 +202,11 @@
             //登录成功
           } else if (res.data === 3) {
 
+            //记住用户名和密码
+            if (this.isRemember) {
+              this.saveUserInfo();
+            }
+            
             this.resultStatus = 1;
             this.changeLoginStatus(true);
             this.setUsername(this.username);
@@ -263,13 +263,18 @@
 
       //保存用户信息
       saveUserInfo: function () {
-        localStorage.setItem('username', this.username);
+
+        //使用Cookie保存用户名
+        document.cookie = 'username=' + this.username + ';'
+          + 'expires=' + new Date('2020-1-1').toGMTString() + '; ';
+
+        //保存密码
         localStorage.setItem('password', this.password);
       },
 
       //读取用户信息
       readUserInfo: function () {
-        this.username = localStorage.getItem('username');
+        this.username = document.cookie.split('=')[1];
         this.password = localStorage.getItem('password');
       }
     }
