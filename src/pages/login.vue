@@ -266,16 +266,20 @@
 
         //使用Cookie保存用户名
         document.cookie = 'username=' + this.username + ';'
-          + 'expires=' + new Date('2020-1-1').toGMTString() + '; ';
+          + 'expires=' + new Date('2020-1-1').toGMTString() + ';';
 
-        //保存密码
-        localStorage.setItem('password', this.password);
+        //使用Cookie保存密码
+        document.cookie = 'password=' + this.password + ';'
+          + 'expires=' + new Date('2020-1-1').toGMTString() + ';';
       },
 
       //读取用户信息
       readUserInfo: function () {
-        this.username = document.cookie.split('=')[1];
-        this.password = localStorage.getItem('password');
+
+        //读取保存在Cookie中的用户名和密码
+        let arr = this.username = document.cookie.split(';');
+        this.username = arr[0].split('=')[1];
+        this.password = arr[1].split('=')[1];
       }
     }
   };
