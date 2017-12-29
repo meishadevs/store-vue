@@ -206,7 +206,7 @@
             if (this.isRemember) {
               this.saveUserInfo();
             }
-            
+
             this.resultStatus = 1;
             this.changeLoginStatus(true);
             this.setUsername(this.username);

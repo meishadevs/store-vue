@@ -2,7 +2,7 @@
 > 使用vue2.0、vuex、vue-router2.0、axios、ES6 等搭建的一个简易版电商网站，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品简介、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
 
 ## 在线访问
-**[http://meishadevs.com/dswz/index.html#/](http://meishadevs.com/dswz/index.html#/)**
+**[http://meishadevs.com/dswz/index.html#/](http://meishadevs.com/dswz/index.html#/)**  
 **注意：** 有些功能需要自己配置服务器端才能访问，配置方式在此文档下面做了相关的介绍
 
 ## 用到的技术
