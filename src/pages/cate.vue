@@ -5,7 +5,7 @@
   <div id="cate">
     <collSite></collSite>
     <topBar></topBar>
-    <myHead></myHead>
+    <siteHead></siteHead>
     <navBar></navBar>
     <section class="wrapper inner-c clearfix">
       <div class="left-area">
@@ -26,7 +26,7 @@
 <script>
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
-  import myHead from '../components/myHead';
+  import siteHead from '../components/siteHead';
   import navBar from '../components/navBar';
   import cateMenu from '../components/cateMenu';
   import banner from '../components/banner';
@@ -42,7 +42,7 @@
     components: {
       collSite,
       topBar,
-      myHead,
+      siteHead,
       navBar,
       cateMenu,
       banner,

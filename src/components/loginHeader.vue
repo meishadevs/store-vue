@@ -6,7 +6,7 @@
     <div class="logo-bar">
       <div class="inner-c clearfix">
         <div class="logo fl">
-          <router-link to="/">慕课网</router-link>
+          <router-link to="/">电商网</router-link>
         </div>
         <h3>欢迎登录</h3>
       </div>

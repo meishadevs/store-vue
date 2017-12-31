@@ -161,7 +161,7 @@
 
     mounted: function () {
       this.$nextTick(() => {
-        document.title = '电商网站的注册页';
+        document.title = '注册页';
         document.body.style.backgroundColor = '#fff';
         window.scrollTo(0, 0);
       });
@@ -261,12 +261,8 @@
           return;
         }
 
-        console.log('isAccept:', this.isAccept);
-
         this.acceptStatus = Util.checkAccept(this.isAccept).acceptStatus;
         this.acceptNotice = Util.checkAccept(this.isAccept).acceptNotice;
-
-        console.log('flag:', Util.checkAccept(this.isAccept).flag);
 
         //如果用户没有接受服务条款，不往下执行
         if (!Util.checkAccept(this.isAccept).flag) {

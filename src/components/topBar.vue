@@ -2,21 +2,21 @@
 <!-- 顶部通栏组件 -->
 
 <template>
-  <div class="topbar">
+  <div class="top-bar">
     <div class="inner-c clearfix">
       <div class="left-area">
-        <a href="javascript:;" class="collection" @click="showMask()">收藏慕课</a>
+        <a href="javascript:;" class="collection" @click="showMask()">收藏电商网</a>
       </div>
       <div class="right-area">
         <!-- 如果用户登录了 s -->
         <div v-if="isLogin">
-          欢迎<a class="show-username" href="javascript:;">{{ username }}</a>来到慕课网
+          欢迎<a class="show-username" href="javascript:;">{{ username }}</a>来到电商网
           <a class="exit" href="javascript:;" @click="exitAccount()">[退出]</a>
         </div>
         <!-- 如果用户登录了 e -->
         <!-- 如果用户没有登录 s-->
         <div v-else>
-          欢迎来到慕课网
+          欢迎来到电商网
           <router-link class="login-link" to="/login">[登录]</router-link>
           <router-link class="register-link" to="/register">[免费注册]</router-link>
         </div>
@@ -69,7 +69,7 @@
 </script>
 
 <style scoped>
-  .topbar {
+  .top-bar {
     width: 100%;
     height: 38px;
     font: 12px/38px "宋体", 'SimSun';
@@ -77,11 +77,11 @@
     color: #666;
   }
 
-  .topbar .left-area {
+  .top-bar .left-area {
     float: left;
   }
 
-  .topbar .left-area .collection {
+  .top-bar .left-area .collection {
     padding-left: 17px;
     background: url(../../static/images/icon/collection.jpg) left center no-repeat;
     font-size: 12px;

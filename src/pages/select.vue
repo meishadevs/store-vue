@@ -5,7 +5,7 @@
   <div id="select">
     <collSite></collSite>
     <topBar></topBar>
-    <myHead></myHead>
+    <siteHead></siteHead>
     <navBar></navBar>
     <userPosition></userPosition>
     <section class="wrapper clearfix">
@@ -43,7 +43,7 @@
   import Vue from 'vue';
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
-  import myHead from '../components/myHead';
+  import siteHead from '../components/siteHead';
   import navBar from '../components/navBar';
   import userPosition from '../components/userPosition';
   import productCate from '../components/productCate';
@@ -60,7 +60,7 @@
     components: {
       collSite,
       topBar,
-      myHead,
+      siteHead,
       navBar,
       userPosition,
       productCate,

@@ -18,7 +18,7 @@
         <div class="advisory-content">
           <div class="question">{{ advisory.question }}</div>
           <div class="answer">
-            <span>慕课网回复：</span>{{ advisory.answer }}
+            <span>电商网回复：</span>{{ advisory.answer }}
             <div class="triangle"></div>
           </div>
         </div>

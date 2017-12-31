@@ -5,7 +5,7 @@
   <div class="show-proinfo">
     <h3 class="title">{{ productInfo.productName }}</h3>
     <div class="dl clearfix">
-      <div class="dt">慕课价</div>
+      <div class="dt">价格</div>
       <div class="dd">
         <span class="des-money">
           <em>￥</em>{{ productInfo.productPrice | formateMoney }}

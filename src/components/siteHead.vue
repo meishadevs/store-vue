@@ -2,10 +2,10 @@
 <!-- 头部组件 -->
 
 <template>
-  <header class="my-head">
+  <header class="site-head">
     <div class="inner-c clearfix">
       <div class="logo">
-        <router-link to="/">慕课网</router-link>
+        <router-link to="/">电商网</router-link>
       </div>
       <div class="search-box clearfix">
         <input
@@ -46,14 +46,14 @@
           </li>
         </ul>
       </div>
-      <div class="shop-cart clearfix">
+      <div class="button-cart clearfix">
         <router-link to="/cart" v-if="isLogin">
-          <span class="shop-text">购物车</span>
-          <span class="shop-num">{{ proNum }}</span>
+          <span class="cart-text">购物车</span>
+          <span class="product-num">{{ proNum }}</span>
         </router-link>
         <router-link to="/login/1" v-else>
-          <span class="shop-text">购物车</span>
-          <span class="shop-num">{{ proNum }}</span>
+          <span class="cart-text">购物车</span>
+          <span class="product-num">{{ proNum }}</span>
         </router-link>
       </div>
     </div>
@@ -66,7 +66,7 @@
   export default {
 
     //组件名称
-    name: 'myHead',
+    name: 'siteHead',
 
     data() {
       return {
@@ -133,18 +133,18 @@
 </script>
 
 <style scoped>
-  .my-head {
+  .site-head {
     width: 100%;
     height: 87px;
     background-color: #1d7ad9;
     display: table;
   }
 
-  .my-head .logo {
+  .site-head .logo {
     padding-top: 14px;
   }
 
-  .my-head .logo a {
+  .site-head .logo a {
     width: 112px;
     height: 59px;
     background: url(../../static/images/logo.png) no-repeat;
@@ -219,7 +219,7 @@
     float: right;
   }
 
-  .shop-cart {
+  .button-cart {
     width: 145px;
     height: 35px;
     margin: 23px 0px 0px 31px;
@@ -228,14 +228,14 @@
     float: left;
   }
 
-  .shop-cart a {
+  .button-cart a {
     width: 100%;
     height: 100%;
     color: #fff;
     display: inline-block;
   }
 
-  .shop-cart .shop-text {
+  .button-cart .cart-text {
     width: 47px;
     height: 100%;
     padding-left: 40px;
@@ -244,7 +244,7 @@
     float: left;
   }
 
-  .shop-cart .shop-num {
+  .button-cart .product-num {
     width: 27px;
     height: 100%;
     padding-right: 29px;

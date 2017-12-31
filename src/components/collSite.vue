@@ -2,7 +2,7 @@
 <!-- 收藏网页组件 -->
 
 <template>
-  <div class="cover" v-show="isShowMask">
+  <div class="coll-site" v-show="isShowMask">
     <div class="mask">
       <div class="mask-content">
         <h3 class="top">
@@ -52,7 +52,7 @@
 </script>
 
 <style scoped>
-  .cover {
+  .coll-site {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -62,7 +62,7 @@
     top: 0;
   }
 
-  .cover .mask {
+  .coll-site .mask {
     width: 370px;
     height: 144px;
     padding: 8px;
@@ -125,13 +125,13 @@
   .mask .bottom button {
     width: 46px;
     height: 23px;
-    color: #fff;
     font-weight: 700;
     border: 1px solid #235994;
     background-color: #ff8407;
     -moz-box-shadow: 0 1px 0 #E5E5E5;
     -webkit-box-shadow: 0 1px 0 #E5E5E5;
     box-shadow: 0 1px 0 #E5E5E5;
+    color: #fff;
     cursor: pointer;
   }
 </style>

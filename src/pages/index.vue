@@ -4,7 +4,7 @@
   <div id="index">
     <collSite></collSite>
     <topBar></topBar>
-    <myHead></myHead>
+    <siteHead></siteHead>
     <navBar></navBar>
     <section class="product-cate-banner inner-c clearfix">
       <div class="product-cate-box">
@@ -25,7 +25,7 @@
 <script>
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
-  import myHead from '../components/myHead';
+  import siteHead from '../components/siteHead';
   import navBar from '../components/navBar';
   import productCateNav from '../components/productCateNav';
   import banner from '../components/banner';
@@ -151,7 +151,7 @@
     components: {
       collSite,
       topBar,
-      myHead,
+      siteHead,
       navBar,
       productCateNav,
       banner,
@@ -181,7 +181,7 @@
     //初始化
     mounted: function () {
       this.$nextTick(function () {
-        document.title = '电商网站首页';
+        document.title = '电商网首页';
         document.body.style.backgroundColor = '#fff';
         window.scrollTo(0, 0);
 

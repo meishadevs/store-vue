@@ -49,7 +49,7 @@ export default new VueRouter({
     },
     {
       path: '/login/:isCart',
-      name: 'login',
+      name: cart,
       component: login
     }
   ]

@@ -109,7 +109,7 @@
     //初始化
     mounted: function () {
       this.$nextTick(() => {
-        document.title = '电商网站的登录页';
+        document.title = '登录页';
         document.body.style.backgroundColor = '#fff';
         this.readUserInfo();
       });
@@ -275,6 +275,14 @@
 
       //读取用户信息
       readUserInfo: function () {
+
+        //获得网站中的Cookie
+        var cookie = document.cookie;
+
+        //如果网站中不存在Cookie
+        if (cookie === null || cookie === '' || cookie === undefined) {
+          return;
+        }
 
         //读取保存在Cookie中的用户名和密码
         let arr = this.username = document.cookie.split(';');

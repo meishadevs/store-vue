@@ -2,7 +2,7 @@
 <!-- 商品评价组件 -->
 
 <template>
-  <div class="comment-box">
+  <div class="product-comment">
     <div class="comment-top">
       <h3 class="title">商品评价</h3>
       <div class="comment-content clearfix">
@@ -24,7 +24,7 @@
             <li class="comment-4">满意</li>
             <li class="comment-5">非常满意</li>
           </ul>
-          <p class="comment-text">共18939位慕课网友参与评分</p>
+          <p class="comment-text">共18939位电商网网友参与评分</p>
         </div>
         <!-- 商品评价描述 e -->
 
@@ -129,7 +129,7 @@
 <style scoped>
 
   /* 商品评价 */
-  .comment-box {
+  .product-comment {
     background-color: #fff;
   }
 

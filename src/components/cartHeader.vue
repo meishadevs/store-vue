@@ -9,7 +9,7 @@
 
       <!-- 网站logo s-->
       <div class="logo">
-        <router-link to="/">慕课网</router-link>
+        <router-link to="/">电商网</router-link>
       </div>
       <!-- 网站logo e -->
 

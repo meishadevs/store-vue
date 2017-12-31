@@ -5,7 +5,7 @@
   <div id="proinfo">
     <collSite></collSite>
     <topBar></topBar>
-    <myHead></myHead>
+    <siteHead></siteHead>
     <navBar></navBar>
     <productPosition></productPosition>
     <section class="description-info inner-c clearfix">
@@ -38,7 +38,7 @@
 <script>
   import collSite from '../components/collSite';
   import topBar from '../components/topBar';
-  import myHead from '../components/myHead';
+  import siteHead from '../components/siteHead';
   import navBar from '../components/navBar';
   import productPosition from '../components/productPosition';
   import productImage from '../components/productImage';
@@ -58,7 +58,7 @@
     components: {
       collSite,
       topBar,
-      myHead,
+      siteHead,
       navBar,
       productPosition,
       productImage,

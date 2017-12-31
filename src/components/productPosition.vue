@@ -1,5 +1,5 @@
 
-<!-- 产品位置组件 -->
+<!-- 商品位置组件 -->
 
 <template>
   <section class="product-position">

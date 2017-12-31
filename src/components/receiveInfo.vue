@@ -202,10 +202,8 @@
           return;
         }
 
-        console.log('调用');
         this.isShowResult = true;
         this.changeReceiveStatus(true);
-        console.log('收货信息的状态:', this.isReceive);
 
         setTimeout(() => {
           this.isShowResult = false;
