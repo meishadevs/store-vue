@@ -48,7 +48,7 @@
     width: 100%;
     height: 224px;
     background-color: #d4d4d4;
-    font-family: "新宋体";
+    font-family: "新宋体", "NSimSun";
     color: #000;
     display: table;
     position: relative;

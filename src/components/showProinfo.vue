@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="dl clearfix">
-        <div class="dt colorSelect">选择颜色</div>
+        <div class="dt select-color">选择颜色</div>
         <div class="dd">
           <!-- 颜色选择组件 s -->
           <selectColor></selectColor>
@@ -248,7 +248,7 @@
     line-height: 24px;
   }
 
-  .dl .colorSelect {
+  .dl .select-color {
     line-height: 35px;
   }
 

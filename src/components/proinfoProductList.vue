@@ -45,7 +45,7 @@
   .proinfo-product-list dt {
     height: 39px;
     padding-left: 16px;
-    font: bold 14px/39px "新宋体";
+    font: bold 14px/39px "新宋体", "NSimSun";
     border-bottom: solid 1px #ccc;
   }
 
@@ -66,7 +66,7 @@
   .proinfo-product-list .product-name {
     line-height: 18px;
     padding-left: 22px;
-    font-family: "新宋体";
+    font-family: "新宋体", "NSimSun";
   }
 
   .proinfo-product-list .product-name a {

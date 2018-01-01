@@ -297,7 +297,7 @@
   }
 
   .product-cate-item dd {
-    font-family: 宋体, SimSun;
+    font-family: "宋体", "SimSun";
     font-size: 12px;
   }
 
@@ -347,7 +347,7 @@
 
   .cate-item dl {
     margin-top: 18px;
-    font-family: 宋体;
+    font-family: "宋体", "SimSun";
     font-size: 12px;
     border-bottom: 1px solid rgb(229, 229, 229);
   }
@@ -370,7 +370,7 @@
     padding: 0px 14px 0px 8px;
     margin: 6px 10px 6px 0px;
     background-color: rgb(39, 133, 230);
-    font: 12px/26px 宋体;
+    font: 12px/26px "宋体", "SimSun";
     color: #fff;
     display: inline-block;
   }

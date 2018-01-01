@@ -82,9 +82,9 @@
   }
 
   .pay-method .pay-content {
+    height: 90px;
     padding-left: 30px;
     padding-top: 15px;
-    height: 90px;
   }
 
   .pay-content .row {

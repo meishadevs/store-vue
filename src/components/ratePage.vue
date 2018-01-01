@@ -78,7 +78,7 @@
 
 <style scoped>
   .rate-page {
-    font-family: tahoma,arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+    font-family: tahoma, arial,\5FAE\8F6F\96C5\9ED1, sans-serif;
     text-align: center;
     font-size: 0;
   }

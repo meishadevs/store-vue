@@ -127,7 +127,7 @@
 
   .cate-menu .product-title {
     height: 34px;
-    font: bold 14px/34px "宋体";
+    font: bold 14px/34px "宋体", "SimSun";
     text-align: center;
     border-bottom: solid 1px #cdcdcd;
   }
@@ -143,14 +143,14 @@
 
   .cate-menu .product-item dt {
     height: 30px;
-    font-family: "宋体";
+    font-family: "宋体", "SimSun";
     font-weight: bold;
     color: #555;
   }
 
   .cate-menu .product-item dd {
     font-size: 0;
-    font-family: "宋体";
+    font-family: "宋体", "SimSun";
   }
   .cate-menu .product-item dd a {
     width: 81px;

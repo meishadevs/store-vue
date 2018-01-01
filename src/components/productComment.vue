@@ -141,7 +141,7 @@
   /* 商品评价的标题 */
   .comment-top .title {
     margin-bottom: 22px;
-    font: bold 14px/38px "新宋体";
+    font: bold 14px/38px "新宋体", "NSimSun";
   }
 
   /* 商品评价得分 */
@@ -220,7 +220,7 @@
 
   .des-comment .comment-text {
     padding-top: 7px;
-    font-family: "新宋体";
+    font-family: "新宋体", "NSimSun";
     font-size: 12px;
     color: #65657D;
   }

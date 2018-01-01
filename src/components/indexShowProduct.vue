@@ -79,7 +79,7 @@
 
   .index-show-product .more {
     margin: 48px 21px 0 0;
-    font-family: "新宋体";
+    font-family: "新宋体", "NSimSun";
     font-size: 12px;
   }
 
@@ -163,7 +163,7 @@
   }
 
   .product-item .product-info .name {
-    font-family: "新宋体";
+    font-family: "新宋体", "NSimSun";
   }
 
   /* ￥符号 */

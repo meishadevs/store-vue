@@ -376,7 +376,7 @@
     height: 52px;
     margin-left: 190px;
     margin-top: 10px;
-    font: 22px/52px "微软雅黑";
+    font: 22px/52px "微软雅黑", "Microsoft YaHei";
     color: #fff;
     text-align: center;
     background: #5a98de;

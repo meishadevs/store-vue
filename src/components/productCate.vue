@@ -73,7 +73,7 @@
     height: 22px;
     padding-left: 12px;
     font-size: 12px;
-    font-family: "新宋体";
+    font-family: "新宋体", "NSimSun";
   }
 
   .product-cate .cate-item li a {
