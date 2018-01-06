@@ -1,5 +1,5 @@
 
-<!-- 商品规格选择组件 -->
+<!-- 手机款式选择组件 -->
 
 <template>
   <div class="select-style clearfix">

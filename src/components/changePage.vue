@@ -3,7 +3,7 @@
 
 <template>
   <!-- 如果当前处于第一页 s -->
-  <div class="rate-page" v-if="indexPage == 1">
+  <div class="change-page" v-if="indexPage == 1">
     <span class="page-prev">&lt;&lt;上一页</span>
     <span>1</span>
     <a href="javascript:;" v-for="page in createArrNum(2, totalPage)" @click="changePage(page)">{{ page }}</a>
@@ -11,7 +11,7 @@
   </div>
   <!-- 如果当前处于第一页 e -->
   <!-- 如果当前处于最后一页 s -->
-  <div class="rate-page" v-else-if="indexPage == totalPage">
+  <div class="change-page" v-else-if="indexPage == totalPage">
     <a href="javascript:;" class="page-prev" @click="changePage(--indexPage)">&lt;&lt;上一页</a>
     <a href="javascript:;" v-for="page in createArrNum(1, totalPage)" @click="changePage(page)">{{ page }}</a>
     <span>{{ totalPage }}</span>
@@ -19,7 +19,7 @@
   </div>
   <!-- 如果当前处于最后一页 e -->
   <!-- 如果当前即不处于第一页也不处于最后一页 s -->
-  <div class="rate-page" v-else>
+  <div class="change-page" v-else>
     <a class="page-prev" href="javascript:;" @click="changePage(--indexPage)">&lt;&lt;上一页</a>
     <a href="javascript:;" v-for="page in createArrNum(1, indexPage)" @click="changePage(page)">{{ page }}</a>
     <span>{{ indexPage }}</span>
@@ -33,14 +33,14 @@
   export default {
 
     //组件名称
-    name: 'ratePage',
+    name: 'changePage',
 
     //父组件传递过来的数据
     props: ['totalPage', 'curPage'],
 
     data() {
       return {
-        //当前展示的是第indexPage数据
+        //当前展示的是第 indexPage 页数据
         indexPage: 1
       };
     },
@@ -77,18 +77,18 @@
 </script>
 
 <style scoped>
-  .rate-page {
+  .change-page {
     font-family: tahoma, arial,\5FAE\8F6F\96C5\9ED1, sans-serif;
     text-align: center;
     font-size: 0;
   }
 
-  .rate-page .page-prev {
+  .change-page .page-prev {
     border-width: 1px;
   }
 
-  .rate-page a,
-  .rate-page span {
+  .change-page a,
+  .change-page span {
     height: 27px;
     line-height: 27px;
     padding: 5px 14px;
@@ -109,18 +109,18 @@
     display: inline-block;
   }
 
-  .rate-page span {
+  .change-page span {
     color: #fff;
     background-color: #f40;
   }
 
-  .rate-page span.page-prev,
-  .rate-page span.page-next {
+  .change-page span.page-prev,
+  .change-page span.page-next {
     color: #ccc;
     background-color: #efefef;
   }
 
-  .rate-page a:hover {
+  .change-page a:hover {
     color: #f40;
     border: solid 1px #f40;
   }

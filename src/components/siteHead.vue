@@ -1,5 +1,5 @@
 
-<!-- 头部组件 -->
+<!-- 网站的头部组件 -->
 
 <template>
   <header class="site-head">

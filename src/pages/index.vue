@@ -17,7 +17,7 @@
     <indexShowProduct v-bind:productInfo="indexProductList[0]"></indexShowProduct>
     <indexShowProduct v-bind:productInfo="indexProductList[1]"></indexShowProduct>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
     <goTop></goTop>
   </div>
 </template>
@@ -30,7 +30,7 @@
   import productCateNav from '../components/productCateNav';
   import banner from '../components/banner';
   import indexShowProduct from '../components/indexShowProduct';
-  import foot from '../components/foot';
+  import siteFoot from '../components/siteFoot';
   import goTop from '../components/goTop.vue';
   import {mapState, mapActions} from 'vuex';
 
@@ -156,7 +156,7 @@
       productCateNav,
       banner,
       indexShowProduct,
-      foot,
+      siteFoot,
       goTop
     },
 

@@ -41,11 +41,11 @@
         </div>
       </div>
       <div class="dl clearfix">
-        <div class="dt des-select-more">选择规格</div>
+        <div class="dt des-select-more">选择款式</div>
         <div class="dd">
-          <!-- 选择产品规格组件 s -->
+          <!-- 手机款式选择组件 s -->
           <selectStyle></selectStyle>
-          <!-- 选择产品规格组件 e -->
+          <!-- 手机款式选择组件 e -->
         </div>
       </div>
       <div class="dl">
@@ -246,10 +246,6 @@
 
   .the-god {
     line-height: 24px;
-  }
-
-  .dl .select-color {
-    line-height: 35px;
   }
 
   .show-proinfo .des-select-more {

@@ -30,11 +30,11 @@
           </div>
         </div>
         <selectShowProduct v-bind:curPage="curPage" v-bind:numProduct="numProduct"></selectShowProduct>
-        <ratePage v-bind:totalPage="totalPage" v-bind:curPage="curPage"></ratePage>
+        <changePage v-bind:totalPage="totalPage" v-bind:curPage="curPage" v-if="totalPage > 0"></changePage>
       </div>
     </section>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
     <goTop></goTop>
   </div>
 </template>
@@ -50,13 +50,14 @@
   import selectProductList from '../components/selectProductList';
   import productFilter from '../components/productFilter';
   import selectShowProduct from '../components/selectShowProduct';
-  import ratePage from '../components/ratePage';
-  import foot from '../components/foot';
+  import changePage from '../components/changePage';
+  import siteFoot from '../components/siteFoot';
   import goTop from '../components/goTop';
 
   export default {
 
     name: 'select',
+
     components: {
       collSite,
       topBar,
@@ -67,8 +68,8 @@
       selectProductList,
       productFilter,
       selectShowProduct,
-      ratePage,
-      foot,
+      changePage,
+      siteFoot,
       goTop
     },
 

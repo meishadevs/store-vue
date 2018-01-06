@@ -87,14 +87,14 @@
       </form>
     </section>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
   </div>
 </template>
 
 <script>
   import {mapState, mapActions} from 'vuex';
   import loginHeader from '../components/loginHeader';
-  import foot from '../components/foot';
+  import siteFoot from '../components/siteFoot';
   import Util from '../js/Util';
 
   export default {
@@ -103,7 +103,7 @@
 
     components: {
       loginHeader,
-      foot
+      siteFoot
     },
 
     //初始化

@@ -20,7 +20,7 @@
         <p class="product-comment">
           评论:
           <span class="star" v-bind:style="{width: product.numStar * 13 + 'px'}"></span>
-          <a class="comment-num" href="javascript:;">({{ product.numComment }}条)</a>
+          <span class="comment-num" href="javascript:;">({{ product.numComment }}条)</span>
         </p>
       </li>
     </ul>
@@ -93,9 +93,5 @@
 
   .product-item .product-comment .comment-num {
     color: #085c9b;
-  }
-
-  .product-item .product-comment .comment-num:hover {
-    color: #DD0000;
   }
 </style>

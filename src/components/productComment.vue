@@ -50,7 +50,7 @@
 
       <div class="rate-page-box">
         <!-- 翻页组件 s -->
-        <ratePage v-bind:totalPage="totalPage" v-bind:curPage="curPage"></ratePage>
+        <changePage v-bind:totalPage="totalPage" v-bind:curPage="curPage" v-if="totalPage > 0"></changePage>
         <!-- 翻页组件 e -->
       </div>
 
@@ -61,14 +61,14 @@
 
 <script>
   import advisoryList from '../components/advisoryList';
-  import ratePage from '../components/ratePage';
+  import changePage from './changePage';
 
   export default {
     name: 'productComment',
 
     components: {
       advisoryList,
-      ratePage
+      changePage
     },
 
     data() {

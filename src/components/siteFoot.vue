@@ -1,8 +1,8 @@
 
-<!-- 脚部组件 -->
+<!-- 网站的脚部组件 -->
 
 <template>
-  <footer class="foot">
+  <footer class="site-foot">
 
       <!-- 网站信息 s -->
       <p class="info clearfix">
@@ -44,7 +44,7 @@
 </script>
 
 <style scoped>
-  .foot {
+  .site-foot {
     width: 100%;
     height: 224px;
     background-color: #d4d4d4;
@@ -54,31 +54,31 @@
     position: relative;
   }
 
-  .foot a,
-  .foot span {
+  .site-foot a,
+  .site-foot span {
     color: #000;
     float: left;
   }
 
-  .foot .info {
+  .site-foot .info {
     transform: translateX(-50%);
     position: absolute;
     top: 56px;
     left: 50%;
   }
 
-  .foot .info span {
+  .site-foot .info span {
     width: 6px;
     height: 14px;
     padding: 0 5px;
   }
 
-  .foot .copyright {
+  .site-foot .copyright {
     margin-top: 83px;
     text-align: center;
   }
 
-  .foot .foot-icon {
+  .site-foot .foot-icon {
     transform: translateX(-50%);
     position: absolute;
     top: 135px;

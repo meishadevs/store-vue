@@ -30,7 +30,7 @@
       </div>
     </section>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
     <goTop></goTop>
   </div>
 </template>
@@ -47,7 +47,7 @@
   import proinfoNavBar from '../components/proinfoNavBar';
   import productIntro from '../components/productIntro';
   import productComment from '../components/productComment';
-  import foot from '../components/foot';
+  import siteFoot from '../components/siteFoot';
   import goTop from '../components/goTop';
 
   export default {
@@ -67,7 +67,7 @@
       proinfoNavBar,
       productIntro,
       productComment,
-      foot,
+      siteFoot,
       goTop
     },
 

@@ -17,7 +17,7 @@
     <orderSett></orderSett>
     <goTop></goTop>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
   </div>
 </template>
 
@@ -31,7 +31,7 @@
   import deliveryInfo from '../components/deliveryInfo';
   import orderSett from '../components/orderSett';
   import goTop from '../components/goTop';
-  import foot from '../components/foot';
+  import siteFoot from '../components/siteFoot';
 
   export default {
 
@@ -47,7 +47,7 @@
       deliveryInfo,
       orderSett,
       goTop,
-      foot
+      siteFoot
     },
 
     //初始化

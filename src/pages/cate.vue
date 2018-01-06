@@ -18,7 +18,7 @@
       </div>
     </section>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
     <goTop></goTop>
   </div>
 </template>
@@ -31,7 +31,7 @@
   import cateMenu from '../components/cateMenu';
   import banner from '../components/banner';
   import cateShowProduct from '../components/cateShowProduct';
-  import foot from '../components/foot';
+  import siteFoot from '../components/siteFoot';
   import goTop from '../components/goTop';
 
   export default {
@@ -47,7 +47,7 @@
       cateMenu,
       banner,
       cateShowProduct,
-      foot,
+      siteFoot,
       goTop
     },
 

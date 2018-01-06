@@ -142,13 +142,13 @@
       </form>
     </section>
     <div class="hr-40"></div>
-    <foot></foot>
+    <siteFoot></siteFoot>
   </div>
 </template>
 
 <script>
   import registerHeader from '../components/registerHeader';
-  import foot from '../components/foot';
+  import siteFoot from '../components/siteFoot';
   import Util from '../js/Util';
 
   export default {
@@ -156,7 +156,7 @@
 
     components: {
       registerHeader,
-      foot
+      siteFoot
     },
 
     mounted: function () {
