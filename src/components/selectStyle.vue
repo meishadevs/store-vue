@@ -3,10 +3,11 @@
 
 <template>
   <div class="select-style clearfix">
-    <div class="des-item"
+    <span class="des-item"
          v-for="(style, index) in productStyle"
          v-bind:class="{active: curIndex == index}"
-         @click="selectStyle(index)">{{ style }}</div>
+         @click="selectStyle(index)">{{ style }}
+    </span>
   </div>
 </template>
 
