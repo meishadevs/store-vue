@@ -19,10 +19,10 @@
     data() {
       return {
 
-        //产品规格
+        //产品款式
         productStyle: ['WIFI 16G', 'WIFI 64G', 'WIFI 32G', 'WIFI Cellular 32G', 'WIFI Cellular 64G', 'WIFI Cellular 16G'],
 
-        //当前选中的产品规格的索引
+        //当前选中的产品款式的索引
         curIndex: 0
       };
     },

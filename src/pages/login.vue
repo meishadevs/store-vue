@@ -92,7 +92,7 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapActions} from 'vuex';
   import loginHeader from '../components/loginHeader';
   import siteFoot from '../components/siteFoot';
   import Util from '../js/Util';
