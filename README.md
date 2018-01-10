@@ -102,9 +102,11 @@ npm run build
 │    ├── fonts	                   // 存放网站的字体
 │    ├── images                    // 存放网站的图片
 │    └── .gitkee                   // 只是一个占位符，一个假文件
-├── .babelrc                       // babel编译的一些配置
+├── .babelrc                       // babel编译的些配置
 ├── .editorconfig                  // 编辑器的配置
-├── .gitignore                     // 提交到git上时，忽略提交的文件和文件夹
+├── .eslintignore                  // 设置忽略做语法检查的文件
+├── .eslintrc.js                   // 设置ESLint语法检查的规则
+├── .gitignore                     // 提交到git上时，忽略提交的文件和文件夹
 ├── .postcssrc.js                  // 自动加载配置为PostCSS
 ├── index.html                     // 入口HTML文件
 └── package.json                   // 项目配置文件

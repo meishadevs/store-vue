@@ -23,7 +23,6 @@
           <li class="clearfix"
               v-for="(result, index) in arrayResult"
               v-bind:value="index"
-              ref='li'
               @click="setKeyWord($event)">
             <!-- 如果搜索结果中不存在用户输入的关键字 s -->
             <p class="product-name" v-if="result[0].indexOf(keyWord) == -1">
@@ -31,18 +30,19 @@
             </p>
             <!-- 如果搜索结果中不存在用户输入的关键字 e -->
             <!-- 如果关键字位于搜索结果的起始位置 s -->
-            <p class="product-name" v-if="result[0].indexOf(keyWord) == 0">
-              <em>{{ keyWord }}</em>
-              {{ result[0].substring(keyWord.length) }}
+            <p class="product-name" v-else-if="result[0].indexOf(keyWord) == 0">
+              <em>{{ keyWord }}</em>{{ result[0].substring(keyWord.length) }}
             </p>
             <!-- 如果关键字位于搜索结果的起始位置 e -->
             <!-- 如果关键字位于搜索结果的结束位置 s -->
-            <p class="product-name" v-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">
-              {{ result[0].substring(0, result[0].length - keyWord.length) }}
-              <em>{{ keyWord }}</em>
+            <p class="product-name" v-else-if="result[0].indexOf(keyWord) == result[0].length - keyWord.length">
+              {{ result[0].substring(0, result[0].length - keyWord.length) }}<em>{{ keyWord }}</em>
             </p>
             <!-- 如果关键字位于搜索结果的结束位置 e -->
             <!-- 关键字位于搜索结果的中间 s -->
+            <p class="product-name" v-else>
+              {{ result[0].split(keyWord)[0] }}<em>{{ keyWord }}</em>{{ result[0].split(keyWord)[1] }}
+            </p>
             <!-- 关键字位于搜索结果的中间 e -->
             <p class="result-num">约{{ result[1] }}个商品</p>
           </li>
@@ -117,6 +117,7 @@
             console.error("error:", err.message);
           } else {
             this.arrayResult = data.result;
+            console.log(this.arrayResult);
           }
         });
       },
