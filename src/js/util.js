@@ -3,10 +3,10 @@
  * 一些通用代码
  */
 
-export default {
+export default class Util {
 
   //检测用户名
-  checkUsername: function (username) {
+  static checkUsername(username) {
 
     //如果用户没有输入用户名
     if (username === '' || username === null) {
@@ -50,10 +50,10 @@ export default {
       usernameNotice: '用户名填写成功',
       flag: true
     };
-  },
+  }
 
   //检测密码
-  checkPassword: function (password) {
+  static checkPassword(password) {
 
     //如果用户没有输入密码
     if (password === null || password === '') {
@@ -79,10 +79,10 @@ export default {
       passwordNotice: '密码验证成功',
       flag: true
     };
-  },
+  }
 
   //检测用户第二次输入的密码
-  checkSecondPassword: function (password, secondPassword) {
+  static checkSecondPassword(password, secondPassword) {
 
     //如果用户没有输入密码
     if (secondPassword === null || secondPassword === '') {
@@ -108,10 +108,10 @@ export default {
       secondPasswordNotice: '您的密码输入正确',
       flag: true
     };
-  },
+  }
 
   //检测邮箱
-  checkEmail: function (email) {
+  static checkEmail(email) {
 
     //如果用户没有输入邮箱
     if (email === null || email === '') {
@@ -139,10 +139,10 @@ export default {
       emailNotice: '您填写的邮箱格式正确',
       flag: true
     };
-  },
+  }
 
   //检测是否接受服务条款
-  checkAccept: function (isAccept) {
+  static checkAccept(isAccept) {
 
     //如果用户没有接受服务条款
     if (!isAccept) {
