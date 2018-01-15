@@ -32,12 +32,7 @@
 
     name: 'cateShowProduct',
 
-    props: ['productList'],
-
-    data() {
-      return {
-      };
-    }
+    props: ['productList']
   };
 </script>
 

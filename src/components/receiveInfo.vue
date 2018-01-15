@@ -124,6 +124,7 @@
 
     data() {
       return {
+
         //记录详细地址
         address: null,
 
@@ -155,8 +156,9 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
+
         document.title = '购物车和结算页';
         document.body.style.backgroundColor = '#fff';
 
@@ -178,7 +180,7 @@
       ]),
 
       //提交收货信息
-      submitReceiveInfo: function () {
+      submitReceiveInfo() {
 
         this.noticeStatus1 = 1;
 
@@ -211,7 +213,7 @@
       },
 
       //恢复状态
-      recoverStatus: function () {
+      recoverStatus() {
 
         if (this.checkAddress() !== 1) {
           this.noticeStatus2 = 0;
@@ -279,7 +281,7 @@
       },
 
       //检测手机号码
-      checkPhoneNum: function () {
+      checkPhoneNum() {
 
         //如果用户没有输入手机号码
         if (this.phoneNum === null || this.phoneNum === '') {
@@ -300,7 +302,7 @@
       },
 
       //检测电话号码
-      checkTelNumber: function () {
+      checkTelNumber() {
 
         if (this.telNum === null || this.telNum === '') {
           this.noticeStatus5 = 0;

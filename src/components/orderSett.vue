@@ -39,7 +39,7 @@
       'checkContent'
     ]),
 
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
         this.formateMoney = Vue.filter('formateMoney');
         this.changeCheckStatus(0);
@@ -55,7 +55,7 @@
       ]),
 
       //提交订单
-      commitOrder: function () {
+      commitOrder() {
 
         window.scrollTo(0, 872);
 

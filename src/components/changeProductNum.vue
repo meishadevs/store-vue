@@ -36,7 +36,7 @@
     ]),
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
 
         //接收商品数量改变的事件
@@ -52,7 +52,7 @@
       ]),
 
       //增加商品数量
-      addProductNum: function () {
+      addProductNum() {
 
         if (this.productNum >= this.limitProductNum) {
           return;
@@ -63,7 +63,7 @@
       },
 
       //减少商品数量
-      reduceProductNum: function () {
+      reduceProductNum() {
 
         if (this.productNum <= 1) {
           return;

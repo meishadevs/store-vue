@@ -51,13 +51,7 @@
     name: 'indexShowProduct',
 
     //传递给组件中的数据
-    props: ['productInfo'],
-
-    //初始化
-    mounted: function () {
-      this.$nextTick(() => {
-      });
-    }
+    props: ['productInfo']
   };
 </script>
 

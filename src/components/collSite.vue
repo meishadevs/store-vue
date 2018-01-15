@@ -28,12 +28,8 @@
     //设置组件名称
     name: 'collSite',
 
-    data () {
-      return {
-      };
-    },
-
     computed: mapState([
+
       //是否显示蒙版
       //映射 this.isShowMask 为 store.state.isShowMask
       'isShowMask'

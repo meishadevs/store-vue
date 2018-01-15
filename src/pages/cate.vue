@@ -53,6 +53,7 @@
 
     data() {
       return {
+
         //商品分类页的商品列表
         cateProductList: [
           {
@@ -182,7 +183,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(function () {
         document.title = '商品分类页';
         document.body.style.backgroundColor = '#fff';

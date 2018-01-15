@@ -149,7 +149,7 @@
     ]),
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
 
         //在showProinfo组件创建的钩子函数中监听select-color事件
@@ -176,7 +176,6 @@
     },
 
     methods: {
-
       ...mapActions([
         'setProductNum',
         'setProductPrice'

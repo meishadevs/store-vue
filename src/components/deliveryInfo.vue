@@ -95,22 +95,22 @@
       };
     },
 
+    mounted() {
+      this.$nextTick(() => {
+        this.formateMoney = Vue.filter('formateMoney');
+      });
+    },
+
     methods: {
       ...mapActions([
         'changeCheckStatus',
         'setCheckContent'
       ]),
 
-      closeDialog: function () {
+      closeDialog() {
         this.changeCheckStatus(0);
         this.setCheckContent('');
       }
-    },
-
-    mounted: function () {
-      this.$nextTick(() => {
-        this.formateMoney = Vue.filter('formateMoney');
-      });
     }
   };
 </script>

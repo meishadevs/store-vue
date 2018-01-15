@@ -42,7 +42,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
 
         //获得当前展示的是第几页商品信息
@@ -63,7 +63,7 @@
     watch: {
 
       //如果indexPage发生改变，这个函数就会调用
-      indexPage: function () {
+      indexPage() {
 
         //获得商品信息
         this.getProductInfo();
@@ -73,13 +73,14 @@
     methods: {
 
       //获得商品信息
-      getProductInfo: function () {
+      getProductInfo() {
 
         //计算每页展示的第一条商品信息的下标
         this.productFirstIndex = (this.indexPage - 1) * this.numProduct;
 
         //发送get请求，获得商品信息
         this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productFirstIndex, null, (err, data) => {
+
           if (err) {
             console.error("error:", err.message);
           } else {

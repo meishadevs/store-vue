@@ -53,8 +53,8 @@
     },
 
     //初始化
-    mounted: function () {
-      this.$nextTick(function () {
+    mounted() {
+      this.$nextTick(() => {
         this.play();
       });
     },
@@ -62,7 +62,7 @@
     methods: {
 
       //播放轮播图
-      play: function () {
+      play() {
         this.timer = setInterval(() => {
 
           this.currentIndex++;
@@ -74,7 +74,7 @@
       },
 
       //停止播放轮播图
-      stopPlay: function () {
+      stopPlay() {
         clearInterval(this.timer);
       }
     }

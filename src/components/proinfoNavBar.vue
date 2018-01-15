@@ -30,7 +30,7 @@
     },
 
     //初始化
-    mounted: function() {
+    mounted() {
       this.$nextTick(() => {
         this.curIndex = this.selectIndex;
       });

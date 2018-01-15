@@ -4,21 +4,21 @@
 <template>
   <div class="login">
     <loginHeader></loginHeader>
-    <!-- 注册成功时显示注册结果 s -->
+    <!-- 登录成功时，显示登录结果 s -->
     <div class="show-result" v-if="resultStatus == 1">
       登录成功
       <span class="time">{{ numTime }}</span>
       秒后跳转到{{ content }}
     </div>
-    <!-- 注册成功时显示注册结果 e -->
-    <!-- 登录失败时，显示注册结果 s -->
+    <!-- 登录成功时，显示登录结果 e -->
+    <!-- 登录失败时，显示登录结果 s -->
     <div class="show-result" v-if="resultStatus === 2">
       <span class="text">{{ resultContent }}</span>
       <button class="close-btn" @click="resultStatus = 0">
         <i class="fa fa-times"></i>
       </button>
     </div>
-    <!-- 登录失败时，显示注册结果-->
+    <!-- 登录失败时，显示登录结果 e -->
     <section class="login-box">
       <form>
         <ul class="login" @click="recoverStatus()">
@@ -107,7 +107,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
         document.title = '登录页';
         document.body.style.backgroundColor = '#fff';
@@ -158,8 +158,9 @@
       ]),
 
       //登录
-      login: function () {
+      login() {
 
+        //获得用户名的检测结果
         this.usernameStatus = Util.checkUsername(this.username).usernameStatus;
         this.usernameNotice = Util.checkUsername(this.username).usernameNotice;
 
@@ -168,6 +169,7 @@
           return;
         }
 
+        //获得密码的检测结果
         this.passwordStatus = Util.checkPassword(this.password).passwordStatus;
         this.passwordNotice = Util.checkPassword(this.password).passwordNotice;
 
@@ -194,12 +196,12 @@
             this.resultStatus = 2;
             this.resultContent = '您输入的用户名不存在';
 
-            //密码错误
+          //密码错误
           } else if (res.data === 2) {
             this.resultStatus = 2;
             this.resultContent = '您输入的密码与用户名不匹配';
 
-            //登录成功
+          //登录成功
           } else if (res.data === 3) {
 
             //记住用户名和密码
@@ -207,8 +209,13 @@
               this.saveUserInfo();
             }
 
+            //标记登录成功
             this.resultStatus = 1;
+
+            //改变登录的状态
             this.changeLoginStatus(true);
+
+            //设置用户名
             this.setUsername(this.username);
 
             //登录成功后是否进入购物车页
@@ -218,7 +225,7 @@
             if (isCart) {
               this.content = '购物车和结算页';
 
-              //登录成功后进入网站首页
+            //登录成功后进入网站首页
             } else {
               this.content = '网站首页';
             }
@@ -248,13 +255,15 @@
       },
 
       //恢复状态
-      recoverStatus: function () {
+      recoverStatus() {
 
+        //如果用户名检测失败
         if (this.usernameStatus !== 1) {
           this.usernameStatus = 0;
           this.usernameNotice = '';
         }
 
+        //如果密码检测失败
         if (this.passwordStatus !== 1) {
           this.passwordStatus = 0;
           this.passwordNotice = '';
@@ -262,7 +271,7 @@
       },
 
       //保存用户信息
-      saveUserInfo: function () {
+      saveUserInfo() {
 
         //使用Cookie保存用户名
         document.cookie = 'username=' + this.username + ';'
@@ -274,7 +283,7 @@
       },
 
       //读取用户信息
-      readUserInfo: function () {
+      readUserInfo() {
 
         //获得网站中的Cookie
         var cookie = document.cookie;

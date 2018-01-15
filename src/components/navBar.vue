@@ -51,6 +51,7 @@
     name: 'nav-bar',
 
     computed: mapState([
+
       //当前选中的导航项的索引
       //映射 this.currentNavIndex 为 store.state.currentNavIndex
       'currentNavIndex'

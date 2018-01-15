@@ -30,7 +30,8 @@
     methods: {
 
       //选择款式
-      selectStyle: function (index) {
+      selectStyle(index) {
+
         this.curIndex = index;
 
         //触发selectStyle组件的select-style事件

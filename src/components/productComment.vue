@@ -64,6 +64,7 @@
   import changePage from './changePage';
 
   export default {
+
     name: 'productComment',
 
     components: {
@@ -106,7 +107,7 @@
     methods: {
 
       //获得商品咨询的数量
-      getAdvisoryNum: function () {
+      getAdvisoryNum() {
 
         //发送get请求，获得商品咨询的数量
         this.jsonp(this.advisoryNumUrl, null, (err, data) => {

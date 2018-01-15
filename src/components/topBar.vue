@@ -44,6 +44,7 @@
     ]),
 
     methods: {
+
       //使用对象展开运算符将此对象混入到外部对象中
       ...mapActions([
 
@@ -60,7 +61,7 @@
       ]),
 
       //退出账户
-      exitAccount: function () {
+      exitAccount() {
         this.exit();
         this.$router.push('/');
       }

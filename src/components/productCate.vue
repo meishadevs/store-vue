@@ -19,10 +19,12 @@
 
 <script>
   export default {
+
     name: 'productCate',
 
     data() {
       return {
+
         //商品分类数据
         productCateData: {
           "title": '产品分类',

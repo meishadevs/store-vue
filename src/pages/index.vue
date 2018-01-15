@@ -179,7 +179,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(function () {
         document.title = '电商网首页';
         document.body.style.backgroundColor = '#fff';

@@ -129,8 +129,8 @@
     },
 
     //初始化
-    mounted: function () {
-      this.$nextTick(function () {
+    mounted() {
+      this.$nextTick(() => {
         document.title = '商品信息展示页';
         document.body.style.backgroundColor = '#f0f0f0';
         window.scrollTo(0, 0);

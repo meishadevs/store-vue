@@ -91,19 +91,19 @@
     methods: {
 
       //选择发票的类型
-      selectInvoiceType: function (index) {
+      selectInvoiceType(index) {
         this.invoiceType = this.invoiceTypeData[index];
         this.isShowInvoiceType = false;
       },
 
       //选择发票抬头
-      selectInvoiceHeader: function (index) {
+      selectInvoiceHeader(index) {
         this.invoiceHeader = this.invoiceHeaderData[index];
         this.isShowInvoiceHeader = false;
       },
 
       //保存发票信息
-      saveInvoiceInfo: function () {
+      saveInvoiceInfo() {
         this.isShowResult = true;
 
         setTimeout(() => {
@@ -112,7 +112,7 @@
       },
 
       //取消使用发票
-      cancelUseInvoice: function () {
+      cancelUseInvoice() {
         this.invoiceType = '商业零售发票';
         this.invoiceHeader = '个人';
         this.invoiceName = '';

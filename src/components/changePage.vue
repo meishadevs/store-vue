@@ -40,14 +40,15 @@
 
     data() {
       return {
+
         //当前展示的是第 indexPage 页数据
         indexPage: 1
       };
     },
 
     //初始化
-    mounted: function () {
-      this.$nextTick(function () {
+    mounted() {
+      this.$nextTick(() => {
         this.indexPage = this.curPage;
       });
     },
@@ -56,7 +57,7 @@
     methods: {
 
       //创建数组,保存分页按钮上的数字
-      createArrNum: function (value, totalPage) {
+      createArrNum(value, totalPage) {
         var arr = [];
         for (let i = 0; i < totalPage - 1; i++) {
           arr[i] = value + i;
@@ -66,7 +67,7 @@
       },
 
       //实现翻页逻辑
-      changePage: function (indexPage) {
+      changePage(indexPage) {
         this.indexPage = indexPage;
 
         //触发翻页组件中的事件

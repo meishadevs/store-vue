@@ -42,6 +42,7 @@
 
     data() {
       return {
+
         pay: 0,
 
         //微信图标
@@ -60,7 +61,7 @@
       ]),
 
       //改变支付方式
-      changePayMethod: function (pay) {
+      changePayMethod(pay) {
         this.setPayMethod(pay);
       }
     }

@@ -13,6 +13,7 @@
 
 <script>
   export default {
+
     name: 'selectColor',
 
     data() {
@@ -29,7 +30,8 @@
     methods: {
 
       //选择颜色
-      selectColor: function (index) {
+      selectColor(index) {
+
         this.curIndex = index;
 
         //触发selectColor组件的select-color事件

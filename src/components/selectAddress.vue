@@ -85,8 +85,8 @@
     },
 
     //初始化
-    mounted: function () {
-      this.$nextTick(function () {
+    mounted() {
+      this.$nextTick(() => {
 
           //获得省的数据
           this.getAddressData(1, this.provinceCode, (err, data) => {
@@ -100,14 +100,14 @@
     },
 
     //销毁
-    destroyed: function () {
+    destroyed() {
     },
 
     //监听器
     watch: {
 
       //如果provinceName的值发生变化，调用这个函数
-      provinceName: function () {
+      provinceName() {
 
         //获得市的数据
         this.getAddressData(2, this.provinceCode, (err, data) => {
@@ -158,7 +158,7 @@
       },
 
       //是否显示滚动条
-      isShowScroll1: function () {
+      isShowScroll1() {
 
         //如果市的个数小于6个，不显示竖直滚动条
         if (this.cityData.length < 6) {
@@ -173,7 +173,7 @@
       },
 
       //是否显示滚动条
-      isShowScroll2: function () {
+      isShowScroll2() {
 
         //如果区的个数小于6个，不显示竖直滚动条
         if (this.areaData.length < 6) {
@@ -193,7 +193,7 @@
        * @param addressCode 地址编码
        * @param callback 回调函数
        */
-      getAddressData: function (flag, addressCode, callback) {
+      getAddressData(flag, addressCode, callback) {
 
         //请求参数
         let param = this.addressUrl + "?flag=" + flag + "&citycode=" + addressCode;

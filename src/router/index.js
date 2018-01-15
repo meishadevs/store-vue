@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import index from '../pages/index';
-import cate from '../pages/cate';
-import select from '../pages/select';
-import proinfo from '../pages/proinfo';
-import cart from '../pages/cart';
-import register from '../pages/register';
-import login from '../pages/login';
+import index from '@/pages/index';
+import cate from '@/pages/cate';
+import select from '@/pages/select';
+import proinfo from '@/pages/proinfo';
+import cart from '@/pages/cart';
+import register from '@/pages/register';
+import login from '@/pages/login';
 
 Vue.use(VueRouter);
 

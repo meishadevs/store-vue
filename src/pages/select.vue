@@ -91,8 +91,8 @@
     },
 
     //初始化
-    mounted: function () {
-      this.$nextTick(function () {
+    mounted() {
+      this.$nextTick(() => {
         document.title = '商品选择页';
         document.body.style.backgroundColor = '#f0f0f0';
         window.scrollTo(0, 0);
@@ -110,7 +110,7 @@
     methods: {
 
       //获得商品的数量
-      getProductNum: function () {
+      getProductNum() {
 
         //发送get请求，获得商品数量
         this.jsonp(this.productNumUrl, null, (err, data) => {

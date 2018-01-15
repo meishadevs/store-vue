@@ -60,6 +60,7 @@
   import {mapState, mapActions} from 'vuex';
 
   export default {
+
     name: 'productFilter',
 
     data() {
@@ -93,7 +94,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
         this.setBrand(null);
         this.setScreenSize(null);

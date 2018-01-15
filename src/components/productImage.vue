@@ -76,7 +76,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
 
         //获得middle-box到浏览器窗口最左端的距离
@@ -90,7 +90,7 @@
     methods: {
 
       //移动放大镜
-      moveGlass: function (event) {
+      moveGlass(event) {
 
         //计算放大镜的位置
         //放大镜的位置 = 鼠标指针的位置 - middle-box在浏览器上的偏移 - 放大镜宽度的一半
@@ -123,7 +123,7 @@
       },
 
       //获得元素最左端到网页最左端的距离
-      getElementLeft: function (element) {
+      getElementLeft(element) {
         var actualLeft = element.offsetLeft;
         var current = element.offsetParent;
         while (current !== null) {
@@ -134,7 +134,7 @@
       },
 
       //获得元素最顶端到网页最顶端的距离
-      getElementTop: function (element) {
+      getElementTop(element) {
         var actualTop = element.offsetTop;
         var current = element.offsetParent;
         while (current !== null) {

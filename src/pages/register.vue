@@ -4,13 +4,13 @@
 <template>
   <div class="register">
     <registerHeader></registerHeader>
-    <!-- 注册成功时显示注册结果 s -->
+    <!-- 注册成功时，显示注册结果 s -->
     <div class="show-result" v-if="resultStatus == 1">
       注册成功
       <span class="time">{{ numTime }}</span>
       秒后跳转到登录页
     </div>
-    <!-- 注册成功时显示注册结果 e -->
+    <!-- 注册成功时，显示注册结果 e -->
     <!-- 注册失败或用户名已存在时，显示注册结果 s -->
     <div class="show-result" v-if="resultStatus == 0 || resultStatus === 2">
       <span class="text">{{ resultContent }}</span>
@@ -18,7 +18,7 @@
         <i class="fa fa-times"></i>
       </button>
     </div>
-    <!-- 注册失败或用户名已存在时，显示注册结果-->
+    <!-- 注册失败或用户名已存在时，显示注册结果 e -->
     <section class="register-box">
       <form @click.stop="recoverStatus()">
         <ul class="register">
@@ -152,6 +152,7 @@
   import Util from '../js/Util';
 
   export default {
+
     name: 'register',
 
     components: {
@@ -159,7 +160,7 @@
       siteFoot
     },
 
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
         document.title = '注册页';
         document.body.style.backgroundColor = '#fff';
@@ -229,6 +230,7 @@
       //注册账号
       registerAccount: function () {
 
+        //获得用户名的检测结果
         this.usernameStatus = Util.checkUsername(this.username).usernameStatus;
         this.usernameNotice = Util.checkUsername(this.username).usernameNotice;
 
@@ -237,6 +239,7 @@
           return;
         }
 
+        //获得密码的检测结果
         this.passwordStatus = Util.checkPassword(this.password).passwordStatus;
         this.passwordNotice = Util.checkPassword(this.password).passwordNotice;
 
@@ -245,6 +248,7 @@
           return;
         }
 
+        //获得用户第二次输入的密码的检测结果
         this.secondPasswordStatus = Util.checkSecondPassword(this.password, this.secondPassword).secondPasswordStatus;
         this.secondPasswordNotice = Util.checkSecondPassword(this.password, this.secondPassword).secondPasswordNotice;
 
@@ -253,6 +257,7 @@
           return;
         }
 
+        //获得邮箱的检测结果
         this.emailStatus = Util.checkEmail(this.email).emailStatus;
         this.emailNotice = Util.checkEmail(this.email).emailNotice;
 
@@ -261,6 +266,7 @@
           return;
         }
 
+        //获得用户是否接受服务条款的检测结果
         this.acceptStatus = Util.checkAccept(this.isAccept).acceptStatus;
         this.acceptNotice = Util.checkAccept(this.isAccept).acceptNotice;
 
@@ -310,23 +316,27 @@
       },
 
       //恢复状态
-      recoverStatus: function () {
+      recoverStatus() {
 
+        //如果用户名检测失败
         if (this.usernameStatus !== 1) {
           this.usernameStatus = 0;
           this.usernameNotice = '';
         }
 
+        //如果密码检测失败
         if (this.passwordStatus !== 1) {
           this.passwordStatus = 0;
           this.passwordNotice = '';
         }
 
+        //如果用户第二次输入的密码检测失败
         if (this.secondPasswordStatus !== 1) {
           this.secondPasswordStatus = 0;
           this.secondPasswordNotice = '';
         }
 
+        //如果邮箱检测失败
         if (this.emailStatus !== 1) {
           this.emailStatus = 0;
           this.emailNotice = '';

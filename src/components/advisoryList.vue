@@ -49,7 +49,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
 
         //获得当前展示的是第几页商品信息
@@ -70,7 +70,7 @@
     watch: {
 
       //如果indexPage发生改变，这个函数就会调用
-      indexPage: function () {
+      indexPage() {
 
         //获得商品咨询信息
         this.getAdvisoryInfo();
@@ -80,7 +80,7 @@
     methods: {
 
       //获得商品咨询信息
-      getAdvisoryInfo: function () {
+      getAdvisoryInfo() {
 
         //计算每页展示的第一条商品咨询信息的下标
         this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory;

@@ -19,7 +19,7 @@
     },
 
     //初始化
-    mounted: function () {
+    mounted() {
       this.$nextTick(() => {
 
         //监听浏览器的滚动事件
@@ -40,7 +40,7 @@
     methods: {
 
       //实现回到顶部的逻辑
-      goTop: function () {
+      goTop() {
 
         //关闭定时器
         clearInterval(this.timer);
@@ -61,7 +61,7 @@
       },
 
       //获取滚动条到浏览器顶部的距离
-      getScrollTop: function () {
+      getScrollTop() {
 
         var scrollPos;
 

@@ -93,7 +93,7 @@
         'isLogin'
       ]),
 
-      proNum: function () {
+      proNum() {
 
         //如果用户登录了
         if (this.isLogin) {
@@ -109,7 +109,7 @@
     methods: {
 
       //获取搜索结果
-      getSearchResult: function () {
+      getSearchResult() {
 
         //发送get请求，搜索商品
         this.jsonp(this.taobaoUrl + this.keyWord, null, (err, data) => {
@@ -123,7 +123,7 @@
       },
 
       //设置关键字
-      setKeyWord: function (event) {
+      setKeyWord(event) {
 
         //获得当前选中的标签的value属性值
         var currentIndex = event.currentTarget.getAttribute('value');
@@ -134,7 +134,7 @@
       },
 
       //搜索数据
-      searchData: function () {
+      searchData() {
         window.location = this.baiduUrl + "?wd=" + this.keyWord;
       }
     }

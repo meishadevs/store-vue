@@ -24,12 +24,13 @@
 
 <script>
   export default {
+
     name: 'proinfoProductList',
 
     props: ['productList', 'isAddBold'],
 
     methods: {
-      goTop: function () {
+      goTop() {
         window.scrollTo(0, 0);
       }
     }
