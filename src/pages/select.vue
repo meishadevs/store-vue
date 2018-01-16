@@ -3,18 +3,18 @@
 
 <template>
   <div id="select">
-    <collSite></collSite>
-    <topBar></topBar>
-    <siteHead></siteHead>
-    <navBar></navBar>
-    <userPosition></userPosition>
+    <coll-site></coll-site>
+    <top-bar></top-bar>
+    <site-head></site-head>
+    <nav-bar></nav-bar>
+    <user-position></user-position>
     <section class="wrapper clearfix">
       <div class="left-area">
-        <productCate></productCate>
-        <selectProductList></selectProductList>
+        <product-cate></product-cate>
+        <select-product-list></select-product-list>
       </div>
       <div class="right-area">
-        <productFilter></productFilter>
+        <product-filter></product-filter>
         <div class="hr-15"></div>
         <div class="add-info clearfix">
           <p class="left-title">全部商品</p>
@@ -29,48 +29,50 @@
             </div>
           </div>
         </div>
-        <selectShowProduct v-bind:curPage="curPage" v-bind:numProduct="numProduct"></selectShowProduct>
-        <changePage v-bind:totalPage="totalPage" v-bind:curPage="curPage" v-if="totalPage > 0"></changePage>
+        <select-show-product v-bind:curPage="curPage" v-bind:numProduct="numProduct"></select-show-product>
+        <change-page v-bind:totalPage="totalPage" v-bind:curPage="curPage" v-if="totalPage > 0"></change-page>
       </div>
     </section>
     <div class="hr-40"></div>
-    <siteFoot></siteFoot>
-    <goTop></goTop>
+    <site-foot></site-foot>
+    <go-top></go-top>
   </div>
 </template>
 
 <script>
   import Vue from 'vue';
-  import collSite from '../components/collSite';
-  import topBar from '../components/topBar';
-  import siteHead from '../components/siteHead';
-  import navBar from '../components/navBar';
-  import userPosition from '../components/userPosition';
-  import productCate from '../components/productCate';
-  import selectProductList from '../components/selectProductList';
-  import productFilter from '../components/productFilter';
-  import selectShowProduct from '../components/selectShowProduct';
-  import changePage from '../components/changePage';
-  import siteFoot from '../components/siteFoot';
-  import goTop from '../components/goTop';
+  import CollSite from '../components/CollSite';
+  import TopBar from '../components/TopBar';
+  import SiteHead from '../components/SiteHead';
+  import NavBar from '../components/NavBar';
+  import UserPosition from '../components/UserPosition';
+  import ProductCate from '../components/ProductCate';
+  import SelectProductList from '../components/SelectProductList';
+  import ProductFilter from '../components/ProductFilter';
+  import SelectShowProduct from '../components/SelectShowProduct';
+  import ChangePage from '../components/ChangePage';
+  import SiteFoot from '../components/SiteFoot';
+  import GoTop from '../components/GoTop';
 
   export default {
 
+    //组件名称
     name: 'select',
 
+    //引入的外部组件
     components: {
-      collSite,
-      topBar,
-      siteHead,
-      navBar,
-      userPosition,
-      productCate,
-      selectProductList,
-      productFilter,
-      selectShowProduct,
-      changePage,
-      siteFoot,
-      goTop
+      CollSite,
+      TopBar,
+      SiteHead,
+      NavBar,
+      UserPosition,
+      ProductCate,
+      SelectProductList,
+      ProductFilter,
+      SelectShowProduct,
+      ChangePage,
+      SiteFoot,
+      GoTop
     },
 
     data() {

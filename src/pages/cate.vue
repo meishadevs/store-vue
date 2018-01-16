@@ -3,52 +3,53 @@
 
 <template>
   <div id="cate">
-    <collSite></collSite>
-    <topBar></topBar>
-    <siteHead></siteHead>
-    <navBar></navBar>
+    <coll-site></coll-site>
+    <top-bar></top-bar>
+    <site-head></site-head>
+    <nav-bar></nav-bar>
     <section class="wrapper inner-c clearfix">
       <div class="left-area">
-        <cateMenu></cateMenu>
+        <cate-menu></cate-menu>
       </div>
       <div class="right-area">
         <banner></banner>
-        <cateShowProduct v-bind:productList="cateProductList[0]"></cateShowProduct>
-        <cateShowProduct v-bind:productList="cateProductList[1]"></cateShowProduct>
+        <cate-show-product v-bind:productList="cateProductList[0]"></cate-show-product>
+        <cate-show-product v-bind:productList="cateProductList[1]"></cate-show-product>
       </div>
     </section>
     <div class="hr-40"></div>
-    <siteFoot></siteFoot>
-    <goTop></goTop>
+    <site-foot></site-foot>
+    <go-top></go-top>
   </div>
 </template>
 
 <script>
-  import collSite from '../components/collSite';
-  import topBar from '../components/topBar';
-  import siteHead from '../components/siteHead';
-  import navBar from '../components/navBar';
-  import cateMenu from '../components/cateMenu';
-  import banner from '../components/banner';
-  import cateShowProduct from '../components/cateShowProduct';
-  import siteFoot from '../components/siteFoot';
-  import goTop from '../components/goTop';
+  import CollSite from '../components/CollSite';
+  import TopBar from '../components/TopBar';
+  import SiteHead from '../components/SiteHead';
+  import NavBar from '../components/NavBar';
+  import CateMenu from '../components/CateMenu';
+  import Banner from '../components/Banner';
+  import CateShowProduct from '../components/CateShowProduct';
+  import SiteFoot from '../components/SiteFoot';
+  import GoTop from '../components/GoTop';
 
   export default {
 
     //组件名称
     name: 'cate',
 
+    //引入的外部组件
     components: {
-      collSite,
-      topBar,
-      siteHead,
-      navBar,
-      cateMenu,
-      banner,
-      cateShowProduct,
-      siteFoot,
-      goTop
+      CollSite,
+      TopBar,
+      SiteHead,
+      NavBar,
+      CateMenu,
+      Banner,
+      CateShowProduct,
+      SiteFoot,
+      GoTop
     },
 
     data() {

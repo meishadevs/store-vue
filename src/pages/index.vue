@@ -2,41 +2,43 @@
 
 <template>
   <div id="index">
-    <collSite></collSite>
-    <topBar></topBar>
-    <siteHead></siteHead>
-    <navBar></navBar>
-    <section class="product-cate-banner inner-c clearfix">
-      <div class="product-cate-box">
-        <productCateNav></productCateNav>
-      </div>
-      <div class="banner-box">
-        <banner></banner>
-      </div>
-    </section>
-    <indexShowProduct v-bind:productInfo="indexProductList[0]"></indexShowProduct>
-    <indexShowProduct v-bind:productInfo="indexProductList[1]"></indexShowProduct>
+    <coll-site></coll-site>
+    <top-bar></top-bar>
+    <site-head></site-head>
+    <nav-bar></nav-bar>
+    <div class="inner-c">
+      <section class="product-cate-banner clearfix">
+        <div class="product-cate-box">
+          <product-cate-nav></product-cate-nav>
+        </div>
+        <div class="banner-box">
+          <banner></banner>
+        </div>
+      </section>
+      <index-show-product v-bind:productInfo="indexProductList[0]"></index-show-product>
+      <index-show-product v-bind:productInfo="indexProductList[1]"></index-show-product>
+    </div>
     <div class="hr-40"></div>
-    <siteFoot></siteFoot>
-    <goTop></goTop>
+    <site-foot></site-foot>
+    <go-top></go-top>
   </div>
 </template>
 
 <script>
-  import collSite from '../components/collSite';
-  import topBar from '../components/topBar';
-  import siteHead from '../components/siteHead';
-  import navBar from '../components/navBar';
-  import productCateNav from '../components/productCateNav';
-  import banner from '../components/banner';
-  import indexShowProduct from '../components/indexShowProduct';
-  import siteFoot from '../components/siteFoot';
-  import goTop from '../components/goTop.vue';
+  import CollSite from '../components/CollSite';
+  import TopBar from '../components/TopBar';
+  import SiteHead from '../components/SiteHead';
+  import NavBar from '../components/NavBar';
+  import ProductCateNav from '../components/ProductCateNav';
+  import Banner from '../components/Banner';
+  import IndexShowProduct from '../components/IndexShowProduct';
+  import SiteFoot from '../components/SiteFoot';
+  import GoTop from '../components/GoTop';
   import {mapState, mapActions} from 'vuex';
 
   export default {
 
-    //设置当前组件名称为index
+    //组件名称
     name: 'index',
 
     data() {
@@ -147,17 +149,17 @@
       };
     },
 
-    //设置index组件中引入的组件
+    //引入的外部组件
     components: {
-      collSite,
-      topBar,
-      siteHead,
-      navBar,
-      productCateNav,
-      banner,
-      indexShowProduct,
-      siteFoot,
-      goTop
+      CollSite,
+      TopBar,
+      SiteHead,
+      NavBar,
+      ProductCateNav,
+      Banner,
+      IndexShowProduct,
+      SiteFoot,
+      GoTop
     },
 
     //计算属性

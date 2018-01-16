@@ -3,7 +3,7 @@
 
 <template>
   <div class="login">
-    <loginHeader></loginHeader>
+    <login-head></login-head>
     <!-- 登录成功时，显示登录结果 s -->
     <div class="show-result" v-if="resultStatus == 1">
       登录成功
@@ -87,23 +87,25 @@
       </form>
     </section>
     <div class="hr-40"></div>
-    <siteFoot></siteFoot>
+    <site-foot></site-foot>
   </div>
 </template>
 
 <script>
   import {mapActions} from 'vuex';
-  import loginHeader from '../components/loginHeader';
-  import siteFoot from '../components/siteFoot';
+  import LoginHead from '../components/LoginHead';
+  import SiteFoot from '../components/SiteFoot';
   import Util from '../js/Util';
 
   export default {
 
+    //组件名称
     name: 'login',
 
+    //引入的外部组件
     components: {
-      loginHeader,
-      siteFoot
+      LoginHead,
+      SiteFoot
     },
 
     //初始化
@@ -416,9 +418,9 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
-    color: #fff;
     font-size: 16px;
     background-color: #ff6d28;
+    color: #fff;
     position: relative;
   }
 
@@ -426,7 +428,6 @@
     width: 26px;
     height: 26px;
     line-height: 24px;
-    margin-left: 274px;
     background: #f86621;
     border-radius: 2px;
     vertical-align: text-bottom;

@@ -3,51 +3,55 @@
 
 <template>
   <div id="cart">
-    <collSite></collSite>
-    <topBar></topBar>
-    <cartHeader></cartHeader>
-    <div class="hr-12"></div>
-    <receiveInfo></receiveInfo>
-    <div class="hr-20"></div>
-    <payMethod></payMethod>
-    <div class="hr-20"></div>
-    <invoiceInfo></invoiceInfo>
-    <deliveryInfo></deliveryInfo>
-    <div class="hr-20"></div>
-    <orderSett></orderSett>
-    <goTop></goTop>
-    <div class="hr-40"></div>
-    <siteFoot></siteFoot>
+    <coll-site></coll-site>
+    <top-bar></top-bar>
+    <cart-head></cart-head>
+    <div class="inner-c">
+      <div class="hr-12"></div>
+      <receive-info></receive-info>
+      <div class="hr-20"></div>
+      <pay-method></pay-method>
+      <div class="hr-20"></div>
+      <invoice-info></invoice-info>
+      <delivery-info></delivery-info>
+      <div class="hr-20"></div>
+      <order-sett></order-sett>
+      <div class="hr-40"></div>
+    </div>
+    <site-foot></site-foot>
+    <go-top></go-top>
   </div>
 </template>
 
 <script>
-  import collSite from '../components/collSite';
-  import topBar from '../components/topBar';
-  import cartHeader from '../components/cartHeader';
-  import receiveInfo from '../components/receiveInfo';
-  import payMethod from '../components/payMethod';
-  import invoiceInfo from '../components/invoiceInfo';
-  import deliveryInfo from '../components/deliveryInfo';
-  import orderSett from '../components/orderSett';
-  import goTop from '../components/goTop';
-  import siteFoot from '../components/siteFoot';
+  import CollSite from '../components/CollSite';
+  import TopBar from '../components/TopBar';
+  import CartHead from '../components/CartHead';
+  import ReceiveInfo from '../components/ReceiveInfo';
+  import PayMethod from '../components/PayMethod';
+  import InvoiceInfo from '../components/InvoiceInfo';
+  import DeliveryInfo from '../components/DeliveryInfo';
+  import OrderSett from '../components/OrderSett';
+  import GoTop from '../components/GoTop';
+  import SiteFoot from '../components/SiteFoot';
 
   export default {
 
+    //组件名称
     name: 'cart',
 
+    //引入的外部组件
     components: {
-      collSite,
-      topBar,
-      cartHeader,
-      receiveInfo,
-      payMethod,
-      invoiceInfo,
-      deliveryInfo,
-      orderSett,
-      goTop,
-      siteFoot
+      CollSite,
+      TopBar,
+      CartHead,
+      ReceiveInfo,
+      PayMethod,
+      InvoiceInfo,
+      DeliveryInfo,
+      OrderSett,
+      GoTop,
+      SiteFoot
     },
 
     //初始化

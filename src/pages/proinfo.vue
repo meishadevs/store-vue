@@ -3,72 +3,73 @@
 
 <template>
   <div id="proinfo">
-    <collSite></collSite>
-    <topBar></topBar>
-    <siteHead></siteHead>
-    <navBar></navBar>
-    <productPosition></productPosition>
+    <coll-site></coll-site>
+    <top-bar></top-bar>
+    <site-head></site-head>
+    <nav-bar></nav-bar>
+    <product-position></product-position>
     <section class="description-info inner-c clearfix">
       <div class="left-area">
-        <productImage></productImage>
+        <product-image></product-image>
       </div>
       <div class="right-area">
-        <showProinfo></showProinfo>
+        <show-proinfo></show-proinfo>
       </div>
     </section>
     <section class="product-info inner-c clearfix">
       <div class="left-area">
-        <proinfoProductList v-bind:productList="productList[0]" v-bind:isAddBold="true"></proinfoProductList>
-        <proinfoProductList v-bind:productList="productList[1]"></proinfoProductList>
+        <proinfo-product-list v-bind:productList="productList[0]" v-bind:isAddBold="true"></proinfo-product-list>
+        <proinfo-product-list v-bind:productList="productList[1]"></proinfo-product-list>
       </div>
       <div class="right-area">
-        <proinfoNavBar v-bind:selectIndex="selectIndex"></proinfoNavBar>
+        <proinfo-nav-bar v-bind:selectIndex="selectIndex"></proinfo-nav-bar>
         <div class="table">
-          <productIntro v-if="selectIndex == 1"></productIntro>
-          <productComment v-if="selectIndex == 2"></productComment>
+          <product-intro v-if="selectIndex == 1"></product-intro>
+          <product-comment v-if="selectIndex == 2"></product-comment>
         </div>
       </div>
     </section>
     <div class="hr-40"></div>
-    <siteFoot></siteFoot>
-    <goTop></goTop>
+    <site-foot></site-foot>
+    <go-top></go-top>
   </div>
 </template>
 
 <script>
-  import collSite from '../components/collSite';
-  import topBar from '../components/topBar';
-  import siteHead from '../components/siteHead';
-  import navBar from '../components/navBar';
-  import productPosition from '../components/productPosition';
-  import productImage from '../components/productImage';
-  import showProinfo from '../components/showProinfo';
-  import proinfoProductList from '../components/proinfoProductList';
-  import proinfoNavBar from '../components/proinfoNavBar';
-  import productIntro from '../components/productIntro';
-  import productComment from '../components/productComment';
-  import siteFoot from '../components/siteFoot';
-  import goTop from '../components/goTop';
+  import CollSite from '../components/CollSite';
+  import TopBar from '../components/TopBar';
+  import SiteHead from '../components/SiteHead';
+  import NavBar from '../components/NavBar';
+  import ProductPosition from '../components/ProductPosition';
+  import ProductImage from '../components/ProductImage';
+  import ShowProinfo from '../components/showProinfo';
+  import ProinfoProductList from '../components/ProinfoProductList';
+  import ProinfoNavBar from '../components/ProinfoNavBar';
+  import ProductIntro from '../components/ProductIntro';
+  import ProductComment from '../components/ProductComment';
+  import SiteFoot from '../components/SiteFoot';
+  import GoTop from '../components/GoTop';
 
   export default {
 
-    //设置组件名称
+    //组件名称
     name: 'proinfo',
 
+    //引入的外部组件
     components: {
-      collSite,
-      topBar,
-      siteHead,
-      navBar,
-      productPosition,
-      productImage,
-      showProinfo,
-      proinfoProductList,
-      proinfoNavBar,
-      productIntro,
-      productComment,
-      siteFoot,
-      goTop
+      CollSite,
+      TopBar,
+      SiteHead,
+      NavBar,
+      ProductPosition,
+      ProductImage,
+      ShowProinfo,
+      ProinfoProductList,
+      ProinfoNavBar,
+      ProductIntro,
+      ProductComment,
+      SiteFoot,
+      GoTop
     },
 
     data() {

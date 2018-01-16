@@ -27,7 +27,7 @@
         <div class="dt">送到</div>
         <div class="dd">
           <!-- 地址选择组件 s -->
-          <selectAddress></selectAddress>
+          <select-address></select-address>
           <!-- 地址选择组件 e -->
           <span class="the-god">有货，可当日出货</span>
         </div>
@@ -36,7 +36,7 @@
         <div class="dt select-color">选择颜色</div>
         <div class="dd">
           <!-- 颜色选择组件 s -->
-          <selectColor></selectColor>
+          <select-color></select-color>
           <!-- 颜色选择组件 e -->
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div class="dt des-select-more">选择款式</div>
         <div class="dd">
           <!-- 手机款式选择组件 s -->
-          <selectStyle></selectStyle>
+          <select-style></select-style>
           <!-- 手机款式选择组件 e -->
         </div>
       </div>
@@ -52,7 +52,7 @@
         <div class="dt">数量</div>
         <div class="dd clearfix">
           <!-- 改变商品数量的组件 s -->
-          <changeProductNum v-bind:limitProductNum="productInfo.limitProductNum"></changeProductNum>
+          <change-product-num v-bind:limitProductNum="productInfo.limitProductNum"></change-product-num>
           <!-- 改变商品数量的组件 e -->
           <span class="buy-number">限购<em>{{ productInfo.limitProductNum }}</em>件</span>
         </div>
@@ -96,20 +96,22 @@
 <script>
   import Vue from 'vue';
   import {mapState, mapActions} from 'vuex';
-  import selectAddress from '../components/selectAddress';
-  import selectColor from '../components/selectColor';
-  import selectStyle from '../components/selectStyle';
-  import changeProductNum from '../components/changeProductNum';
+  import SelectAddress from './SelectAddress';
+  import SelectColor from './SelectColor';
+  import SelectStyle from './SelectStyle';
+  import ChangeProductNum from './ChangeProductNum';
 
   export default {
 
-    name: 'showProinfo',
+    //组件名称
+    name: 'ShowProinfo',
 
+    //引入外部组件
     components: {
-      selectAddress,
-      selectColor,
-      selectStyle,
-      changeProductNum
+      SelectAddress,
+      SelectColor,
+      SelectStyle,
+      ChangeProductNum
     },
 
     data() {
