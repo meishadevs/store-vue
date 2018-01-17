@@ -3,10 +3,10 @@
  * 过滤器
  */
 
-import Vue from 'vue';
+import Vue from "vue";
 
 //格式化现金过滤器
-let formateMoney = Vue.filter('formateMoney', function (value) {
+let formateMoney = Vue.filter("formateMoney", function (value) {
   return value.toFixed(2);
 });
 

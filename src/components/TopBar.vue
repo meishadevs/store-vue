@@ -27,20 +27,20 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'TopBar',
+    name: "TopBar",
 
     computed: mapState([
 
       //用户名
-      'username',
+      "username",
 
       //是否登录了
-      'isLogin'
+      "isLogin"
     ]),
 
     methods: {
@@ -49,21 +49,21 @@
       ...mapActions([
 
         //显示模板
-        'showMask',
+        "showMask",
 
         //退出
-        'exit',
+        "exit",
 
         //设置用户名
-        'setUsername',
+        "setUsername",
 
-        'changeLoginStatus'
+        "changeLoginStatus"
       ]),
 
       //退出账户
       exitAccount() {
         this.exit();
-        this.$router.push('/');
+        this.$router.push("/");
       }
     }
   };
@@ -73,7 +73,7 @@
   .top-bar {
     width: 100%;
     height: 38px;
-    font: 12px/38px "宋体", 'SimSun';
+    font: 12px/38px "宋体", "SimSun";
     background-color: #f7f7f7;
     color: #666;
   }

@@ -94,17 +94,17 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import {mapState, mapActions} from 'vuex';
-  import SelectAddress from './SelectAddress';
-  import SelectColor from './SelectColor';
-  import SelectStyle from './SelectStyle';
-  import ChangeProductNum from './ChangeProductNum';
+  import Vue from "vue";
+  import {mapState, mapActions} from "vuex";
+  import SelectAddress from "./SelectAddress";
+  import SelectColor from "./SelectColor";
+  import SelectStyle from "./SelectStyle";
+  import ChangeProductNum from "./ChangeProductNum";
 
   export default {
 
     //组件名称
-    name: 'ShowProinfo',
+    name: "ShowProinfo",
 
     //引入外部组件
     components: {
@@ -121,7 +121,7 @@
         productInfo: {
 
           //商品的名称
-          productName: '全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货',
+          productName: "全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货",
 
           //商品的价格
           productPrice: 1999,
@@ -130,10 +130,10 @@
           productNum: 1,
 
           //商品的颜色
-          productColor: '白色',
+          productColor: "白色",
 
           //商品的规格
-          productStyle: 'WIFI 16G',
+          productStyle: "WIFI 16G",
 
           //商品限制购买的数量
           limitProductNum: 200,
@@ -145,9 +145,9 @@
 
     //计算属性
     computed: mapState([
-      'productNum',
-      'productPrice',
-      'isLogin'
+      "productNum",
+      "productPrice",
+      "isLogin"
     ]),
 
     //初始化
@@ -155,12 +155,12 @@
       this.$nextTick(() => {
 
         //在showProinfo组件创建的钩子函数中监听select-color事件
-        this.bus.$on('select-color', color => {
+        this.bus.$on("select-color", color => {
           this.productInfo.productColor = color;
         });
 
         //在showProinfo组件创建的钩子函数中监听select-style事件
-        this.bus.$on('select-style', style => {
+        this.bus.$on("select-style", style => {
           this.productInfo.productStyle = style;
         });
 
@@ -170,17 +170,17 @@
         //设置商品的价格
         this.setProductPrice(this.productInfo.productPrice);
 
-        this.bus.$emit('change-num', this.productNum);
+        this.bus.$emit("change-num", this.productNum);
 
         //获得已经注册的过滤器
-        this.formateMoney = Vue.filter('formateMoney');
+        this.formateMoney = Vue.filter("formateMoney");
       });
     },
 
     methods: {
       ...mapActions([
-        'setProductNum',
-        'setProductPrice'
+        "setProductNum",
+        "setProductPrice"
       ])
     }
   };

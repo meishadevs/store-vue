@@ -43,18 +43,18 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'NavBar',
+    name: "NavBar",
 
     computed: mapState([
 
       //当前选中的导航项的索引
       //映射 this.currentNavIndex 为 store.state.currentNavIndex
-      'currentNavIndex'
+      "currentNavIndex"
     ]),
 
     methods: {
@@ -63,7 +63,7 @@
       ...mapActions([
 
         //改变当前选中的导航项的索引
-        'changeNavIndex'
+        "changeNavIndex"
       ])
     }
   };

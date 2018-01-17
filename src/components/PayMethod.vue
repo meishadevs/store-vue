@@ -35,12 +35,12 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'PayMethod',
+    name: "PayMethod",
 
     data() {
       return {
@@ -48,18 +48,18 @@
         pay: 0,
 
         //微信图标
-        wxIcon: './static/images/icon/weixin.jpg'
+        wxIcon: "./static/images/icon/weixin.jpg"
       };
     },
 
     computed: mapState([
-      'payMethod'
+      "payMethod"
     ]),
 
     methods: {
 
       ...mapActions([
-        'setPayMethod'
+        "setPayMethod"
       ]),
 
       //改变支付方式

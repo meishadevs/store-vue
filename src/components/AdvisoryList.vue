@@ -31,10 +31,10 @@
   export default {
 
     //组件名称
-    name: 'AdvisoryList',
+    name: "AdvisoryList",
 
     //获取从父组件中传递过来的数据
-    props: ['curPage', 'numAdvisory'],
+    props: ["curPage", "numAdvisory"],
 
     data() {
       return {
@@ -61,7 +61,7 @@
         this.getAdvisoryInfo();
 
         //监听翻页组件中传递过来的事件
-        this.bus.$on('change-page', (page) => {
+        this.bus.$on("change-page", (page) => {
           window.scrollTo(0, 1050);
           this.indexPage = page;
         });
@@ -88,7 +88,7 @@
         this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory;
 
         //发送get请求，获得商品咨询信息
-        this.jsonp(this.advisoryInfoUrl + this.numAdvisory + '&startIndex=' + this.advisoryFirstIndex, null, (err, data) => {
+        this.jsonp(this.advisoryInfoUrl + this.numAdvisory + "&startIndex=" + this.advisoryFirstIndex, null, (err, data) => {
           if (err) {
             console.error("error:", err.message);
           } else {

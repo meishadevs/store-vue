@@ -57,38 +57,38 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'ProductFilter',
+    name: "ProductFilter",
 
     data() {
       return {
         productFilterData: [
           {
-            "type": '品牌',
-            "content": ['Samsung/三星', 'Apple/苹果', 'Huawei/华为', 'Miui/小米',
-              'Lenove/联想', 'Sony/索尼', 'HTC/宏达电', 'Coolpad/酷派', 'Meinu/魅族',
-              'Bbk/步步高', 'Oppo/欧珀', 'Motorola/摩托罗拉', 'vivo/维沃', 'Gionee/金立',
-              'Letv/乐视']
+            "type": "品牌",
+            "content": ["Samsung/三星", "Apple/苹果", "Huawei/华为", "Miui/小米",
+              "Lenove/联想", "Sony/索尼", "HTC/宏达电", "Coolpad/酷派", "Meinu/魅族",
+              "Bbk/步步高", "Oppo/欧珀", "Motorola/摩托罗拉", "vivo/维沃", "Gionee/金立",
+              "Letv/乐视"]
           },
           {
-            "type": '屏幕尺寸',
-            "content": ['3.0英寸及以下', '4.5-3.1英寸', '5.0-4.6英寸', '5.5-5.1英寸', '5.6英寸及以上']
+            "type": "屏幕尺寸",
+            "content": ["3.0英寸及以下", "4.5-3.1英寸", "5.0-4.6英寸", "5.5-5.1英寸", "5.6英寸及以上"]
           },
           {
-            "type": '操作系统',
-            "content": ['Android', '苹果iOS', 'Windows Phone', 'Symbian', '非智能机']
+            "type": "操作系统",
+            "content": ["Android", "苹果iOS", "Windows Phone", "Symbian", "非智能机"]
           },
           {
-            "type": '运行内存',
-            "content": ['2G', '3G', '4G', '6G', '8G']
+            "type": "运行内存",
+            "content": ["2G", "3G", "4G", "6G", "8G"]
           },
           {
-            "type": '网络类型',
-            "content": ['双卡单4G', '双卡双4G', '电信4G', '移动4G', '联通4G']
+            "type": "网络类型",
+            "content": ["双卡单4G", "双卡双4G", "电信4G", "移动4G", "联通4G"]
           }
         ]
       };
@@ -106,20 +106,20 @@
     },
 
     computed: mapState([
-      'brand',
-      'screenSize',
-      'operatingSystem',
-      'runningMemory',
-      'networkType'
+      "brand",
+      "screenSize",
+      "operatingSystem",
+      "runningMemory",
+      "networkType"
     ]),
 
     methods: {
       ...mapActions([
-        'setBrand',
-        'setScreenSize',
-        'setOperatingSystem',
-        'setRunningMemory',
-        'setNetworkType'
+        "setBrand",
+        "setScreenSize",
+        "setOperatingSystem",
+        "setRunningMemory",
+        "setNetworkType"
       ])
     }
   };

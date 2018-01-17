@@ -12,15 +12,15 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'ChangeProductNum',
+    name: "ChangeProductNum",
 
     //获取从父组件中传过来的数据
-    props: ['limitProductNum'],
+    props: ["limitProductNum"],
 
     data() {
       return {
@@ -32,7 +32,7 @@
     },
 
     computed: mapState([
-      'productNum'
+      "productNum"
     ]),
 
     //初始化
@@ -40,7 +40,7 @@
       this.$nextTick(() => {
 
         //接收商品数量改变的事件
-        this.bus.$on('change-num', (num) => {
+        this.bus.$on("change-num", (num) => {
           this.inputProductNum = num;
         });
       });
@@ -48,7 +48,7 @@
 
     methods: {
       ...mapActions([
-        'setProductNum'
+        "setProductNum"
       ]),
 
       //增加商品数量

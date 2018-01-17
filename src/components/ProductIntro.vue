@@ -38,7 +38,7 @@
   export default {
 
     //组件名称
-    name: 'ProductIntro'
+    name: "ProductIntro"
   };
 </script>
 

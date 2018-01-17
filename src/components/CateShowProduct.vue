@@ -31,10 +31,10 @@
   export default {
 
     //组件名称
-    name: 'CateShowProduct',
+    name: "CateShowProduct",
 
     //获取从父组件中传递过来的数据
-    props: ['productList']
+    props: ["productList"]
   };
 </script>
 

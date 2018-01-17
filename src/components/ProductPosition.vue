@@ -23,7 +23,7 @@
   export default {
 
     //组件名称
-    name: 'ProductPosition'
+    name: "ProductPosition"
   };
 </script>
 

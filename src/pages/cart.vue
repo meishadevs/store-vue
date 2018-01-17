@@ -24,21 +24,21 @@
 </template>
 
 <script>
-  import CollSite from '../components/CollSite';
-  import TopBar from '../components/TopBar';
-  import CartHead from '../components/CartHead';
-  import ReceiveInfo from '../components/ReceiveInfo';
-  import PayMethod from '../components/PayMethod';
-  import InvoiceInfo from '../components/InvoiceInfo';
-  import DeliveryInfo from '../components/DeliveryInfo';
-  import OrderSett from '../components/OrderSett';
-  import GoTop from '../components/GoTop';
-  import SiteFoot from '../components/SiteFoot';
+  import CollSite from "../components/CollSite";
+  import TopBar from "../components/TopBar";
+  import CartHead from "../components/CartHead";
+  import ReceiveInfo from "../components/ReceiveInfo";
+  import PayMethod from "../components/PayMethod";
+  import InvoiceInfo from "../components/InvoiceInfo";
+  import DeliveryInfo from "../components/DeliveryInfo";
+  import OrderSett from "../components/OrderSett";
+  import GoTop from "../components/GoTop";
+  import SiteFoot from "../components/SiteFoot";
 
   export default {
 
     //组件名称
-    name: 'cart',
+    name: "cart",
 
     //引入的外部组件
     components: {
@@ -57,8 +57,8 @@
     //初始化
     mounted() {
       this.$nextTick(() => {
-        document.title = '购物车和结算页';
-        document.body.style.backgroundColor = '#fff';
+        document.title = "购物车和结算页";
+        document.body.style.backgroundColor = "#fff";
         window.scrollTo(0, 0);
       });
     }
@@ -66,5 +66,4 @@
 </script>
 
 <style scoped>
-
 </style>

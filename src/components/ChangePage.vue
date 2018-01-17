@@ -33,10 +33,10 @@
   export default {
 
     //组件名称
-    name: 'ChangePage',
+    name: "ChangePage",
 
     //获取从父组件中传递过来的数据
-    props: ['totalPage', 'curPage'],
+    props: ["totalPage", "curPage"],
 
     data() {
       return {
@@ -71,7 +71,7 @@
         this.indexPage = indexPage;
 
         //触发翻页组件中的事件
-        this.bus.$emit('change-page', this.indexPage);
+        this.bus.$emit("change-page", this.indexPage);
       }
     }
   };

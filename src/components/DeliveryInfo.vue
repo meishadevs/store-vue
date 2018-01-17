@@ -72,19 +72,19 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import {mapState, mapActions} from 'vuex';
+  import Vue from "vue";
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'DeliveryInfo',
+    name: "DeliveryInfo",
 
     computed: mapState([
-      'productNum',
-      'productPrice',
-      'checkStatus',
-      'checkContent'
+      "productNum",
+      "productPrice",
+      "checkStatus",
+      "checkContent"
     ]),
 
     data() {
@@ -92,25 +92,25 @@
         formateMoney: null,
 
         //商品图片
-        productImage: ['./static/images/pro.jpg', './static/images/pro1.jpg']
+        productImage: ["./static/images/pro.jpg", "./static/images/pro1.jpg"]
       };
     },
 
     mounted() {
       this.$nextTick(() => {
-        this.formateMoney = Vue.filter('formateMoney');
+        this.formateMoney = Vue.filter("formateMoney");
       });
     },
 
     methods: {
       ...mapActions([
-        'changeCheckStatus',
-        'setCheckContent'
+        "changeCheckStatus",
+        "setCheckContent"
       ]),
 
       closeDialog() {
         this.changeCheckStatus(0);
-        this.setCheckContent('');
+        this.setCheckContent("");
       }
     }
   };

@@ -57,22 +57,22 @@
   export default {
 
     //组件名称
-    name: 'InvoiceInfo',
+    name: "InvoiceInfo",
 
     data() {
       return {
 
         //发票类型数据
-        invoiceTypeData: ['商业零售发票', '个人所得税发票'],
+        invoiceTypeData: ["商业零售发票", "个人所得税发票"],
 
         //发票抬头数据
-        invoiceHeaderData: ['个人', '企业'],
+        invoiceHeaderData: ["个人", "企业"],
 
         //用户选择的发票类型
-        invoiceType: '商业零售发票',
+        invoiceType: "商业零售发票",
 
         //用户选择的发票抬头
-        invoiceHeader: '个人',
+        invoiceHeader: "个人",
 
         //是否显示发票类型
         isShowInvoiceType: false,
@@ -81,7 +81,7 @@
         isShowInvoiceHeader: false,
 
         //开发票人的姓名
-        invoiceName: '',
+        invoiceName: "",
 
         //标记是否需要发票
         isUseInvoice: false,
@@ -115,9 +115,9 @@
 
       //取消使用发票
       cancelUseInvoice() {
-        this.invoiceType = '商业零售发票';
-        this.invoiceHeader = '个人';
-        this.invoiceName = '';
+        this.invoiceType = "商业零售发票";
+        this.invoiceHeader = "个人";
+        this.invoiceName = "";
       }
     }
   };

@@ -92,15 +92,15 @@
 </template>
 
 <script>
-  import {mapActions} from 'vuex';
-  import LoginHead from '../components/LoginHead';
-  import SiteFoot from '../components/SiteFoot';
-  import Util from '../js/Util';
+  import {mapActions} from "vuex";
+  import LoginHead from "../components/LoginHead";
+  import SiteFoot from "../components/SiteFoot";
+  import Util from "../js/Util";
 
   export default {
 
     //组件名称
-    name: 'login',
+    name: "login",
 
     //引入的外部组件
     components: {
@@ -111,8 +111,8 @@
     //初始化
     mounted() {
       this.$nextTick(() => {
-        document.title = '登录页';
-        document.body.style.backgroundColor = '#fff';
+        document.title = "登录页";
+        document.body.style.backgroundColor = "#fff";
         this.readUserInfo();
       });
     },
@@ -148,15 +148,15 @@
 
         numTime: 3,
 
-        content: '网站首页'
+        content: "网站首页"
       };
     },
 
     methods: {
 
       ...mapActions([
-        'changeLoginStatus',
-        'setUsername'
+        "changeLoginStatus",
+        "setUsername"
       ]),
 
       //登录
@@ -182,26 +182,26 @@
 
         //使用axios发送post请求，登录
         this.axios({
-          method: 'post',
+          method: "post",
           url: this.loginUrl,
           data: this.qs.stringify({
             username: this.username,
             password: this.password
           }),
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            "Content-Type": "application/x-www-form-urlencoded"
           }
         }).then(res => {
 
           //用户名不存在
           if (res.data === 1) {
             this.resultStatus = 2;
-            this.resultContent = '您输入的用户名不存在';
+            this.resultContent = "您输入的用户名不存在";
 
           //密码错误
           } else if (res.data === 2) {
             this.resultStatus = 2;
-            this.resultContent = '您输入的密码与用户名不匹配';
+            this.resultContent = "您输入的密码与用户名不匹配";
 
           //登录成功
           } else if (res.data === 3) {
@@ -225,11 +225,11 @@
 
             //登录成功后进入购物车页
             if (isCart) {
-              this.content = '购物车和结算页';
+              this.content = "购物车和结算页";
 
             //登录成功后进入网站首页
             } else {
-              this.content = '网站首页';
+              this.content = "网站首页";
             }
 
             //创建定时器
@@ -242,13 +242,13 @@
 
                 //登录成功后进入购物车页
                 if (isCart) {
-                  this.content = '购物车和结算页';
-                  this.$router.push('/cart');
+                  this.content = "购物车和结算页";
+                  this.$router.push("/cart");
 
                 //登录成功后进入网站首页
                 } else {
-                  this.content = '网站首页';
-                  this.$router.push('/');
+                  this.content = "网站首页";
+                  this.$router.push("/");
                 }
               }
             }, 1000);
@@ -262,13 +262,13 @@
         //如果用户名检测失败
         if (this.usernameStatus !== 1) {
           this.usernameStatus = 0;
-          this.usernameNotice = '';
+          this.usernameNotice = "";
         }
 
         //如果密码检测失败
         if (this.passwordStatus !== 1) {
           this.passwordStatus = 0;
-          this.passwordNotice = '';
+          this.passwordNotice = "";
         }
       },
 
@@ -276,12 +276,12 @@
       saveUserInfo() {
 
         //使用Cookie保存用户名
-        document.cookie = 'username=' + this.username + ';'
-          + 'expires=' + new Date('2020-1-1').toGMTString() + ';';
+        document.cookie = "username=" + this.username + ";"
+          + "expires=" + new Date("2020-1-1").toGMTString() + ";";
 
         //使用Cookie保存密码
-        document.cookie = 'password=' + this.password + ';'
-          + 'expires=' + new Date('2020-1-1').toGMTString() + ';';
+        document.cookie = "password=" + this.password + ";"
+          + "expires=" + new Date("2020-1-1").toGMTString() + ";";
       },
 
       //读取用户信息
@@ -291,14 +291,14 @@
         var cookie = document.cookie;
 
         //如果网站中不存在Cookie
-        if (cookie === null || cookie === '' || cookie === undefined) {
+        if (cookie === null || cookie === "" || cookie === undefined) {
           return;
         }
 
         //读取保存在Cookie中的用户名和密码
-        let arr = this.username = document.cookie.split(';');
-        this.username = arr[0].split('=')[1];
-        this.password = arr[1].split('=')[1];
+        let arr = this.username = document.cookie.split(";");
+        this.username = arr[0].split("=")[1];
+        this.password = arr[1].split("=")[1];
       }
     }
   };

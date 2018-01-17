@@ -1,8 +1,8 @@
 
-import Vue from 'vue';
-import Vuex from 'vuex';
-import actions from './action';
-import mutations from './mutations';
+import Vue from "vue";
+import Vuex from "vuex";
+import actions from "./action";
+import mutations from "./mutations";
 
 //使用Vuex状态管理器
 Vue.use(Vuex);

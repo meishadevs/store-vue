@@ -21,18 +21,18 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'CollSite',
+    name: "CollSite",
 
     computed: mapState([
 
       //是否显示蒙版
       //映射 this.isShowMask 为 store.state.isShowMask
-      'isShowMask'
+      "isShowMask"
     ]),
 
     methods: {
@@ -41,7 +41,7 @@
       ...mapActions([
 
         //隐藏模板
-        'hideMask'
+        "hideMask"
       ])
     }
   };

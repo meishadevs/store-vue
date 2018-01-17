@@ -147,14 +147,14 @@
 </template>
 
 <script>
-  import RegisterHead from '../components/RegisterHead';
-  import SiteFoot from '../components/SiteFoot';
-  import Util from '../js/Util';
+  import RegisterHead from "../components/RegisterHead";
+  import SiteFoot from "../components/SiteFoot";
+  import Util from "../js/Util";
 
   export default {
 
     //组件名称
-    name: 'register',
+    name: "register",
 
     //引入的外部组件
     components: {
@@ -164,8 +164,8 @@
 
     mounted() {
       this.$nextTick(() => {
-        document.title = '注册页';
-        document.body.style.backgroundColor = '#fff';
+        document.title = "注册页";
+        document.body.style.backgroundColor = "#fff";
         window.scrollTo(0, 0);
       });
     },
@@ -279,7 +279,7 @@
 
         //使用axios发送post请求实现注册
         this.axios({
-          method: 'post',
+          method: "post",
           url: this.registerUrl,
           data: this.qs.stringify({
             username: this.username,
@@ -287,7 +287,7 @@
             email: this.email
           }),
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            "Content-Type": "application/x-www-form-urlencoded"
           }
         }).then(res => {
 
@@ -300,19 +300,19 @@
 
               if (this.numTime <= 0) {
                 clearInterval(timer);
-                this.$router.push('/login');
+                this.$router.push("/login");
               }
             }, 1000);
 
           //注册失败
           } else if (res.data === 0) {
             this.resultStatus = 0;
-            this.resultContent = '注册失败';
+            this.resultContent = "注册失败";
 
           //用户名已存在
           } else if (res.data === 2) {
             this.resultStatus = 2;
-            this.resultContent = '用户名已存在';
+            this.resultContent = "用户名已存在";
           }
         });
       },
@@ -323,25 +323,25 @@
         //如果用户名检测失败
         if (this.usernameStatus !== 1) {
           this.usernameStatus = 0;
-          this.usernameNotice = '';
+          this.usernameNotice = "";
         }
 
         //如果密码检测失败
         if (this.passwordStatus !== 1) {
           this.passwordStatus = 0;
-          this.passwordNotice = '';
+          this.passwordNotice = "";
         }
 
         //如果用户第二次输入的密码检测失败
         if (this.secondPasswordStatus !== 1) {
           this.secondPasswordStatus = 0;
-          this.secondPasswordNotice = '';
+          this.secondPasswordNotice = "";
         }
 
         //如果邮箱检测失败
         if (this.emailStatus !== 1) {
           this.emailStatus = 0;
-          this.emailNotice = '';
+          this.emailNotice = "";
         }
 
         this.acceptStatus = 0;

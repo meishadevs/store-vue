@@ -20,10 +20,10 @@
   export default {
 
     //组件名称
-    name: 'ProinfoNavBar',
+    name: "ProinfoNavBar",
 
     //获取从父组件中传递过来的数据
-    props: ['selectIndex'],
+    props: ["selectIndex"],
 
     data() {
       return {
@@ -43,7 +43,7 @@
       //改变导航项
       changeNavIndex: function (index) {
         this.curIndex = index;
-        this.bus.$emit('select-nav', this.curIndex);
+        this.bus.$emit("select-nav", this.curIndex);
       }
     }
   };

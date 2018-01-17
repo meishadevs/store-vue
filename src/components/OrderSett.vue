@@ -17,13 +17,13 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import {mapState, mapActions} from 'vuex';
+  import Vue from "vue";
+  import {mapState, mapActions} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'OrderSett',
+    name: "OrderSett",
 
     data() {
       return {
@@ -32,27 +32,27 @@
     },
 
     computed: mapState([
-      'productNum',
-      'productPrice',
-      'isReceive',
-      'payMethod',
-      'checkStatus',
-      'checkContent'
+      "productNum",
+      "productPrice",
+      "isReceive",
+      "payMethod",
+      "checkStatus",
+      "checkContent"
     ]),
 
     mounted() {
       this.$nextTick(() => {
-        this.formateMoney = Vue.filter('formateMoney');
+        this.formateMoney = Vue.filter("formateMoney");
         this.changeCheckStatus(0);
-        this.setCheckContent('');
+        this.setCheckContent("");
       });
     },
 
     methods: {
 
       ...mapActions([
-        'changeCheckStatus',
-        'setCheckContent'
+        "changeCheckStatus",
+        "setCheckContent"
       ]),
 
       //提交订单
@@ -63,23 +63,23 @@
         //如果用户没有填写收货信息
         if (!this.isReceive) {
           this.changeCheckStatus(2);
-          this.setCheckContent('请填写收货信息');
+          this.setCheckContent("请填写收货信息");
           return;
         }
 
         //如果用户没有选择支付方式
         if (this.payMethod === 0) {
           this.changeCheckStatus(2);
-          this.setCheckContent('请选择支付方式');
+          this.setCheckContent("请选择支付方式");
           return;
         }
 
         this.changeCheckStatus(1);
-        this.setCheckContent('订单已提交');
+        this.setCheckContent("订单已提交");
 
         setTimeout(() => {
           this.changeCheckStatus(0);
-          this.setCheckContent('');
+          this.setCheckContent("");
         }, 3000);
       }
     }

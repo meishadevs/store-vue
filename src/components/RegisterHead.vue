@@ -18,7 +18,7 @@
   export default {
 
     //组件名称
-    name: 'RegisterHead'
+    name: "RegisterHead"
   };
 </script>
 

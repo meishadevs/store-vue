@@ -48,10 +48,10 @@
   export default {
 
     //组件名称
-    name: 'IndexShowProduct',
+    name: "IndexShowProduct",
 
     //获取从父组件中传递过来的数据
-    props: ['productInfo']
+    props: ["productInfo"]
   };
 </script>
 

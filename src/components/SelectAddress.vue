@@ -33,7 +33,7 @@
   export default {
 
     //组件名称
-    name: 'SelectAddress',
+    name: "SelectAddress",
 
     data() {
       return {
@@ -75,12 +75,12 @@
         isShowArea: false,
 
         //ul标签的样式
-        ulStyle: 'scroll',
-        ulStyle1: 'scroll',
+        ulStyle: "scroll",
+        ulStyle1: "scroll",
 
         //li标签的样式
-        liStyle: '93px',
-        liStyle1: '93px'
+        liStyle: "93px",
+        liStyle1: "93px"
       };
     },
 
@@ -95,7 +95,7 @@
             this.provinceCode = this.provinceData[0].code;
           });
 
-          this.bus.$emit('select-address');
+          this.bus.$emit("select-address");
       });
     },
 
@@ -138,7 +138,7 @@
         this.provinceName = provinceName;
         this.provinceCode = provinceCode;
         this.isShowProvince = false;
-        this.bus.$emit('select-address');
+        this.bus.$emit("select-address");
       },
 
       //选择市
@@ -146,7 +146,7 @@
         this.cityName = cityName;
         this.cityCode = cityCode;
         this.isShowCity = false;
-        this.bus.$emit('select-address');
+        this.bus.$emit("select-address");
       },
 
       //选择区
@@ -154,7 +154,7 @@
         this.areaName = areaName;
         this.areaCode = areaCode;
         this.isShowArea = false;
-        this.bus.$emit('select-address');
+        this.bus.$emit("select-address");
       },
 
       //是否显示滚动条
@@ -162,13 +162,13 @@
 
         //如果市的个数小于6个，不显示竖直滚动条
         if (this.cityData.length < 6) {
-          this.ulStyle = 'inherit';
-          this.liStyle = '100%';
+          this.ulStyle = "inherit";
+          this.liStyle = "100%";
 
           //如果市的个数大于或等于6个，显示竖直滚动条
         } else {
-          this.ulStyle = 'scroll';
-          this.liStyle = '93px';
+          this.ulStyle = "scroll";
+          this.liStyle = "93px";
         }
       },
 
@@ -177,13 +177,13 @@
 
         //如果区的个数小于6个，不显示竖直滚动条
         if (this.areaData.length < 6) {
-          this.ulStyle1 = 'inherit';
-          this.liStyle1 = '100%';
+          this.ulStyle1 = "inherit";
+          this.liStyle1 = "100%";
 
           //如果区的个数大于或等于6个，显示竖直滚动条
         } else {
-          this.ulStyle1 = 'scroll';
-          this.liStyle1 = '93px';
+          this.ulStyle1 = "scroll";
+          this.liStyle1 = "93px";
         }
       },
 

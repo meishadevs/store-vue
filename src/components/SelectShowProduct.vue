@@ -22,10 +22,10 @@
   export default {
 
     //组件名称
-    name: 'SelectShowProduct',
+    name: "SelectShowProduct",
 
     //获取从父组件中传递过来的数据
-    props: ['curPage', 'numProduct'],
+    props: ["curPage", "numProduct"],
 
     data() {
       return {
@@ -52,7 +52,7 @@
         this.getProductInfo();
 
         //监听翻页组件中传递过来的事件
-        this.bus.$on('change-page', (data) => {
+        this.bus.$on("change-page", (data) => {
           window.scrollTo(0, 459);
           this.indexPage = data;
         });
@@ -79,7 +79,7 @@
         this.productFirstIndex = (this.indexPage - 1) * this.numProduct;
 
         //发送get请求，获得商品信息
-        this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productFirstIndex, null, (err, data) => {
+        this.jsonp(this.productInfoUrl + this.numProduct + "&startIndex=" + this.productFirstIndex, null, (err, data) => {
 
           if (err) {
             console.error("error:", err.message);

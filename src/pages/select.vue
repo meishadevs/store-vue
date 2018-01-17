@@ -40,24 +40,24 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import CollSite from '../components/CollSite';
-  import TopBar from '../components/TopBar';
-  import SiteHead from '../components/SiteHead';
-  import NavBar from '../components/NavBar';
-  import UserPosition from '../components/UserPosition';
-  import ProductCate from '../components/ProductCate';
-  import SelectProductList from '../components/SelectProductList';
-  import ProductFilter from '../components/ProductFilter';
-  import SelectShowProduct from '../components/SelectShowProduct';
-  import ChangePage from '../components/ChangePage';
-  import SiteFoot from '../components/SiteFoot';
-  import GoTop from '../components/GoTop';
+  import Vue from "vue";
+  import CollSite from "../components/CollSite";
+  import TopBar from "../components/TopBar";
+  import SiteHead from "../components/SiteHead";
+  import NavBar from "../components/NavBar";
+  import UserPosition from "../components/UserPosition";
+  import ProductCate from "../components/ProductCate";
+  import SelectProductList from "../components/SelectProductList";
+  import ProductFilter from "../components/ProductFilter";
+  import SelectShowProduct from "../components/SelectShowProduct";
+  import ChangePage from "../components/ChangePage";
+  import SiteFoot from "../components/SiteFoot";
+  import GoTop from "../components/GoTop";
 
   export default {
 
     //组件名称
-    name: 'select',
+    name: "select",
 
     //引入的外部组件
     components: {
@@ -95,15 +95,15 @@
     //初始化
     mounted() {
       this.$nextTick(() => {
-        document.title = '商品选择页';
-        document.body.style.backgroundColor = '#f0f0f0';
+        document.title = "商品选择页";
+        document.body.style.backgroundColor = "#f0f0f0";
         window.scrollTo(0, 0);
 
         //获得商品的数量
         this.getProductNum();
 
         //监听翻页组件中传递过来的事件
-        this.bus.$on('change-page', (page) => {
+        this.bus.$on("change-page", (page) => {
           this.curPage = page;
         });
       });

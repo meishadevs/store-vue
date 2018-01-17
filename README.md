@@ -35,8 +35,7 @@ npm run build
 ```
 ├── build                          // 项目构建相关的代码       
 ├── config                         // 项目开发环境相关配置                   
-├── src                            // 源码目录
-│   ├── assets                     // 项目的资源目录    
+├── src                            // 源码目录   
 │   ├── components                 // Vue公共组件
 │   │   ├── AdvisoryList.vue       // 商品咨询列表组件
 │   │   ├── Banner.vue             // 轮播图组件

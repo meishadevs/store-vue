@@ -14,7 +14,7 @@ export default {
   //退出
   exit: function (state) {
     state.isLogin = false;
-    state.username = '';
+    state.username = "";
   },
 
   //设置用户名

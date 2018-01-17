@@ -60,13 +60,13 @@
 </template>
 
 <script>
-  import AdvisoryList from './AdvisoryList';
-  import ChangePage from './ChangePage';
+  import AdvisoryList from "./AdvisoryList";
+  import ChangePage from "./ChangePage";
 
   export default {
 
     //组件名称
-    name: 'ProductComment',
+    name: "ProductComment",
 
     components: {
       AdvisoryList,
@@ -98,7 +98,7 @@
         this.getAdvisoryNum();
 
         //监听翻页组件中传递过来的事件
-        this.bus.$on('change-page', (page) => {
+        this.bus.$on("change-page", (page) => {
           this.curPage = page;
         });
 

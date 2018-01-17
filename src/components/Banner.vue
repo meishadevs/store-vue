@@ -20,7 +20,7 @@
   export default {
 
     //组件名称
-    name: 'Banner',
+    name: "Banner",
 
     data() {
       return {
@@ -33,20 +33,20 @@
 
         bannerData: [
           {
-            "image": './static/images/banner/banner1.jpg',
-            "url": '/proinfo'
+            "image": "./static/images/banner/banner1.jpg",
+            "url": "/proinfo"
           },
           {
-            "image": './static/images/banner/banner2.jpg',
-            "url": '/proinfo'
+            "image": "./static/images/banner/banner2.jpg",
+            "url": "/proinfo"
           },
           {
-            "image": './static/images/banner/banner3.jpg',
-            "url": '/proinfo'
+            "image": "./static/images/banner/banner3.jpg",
+            "url": "/proinfo"
           },
           {
-            "image": './static/images/banner/banner4.jpg',
-            "url": '/proinfo'
+            "image": "./static/images/banner/banner4.jpg",
+            "url": "/proinfo"
           }
         ]
       };

@@ -9,7 +9,7 @@
   export default {
 
     //组件名称
-    name: 'GoTop',
+    name: "GoTop",
 
     data() {
       return {
@@ -71,7 +71,7 @@
 
           scrollPos = window.pageYOffset;
 
-        } else if (document.compatMode && document.compatMode !== 'BackCompat') {
+        } else if (document.compatMode && document.compatMode !== "BackCompat") {
 
           scrollPos = document.documentElement.scrollTop;
 

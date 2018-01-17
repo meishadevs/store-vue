@@ -30,19 +30,19 @@
   export default {
 
     //组件名称
-    name: 'ProductImage',
+    name: "ProductImage",
 
     data() {
       return {
 
         //商品图片数据
         prodImgData: {
-          bigImage: ['./static/images/bigpad1.jpg', './static/images/bigpad2.jpg', './static/images/bigpad3.jpg',
-            './static/images/bigpad4.jpg', './static/images/bigpad5.jpg'],
-          middleImage: ['./static/images/middlepad1.jpg', './static/images/middlepad2.jpg', './static/images/middlepad3.jpg',
-            'static/images/middlepad4.jpg', 'static/images/middlepad5.jpg'],
-          smallImage: ['./static/images/smallipad1.jpg', './static/images/smallipad2.jpg', './static/images/smallipad3.jpg',
-            './static/images/smallipad4.jpg', './static/images/smallipad5.jpg']
+          bigImage: ["./static/images/bigpad1.jpg", "./static/images/bigpad2.jpg", "./static/images/bigpad3.jpg",
+            "./static/images/bigpad4.jpg", "./static/images/bigpad5.jpg"],
+          middleImage: ["./static/images/middlepad1.jpg", "./static/images/middlepad2.jpg", "./static/images/middlepad3.jpg",
+            "static/images/middlepad4.jpg", "static/images/middlepad5.jpg"],
+          smallImage: ["./static/images/smallipad1.jpg", "./static/images/smallipad2.jpg", "./static/images/smallipad3.jpg",
+            "./static/images/smallipad4.jpg", "./static/images/smallipad5.jpg"]
         },
 
         //当前选中的索引
@@ -82,10 +82,10 @@
       this.$nextTick(() => {
 
         //获得middle-box到浏览器窗口最左端的距离
-        this.boxOffsetLeft = this.getElementLeft(document.querySelector('.middle-box'));
+        this.boxOffsetLeft = this.getElementLeft(document.querySelector(".middle-box"));
 
         //获得middle-box到浏览器窗口顶部的距离
-        this.boxOffsetTop = this.getElementTop(document.querySelector('.middle-box'));
+        this.boxOffsetTop = this.getElementTop(document.querySelector(".middle-box"));
       });
     },
 

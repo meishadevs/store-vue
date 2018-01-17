@@ -40,7 +40,7 @@
   export default {
 
     //组件名称
-    name: 'CartHead'
+    name: "CartHead"
   };
 </script>
 

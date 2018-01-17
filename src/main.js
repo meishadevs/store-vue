@@ -1,14 +1,14 @@
 
-import Vue from 'vue';
-import App from './App';
-import router from './router';
-import store from './store';
-import config from './js/config';
-import axios from 'axios';
-import qs from 'qs';
-import jsonp from 'jsonp';
-import filter from './filter';
-import './css/reset.css';
+import Vue from "vue";
+import App from "./App";
+import router from "./router";
+import store from "./store";
+import config from "./js/config";
+import axios from "axios";
+import qs from "qs";
+import jsonp from "jsonp";
+import filter from "./filter";
+import "./css/reset.css";
 
 //使用插件
 Vue.use(config);
@@ -23,10 +23,10 @@ Vue.prototype.bus = new Vue({});
 
 //创建一个Vue实例
 let vm = new Vue({
-  el: '#app',
+  el: "#app",
   router,
   store,
   filter,
-  template: '<App/>',
+  template: "<App/>",
   components: { App }
 });

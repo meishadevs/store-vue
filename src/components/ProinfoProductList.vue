@@ -13,7 +13,7 @@
             </a>
           </div>
           <p class="product-name">
-            <a href="javascript:;" @click="GoTop()">{{ product.productName }}</a>
+            <a href="javascript:;" @click="goTop()">{{ product.productName }}</a>
           </p>
           <p class="product-price">￥{{ product.productPrice }}</p>
         </li>
@@ -26,10 +26,10 @@
   export default {
 
     //组件名称
-    name: 'ProinfoProductList',
+    name: "ProinfoProductList",
 
     //获取从父组件中传递过来的数据
-    props: ['productList', 'isAddBold'],
+    props: ["productList", "isAddBold"],
 
     methods: {
       goTop() {

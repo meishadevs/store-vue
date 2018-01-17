@@ -15,13 +15,13 @@
   export default {
 
     //组件名称
-    name: 'SelectColor',
+    name: "SelectColor",
 
     data() {
       return {
 
         //商品颜色
-        productColor: ['白色', '黑色', '灰色', '红色', '粉红色'],
+        productColor: ["白色", "黑色", "灰色", "红色", "粉红色"],
 
         //当前选中的颜色的索引
         curIndex: 0
@@ -36,7 +36,7 @@
         this.curIndex = index;
 
         //触发selectColor组件的select-color事件
-        this.bus.$emit('select-color', this.productColor[this.curIndex]);
+        this.bus.$emit("select-color", this.productColor[this.curIndex]);
       }
     }
   };

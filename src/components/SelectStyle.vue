@@ -15,13 +15,13 @@
   export default {
 
     //组件名称
-    name: 'SelectStyle',
+    name: "SelectStyle",
 
     data() {
       return {
 
         //产品款式
-        productStyle: ['WIFI 16G', 'WIFI 64G', 'WIFI 32G', 'WIFI Cellular 32G', 'WIFI Cellular 64G', 'WIFI Cellular 16G'],
+        productStyle: ["WIFI 16G", "WIFI 64G", "WIFI 32G", "WIFI Cellular 32G", "WIFI Cellular 64G", "WIFI Cellular 16G"],
 
         //当前选中的产品款式的索引
         curIndex: 0
@@ -36,7 +36,7 @@
         this.curIndex = index;
 
         //触发selectStyle组件的select-style事件
-        this.bus.$emit('select-style', this.productStyle[this.curIndex]);
+        this.bus.$emit("select-style", this.productStyle[this.curIndex]);
       }
     }
   };

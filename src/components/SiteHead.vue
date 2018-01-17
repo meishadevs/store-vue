@@ -68,18 +68,18 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex';
+  import {mapState} from "vuex";
 
   export default {
 
     //组件名称
-    name: 'SiteHead',
+    name: "SiteHead",
 
     data() {
       return {
 
         //关键字
-        keyWord: '',
+        keyWord: "",
 
         //保存搜索结果
         arrayResult: []
@@ -89,8 +89,8 @@
     computed: {
 
       ...mapState([
-        'productNum',
-        'isLogin'
+        "productNum",
+        "isLogin"
       ]),
 
       proNum() {
@@ -117,7 +117,6 @@
             console.error("error:", err.message);
           } else {
             this.arrayResult = data.result;
-            console.log(this.arrayResult);
           }
         });
       },
@@ -126,7 +125,7 @@
       setKeyWord(event) {
 
         //获得当前选中的标签的value属性值
-        var currentIndex = event.currentTarget.getAttribute('value');
+        var currentIndex = event.currentTarget.getAttribute("value");
 
         //重置关键字的值
         this.keyWord = this.arrayResult[currentIndex][0];
