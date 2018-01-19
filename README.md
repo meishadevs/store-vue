@@ -5,13 +5,13 @@
 **[http://meishadevs.com/dswz/index.html#/](http://meishadevs.com/dswz/index.html#/)**  
 **注意：** 有些功能需要自己配置服务器端才能访问，配置方式在此文档下面做了相关的介绍
 
-## 用到的技术
+## 技术栈
 - **前端：** vue + vuex + vue-router + axios + ESLint + ES6
 - **构建工具：** Webpack
 - **服务器端：** PHP
 - **数据库：** MySQL
 
-## 运行项目
+## 项目运行
 
 ```
 # 将项目克隆到本地

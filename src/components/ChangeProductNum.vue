@@ -82,8 +82,9 @@
           //如果inputProductNum的值的值为0
           //如果inputProductNum的值超过了取值范围
           //如果inputProductNum没有值
-          if (isNaN(this.inputProductNum) || this.inputProductNum === 0 ||
-            this.inputProductNum.length === 0) {
+          if (isNaN(this.inputProductNum)
+            || this.inputProductNum === 0
+            || this.inputProductNum.length === 0) {
             this.inputProductNum = 1;
           }
 

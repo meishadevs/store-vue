@@ -1,3 +1,4 @@
+
 //eslint的配置文件
 
 module.exports = {
@@ -20,52 +21,56 @@ module.exports = {
   //添加自定义规则
   'rules': {
 
-    //允许箭头函数前不写括号，0表示忽略规则检测
+    //允许在箭头函数中，当只有一个参数时，可以不用括号包裹参数，0表示忽略规则检测
     'arrow-parens': 0,
 
-    //允许使用 async-await
+    //允许在生成器函数与*之间不加空格
     'generator-star-spacing': 0,
 
     //如果当前处于开发环境下 no-debugger = 0(可以调试)
     //如果当前处于生产环境下 no-debugger = 2(不可以调试)
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
 
-    //不检测注释中是否存在空格
+    //不检测注释语句与注释符号之间是否存在空格
     'spaced-comment': 0,
 
-    //如果代码末尾没加分好，就报错
+    //在代码末尾必须加上分号，否则会报错
     'semi': ['error', 'always'],
 
     //不检测代码是否缩进了
     'indent': 0,
 
-    //不检查函数名与圆括号之间的空格
+    //不检查函数名与圆括号之间是否存在空格
     'space-before-function-paren': 0,
 
     //不检测变量声明后是否使用了
     'no-unused-vars': 0,
 
-    //不检测代码中是否有空行
+    //允许在每行代码的行尾添加空格
     'no-trailing-spaces': 0,
 
     //不检测代码块
     'padded-blocks': 0,
 
-    'operator-linebreak': 0,
+    //当一条语句太长需要写多行时，强制运算符放在行首，否则报错
+    'operator-linebreak':  [1, "before"],
 
+    //不强制使用一致的符号定义字符串，可以使用单引号定义字符串，也可以使用双引号定义字符串
     'quotes': 0,
 
-    //允许使用三元运算符
+    //当存在更简单的选择时也可以使用三目运算符
     'no-unneeded-ternary': 0,
 
+    //不强制执行回调错误处理
     'handle-callback-err': 0,
 
-    //允许使用new Object()
+    //允许使用Object构造函数
     'no-new-object': 0,
 
-    //允许使用return
+    //允许使用多余的返回语句
     'no-useless-return': 0,
 
-    'no-useless-escape': 0,
+    //允许在字符串和正则表达式中使用无意义的转义符
+    'no-useless-escape': 0
   }
 }
