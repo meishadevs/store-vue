@@ -51,7 +51,7 @@ Advisory.prototype = {
         str += this.Question;
         str += '</div>';
         str += '<div class="answer">';
-        str += '<span>慕课网回复：</span>' + this.Answer +'';
+        str += '<span>电商网回复：</span>' + this.Answer +'';
         str += '<div class="triangle"></div>';
         str += '</div>';
         str += '</div>';
