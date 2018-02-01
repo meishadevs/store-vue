@@ -88,14 +88,14 @@
     mounted() {
       this.$nextTick(() => {
 
-          //获得省的数据
-          this.getAddressData(1, this.provinceCode, (err, data) => {
-            this.provinceData = data;
-            this.provinceName = this.provinceData[0].name;
-            this.provinceCode = this.provinceData[0].code;
-          });
+        //获得省的数据
+        this.getAddressData(1, this.provinceCode, (err, data) => {
+          this.provinceData = data;
+          this.provinceName = this.provinceData[0].name;
+          this.provinceCode = this.provinceData[0].code;
+        });
 
-          this.bus.$emit("select-address");
+        this.bus.$emit("select-address");
       });
     },
 
