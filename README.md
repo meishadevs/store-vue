@@ -3,7 +3,7 @@
 
 ## 项目的一些链接
 
-**网站地址：[http://meishadevs.com/dswz/index.html#/](http://meishadevs.com/dswz/index.html#/)**  
+**网站地址：[http://meishadevs.com/dswz/jquery/index.html](http://meishadevs.com/dswz/jquery/index.html)**  
 
 ## 用到的技术
 - **前端：** jQuery Ajax HTML5 CSS3 LocalStorage
