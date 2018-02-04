@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import index from "@/pages/index";
+import home from "@/pages/home";
 import cate from "@/pages/cate";
 import select from "@/pages/select";
 import proinfo from "@/pages/proinfo";
@@ -14,8 +14,8 @@ export default new VueRouter({
   routes: [
     {
       path: "/",
-      name: "index",
-      component: index
+      name: "home",
+      component: home
     },
     {
       path: "/cate",
