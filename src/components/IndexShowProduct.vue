@@ -9,7 +9,7 @@
       </div>
       <h3 class="fl">{{ productInfo.title }}</h3>
       <div class="more fr">
-        <router-link to="/select">{{ productInfo.more }}&gt;&gt;</router-link>
+        <router-link to="/choose">{{ productInfo.more }}&gt;&gt;</router-link>
       </div>
     </div>
     <div class="product-content clearfix">

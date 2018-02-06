@@ -8,11 +8,11 @@
         <router-link to="/">首页</router-link>
       </strong>
       <span>&nbsp;&gt;&nbsp;</span>
-      <router-link to="/select">平板电脑</router-link>
+      <router-link to="/choose">平板电脑</router-link>
       <span>&nbsp;&gt;&nbsp;</span>
-      <router-link to="/select">Apple</router-link>
+      <router-link to="/choose">Apple</router-link>
       <span>&nbsp;&gt;&nbsp;</span>
-      <router-link to="/select">iPad</router-link>
+      <router-link to="/choose">iPad</router-link>
       <span>&nbsp;&gt;&nbsp;</span>
       <em>iPad mini</em>
     </div>

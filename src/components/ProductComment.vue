@@ -48,7 +48,7 @@
       <advisory-list v-bind:curPage="curPage" v-bind:numAdvisory="numAdvisory"></advisory-list>
       <!-- 商品咨询列表组件 e -->
 
-      <div class="rate-page-box">
+      <div class="page-box">
         <!-- 翻页组件 s -->
         <change-page v-bind:totalPage="totalPage" v-bind:curPage="curPage" v-if="totalPage > 0"></change-page>
         <!-- 翻页组件 e -->
@@ -273,7 +273,7 @@
     color: #777777;
   }
 
-  .rate-page-box {
+  .page-box {
     margin-left: 130px;
   }
 </style>

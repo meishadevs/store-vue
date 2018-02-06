@@ -116,7 +116,7 @@
       },
 
       //如果cityName的值发生变化，调用这个函数
-      cityName: function () {
+      cityName() {
 
         //获得区的数据
         this.getAddressData(3, this.cityCode, (err, data) => {
