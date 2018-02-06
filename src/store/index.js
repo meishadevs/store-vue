@@ -55,7 +55,25 @@ const state = {
   checkStatus: 0,
 
   //检测结果中显示的内容
-  checkContent: null
+  checkContent: null,
+
+  //当前显示的省的编码
+  provinceCode: "110000",
+
+  //当前显示的市的编码
+  cityCode: "110100",
+
+  //当前显示的区的编码
+  areaCode: "110101",
+
+  //当前显示的省的名称
+  provinceName: "北京市",
+
+  //当前显示的市的名称
+  cityName: "北京市",
+
+  //当前显示的区的名称
+  areaName: "东城区"
 };
 
 export default new Vuex.Store({

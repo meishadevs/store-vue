@@ -2,7 +2,7 @@
 <!-- 商品选择页 -->
 
 <template>
-  <div id="select">
+  <div id="choose">
     <coll-site></coll-site>
     <top-bar></top-bar>
     <site-head></site-head>
@@ -57,7 +57,7 @@
   export default {
 
     //组件名称
-    name: "select",
+    name: "choose",
 
     //引入的外部组件
     components: {

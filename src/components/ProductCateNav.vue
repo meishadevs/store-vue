@@ -13,14 +13,14 @@
         v-bind:class="{current: selectIndex == index + 1}">
         <dt class="cate-top">
           <router-link
-            to="/select"
+            to="/choose"
             v-for="title in leftCate.title"
             :key="title.id">
             {{ title }}
           </router-link>
           <router-link
             class="alink"
-            to="/select"
+            to="/choose"
             v-if="leftCate.selectTitle != null"
             :key="leftCate.selectTitle.id">
             {{ leftCate.selectTitle }}
@@ -28,7 +28,7 @@
         </dt>
         <dd class="cate-bottom">
           <router-link
-            to="/select"
+            to="/choose"
             v-for="item in leftCate.content"
             :key="item.id">
             {{ item }}
@@ -44,11 +44,11 @@
         <dl class="product-cate clearfix" v-for="page in rightCate.page">
           <dt class="cate-title">{{ page.title }}</dt>
           <dd class="cate-content">
-            <router-link to="/select" v-for="content in page.content" :key="content.id">{{ content }}</router-link>
+            <router-link to="/choose" v-for="content in page.content" :key="content.id">{{ content }}</router-link>
           </dd>
         </dl>
         <div class="product-link">
-          <router-link to="/select" v-for="button in rightCate.button" :key="button.id">{{ button }}<span></span></router-link>
+          <router-link to="/choose" v-for="button in rightCate.button" :key="button.id">{{ button }}<span></span></router-link>
         </div>
       </div>
     </div>

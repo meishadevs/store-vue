@@ -9,7 +9,7 @@
     <dl class="product-item" v-for="item in cateData.cateList">
       <dt>{{ item.cateTitle }}</dt>
       <dd>
-        <router-link to="/select" v-for="content in item.cateContent" :key="item.id">{{ content }}</router-link>
+        <router-link to="/choose" v-for="content in item.cateContent" :key="item.id">{{ content }}</router-link>
       </dd>
     </dl>
   </div>

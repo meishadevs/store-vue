@@ -30,6 +30,8 @@
 </template>
 
 <script>
+  import {mapState, mapActions} from 'vuex';
+
   export default {
 
     //组件名称
@@ -37,24 +39,6 @@
 
     data() {
       return {
-
-        //当前显示的省的编码
-        provinceCode: 0,
-
-        //当前显示的市的编码
-        cityCode: 0,
-
-        //当前显示的区的编码
-        areaCode: 0,
-
-        //当前显示的省的名称
-        provinceName: null,
-
-        //当前显示的市的名称
-        cityName: null,
-
-        //当前显示的区的名称
-        areaName: null,
 
         //省的数据
         provinceData: [],
@@ -84,6 +68,15 @@
       };
     },
 
+    computed: mapState([
+      "provinceName",
+      "cityName",
+      "areaName",
+      "provinceCode",
+      "cityCode",
+      "areaCode"
+    ]),
+
     //初始化
     mounted() {
       this.$nextTick(() => {
@@ -91,16 +84,20 @@
         //获得省的数据
         this.getAddressData(1, this.provinceCode, (err, data) => {
           this.provinceData = data;
-          this.provinceName = this.provinceData[0].name;
-          this.provinceCode = this.provinceData[0].code;
         });
 
-        this.bus.$emit("select-address");
-      });
-    },
+        //获得市的数据
+        this.getAddressData(2, this.provinceCode, (err, data) => {
+          this.cityData = data;
+          this.isShowScroll1();
+        });
 
-    //销毁
-    destroyed() {
+        //获得区的数据
+        this.getAddressData(3, this.cityCode, (err, data) => {
+          this.areaData = data;
+          this.isShowScroll2();
+        });
+      });
     },
 
     //监听器
@@ -112,8 +109,8 @@
         //获得市的数据
         this.getAddressData(2, this.provinceCode, (err, data) => {
           this.cityData = data;
-          this.cityName = this.cityData[0].name;
-          this.cityCode = this.cityData[0].code;
+          this.setCityName(this.cityData[0].name);
+          this.setCityCode(this.cityData[0].code);
           this.isShowScroll1();
         });
       },
@@ -124,8 +121,8 @@
         //获得区的数据
         this.getAddressData(3, this.cityCode, (err, data) => {
           this.areaData = data;
-          this.areaName = this.areaData[0].name;
-          this.areaCode = this.areaData[0].code;
+          this.setAreaName(this.areaData[0].name);
+          this.setAreaCode(this.areaData[0].code);
           this.isShowScroll2();
         });
       }
@@ -133,28 +130,34 @@
 
     methods: {
 
+      ...mapActions([
+        "setProvinceName",
+        "setCityName",
+        "setAreaName",
+        "setProvinceCode",
+        "setCityCode",
+        "setAreaCode"
+      ]),
+
       //选择省份
       selectProvince(provinceName, provinceCode) {
-        this.provinceName = provinceName;
-        this.provinceCode = provinceCode;
+        this.setProvinceName(provinceName);
+        this.setProvinceCode(provinceCode);
         this.isShowProvince = false;
-        this.bus.$emit("select-address");
       },
 
       //选择市
       selectCity(cityName, cityCode) {
-        this.cityName = cityName;
-        this.cityCode = cityCode;
+        this.setCityName(cityName);
+        this.setCityCode(cityCode);
         this.isShowCity = false;
-        this.bus.$emit("select-address");
       },
 
       //选择区
       selectArea(areaName, areaCode) {
-        this.areaName = areaName;
-        this.areaCode = areaCode;
+        this.setAreaName(areaName);
+        this.setAreaCode(areaCode);
         this.isShowArea = false;
-        this.bus.$emit("select-address");
       },
 
       //是否显示滚动条

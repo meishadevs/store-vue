@@ -89,5 +89,29 @@ export default {
   //切换登录的状态
   changeLoginStatus({ commit }, isLogin) {
     commit("changeLoginStatus", isLogin);
+  },
+
+  setProvinceName({ commit }, provinceName) {
+    commit("setProvinceName", provinceName);
+  },
+
+  setCityName({ commit }, cityName) {
+    commit("setCityName", cityName);
+  },
+
+  setAreaName({ commit }, areaName) {
+    commit("setAreaName", areaName);
+  },
+
+  setProvinceCode({ commit }, provinceCode) {
+    commit("setProvinceCode", provinceCode);
+  },
+
+  setCityCode({ commit }, cityCode) {
+    commit("setCityCode", cityCode);
+  },
+
+  setAreaCode({ commit }, areaCode) {
+    commit("setAreaCode", areaCode);
   }
 };

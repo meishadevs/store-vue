@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import home from "@/pages/home";
 import cate from "@/pages/cate";
-import select from "@/pages/select";
+import choose from "@/pages/choose";
 import proinfo from "@/pages/proinfo";
 import cart from "@/pages/cart";
 import register from "@/pages/register";
@@ -23,9 +23,9 @@ export default new VueRouter({
       component: cate
     },
     {
-      path: "/select",
-      name: "select",
-      component: select
+      path: "/choose",
+      name: "choose",
+      component: choose
     },
     {
       path: "/proinfo",
