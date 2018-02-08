@@ -74,8 +74,8 @@ gulp.task('indexCss', function() {
 
 //处理商品分类页的CSS样式
 gulp.task('classCss', function() {
-    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/module.css', 'src/css/classification.css'])
-        .pipe(concat('classification.min.css')) //CSS文件合并
+    gulp.src(['src/css/reset.css', 'src/css/common.css', 'src/css/module.css', 'src/css/cate.css'])
+        .pipe(concat('cate.min.css')) //CSS文件合并
         .pipe(minifyCss()) //压缩CSS文件
         .pipe(gulp.dest('dist/css')) //文件的输出路径
         .pipe(browserSync.reload({
@@ -158,8 +158,8 @@ gulp.task('indexJs', function() {
 
 //处理商品分类页的js脚本
 gulp.task('classJs', function() {
-    gulp.src(['src/js/animate.js', 'src/js/util.js', 'src/js/config.js', 'src/js/common.js', 'src/js/classification.js'])
-        .pipe(concat('classification.min.js'))
+    gulp.src(['src/js/animate.js', 'src/js/util.js', 'src/js/config.js', 'src/js/common.js', 'src/js/cate.js'])
+        .pipe(concat('cate.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.reload({
