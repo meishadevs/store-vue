@@ -274,31 +274,14 @@
 
       //保存用户信息
       saveUserInfo() {
-
-        //使用Cookie保存用户名
-        document.cookie = "username=" + this.username + ";"
-          + "expires=" + new Date("2020-1-1").toGMTString() + ";";
-
-        //使用Cookie保存密码
-        document.cookie = "password=" + this.password + ";"
-          + "expires=" + new Date("2020-1-1").toGMTString() + ";";
+        localStorage.setItem('username', this.username);
+        localStorage.setItem('password', this.password);
       },
 
       //读取用户信息
       readUserInfo() {
-
-        //获得网站中的Cookie
-        var cookie = document.cookie;
-
-        //如果网站中不存在Cookie
-        if (cookie === null || cookie === "" || cookie === undefined) {
-          return;
-        }
-
-        //读取保存在Cookie中的用户名和密码
-        let arr = this.username = document.cookie.split(";");
-        this.username = arr[0].split("=")[1];
-        this.password = arr[1].split("=")[1];
+        this.username = localStorage.getItem('username');
+        this.password = localStorage.getItem('password');
       }
     }
   };
