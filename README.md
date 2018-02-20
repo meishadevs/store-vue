@@ -3,7 +3,6 @@
 
 ## 在线访问
 **[http://meishadevs.com/dswz/index.html#/](http://meishadevs.com/dswz/index.html#/)**  
-**注意：** 有些功能需要自己配置服务器端才能访问，配置方式在此文档下面做了相关的介绍
 
 ## 技术栈
 - **前端：** vue + vuex + vue-router + axios + ESLint + ES6
