@@ -12,7 +12,7 @@
           class="search-text"
           spellcheck="false"
           type="text"
-          placeholder="女神的衣柜必备"
+          placeholder="潮流T恤"
           v-model="keyWord"
           v-on:keyup="getSearchResult()">
         <input class="search-btn" type="button" value="搜索" @click="searchData()">
