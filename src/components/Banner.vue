@@ -22,6 +22,8 @@
     //组件名称
     name: "Banner",
 
+    props: ["bannerData"],
+
     data() {
       return {
 
@@ -29,26 +31,7 @@
         currentIndex: 1,
 
         //定时器
-        timer: null,
-
-        bannerData: [
-          {
-            "image": "./static/images/banner/banner1.jpg",
-            "url": "/proinfo"
-          },
-          {
-            "image": "./static/images/banner/banner2.jpg",
-            "url": "/proinfo"
-          },
-          {
-            "image": "./static/images/banner/banner3.jpg",
-            "url": "/proinfo"
-          },
-          {
-            "image": "./static/images/banner/banner4.jpg",
-            "url": "/proinfo"
-          }
-        ]
+        timer: null
       };
     },
 
@@ -67,7 +50,7 @@
 
           this.currentIndex++;
 
-          if (this.currentIndex > 4) {
+          if (this.currentIndex > this.bannerData.length) {
             this.currentIndex = 1;
           }
         }, 3000);

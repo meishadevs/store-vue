@@ -12,7 +12,7 @@
         <cate-menu></cate-menu>
       </div>
       <div class="right-area">
-        <banner></banner>
+        <banner v-bind:bannerData="bannerData"></banner>
         <cate-show-product v-bind:productList="cateProductList[0]"></cate-show-product>
         <cate-show-product v-bind:productList="cateProductList[1]"></cate-show-product>
       </div>
@@ -178,6 +178,25 @@
                 "numComment": "16"
               }
             ]
+          }
+        ],
+
+        bannerData: [
+          {
+            "image": "./static/images/banner/banner1.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner2.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner3.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner4.jpg",
+            "url": "/proinfo"
           }
         ]
       };

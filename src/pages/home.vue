@@ -12,7 +12,7 @@
           <product-cate-nav></product-cate-nav>
         </div>
         <div class="banner-box">
-          <banner></banner>
+          <banner v-bind:bannerData="bannerData"></banner>
         </div>
       </section>
       <index-show-product v-bind:productInfo="indexProductList[0]"></index-show-product>
@@ -144,6 +144,29 @@
                 "price": "58.80"
               }
             ]
+          }
+        ],
+
+        bannerData: [
+          {
+            "image": "./static/images/banner/banner1.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner2.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner3.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner4.jpg",
+            "url": "/proinfo"
+          },
+          {
+            "image": "./static/images/banner/banner4.jpg",
+            "url": "/proinfo"
           }
         ]
       };
