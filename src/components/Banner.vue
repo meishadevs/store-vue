@@ -6,7 +6,7 @@
     <ul class="banner-list">
       <li v-for="(item, index) in bannerData" v-bind:class="{ fadeIn: currentIndex == index + 1 }">
         <router-link v-bind:to="item.url">
-          <img v-bind:src="item.image" alt="轮播图">
+          <img v-bind:src="item.imageUrl" alt="轮播图">
         </router-link>
       </li>
     </ul>
