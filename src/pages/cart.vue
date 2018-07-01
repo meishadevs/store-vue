@@ -34,6 +34,7 @@
   import OrderSett from "../components/OrderSett";
   import GoTop from "../components/GoTop";
   import SiteFoot from "../components/SiteFoot";
+  import {mapState} from "vuex";
 
   export default {
 
@@ -54,8 +55,25 @@
       SiteFoot
     },
 
+    //计算属性
+    computed: mapState([
+
+      //用户是否登录
+      //映射 this.isLogin 为 srore.state.isLogin
+      "isLogin"
+    ]),
+
     //初始化
     mounted() {
+
+      //如果用户没有登录
+      if (!this.isLogin) {
+
+        //进入登录页
+        this.$router.push("/login");
+        return;
+      }
+
       this.$nextTick(() => {
         document.title = "购物车和结算页";
         document.body.style.backgroundColor = "#fff";
