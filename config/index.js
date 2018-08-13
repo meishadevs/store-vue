@@ -13,7 +13,7 @@ module.exports = {
     proxyTable: {},
 
     //设置主机名
-    host: 'localhost',
+    host:'localhost',
 
     //设置端口号
     port: 8080,

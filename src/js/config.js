@@ -6,7 +6,7 @@ export default {
   install(Vue, option) {
 
     //服务器端的url
-    Vue.prototype.serverUrl = 'http://localhost/dswzServer/';
+    Vue.prototype.serverUrl = 'http://192.168.10.197/dswzServer/';
 
     //获得省、市、区数据的url
     Vue.prototype.addressUrl = Vue.prototype.serverUrl + 'place.php';

@@ -149,23 +149,23 @@
 
         bannerData: [
           {
-            "imageUrl": "./static/images/banner/banner1.jpg",
+            "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner1.jpg",
             "url": "/proinfo"
           },
           {
-            "imageUrl": "./static/images/banner/banner2.jpg",
+            "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner2.jpg",
             "url": "/proinfo"
           },
           {
-            "imageUrl": "./static/images/banner/banner3.jpg",
+            "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner3.jpg",
             "url": "/proinfo"
           },
           {
-            "imageUrl": "./static/images/banner/banner4.jpg",
+            "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner4.jpg",
             "url": "/proinfo"
           },
           {
-            "imageUrl": "./static/images/banner/banner4.jpg",
+            "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner4.jpg",
             "url": "/proinfo"
           }
         ]
