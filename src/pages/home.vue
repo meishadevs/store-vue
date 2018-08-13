@@ -163,10 +163,6 @@
           {
             "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner4.jpg",
             "url": "/proinfo"
-          },
-          {
-            "imageUrl": "http://oqdvwkahb.bkt.clouddn.com/banner4.jpg",
-            "url": "/proinfo"
           }
         ]
       };
