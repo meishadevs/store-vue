@@ -6,7 +6,7 @@
     <li class="clearfix" v-for="advisory in advisoryListData">
       <div class="member-info">
         <div class="member-image">
-          <img v-bind:src="advisory.memberimage" alt="">
+          <img v-bind:src="serverUrl + 'images/advisoryimages/' + advisory.memberimage" alt="">
         </div>
         <p class="member-name">{{ advisory.membernum }}</p>
         <p class="member-grade">{{ advisory.membergrade }}</p></div>
