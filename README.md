@@ -35,7 +35,7 @@ WampServer中使用phpMyAdmin管理MySQL数据库，单击上一步操作中出�
 
 **第三步：进入phpMyAdmin**
 在用户名一栏中输入默认的用户名root，然后点击执行就可进入phpMyAdmin
-![](http://oqdvwkahb.bkt.clouddn.com/database.PNG)
+![](database.PNG)
 
 **第四步：将网站需要用到的数据导入数据库中**  
 选择导入，然后会弹出下图所示的界面，单击界面上的Choose File按钮，选择导入的文件为sql文件夹下的dswzdb.sql，将文件字符集设置为utf-8，格式选为SQL，设置完成后点击执行  
