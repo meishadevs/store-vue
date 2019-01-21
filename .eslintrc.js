@@ -27,8 +27,8 @@ module.exports = {
     //允许在生成器函数与*之间不加空格
     'generator-star-spacing': 'off',
 
-    //如果当前处于开发环境下 no-debugger = 0(可以调试)
-    //如果当前处于生产环境下 no-debugger = 2(不可以调试)
+    //如果当前处于开发环境下，可以使用debugger
+    //如果当前处于生产环境下，不能使用debugger
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
 
     //不检测注释语句与注释符号之间是否存在空格
