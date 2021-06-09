@@ -14,21 +14,21 @@ $flag = $_GET['flag'];
 
 //获取省的数据
 if($flag == 1) {
-	$query=mysql_query("select * from province order by id");
+	$query= mysqli_query($link, "select * from province order by id");
 	
 //获取市的数据 
 }else if($flag == 2) {
-	$query=mysql_query("select * from city where provincecode = '".$code."' order by id" );
+	$query = mysqli_query($link, "select * from city where provincecode = '".$code."' order by id" );
 	
 //获取区的数据
 }else if($flag == 3) {
-	$query=mysql_query("select * from area where citycode = '".$code."' order by id" );
+	$query = mysqli_query($link, "select * from area where citycode = '".$code."' order by id" );
 }
 
 //创建数组，存放获取的数据
 $sayList = [];
 
-while ($row=mysql_fetch_array($query)) {
+while ($row=mysqli_fetch_array($query)) {
 	$sayList[] = array(
 		'code'=>$row['code'],
 		'name'=>$row['name']

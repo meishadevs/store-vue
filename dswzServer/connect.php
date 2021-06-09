@@ -16,13 +16,13 @@ $db_name = "dswzdb";
 $timezone = "Asia/Shanghai";
 
 //链接数据库 
-$link = mysql_connect($host,$db_user,$db_pass);
+$link = mysqli_connect($host, $db_user, $db_pass, $db_name);
 
 //选择数据库
-mysql_select_db($db_name, $link);
+// mysql_select_db($db_name, $link);
 
 //执行一条数据库查询语句
-mysql_query("SET names UTF8");
+mysqli_query($link, 'SET names UTF8');
 
 header("Content-Type: text/html; charset=utf-8");
 

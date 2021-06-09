@@ -13,9 +13,9 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 //查询用户名
-$query = mysql_query("select * from user where username = '".$username."'");
+$query = mysqli_query($link, "select * from user where username = '".$username."'");
 
-$row = mysql_num_rows($query);
+$row = mysqli_num_rows($query);
 
 //如果用户名不存在
 if ($row <= 0) {
@@ -24,9 +24,9 @@ if ($row <= 0) {
 }
 
 //查询密码
-$query = mysql_query("select * from user where username = '".$username."' and password = '".$password."'");
+$query = mysqli_query($link, "select * from user where username = '".$username."' and password = '".$password."'");
 
-$row = mysql_num_rows($query);
+$row = mysqli_num_rows($query);
 
 //如果密码不正确
 if ($row <= 0) {

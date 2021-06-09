@@ -12,7 +12,7 @@ $callback = $_GET['callback'];
 //$flag == 1表示查询数据中一共有多少条商品咨询信息
 if ($flag == 1) {
 
-	$squery = mysql_query("select count(*) from advisory");
+	$squery = mysqli_query($link, "select count(*) from advisory");
     $result = mysql_result($squery, 0);
 	echo $callback.'('.$result.')';
 
@@ -26,10 +26,10 @@ if ($flag == 1) {
 	$amount = $_GET['amount'];
 
 	//执行SQL语句，从数据库中获得商品咨询信息
-	$query = mysql_query("select * from advisory order by id asc limit ".$startIndex.", ".$amount);
+	$query = mysqli_query($link, "select * from advisory order by id asc limit ".$startIndex.", ".$amount);
 
 	//遍历从数据库中获取的商品咨询信息
-	while ($row = mysql_fetch_array($query)) {
+	while ($row = mysqli_fetch_array($query)) {
 
 		//表示查询到了数据
 		$flag = 3;

@@ -1,5 +1,4 @@
-<?php
-
+<?php	
 //连接数据库
 require_once('connect.php');
 
@@ -12,8 +11,11 @@ $callback = $_GET['callback'];
 //$flag == 1表示查询数据中一共有多少条商品信息
 if ($flag == 1) {
 
-	$squery = mysql_query("select count(*) from product");
-    $result = mysql_result($squery, 0);
+	$squery = mysqli_query($link, "select count(*) from product");
+	$rows = mysqli_fetch_row($squery);
+	$result = $rows[0];
+
+
 	echo $callback.'('.$result.')';
 
 //$flag == 2表示查询商品信息
@@ -26,10 +28,10 @@ if ($flag == 1) {
 	$amount = $_GET['amount'];
 
 	//执行SQL语句，从数据库中获得商品信息
-	$query = mysql_query("select * from product order by id asc limit ".$startIndex.", ".$amount);
+	$query = mysqli_query($link, "select * from product order by id asc limit ".$startIndex.", ".$amount);
 
 	//遍历从数据库中获取到的商品信息
-	while ($row = mysql_fetch_array($query)) {
+	while ($row = mysqli_fetch_array($query)) {
 
 		//表示查询到了数据
 		$flag = 3;
@@ -64,6 +66,5 @@ if ($flag == 1) {
 		echo $callback.'('.'null'.')';
 	}
 }
-
 ?>
 

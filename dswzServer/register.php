@@ -19,9 +19,9 @@ $email = $_POST['email'];
 $sql = "select * from user where username = '".$username."'";
 
 //查询用户名是否存在
-$query = mysql_query($sql);
+$query = mysqli_query($link, $sql);
 
-$row = mysql_num_rows($query);
+$row = mysqli_num_rows($query);
 
 //如果用户名已存在
 if ($row > 0) {
@@ -33,7 +33,7 @@ if ($row > 0) {
 $sql = "insert into user(username, password, email) values ('".$username."','".$password."','".$email."')";
 
 //将用户名，密码，邮箱插入到数据库中
-$query = mysql_query($sql);
+$query = mysqli_query($link, $sql);
 
 //判断注册成功还是注册失败
 if ($query) {
