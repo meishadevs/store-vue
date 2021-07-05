@@ -13,6 +13,14 @@ export const getToken = () => {
   else return false
 }
 
+export const localSave = (key, value) => {
+  localStorage.setItem(key, value)
+}
+
+export const localRead = (key) => {
+  return localStorage.getItem(key) || ''
+}
+
 // 检测用户名
 export const checkUsername = (username) => {
   // 如果用户没有输入用户名
