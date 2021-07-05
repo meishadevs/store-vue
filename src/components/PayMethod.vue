@@ -6,7 +6,8 @@
     <div class="title">支付方式</div>
     <div class="pay-content">
       <div class="row clearfix">
-        <input class="weixin-radio"
+        <input
+class="weixin-radio"
                name="pay"
                id="weixin"
                type="radio"
@@ -20,7 +21,8 @@
         <p class="info">用微信扫一扫就能支付!</p>
       </div>
       <div class="row clearfix">
-        <input class="cash-radio"
+        <input
+class="cash-radio"
                name="pay"
                id="cash"
                type="radio"
@@ -35,42 +37,42 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from "vuex";
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "PayMethod",
+  // 组件名称
+  name: 'PayMethod',
 
-    data() {
-      return {
+  data() {
+    return {
 
-        pay: 0,
+      pay: 0,
 
-        //微信图标
-        wxIcon: "./static/images/icon/weixin.jpg"
-      };
-    },
+      // 微信图标
+      wxIcon: './static/images/icon/weixin.jpg'
+    }
+  },
 
-    computed: mapState([
-      "payMethod"
+  computed: mapState([
+    'payMethod'
+  ]),
+
+  methods: {
+
+    ...mapActions([
+      'setPayMethod'
     ]),
 
-    methods: {
-
-      ...mapActions([
-        "setPayMethod"
-      ]),
-
-      //改变支付方式
-      changePayMethod(pay) {
-        this.setPayMethod(pay);
-      }
+    // 改变支付方式
+    changePayMethod(pay) {
+      this.setPayMethod(pay)
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .pay-method {
     border: solid 1px #CCCCCC;
   }

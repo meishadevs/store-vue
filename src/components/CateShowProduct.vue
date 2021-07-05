@@ -28,17 +28,17 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "CateShowProduct",
+  // 组件名称
+  name: 'CateShowProduct',
 
-    //获取从父组件中传递过来的数据
-    props: ["productList"]
-  };
+  // 获取从父组件中传递过来的数据
+  props: ['productList']
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .cate-show-product .cate-name {
     height: 34px;
     border-bottom: solid 2px #ccc;
@@ -84,7 +84,7 @@
   .product-item .product-comment .star {
     width: 13px;
     height: 12px;
-    background: url("../../static/images/star.png");
+    background: url("~@/assets/images/star.png");
     display: inline-block;
   }
 

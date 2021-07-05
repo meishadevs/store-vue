@@ -36,14 +36,14 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "SiteFoot"
-  };
+  // 组件名称
+  name: 'SiteFoot'
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .site-foot {
     width: 100%;
     height: 224px;
@@ -88,7 +88,7 @@
     width: 103px;
     height: 32px;
     margin-right: 9px;
-    background: url("../../static/images/icon/ico_footer.png");
+    background: url("~@/assets/images/icon/ico_footer.png");
     background-repeat: no-repeat;
     text-indent: -1000px;
     overflow: hidden;

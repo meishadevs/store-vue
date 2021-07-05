@@ -20,14 +20,14 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "ProductPosition"
-  };
+  // 组件名称
+  name: 'ProductPosition'
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .product-position {
     margin: 25px 0 15px 0;
     font-size: 0;

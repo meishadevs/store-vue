@@ -17,76 +17,75 @@
 </template>
 
 <script>
-  import Vue from "vue";
-  import {mapState, mapActions} from "vuex";
+import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "OrderSett",
+  // 组件名称
+  name: 'OrderSett',
 
-    data() {
-      return {
-        formateMoney: null
-      };
-    },
+  data() {
+    return {
+      formateMoney: null
+    }
+  },
 
-    computed: mapState([
-      "productNum",
-      "productPrice",
-      "isReceive",
-      "payMethod",
-      "checkStatus",
-      "checkContent"
+  computed: mapState([
+    'productNum',
+    'productPrice',
+    'isReceive',
+    'payMethod',
+    'checkStatus',
+    'checkContent'
+  ]),
+
+  mounted() {
+    this.$nextTick(() => {
+      this.formateMoney = Vue.filter('formateMoney')
+      this.changeCheckStatus(0)
+      this.setCheckContent('')
+    })
+  },
+
+  methods: {
+
+    ...mapActions([
+      'changeCheckStatus',
+      'setCheckContent'
     ]),
 
-    mounted() {
-      this.$nextTick(() => {
-        this.formateMoney = Vue.filter("formateMoney");
-        this.changeCheckStatus(0);
-        this.setCheckContent("");
-      });
-    },
+    // 提交订单
+    commitOrder() {
+      window.scrollTo(0, 872)
 
-    methods: {
-
-      ...mapActions([
-        "changeCheckStatus",
-        "setCheckContent"
-      ]),
-
-      //提交订单
-      commitOrder() {
-
-        window.scrollTo(0, 872);
-
-        //如果用户没有填写收货信息
-        if (!this.isReceive) {
-          this.changeCheckStatus(2);
-          this.setCheckContent("请填写收货信息");
-          return;
-        }
-
-        //如果用户没有选择支付方式
-        if (this.payMethod === 0) {
-          this.changeCheckStatus(2);
-          this.setCheckContent("请选择支付方式");
-          return;
-        }
-
-        this.changeCheckStatus(1);
-        this.setCheckContent("订单已提交");
-
-        setTimeout(() => {
-          this.changeCheckStatus(0);
-          this.setCheckContent("");
-        }, 3000);
+      // 如果用户没有填写收货信息
+      if (!this.isReceive) {
+        this.changeCheckStatus(2)
+        this.setCheckContent('请填写收货信息')
+        return
       }
+
+      // 如果用户没有选择支付方式
+      if (this.payMethod === 0) {
+        this.changeCheckStatus(2)
+        this.setCheckContent('请选择支付方式')
+        return
+      }
+
+      this.changeCheckStatus(1)
+      this.setCheckContent('订单已提交')
+
+      setTimeout(() => {
+        this.changeCheckStatus(0)
+        this.setCheckContent('')
+      }, 3000)
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .order-sett {
     margin-top: 20px;
     border: solid 1px #ccc;

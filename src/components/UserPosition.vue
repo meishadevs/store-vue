@@ -38,34 +38,34 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from "vuex";
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "UserPosition",
+  // 组件名称
+  name: 'UserPosition',
 
-    computed: mapState([
-      "brand",
-      "screenSize",
-      "operatingSystem",
-      "runningMemory",
-      "networkType"
-    ]),
+  computed: mapState([
+    'brand',
+    'screenSize',
+    'operatingSystem',
+    'runningMemory',
+    'networkType'
+  ]),
 
-    methods: {
-      ...mapActions([
-        "setBrand",
-        "setScreenSize",
-        "setOperatingSystem",
-        "setRunningMemory",
-        "setNetworkType"
-      ])
-    }
-  };
+  methods: {
+    ...mapActions([
+      'setBrand',
+      'setScreenSize',
+      'setOperatingSystem',
+      'setRunningMemory',
+      'setNetworkType'
+    ])
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
   .wrapper {
     width: 959px;

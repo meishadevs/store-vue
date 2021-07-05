@@ -3,7 +3,8 @@
 
 <template>
   <div class="select-style clearfix">
-    <span class="des-item"
+    <span
+class="des-item"
          v-for="(style, index) in productStyle"
          v-bind:class="{active: curIndex == index}"
          @click="selectStyle(index)">{{ style }}
@@ -12,37 +13,36 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "SelectStyle",
+  // 组件名称
+  name: 'SelectStyle',
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //产品款式
-        productStyle: ["WIFI 16G", "WIFI 64G", "WIFI 32G", "WIFI Cellular 32G", "WIFI Cellular 64G", "WIFI Cellular 16G"],
+      // 产品款式
+      productStyle: ['WIFI 16G', 'WIFI 64G', 'WIFI 32G', 'WIFI Cellular 32G', 'WIFI Cellular 64G', 'WIFI Cellular 16G'],
 
-        //当前选中的产品款式的索引
-        curIndex: 0
-      };
-    },
-
-    methods: {
-
-      //选择款式
-      selectStyle(index) {
-
-        this.curIndex = index;
-
-        //触发selectStyle组件的select-style事件
-        this.bus.$emit("select-style", this.productStyle[this.curIndex]);
-      }
+      // 当前选中的产品款式的索引
+      curIndex: 0
     }
-  };
+  },
+
+  methods: {
+
+    // 选择款式
+    selectStyle(index) {
+      this.curIndex = index
+
+      // 触发selectStyle组件的select-style事件
+      this.bus.$emit('select-style', this.productStyle[this.curIndex])
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .des-item {
     padding: 3px 7px;
     margin-right: 10px;

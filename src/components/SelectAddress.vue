@@ -30,185 +30,179 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex';
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "SelectAddress",
+  // 组件名称
+  name: 'SelectAddress',
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //省的数据
-        provinceData: [],
+      // 省的数据
+      provinceData: [],
 
-        //市的数据
-        cityData: [],
+      // 市的数据
+      cityData: [],
 
-        //区的数据
-        areaData: [],
+      // 区的数据
+      areaData: [],
 
-        //是否显示省份列表
-        isShowProvince: false,
+      // 是否显示省份列表
+      isShowProvince: false,
 
-        //是否显示市列表
-        isShowCity: false,
+      // 是否显示市列表
+      isShowCity: false,
 
-        //是否显示区列表
-        isShowArea: false,
+      // 是否显示区列表
+      isShowArea: false,
 
-        //ul标签的样式
-        ulStyle: "scroll",
-        ulStyle1: "scroll",
+      // ul标签的样式
+      ulStyle: 'scroll',
+      ulStyle1: 'scroll',
 
-        //li标签的样式
-        liStyle: "93px",
-        liStyle1: "93px"
-      };
+      // li标签的样式
+      liStyle: '93px',
+      liStyle1: '93px'
+    }
+  },
+
+  computed: mapState([
+    'provinceName',
+    'cityName',
+    'areaName',
+    'provinceCode',
+    'cityCode',
+    'areaCode'
+  ]),
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      // 获得省的数据
+      this.getAddressData(1, this.provinceCode, (err, data) => {
+        this.provinceData = data
+      })
+
+      // 获得市的数据
+      this.getAddressData(2, this.provinceCode, (err, data) => {
+        this.cityData = data
+        this.isShowScroll1()
+      })
+
+      // 获得区的数据
+      this.getAddressData(3, this.cityCode, (err, data) => {
+        this.areaData = data
+        this.isShowScroll2()
+      })
+    })
+  },
+
+  // 监听器
+  watch: {
+
+    // 如果provinceName的值发生变化，调用这个函数
+    provinceName() {
+      // 获得市的数据
+      this.getAddressData(2, this.provinceCode, (err, data) => {
+        this.cityData = data
+        this.setCityName(this.cityData[0].name)
+        this.setCityCode(this.cityData[0].code)
+        this.isShowScroll1()
+      })
     },
 
-    computed: mapState([
-      "provinceName",
-      "cityName",
-      "areaName",
-      "provinceCode",
-      "cityCode",
-      "areaCode"
+    // 如果cityName的值发生变化，调用这个函数
+    cityName() {
+      // 获得区的数据
+      this.getAddressData(3, this.cityCode, (err, data) => {
+        this.areaData = data
+        this.setAreaName(this.areaData[0].name)
+        this.setAreaCode(this.areaData[0].code)
+        this.isShowScroll2()
+      })
+    }
+  },
+
+  methods: {
+
+    ...mapActions([
+      'setProvinceName',
+      'setCityName',
+      'setAreaName',
+      'setProvinceCode',
+      'setCityCode',
+      'setAreaCode'
     ]),
 
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-
-        //获得省的数据
-        this.getAddressData(1, this.provinceCode, (err, data) => {
-          this.provinceData = data;
-        });
-
-        //获得市的数据
-        this.getAddressData(2, this.provinceCode, (err, data) => {
-          this.cityData = data;
-          this.isShowScroll1();
-        });
-
-        //获得区的数据
-        this.getAddressData(3, this.cityCode, (err, data) => {
-          this.areaData = data;
-          this.isShowScroll2();
-        });
-      });
+    // 选择省份
+    selectProvince(provinceName, provinceCode) {
+      this.setProvinceName(provinceName)
+      this.setProvinceCode(provinceCode)
+      this.isShowProvince = false
     },
 
-    //监听器
-    watch: {
+    // 选择市
+    selectCity(cityName, cityCode) {
+      this.setCityName(cityName)
+      this.setCityCode(cityCode)
+      this.isShowCity = false
+    },
 
-      //如果provinceName的值发生变化，调用这个函数
-      provinceName() {
+    // 选择区
+    selectArea(areaName, areaCode) {
+      this.setAreaName(areaName)
+      this.setAreaCode(areaCode)
+      this.isShowArea = false
+    },
 
-        //获得市的数据
-        this.getAddressData(2, this.provinceCode, (err, data) => {
-          this.cityData = data;
-          this.setCityName(this.cityData[0].name);
-          this.setCityCode(this.cityData[0].code);
-          this.isShowScroll1();
-        });
-      },
+    // 是否显示滚动条
+    isShowScroll1() {
+      // 如果市的个数小于6个，不显示竖直滚动条
+      if (this.cityData.length < 6) {
+        this.ulStyle = 'inherit'
+        this.liStyle = '100%'
 
-      //如果cityName的值发生变化，调用这个函数
-      cityName() {
-
-        //获得区的数据
-        this.getAddressData(3, this.cityCode, (err, data) => {
-          this.areaData = data;
-          this.setAreaName(this.areaData[0].name);
-          this.setAreaCode(this.areaData[0].code);
-          this.isShowScroll2();
-        });
+        // 如果市的个数大于或等于6个，显示竖直滚动条
+      } else {
+        this.ulStyle = 'scroll'
+        this.liStyle = '93px'
       }
     },
 
-    methods: {
+    // 是否显示滚动条
+    isShowScroll2() {
+      // 如果区的个数小于6个，不显示竖直滚动条
+      if (this.areaData.length < 6) {
+        this.ulStyle1 = 'inherit'
+        this.liStyle1 = '100%'
 
-      ...mapActions([
-        "setProvinceName",
-        "setCityName",
-        "setAreaName",
-        "setProvinceCode",
-        "setCityCode",
-        "setAreaCode"
-      ]),
+        // 如果区的个数大于或等于6个，显示竖直滚动条
+      } else {
+        this.ulStyle1 = 'scroll'
+        this.liStyle1 = '93px'
+      }
+    },
 
-      //选择省份
-      selectProvince(provinceName, provinceCode) {
-        this.setProvinceName(provinceName);
-        this.setProvinceCode(provinceCode);
-        this.isShowProvince = false;
-      },
-
-      //选择市
-      selectCity(cityName, cityCode) {
-        this.setCityName(cityName);
-        this.setCityCode(cityCode);
-        this.isShowCity = false;
-      },
-
-      //选择区
-      selectArea(areaName, areaCode) {
-        this.setAreaName(areaName);
-        this.setAreaCode(areaCode);
-        this.isShowArea = false;
-      },
-
-      //是否显示滚动条
-      isShowScroll1() {
-
-        //如果市的个数小于6个，不显示竖直滚动条
-        if (this.cityData.length < 6) {
-          this.ulStyle = "inherit";
-          this.liStyle = "100%";
-
-          //如果市的个数大于或等于6个，显示竖直滚动条
-        } else {
-          this.ulStyle = "scroll";
-          this.liStyle = "93px";
-        }
-      },
-
-      //是否显示滚动条
-      isShowScroll2() {
-
-        //如果区的个数小于6个，不显示竖直滚动条
-        if (this.areaData.length < 6) {
-          this.ulStyle1 = "inherit";
-          this.liStyle1 = "100%";
-
-          //如果区的个数大于或等于6个，显示竖直滚动条
-        } else {
-          this.ulStyle1 = "scroll";
-          this.liStyle1 = "93px";
-        }
-      },
-
-      /**
+    /**
        * 获得地址数据
        * @param flag 标记位，1表示省，2表示市，3表示区
        * @param addressCode 地址编码
        * @param callback 回调函数
        */
-      getAddressData(flag, addressCode, callback) {
+    getAddressData(flag, addressCode, callback) {
+      // 请求参数
+      let param = this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode
 
-        //请求参数
-        let param = this.addressUrl + "?flag=" + flag + "&citycode=" + addressCode;
-
-        //发送get请求，获得省份数据
-        this.jsonp(param, null, callback);
-      }
+      // 发送get请求，获得省份数据
+      this.jsonp(param, null, callback)
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
   .select {
     height: 24px;

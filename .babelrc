@@ -1,9 +1,14 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }],
-    "stage-2"
+    "@vue/app"
   ],
-  "plugins": ["transform-runtime"]
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
 }

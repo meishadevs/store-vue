@@ -15,14 +15,14 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "RegisterHead"
-  };
+  // 组件名称
+  name: 'RegisterHead'
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .register-head {
     width: 100%;
   }
@@ -39,7 +39,7 @@
   .logo-bar .logo a {
     width: 112px;
     height: 59px;
-    background: url(../../static/images/logo.png) no-repeat;
+    background: url("~@/assets/images/logo.png") no-repeat;
     text-indent: -1000px;
     float: left;
   }

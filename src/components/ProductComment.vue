@@ -60,75 +60,71 @@
 </template>
 
 <script>
-  import AdvisoryList from "./AdvisoryList";
-  import ChangePage from "./ChangePage";
+import AdvisoryList from './AdvisoryList'
+import ChangePage from './ChangePage'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "ProductComment",
+  // 组件名称
+  name: 'ProductComment',
 
-    components: {
-      AdvisoryList,
-      ChangePage
-    },
+  components: {
+    AdvisoryList,
+    ChangePage
+  },
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //商品咨询的总数
-        totalAdvisory: 0,
+      // 商品咨询的总数
+      totalAdvisory: 0,
 
-        //每页展示的商品咨询数
-        numAdvisory: 5,
+      // 每页展示的商品咨询数
+      numAdvisory: 5,
 
-        //一共有多少页商品咨询
-        totalPage: 0,
+      // 一共有多少页商品咨询
+      totalPage: 0,
 
-        //当前展示的第几页商品咨询
-        curPage: 1
-      };
-    },
-
-    //初始化
-    mounted: function () {
-      this.$nextTick(() => {
-
-        //获得商品咨询的数量
-        this.getAdvisoryNum();
-
-        //监听翻页组件中传递过来的事件
-        this.bus.$on("change-page", (page) => {
-          this.curPage = page;
-        });
-
-      });
-    },
-
-    methods: {
-
-      //获得商品咨询的数量
-      getAdvisoryNum() {
-
-        //发送get请求，获得商品咨询的数量
-        this.jsonp(this.advisoryNumUrl, null, (err, data) => {
-          if (err) {
-            console.error("error:", err.message);
-          } else {
-
-            //获得商品咨询的数量
-            this.totalAdvisory = data;
-
-            //计算一共有多少页
-            this.totalPage = this.totalAdvisory / this.numAdvisory;
-          }
-        });
-      }
+      // 当前展示的第几页商品咨询
+      curPage: 1
     }
-  };
+  },
+
+  // 初始化
+  mounted: function() {
+    this.$nextTick(() => {
+      // 获得商品咨询的数量
+      this.getAdvisoryNum()
+
+      // 监听翻页组件中传递过来的事件
+      this.bus.$on('change-page', (page) => {
+        this.curPage = page
+      })
+    })
+  },
+
+  methods: {
+
+    // 获得商品咨询的数量
+    getAdvisoryNum() {
+      // 发送get请求，获得商品咨询的数量
+      this.jsonp(this.advisoryNumUrl, null, (err, data) => {
+        if (err) {
+          console.error('error:', err.message)
+        } else {
+          // 获得商品咨询的数量
+          this.totalAdvisory = data
+
+          // 计算一共有多少页
+          this.totalPage = this.totalAdvisory / this.numAdvisory
+        }
+      })
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
   /* 商品评价 */
   .product-comment {

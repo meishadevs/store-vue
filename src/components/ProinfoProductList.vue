@@ -23,23 +23,23 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "ProinfoProductList",
+  // 组件名称
+  name: 'ProinfoProductList',
 
-    //获取从父组件中传递过来的数据
-    props: ["productList", "isAddBold"],
+  // 获取从父组件中传递过来的数据
+  props: ['productList', 'isAddBold'],
 
-    methods: {
-      goTop() {
-        window.scrollTo(0, 0);
-      }
+  methods: {
+    goTop() {
+      window.scrollTo(0, 0)
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .proinfo-product-list {
     margin-bottom: 10px;
     border: solid 1px #CCCCCC;

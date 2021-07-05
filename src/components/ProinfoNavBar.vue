@@ -17,39 +17,39 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "ProinfoNavBar",
+  // 组件名称
+  name: 'ProinfoNavBar',
 
-    //获取从父组件中传递过来的数据
-    props: ["selectIndex"],
+  // 获取从父组件中传递过来的数据
+  props: ['selectIndex'],
 
-    data() {
-      return {
-        curIndex: 0
-      };
-    },
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-        this.curIndex = this.selectIndex;
-      });
-    },
-
-    methods: {
-
-      //改变导航项
-      changeNavIndex: function (index) {
-        this.curIndex = index;
-        this.bus.$emit("select-nav", this.curIndex);
-      }
+  data() {
+    return {
+      curIndex: 0
     }
-  };
+  },
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      this.curIndex = this.selectIndex
+    })
+  },
+
+  methods: {
+
+    // 改变导航项
+    changeNavIndex: function(index) {
+      this.curIndex = index
+      this.bus.$emit('select-nav', this.curIndex)
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .proinfo-nav-bar ul {
     width: 786px;
   }
@@ -80,18 +80,18 @@
   }
 
   .proinfo-nav-bar li .intro {
-    background: url("../../static/images/icon/intro.png") right center no-repeat;
+    background: url("~@/assets/images/icon/intro.png") right center no-repeat;
   }
 
   .proinfo-nav-bar li.active .intro {
-    background: url("../../static/images/icon/intro-active.png") right center no-repeat;
+    background: url("~@/assets/images/icon/intro-active.png") right center no-repeat;
   }
 
   .proinfo-nav-bar li .appra {
-    background: url("../../static/images/icon/appra.png") right center no-repeat;
+    background: url("~@/assets/images/icon/appra.png") right center no-repeat;
   }
 
   .proinfo-nav-bar li.active .appra {
-    background: url("../../static/images/icon/appra-active.png") right center no-repeat;
+    background: url("~@/assets/images/icon/appra-active.png") right center no-repeat;
   }
 </style>

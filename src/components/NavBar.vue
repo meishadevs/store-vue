@@ -43,33 +43,33 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from "vuex";
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "NavBar",
+  // 组件名称
+  name: 'NavBar',
 
-    computed: mapState([
+  computed: mapState([
 
-      //当前选中的导航项的索引
-      //映射 this.currentNavIndex 为 store.state.currentNavIndex
-      "currentNavIndex"
-    ]),
+    // 当前选中的导航项的索引
+    // 映射 this.currentNavIndex 为 store.state.currentNavIndex
+    'currentNavIndex'
+  ]),
 
-    methods: {
+  methods: {
 
-      //使用对象展开运算符将此对象混入到外部对象中
-      ...mapActions([
+    // 使用对象展开运算符将此对象混入到外部对象中
+    ...mapActions([
 
-        //改变当前选中的导航项的索引
-        "changeNavIndex"
-      ])
-    }
-  };
+      // 改变当前选中的导航项的索引
+      'changeNavIndex'
+    ])
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .nav-bar {
     width: 100%;
     height: 35px;
@@ -85,8 +85,8 @@
     height: 35px;
     padding-left: 40px;
     color: rgb(255, 255, 255);
-    background: url(../../static/images/icon/arrow-down.png) 148px center no-repeat;
-    font: 16px/35px 微软雅黑, "microsoft yahei";
+    background: url("~@/assets/images/icon/arrow-down.png") 148px center no-repeat;
+    font: 16px/35px "microsoft yahei";
   }
 
   .nav {
@@ -96,7 +96,7 @@
   .nav li {
     width: 100px;
     height: 35px;
-    font: 14px/35px 微软雅黑, "microsoft yahei";
+    font: 14px/35px "微软雅黑", "microsoft yahei";
     text-align: center;
     cursor: pointer;
     float: left;

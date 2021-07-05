@@ -72,51 +72,51 @@
 </template>
 
 <script>
-  import Vue from "vue";
-  import {mapState, mapActions} from "vuex";
+import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "DeliveryInfo",
+  // 组件名称
+  name: 'DeliveryInfo',
 
-    computed: mapState([
-      "productNum",
-      "productPrice",
-      "checkStatus",
-      "checkContent"
+  computed: mapState([
+    'productNum',
+    'productPrice',
+    'checkStatus',
+    'checkContent'
+  ]),
+
+  data() {
+    return {
+      formateMoney: null,
+
+      // 商品图片
+      productImage: ['./static/images/pro.jpg', './static/images/pro1.jpg']
+    }
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.formateMoney = Vue.filter('formateMoney')
+    })
+  },
+
+  methods: {
+    ...mapActions([
+      'changeCheckStatus',
+      'setCheckContent'
     ]),
 
-    data() {
-      return {
-        formateMoney: null,
-
-        //商品图片
-        productImage: ["./static/images/pro.jpg", "./static/images/pro1.jpg"]
-      };
-    },
-
-    mounted() {
-      this.$nextTick(() => {
-        this.formateMoney = Vue.filter("formateMoney");
-      });
-    },
-
-    methods: {
-      ...mapActions([
-        "changeCheckStatus",
-        "setCheckContent"
-      ]),
-
-      closeDialog() {
-        this.changeCheckStatus(0);
-        this.setCheckContent("");
-      }
+    closeDialog() {
+      this.changeCheckStatus(0)
+      this.setCheckContent('')
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   /* 送货清单 */
   .delivery-info {
     margin-top: 20px;
@@ -268,7 +268,7 @@
     display: inline-block;
     width: 12px;
     height: 14px;
-    background: url("../../static/images/icon/notice.jpg") center center no-repeat;
+    background: url("~@/assets/images/icon/notice.jpg") center center no-repeat;
     position: relative;
     bottom: -2px;
   }
@@ -362,14 +362,4 @@
     opacity: 0;
   }
 </style>
-
-
-
-
-
-
-
-
-
-
 

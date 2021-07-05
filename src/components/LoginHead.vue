@@ -15,14 +15,14 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "LoginHead"
-  };
+  // 组件名称
+  name: 'LoginHead'
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .login-head {
     width: 100%;
   }
@@ -40,7 +40,7 @@
   .logo-bar .logo a {
     width: 112px;
     height: 59px;
-    background: url(../../static/images/logo.png) no-repeat;
+    background: url("~@/assets/images/logo.png") no-repeat;
     text-indent: -1000px;
     float: left;
   }
@@ -49,6 +49,6 @@
     margin-left: 22px;
     color: rgb(255, 255, 255);
     float: left;
-    font: 22px/87px 微软雅黑, "microsoft yahei";
+    font: 22px/87px "微软雅黑", "microsoft yahei";
   }
 </style>

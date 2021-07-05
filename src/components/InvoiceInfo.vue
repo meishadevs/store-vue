@@ -54,76 +54,76 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "InvoiceInfo",
+  // 组件名称
+  name: 'InvoiceInfo',
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //发票类型数据
-        invoiceTypeData: ["商业零售发票", "个人所得税发票"],
+      // 发票类型数据
+      invoiceTypeData: ['商业零售发票', '个人所得税发票'],
 
-        //发票抬头数据
-        invoiceHeaderData: ["个人", "企业"],
+      // 发票抬头数据
+      invoiceHeaderData: ['个人', '企业'],
 
-        //用户选择的发票类型
-        invoiceType: "商业零售发票",
+      // 用户选择的发票类型
+      invoiceType: '商业零售发票',
 
-        //用户选择的发票抬头
-        invoiceHeader: "个人",
+      // 用户选择的发票抬头
+      invoiceHeader: '个人',
 
-        //是否显示发票类型
-        isShowInvoiceType: false,
+      // 是否显示发票类型
+      isShowInvoiceType: false,
 
-        //是否显示发票抬头
-        isShowInvoiceHeader: false,
+      // 是否显示发票抬头
+      isShowInvoiceHeader: false,
 
-        //开发票人的姓名
-        invoiceName: "",
+      // 开发票人的姓名
+      invoiceName: '',
 
-        //标记是否需要发票
-        isUseInvoice: false,
+      // 标记是否需要发票
+      isUseInvoice: false,
 
-        isShowResult: false
-      };
+      isShowResult: false
+    }
+  },
+
+  methods: {
+
+    // 选择发票的类型
+    selectInvoiceType(index) {
+      this.invoiceType = this.invoiceTypeData[index]
+      this.isShowInvoiceType = false
     },
 
-    methods: {
+    // 选择发票抬头
+    selectInvoiceHeader(index) {
+      this.invoiceHeader = this.invoiceHeaderData[index]
+      this.isShowInvoiceHeader = false
+    },
 
-      //选择发票的类型
-      selectInvoiceType(index) {
-        this.invoiceType = this.invoiceTypeData[index];
-        this.isShowInvoiceType = false;
-      },
+    // 保存发票信息
+    saveInvoiceInfo() {
+      this.isShowResult = true
 
-      //选择发票抬头
-      selectInvoiceHeader(index) {
-        this.invoiceHeader = this.invoiceHeaderData[index];
-        this.isShowInvoiceHeader = false;
-      },
+      setTimeout(() => {
+        this.isShowResult = false
+      }, 3000)
+    },
 
-      //保存发票信息
-      saveInvoiceInfo() {
-        this.isShowResult = true;
-
-        setTimeout(() => {
-          this.isShowResult = false;
-        }, 3000);
-      },
-
-      //取消使用发票
-      cancelUseInvoice() {
-        this.invoiceType = "商业零售发票";
-        this.invoiceHeader = "个人";
-        this.invoiceName = "";
-      }
+    // 取消使用发票
+    cancelUseInvoice() {
+      this.invoiceType = '商业零售发票'
+      this.invoiceHeader = '个人'
+      this.invoiceName = ''
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .invoice-info {
     border: solid 1px #CCCCCC;
   }
@@ -297,27 +297,4 @@
     opacity: 0;
   }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

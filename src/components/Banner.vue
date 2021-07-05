@@ -17,54 +17,53 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "Banner",
+  // 组件名称
+  name: 'Banner',
 
-    props: ["bannerData"],
+  props: ['bannerData'],
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //当前选中的轮播图索引
-        currentIndex: 1,
+      // 当前选中的轮播图索引
+      currentIndex: 1,
 
-        //定时器
-        timer: null
-      };
-    },
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-        this.play();
-      });
-    },
-
-    methods: {
-
-      //播放轮播图
-      play() {
-        this.timer = setInterval(() => {
-
-          this.currentIndex++;
-
-          if (this.currentIndex > this.bannerData.length) {
-            this.currentIndex = 1;
-          }
-        }, 3000);
-      },
-
-      //停止播放轮播图
-      stopPlay() {
-        clearInterval(this.timer);
-      }
+      // 定时器
+      timer: null
     }
-  };
+  },
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      this.play()
+    })
+  },
+
+  methods: {
+
+    // 播放轮播图
+    play() {
+      this.timer = setInterval(() => {
+        this.currentIndex++
+
+        if (this.currentIndex > this.bannerData.length) {
+          this.currentIndex = 1
+        }
+      }, 3000)
+    },
+
+    // 停止播放轮播图
+    stopPlay() {
+      clearInterval(this.timer)
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .banner {
     width: 811px;
     height: 320px;

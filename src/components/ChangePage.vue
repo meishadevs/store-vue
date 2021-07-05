@@ -30,56 +30,56 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "ChangePage",
+  // 组件名称
+  name: 'ChangePage',
 
-    //获取从父组件中传递过来的数据
-    props: ["totalPage", "curPage"],
+  // 获取从父组件中传递过来的数据
+  props: ['totalPage', 'curPage'],
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //当前展示的是第 indexPage 页数据
-        indexPage: 1
-      };
-    },
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-        this.indexPage = this.curPage;
-      });
-    },
-
-    //计算属性
-    methods: {
-
-      //创建数组,保存分页按钮上的数字
-      createArrNum(value, totalPage) {
-        var arr = [];
-        for (let i = 0; i < totalPage - 1; i++) {
-          arr[i] = value + i;
-        }
-
-        return arr;
-      },
-
-      //实现翻页逻辑
-      changePage(indexPage) {
-        this.indexPage = indexPage;
-
-        //触发翻页组件中的事件
-        this.bus.$emit("change-page", this.indexPage);
-      }
+      // 当前展示的是第 indexPage 页数据
+      indexPage: 1
     }
-  };
+  },
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      this.indexPage = this.curPage
+    })
+  },
+
+  // 计算属性
+  methods: {
+
+    // 创建数组,保存分页按钮上的数字
+    createArrNum(value, totalPage) {
+      var arr = []
+      for (let i = 0; i < totalPage - 1; i++) {
+        arr[i] = value + i
+      }
+
+      return arr
+    },
+
+    // 实现翻页逻辑
+    changePage(indexPage) {
+      this.indexPage = indexPage
+
+      // 触发翻页组件中的事件
+      this.bus.$emit('change-page', this.indexPage)
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .change-page {
-    font-family: tahoma, arial,\5FAE\8F6F\96C5\9ED1, sans-serif;
+    font-family: tahoma, arial, sans-serif;
     text-align: center;
     font-size: 0;
   }

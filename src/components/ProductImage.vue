@@ -8,15 +8,22 @@
         <img v-bind:src="prodImgData.bigImage[curIndex]" v-bind:style="{left: bigLeft + 'px', top: bigTop + 'px'}">
       </div>
       <div class="middle">
-        <div class="middle-box" v-bind:style="{width: boxWidth + 'px', height: boxHeight + 'px'}"
-             @mouseenter="isShow = true" @mouseleave="isShow = false" @mousemove="moveGlass($event)">
+        <div
+class="middle-box"
+v-bind:style="{width: boxWidth + 'px', height: boxHeight + 'px'}"
+             @mouseenter="isShow = true"
+@mouseleave="isShow = false"
+@mousemove="moveGlass($event)">
           <img v-bind:src="prodImgData.middleImage[curIndex]" alt="">
-          <div class="glass" v-if="isShow"
+          <div
+class="glass"
+v-if="isShow"
                v-bind:style="{width: this.glassWidth + 'px', height: this.glassHeight + 'px', left: this.glassLeft + 'px', top: this.glassTop + 'px'}"></div>
         </div>
       </div>
       <ul class="small clearfix">
-        <li v-for="(image, index) in prodImgData.smallImage"
+        <li
+v-for="(image, index) in prodImgData.smallImage"
             v-bind:class="{active: curIndex == index}"
             @mouseenter="curIndex = index">
           <img v-bind:src="image" alt="">
@@ -27,129 +34,127 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "ProductImage",
+  // 组件名称
+  name: 'ProductImage',
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //商品图片数据
-        prodImgData: {
-          bigImage: ["./static/images/bigpad1.jpg", "./static/images/bigpad2.jpg", "./static/images/bigpad3.jpg",
-            "./static/images/bigpad4.jpg", "./static/images/bigpad5.jpg"],
-          middleImage: ["./static/images/middlepad1.jpg", "./static/images/middlepad2.jpg", "./static/images/middlepad3.jpg",
-            "static/images/middlepad4.jpg", "static/images/middlepad5.jpg"],
-          smallImage: ["./static/images/smallipad1.jpg", "./static/images/smallipad2.jpg", "./static/images/smallipad3.jpg",
-            "./static/images/smallipad4.jpg", "./static/images/smallipad5.jpg"]
-        },
-
-        //当前选中的索引
-        curIndex: 0,
-
-        //是否显示大图
-        isShow: false,
-
-        //middle-box的宽度和高度
-        boxWidth: 280,
-        boxHeight: 280,
-
-        //middle-box相对于浏览器窗口的偏移
-        boxOffsetLeft: 0,
-        boxOffsetTop: 0,
-
-        //放大镜的宽度和高度
-        glassWidth: 100,
-        glassHeight: 100,
-
-        //放大镜的位置
-        glassLeft: 0,
-        glassTop: 0,
-
-        //大图的宽度和高度
-        bigWidth: 800,
-        bigHeight: 800,
-
-        //大图的位置
-        bigLeft: 0,
-        bigTop: 0
-      };
-    },
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-
-        //获得middle-box到浏览器窗口最左端的距离
-        this.boxOffsetLeft = this.getElementLeft(document.querySelector(".middle-box"));
-
-        //获得middle-box到浏览器窗口顶部的距离
-        this.boxOffsetTop = this.getElementTop(document.querySelector(".middle-box"));
-      });
-    },
-
-    methods: {
-
-      //移动放大镜
-      moveGlass(event) {
-
-        //计算放大镜的位置
-        //放大镜的位置 = 鼠标指针的位置 - middle-box在浏览器上的偏移 - 放大镜宽度的一半
-        this.glassLeft = event.pageX - this.boxOffsetLeft - this.glassWidth / 2;
-        this.glassTop = event.pageY - this.boxOffsetTop - this.glassHeight / 2;
-
-        //放大镜在水平方向上移动的最大距离
-        var maxLeft = this.boxWidth - this.glassWidth;
-
-        //放大镜在竖直方向上移动的最大距离
-        var maxTop = this.boxHeight - this.glassHeight;
-
-        //限制放大镜在水平方向上的范围
-        if (this.glassLeft < 0) {
-          this.glassLeft = 0;
-        } else if (this.glassLeft > maxLeft) {
-          this.glassLeft = maxLeft;
-        }
-
-        //限制放大镜在竖直方向上的范围
-        if (this.glassTop < 0) {
-          this.glassTop = 0;
-        } else if (this.glassTop > maxTop) {
-          this.glassTop = maxTop;
-        }
-
-        //计算大图移动的位置
-        this.bigLeft = -this.glassLeft * this.bigWidth / this.boxWidth;
-        this.bigTop = -this.glassTop * this.bigHeight / this.boxHeight;
+      // 商品图片数据
+      prodImgData: {
+        bigImage: ['./static/images/bigpad1.jpg', './static/images/bigpad2.jpg', './static/images/bigpad3.jpg',
+          './static/images/bigpad4.jpg', './static/images/bigpad5.jpg'],
+        middleImage: ['./static/images/middlepad1.jpg', './static/images/middlepad2.jpg', './static/images/middlepad3.jpg',
+          'static/images/middlepad4.jpg', 'static/images/middlepad5.jpg'],
+        smallImage: ['./static/images/smallipad1.jpg', './static/images/smallipad2.jpg', './static/images/smallipad3.jpg',
+          './static/images/smallipad4.jpg', './static/images/smallipad5.jpg']
       },
 
-      //获得元素最左端到网页最左端的距离
-      getElementLeft(element) {
-        var actualLeft = element.offsetLeft;
-        var current = element.offsetParent;
-        while (current !== null) {
-          actualLeft += current.offsetLeft;
-          current = current.offsetParent;
-        }
-        return actualLeft;
-      },
+      // 当前选中的索引
+      curIndex: 0,
 
-      //获得元素最顶端到网页最顶端的距离
-      getElementTop(element) {
-        var actualTop = element.offsetTop;
-        var current = element.offsetParent;
-        while (current !== null) {
-          actualTop += current.offsetTop;
-          current = current.offsetParent;
-        }
-        return actualTop;
-      }
+      // 是否显示大图
+      isShow: false,
+
+      // middle-box的宽度和高度
+      boxWidth: 280,
+      boxHeight: 280,
+
+      // middle-box相对于浏览器窗口的偏移
+      boxOffsetLeft: 0,
+      boxOffsetTop: 0,
+
+      // 放大镜的宽度和高度
+      glassWidth: 100,
+      glassHeight: 100,
+
+      // 放大镜的位置
+      glassLeft: 0,
+      glassTop: 0,
+
+      // 大图的宽度和高度
+      bigWidth: 800,
+      bigHeight: 800,
+
+      // 大图的位置
+      bigLeft: 0,
+      bigTop: 0
     }
-  };
+  },
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      // 获得middle-box到浏览器窗口最左端的距离
+      this.boxOffsetLeft = this.getElementLeft(document.querySelector('.middle-box'))
+
+      // 获得middle-box到浏览器窗口顶部的距离
+      this.boxOffsetTop = this.getElementTop(document.querySelector('.middle-box'))
+    })
+  },
+
+  methods: {
+
+    // 移动放大镜
+    moveGlass(event) {
+      // 计算放大镜的位置
+      // 放大镜的位置 = 鼠标指针的位置 - middle-box在浏览器上的偏移 - 放大镜宽度的一半
+      this.glassLeft = event.pageX - this.boxOffsetLeft - this.glassWidth / 2
+      this.glassTop = event.pageY - this.boxOffsetTop - this.glassHeight / 2
+
+      // 放大镜在水平方向上移动的最大距离
+      var maxLeft = this.boxWidth - this.glassWidth
+
+      // 放大镜在竖直方向上移动的最大距离
+      var maxTop = this.boxHeight - this.glassHeight
+
+      // 限制放大镜在水平方向上的范围
+      if (this.glassLeft < 0) {
+        this.glassLeft = 0
+      } else if (this.glassLeft > maxLeft) {
+        this.glassLeft = maxLeft
+      }
+
+      // 限制放大镜在竖直方向上的范围
+      if (this.glassTop < 0) {
+        this.glassTop = 0
+      } else if (this.glassTop > maxTop) {
+        this.glassTop = maxTop
+      }
+
+      // 计算大图移动的位置
+      this.bigLeft = -this.glassLeft * this.bigWidth / this.boxWidth
+      this.bigTop = -this.glassTop * this.bigHeight / this.boxHeight
+    },
+
+    // 获得元素最左端到网页最左端的距离
+    getElementLeft(element) {
+      var actualLeft = element.offsetLeft
+      var current = element.offsetParent
+      while (current !== null) {
+        actualLeft += current.offsetLeft
+        current = current.offsetParent
+      }
+      return actualLeft
+    },
+
+    // 获得元素最顶端到网页最顶端的距离
+    getElementTop(element) {
+      var actualTop = element.offsetTop
+      var current = element.offsetParent
+      while (current !== null) {
+        actualTop += current.offsetTop
+        current = current.offsetParent
+      }
+      return actualTop
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .product-image {
     width: 309px;
     position: relative;

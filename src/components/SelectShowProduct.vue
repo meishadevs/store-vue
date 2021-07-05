@@ -19,82 +19,77 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "SelectShowProduct",
+  // 组件名称
+  name: 'SelectShowProduct',
 
-    //获取从父组件中传递过来的数据
-    props: ["curPage", "numProduct"],
+  // 获取从父组件中传递过来的数据
+  props: ['curPage', 'numProduct'],
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //商品列表数据
-        productListData: [],
+      // 商品列表数据
+      productListData: [],
 
-        //每页第一条商品信息的下标
-        productFirstIndex: 0,
+      // 每页第一条商品信息的下标
+      productFirstIndex: 0,
 
-        //当前展示的是第indexPage页商品信息
-        indexPage: 0
-      };
-    },
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-
-        //获得当前展示的是第几页商品信息
-        this.indexPage = this.curPage;
-
-        //获得商品信息
-        this.getProductInfo();
-
-        //监听翻页组件中传递过来的事件
-        this.bus.$on("change-page", (data) => {
-          window.scrollTo(0, 459);
-          this.indexPage = data;
-        });
-      });
-    },
-
-    //监听器
-    watch: {
-
-      //如果indexPage发生改变，这个函数就会调用
-      indexPage() {
-
-        //获得商品信息
-        this.getProductInfo();
-      }
-    },
-
-    methods: {
-
-      //获得商品信息
-      getProductInfo() {
-
-        //计算每页展示的第一条商品信息的下标
-        this.productFirstIndex = (this.indexPage - 1) * this.numProduct;
-
-        //发送get请求，获得商品信息
-        this.jsonp(this.productInfoUrl + this.numProduct + "&startIndex=" + this.productFirstIndex, null, (err, data) => {
-
-          if (err) {
-            console.error("error:", err.message);
-          } else {
-
-            //获得商品列表数据
-            this.productListData = data;
-          }
-        });
-      }
+      // 当前展示的是第indexPage页商品信息
+      indexPage: 0
     }
-  };
+  },
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      // 获得当前展示的是第几页商品信息
+      this.indexPage = this.curPage
+
+      // 获得商品信息
+      this.getProductInfo()
+
+      // 监听翻页组件中传递过来的事件
+      this.bus.$on('change-page', (data) => {
+        window.scrollTo(0, 459)
+        this.indexPage = data
+      })
+    })
+  },
+
+  // 监听器
+  watch: {
+
+    // 如果indexPage发生改变，这个函数就会调用
+    indexPage() {
+      // 获得商品信息
+      this.getProductInfo()
+    }
+  },
+
+  methods: {
+
+    // 获得商品信息
+    getProductInfo() {
+      // 计算每页展示的第一条商品信息的下标
+      this.productFirstIndex = (this.indexPage - 1) * this.numProduct
+
+      // 发送get请求，获得商品信息
+      this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productFirstIndex, null, (err, data) => {
+        if (err) {
+          console.error('error:', err.message)
+        } else {
+          // 获得商品列表数据
+          this.productListData = data
+        }
+      })
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .select-show-product {
     width: 100%;
     height: 536px;

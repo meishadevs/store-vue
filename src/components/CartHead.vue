@@ -37,14 +37,14 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "CartHead"
-  };
+  // 组件名称
+  name: 'CartHead'
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .cart-head {
     width: 100%;
     height: 87px;
@@ -58,7 +58,7 @@
   .cart-head .logo a {
     width: 112px;
     height: 59px;
-    background: url(../../static/images/logo.png) no-repeat;
+    background: url("~@/assets/images/logo.png") no-repeat;
     text-indent: -1000px;
     float: left;
   }

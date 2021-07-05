@@ -5,7 +5,7 @@
   <div class="product-intro">
     <div class="image">
       <a href="javascript:;">
-        <img src="../../static/images/intro.jpg" alt="">
+        <img src="`~@/assets/images/intro.jpg`" alt="">
       </a>
     </div>
     <div class="text-info">
@@ -29,20 +29,20 @@
     </div>
     <div class="hr-45"></div>
     <div class="image-info">
-      <img src="../../static/images/sy.jpg" alt="">
+      <img src="`~@/assets/images/sy.jpg`" alt="">
     </div>
   </div>
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "ProductIntro"
-  };
+  // 组件名称
+  name: 'ProductIntro'
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
   .product-intro .image {
     margin: 30px 0;

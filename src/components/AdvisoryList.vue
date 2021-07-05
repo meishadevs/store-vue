@@ -28,81 +28,77 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "AdvisoryList",
+  // 组件名称
+  name: 'AdvisoryList',
 
-    //获取从父组件中传递过来的数据
-    props: ["curPage", "numAdvisory"],
+  // 获取从父组件中传递过来的数据
+  props: ['curPage', 'numAdvisory'],
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //商品咨询列表
-        advisoryListData: [],
+      // 商品咨询列表
+      advisoryListData: [],
 
-        //每页第一条商品咨询信息的下标
-        advisoryFirstIndex: 0,
+      // 每页第一条商品咨询信息的下标
+      advisoryFirstIndex: 0,
 
-        //当前展示的是第indexPage页商品咨询信息
-        indexPage: 0
-      };
-    },
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-
-        //获得当前展示的是第几页商品信息
-        this.indexPage = this.curPage;
-
-        //获得商品咨询信息
-        this.getAdvisoryInfo();
-
-        //监听翻页组件中传递过来的事件
-        this.bus.$on("change-page", (page) => {
-          window.scrollTo(0, 1050);
-          this.indexPage = page;
-        });
-      });
-    },
-
-    //监听器
-    watch: {
-
-      //如果indexPage发生改变，这个函数就会调用
-      indexPage() {
-
-        //获得商品咨询信息
-        this.getAdvisoryInfo();
-      }
-    },
-
-    methods: {
-
-      //获得商品咨询信息
-      getAdvisoryInfo() {
-
-        //计算每页展示的第一条商品咨询信息的下标
-        this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory;
-
-        //发送get请求，获得商品咨询信息
-        this.jsonp(this.advisoryInfoUrl + this.numAdvisory + "&startIndex=" + this.advisoryFirstIndex, null, (err, data) => {
-          if (err) {
-            console.error("error:", err.message);
-          } else {
-
-            //获得商品咨询列表数据
-            this.advisoryListData = data;
-          }
-        });
-      }
+      // 当前展示的是第indexPage页商品咨询信息
+      indexPage: 0
     }
-  };
+  },
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      // 获得当前展示的是第几页商品信息
+      this.indexPage = this.curPage
+
+      // 获得商品咨询信息
+      this.getAdvisoryInfo()
+
+      // 监听翻页组件中传递过来的事件
+      this.bus.$on('change-page', (page) => {
+        window.scrollTo(0, 1050)
+        this.indexPage = page
+      })
+    })
+  },
+
+  // 监听器
+  watch: {
+
+    // 如果indexPage发生改变，这个函数就会调用
+    indexPage() {
+      // 获得商品咨询信息
+      this.getAdvisoryInfo()
+    }
+  },
+
+  methods: {
+
+    // 获得商品咨询信息
+    getAdvisoryInfo() {
+      // 计算每页展示的第一条商品咨询信息的下标
+      this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory
+
+      // 发送get请求，获得商品咨询信息
+      this.jsonp(this.advisoryInfoUrl + this.numAdvisory + '&startIndex=' + this.advisoryFirstIndex, null, (err, data) => {
+        if (err) {
+          console.error('error:', err.message)
+        } else {
+          // 获得商品咨询列表数据
+          this.advisoryListData = data
+        }
+      })
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
   /* 咨询列表 */
   .advisory-list {

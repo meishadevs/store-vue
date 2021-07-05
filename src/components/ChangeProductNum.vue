@@ -12,95 +12,89 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from "vuex";
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "ChangeProductNum",
+  // 组件名称
+  name: 'ChangeProductNum',
 
-    //获取从父组件中传过来的数据
-    props: ["limitProductNum"],
+  // 获取从父组件中传过来的数据
+  props: ['limitProductNum'],
 
-    data() {
-      return {
-        timer: null,
+  data() {
+    return {
+      timer: null,
 
-        //用户在输入框中输入的商品数量
-        inputProductNum: 0
-      };
-    },
+      // 用户在输入框中输入的商品数量
+      inputProductNum: 0
+    }
+  },
 
-    computed: mapState([
-      "productNum"
+  computed: mapState([
+    'productNum'
+  ]),
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      // 接收商品数量改变的事件
+      this.bus.$on('change-num', (num) => {
+        this.inputProductNum = num
+      })
+    })
+  },
+
+  methods: {
+    ...mapActions([
+      'setProductNum'
     ]),
 
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
+    // 增加商品数量
+    addProductNum() {
+      if (this.productNum >= this.limitProductNum) {
+        return
+      }
 
-        //接收商品数量改变的事件
-        this.bus.$on("change-num", (num) => {
-          this.inputProductNum = num;
-        });
-      });
+      this.setProductNum(this.productNum + 1)
+      this.inputProductNum = this.productNum
     },
 
-    methods: {
-      ...mapActions([
-        "setProductNum"
-      ]),
-
-      //增加商品数量
-      addProductNum() {
-
-        if (this.productNum >= this.limitProductNum) {
-          return;
-        }
-
-        this.setProductNum(this.productNum + 1);
-        this.inputProductNum = this.productNum;
-      },
-
-      //减少商品数量
-      reduceProductNum() {
-
-        if (this.productNum <= 1) {
-          return;
-        }
-
-        this.setProductNum(this.productNum - 1);
-        this.inputProductNum = this.productNum;
-      },
-
-      changeNum: function () {
-
-        //每两秒钟判断一次
-        setTimeout(() => {
-
-          //如果inputProductNum的值不是数字
-          //如果inputProductNum的值的值为0
-          //如果inputProductNum的值超过了取值范围
-          //如果inputProductNum没有值
-          if (isNaN(this.inputProductNum)
-            || this.inputProductNum === 0
-            || this.inputProductNum.length === 0) {
-            this.inputProductNum = 1;
-          }
-
-          if (this.inputProductNum >= this.limitProductNum) {
-            this.inputProductNum = this.limitProductNum;
-          }
-
-          this.setProductNum(this.inputProductNum);
-
-        }, 2000);
+    // 减少商品数量
+    reduceProductNum() {
+      if (this.productNum <= 1) {
+        return
       }
+
+      this.setProductNum(this.productNum - 1)
+      this.inputProductNum = this.productNum
+    },
+
+    changeNum: function() {
+      // 每两秒钟判断一次
+      setTimeout(() => {
+        // 如果inputProductNum的值不是数字
+        // 如果inputProductNum的值的值为0
+        // 如果inputProductNum的值超过了取值范围
+        // 如果inputProductNum没有值
+        if (isNaN(this.inputProductNum) ||
+            this.inputProductNum === 0 ||
+            this.inputProductNum.length === 0) {
+          this.inputProductNum = 1
+        }
+
+        if (this.inputProductNum >= this.limitProductNum) {
+          this.inputProductNum = this.limitProductNum
+        }
+
+        this.setProductNum(this.inputProductNum)
+      }, 2000)
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .change-product-num {
     margin-right: 1px;
     float: left;

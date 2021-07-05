@@ -45,17 +45,17 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "IndexShowProduct",
+  // 组件名称
+  name: 'IndexShowProduct',
 
-    //获取从父组件中传递过来的数据
-    props: ["productInfo"]
-  };
+  // 获取从父组件中传递过来的数据
+  props: ['productInfo']
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .index-show-product .product-title {
     width: 100%;
     height: 75px;

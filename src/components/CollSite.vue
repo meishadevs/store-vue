@@ -21,33 +21,33 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from "vuex";
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "CollSite",
+  // 组件名称
+  name: 'CollSite',
 
-    computed: mapState([
+  computed: mapState([
 
-      //是否显示蒙版
-      //映射 this.isShowMask 为 store.state.isShowMask
-      "isShowMask"
-    ]),
+    // 是否显示蒙版
+    // 映射 this.isShowMask 为 store.state.isShowMask
+    'isShowMask'
+  ]),
 
-    methods: {
+  methods: {
 
-      //使用对象展开运算符将此对象混入到外部对象中
-      ...mapActions([
+    // 使用对象展开运算符将此对象混入到外部对象中
+    ...mapActions([
 
-        //隐藏模板
-        "hideMask"
-      ])
-    }
-  };
+      // 隐藏模板
+      'hideMask'
+    ])
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .coll-site {
     width: 100%;
     height: 100%;
@@ -97,7 +97,7 @@
   .mask .top .close-dialog {
     width: 20px;
     height: 20px;
-    background: url(../../static/images/icon/cls.gif) no-repeat 0 0;
+    background: url("~@/assets/images/icon/cls.gif") no-repeat 0 0;
     display: inline-block;
   }
 
@@ -107,7 +107,7 @@
     margin: 0 10px 10px;
     padding-left: 50px;
     font-size: 14px;
-    background: url(../../static/images/icon/info.gif) left center no-repeat;
+    background: url("~@/assets/images/icon/info.gif") left center no-repeat;
   }
 
   .mask .bottom {

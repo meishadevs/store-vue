@@ -27,49 +27,49 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from "vuex";
+import { mapState, mapActions } from 'vuex'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "TopBar",
+  // 组件名称
+  name: 'TopBar',
 
-    computed: mapState([
+  computed: mapState([
 
-      //用户名
-      "username",
+    // 用户名
+    'username',
 
-      //是否登录了
-      "isLogin"
+    // 是否登录了
+    'isLogin'
+  ]),
+
+  methods: {
+
+    // 使用对象展开运算符将此对象混入到外部对象中
+    ...mapActions([
+
+      // 显示模板
+      'showMask',
+
+      // 退出
+      'exit',
+
+      // 设置用户名
+      'setUsername',
+
+      'changeLoginStatus'
     ]),
 
-    methods: {
-
-      //使用对象展开运算符将此对象混入到外部对象中
-      ...mapActions([
-
-        //显示模板
-        "showMask",
-
-        //退出
-        "exit",
-
-        //设置用户名
-        "setUsername",
-
-        "changeLoginStatus"
-      ]),
-
-      //退出账户
-      exitAccount() {
-        this.exit();
-        this.$router.push("/");
-      }
+    // 退出账户
+    exitAccount() {
+      this.exit()
+      this.$router.push('/')
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .top-bar {
     width: 100%;
     height: 38px;
@@ -84,7 +84,7 @@
 
   .top-bar .left-area .collection {
     padding-left: 17px;
-    background: url(../../static/images/icon/collection.jpg) left center no-repeat;
+    background: url("~@/assets/images/icon/collection.jpg") left center no-repeat;
     font-size: 12px;
     font-weight: bold;
   }

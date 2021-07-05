@@ -94,99 +94,98 @@
 </template>
 
 <script>
-  import Vue from "vue";
-  import {mapState, mapActions} from "vuex";
-  import SelectAddress from "./SelectAddress";
-  import SelectColor from "./SelectColor";
-  import SelectStyle from "./SelectStyle";
-  import ChangeProductNum from "./ChangeProductNum";
+import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
+import SelectAddress from './SelectAddress'
+import SelectColor from './SelectColor'
+import SelectStyle from './SelectStyle'
+import ChangeProductNum from './ChangeProductNum'
 
-  export default {
+export default {
 
-    //组件名称
-    name: "ShowProinfo",
+  // 组件名称
+  name: 'ShowProinfo',
 
-    //引入外部组件
-    components: {
-      SelectAddress,
-      SelectColor,
-      SelectStyle,
-      ChangeProductNum
-    },
+  // 引入外部组件
+  components: {
+    SelectAddress,
+    SelectColor,
+    SelectStyle,
+    ChangeProductNum
+  },
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //商品信息
-        productInfo: {
+      // 商品信息
+      productInfo: {
 
-          //商品的名称
-          productName: "全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货",
+        // 商品的名称
+        productName: '全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货',
 
-          //商品的价格
-          productPrice: 1999,
+        // 商品的价格
+        productPrice: 1999,
 
-          //商品的数量
-          productNum: 1,
+        // 商品的数量
+        productNum: 1,
 
-          //商品的颜色
-          productColor: "白色",
+        // 商品的颜色
+        productColor: '白色',
 
-          //商品的规格
-          productStyle: "WIFI 16G",
+        // 商品的规格
+        productStyle: 'WIFI 16G',
 
-          //商品限制购买的数量
-          limitProductNum: 200,
+        // 商品限制购买的数量
+        limitProductNum: 200,
 
-          formateMoney: null
-        }
-      };
-    },
-
-    //计算属性
-    computed: mapState([
-      "productNum",
-      "productPrice",
-      "isLogin"
-    ]),
-
-    //初始化
-    mounted() {
-      this.$nextTick(() => {
-
-        //在showProinfo组件创建的钩子函数中监听select-color事件
-        this.bus.$on("select-color", color => {
-          this.productInfo.productColor = color;
-        });
-
-        //在showProinfo组件创建的钩子函数中监听select-style事件
-        this.bus.$on("select-style", style => {
-          this.productInfo.productStyle = style;
-        });
-
-        //设置商品的数量
-        this.setProductNum(this.productInfo.productNum);
-
-        //设置商品的价格
-        this.setProductPrice(this.productInfo.productPrice);
-
-        this.bus.$emit("change-num", this.productNum);
-
-        //获得已经注册的过滤器
-        this.formateMoney = Vue.filter("formateMoney");
-      });
-    },
-
-    methods: {
-      ...mapActions([
-        "setProductNum",
-        "setProductPrice"
-      ])
+        formateMoney: null
+      }
     }
-  };
+  },
+
+  // 计算属性
+  computed: mapState([
+    'productNum',
+    'productPrice',
+    'isLogin'
+  ]),
+
+  // 初始化
+  mounted() {
+    this.$nextTick(() => {
+      // 在showProinfo组件创建的钩子函数中监听select-color事件
+      this.bus.$on('select-color', color => {
+        this.productInfo.productColor = color
+      })
+
+      // 在showProinfo组件创建的钩子函数中监听select-style事件
+      this.bus.$on('select-style', style => {
+        this.productInfo.productStyle = style
+      })
+
+      // 设置商品的数量
+      this.setProductNum(this.productInfo.productNum)
+
+      // 设置商品的价格
+      this.setProductPrice(this.productInfo.productPrice)
+
+      this.bus.$emit('change-num', this.productNum)
+
+      // 获得已经注册的过滤器
+      this.formateMoney = Vue.filter('formateMoney')
+    })
+  },
+
+  methods: {
+    ...mapActions([
+      'setProductNum',
+      'setProductPrice'
+    ])
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .show-proinfo {
     padding: 10px;
   }
@@ -233,7 +232,7 @@
     height: 18px;
     line-height: 18px;
     margin-right: 10px;
-    background: url("../../static/images/icon/hg.jpg") left top no-repeat;
+    background: url("~@/assets/images/icon/hg.jpg") left top no-repeat;
     font-style: normal;
     color: #fff;
     text-indent: 16px;
@@ -298,7 +297,7 @@
     width: 136px;
     height: 48px;
     padding: 0px 0 0 68px;
-    background: url("../../static/images/icon/car1.jpg") 30px center no-repeat;
+    background: url("~@/assets/images/icon/car1.jpg") 30px center no-repeat;
     font: 20px/48px "微软雅黑", "microsoft yahei";
     color: #fff;
     background-color: #F98700;

@@ -1,50 +1,83 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue'
+import Router from 'vue-router'
+import { routes, page404 } from './routers'
+import store from '@/store'
+import { setToken, getToken } from '@/libs/util'
+import config from '@/config'
+const { homeName } = config
 
-Vue.use(VueRouter);
+Vue.use(Router)
 
-export default new VueRouter({
-  routes: [
-    {
-      //跳转到网站首页的路由
-      path: "/",
-      component: r => require.ensure([], () => r(require("../pages/home")), "home")
-    },
-    {
-      //跳转到商品分类页的路由
-      path: "/cate",
-      component: r => require.ensure([], () => r(require("../pages/cate")), "cate")
-    },
-    {
-      //跳转到商品选择页的路由
-      path: "/choose",
-      component: r => require.ensure([], () => r(require("../pages/choose")), "choose")
-    },
-    {
-      //跳转到商品信息展示页的路由
-      path: "/proinfo",
-      component: r => require.ensure([], () => r(require("../pages/proinfo")), "proinfo")
-    },
-    {
-      //跳转到购物车页的路由
-      path: "/cart",
-      component: r => require.ensure([], () => r(require("../pages/cart")), "cart")
-    },
-    {
-      //跳转到注册页的路由
-      path: "/register",
-      component: r => require.ensure([], () => r(require("../pages/register")), "register")
-    },
-    {
-      //跳转到登录页的路由
-      path: "/login",
-      component: r => require.ensure([], () => r(require("../pages/login")), "login")
-    },
-    {
-      //当用户点击加入购物车按钮时判断用户是否登录了
-      //当用户没有登录时通过这个路由跳转到登录页，在登录页登录成功后直接跳转到购物车页
-      path: "/login/:isCart",
-      component: r => require.ensure([], () => r(require("../pages/login")), "login")
+const router = new Router({
+  routes,
+  mode: 'history'
+})
+
+router.$addRoutes = (params) => {
+  router.matcher = new Router({ routes, mode: 'history' }).matcher
+  router.addRoutes(params)
+}
+
+const LOGIN_PAGE_NAME = 'login'
+const NO_LOGIN_ROUTER = ['sms_visit', 'second_visit', 'sms_success']
+
+router.beforeEach((to, from, next) => {
+  const token = getToken()
+
+  // console.log('token:', token)
+  if (token) {
+    if (!store.state.router.hasGetRules) {
+      store.dispatch('authorization').then(rules => {
+        store.dispatch('concatRouters', rules).then(routers => {
+          router.$addRoutes(routers.concat(page404))
+          next({ ...to, replace: true })
+        })
+      })
     }
-  ]
-});
+  }
+
+  if (!token && to.name !== LOGIN_PAGE_NAME) {
+    // 未登录且要跳转的页面不是登录页
+    if (NO_LOGIN_ROUTER.indexOf(to.name) !== -1) {
+      next()
+    } else {
+      next({
+        name: LOGIN_PAGE_NAME // 跳转到登录页
+      })
+    }
+  } else if (!token && to.name === LOGIN_PAGE_NAME) {
+    // 未登陆且要跳转的页面是登录页
+    next() // 跳转
+  } else if (token && to.name === LOGIN_PAGE_NAME) {
+    // 已登录且要跳转的页面是登录页
+    next({
+      name: homeName // 跳转到homeName页
+    })
+  } else {
+    if (store.state.user.hasGetInfo) {
+      next()
+    } else {
+      store.dispatch('getUserInfo').then(user => {
+        next()
+      }).catch(() => {
+        setToken('')
+        next({
+          name: 'login'
+        })
+      })
+    }
+  }
+})
+
+const originalPush = Router.prototype.push
+
+Router.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+  return originalPush.call(this, location).catch(err => err)
+}
+
+router.afterEach(to => {
+  window.scrollTo(0, 0)
+})
+
+export default router

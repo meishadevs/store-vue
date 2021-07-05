@@ -16,109 +16,109 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-    //组件名称
-    name: "CateMenu",
+  // 组件名称
+  name: 'CateMenu',
 
-    data() {
-      return {
+  data() {
+    return {
 
-        //商品分类数据
-        cateData: {
-          "headTitle": ["手机", "相机", "数码"],
-          "cateList": [
-            {
-              "cateTitle": "手机通讯",
-              "cateContent": [
-                "全部手机",
-                "1080P高清",
-                "双卡手机",
-                "拍照神器",
-                "老年手机",
-                "对讲机",
-                "联通专区"
-              ]
-            },
-            {
-              "cateTitle": "数码相机",
-              "cateContent": [
-                "卡片机",
-                "中长焦",
-                "专业便",
-                "携自拍神器",
-                "防水防摔",
-                "一次成像"
-              ]
-            },
-            {
-              "cateTitle": "单反",
-              "cateContent": [
-                "全部",
-                "佳能",
-                "尼康",
-                "宾得",
-                "哈苏"
-              ]
-            },
-            {
-              "cateTitle": "镜头",
-              "cateContent": [
-                "单反镜头",
-                "微单镜头"
-              ]
-            },
-            {
-              "cateTitle": "摄像机",
-              "cateContent": [
-                "全部",
-                "索尼",
-                "松下",
-                "佳能",
-                "三星"
-              ]
-            },
-            {
-              "cateTitle": "摄像配件",
-              "cateContent": [
-                "相机包",
-                "相机电池",
-                "贴膜",
-                "滤镜",
-                "三脚架",
-                "闪光灯",
-                "遮光器",
-                "遥控器",
-                "专业配件",
-                "清洁用品",
-                "望远镜"
-              ]
-            },
-            {
-              "cateTitle": "数码存储",
-              "cateContent": [
-                "刻录盘片",
-                "盘片附件"
-              ]
-            },
-            {
-              "cateTitle": "电子教育",
-              "cateContent": [
-                "电子书",
-                "盒电子词典",
-                "幼儿教育",
-                "智能学习",
-                "录音笔"
-              ]
-            }
-          ]
-        }
-      };
+      // 商品分类数据
+      cateData: {
+        'headTitle': ['手机', '相机', '数码'],
+        'cateList': [
+          {
+            'cateTitle': '手机通讯',
+            'cateContent': [
+              '全部手机',
+              '1080P高清',
+              '双卡手机',
+              '拍照神器',
+              '老年手机',
+              '对讲机',
+              '联通专区'
+            ]
+          },
+          {
+            'cateTitle': '数码相机',
+            'cateContent': [
+              '卡片机',
+              '中长焦',
+              '专业便',
+              '携自拍神器',
+              '防水防摔',
+              '一次成像'
+            ]
+          },
+          {
+            'cateTitle': '单反',
+            'cateContent': [
+              '全部',
+              '佳能',
+              '尼康',
+              '宾得',
+              '哈苏'
+            ]
+          },
+          {
+            'cateTitle': '镜头',
+            'cateContent': [
+              '单反镜头',
+              '微单镜头'
+            ]
+          },
+          {
+            'cateTitle': '摄像机',
+            'cateContent': [
+              '全部',
+              '索尼',
+              '松下',
+              '佳能',
+              '三星'
+            ]
+          },
+          {
+            'cateTitle': '摄像配件',
+            'cateContent': [
+              '相机包',
+              '相机电池',
+              '贴膜',
+              '滤镜',
+              '三脚架',
+              '闪光灯',
+              '遮光器',
+              '遥控器',
+              '专业配件',
+              '清洁用品',
+              '望远镜'
+            ]
+          },
+          {
+            'cateTitle': '数码存储',
+            'cateContent': [
+              '刻录盘片',
+              '盘片附件'
+            ]
+          },
+          {
+            'cateTitle': '电子教育',
+            'cateContent': [
+              '电子书',
+              '盒电子词典',
+              '幼儿教育',
+              '智能学习',
+              '录音笔'
+            ]
+          }
+        ]
+      }
     }
-  };
+  }
+}
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .cate-menu {
     width: 183px;
     border: solid 1px #d7d7d7;
