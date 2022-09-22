@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { routes, page404 } from './routers';
-import store from '@/store';
-import { setToken, getToken } from '@/libs/util';
+import { routes } from './routers';
+import { getToken } from '@/libs/util';
 import config from '@/config';
 const { homeName } = config;
 
@@ -25,51 +24,40 @@ router.$addRoutes = (params) => {
 };
 
 router.beforeEach((to, from, next) => {
+  // 获得当前用户的 token
   const token = getToken();
 
-  console.log('token:', token);
-
+  // 如果当前用户有 token
   if (token) {
-    if (!store.state.router.hasGetRules) {
-      store.dispatch('authorization').then(rules => {
-        store.dispatch('concatRouters', rules).then(routers => {
-          router.$addRoutes(routers.concat(page404));
-          next({ ...to, replace: true });
-        });
-      });
-    }
+    next({ ...to, replace: true });
   }
 
+  // 如果未登录且要跳转的页面不是登录页
   if (!token && to.name !== LOGIN_PAGE_NAME) {
-    // 未登录且要跳转的页面不是登录页
-    if (NO_LOGIN_ROUTER.indexOf(to.name) !== -1) {
+    // 如果要跳转的页面不需要登录，并且要跳转的页面是首页
+    if (NO_LOGIN_ROUTER.includes(to.name) || to.path.includes('home')) {
+      console.log('to.path:', to.path);
+      // 跳转
       next();
     } else {
+      // 跳转到登录页
       next({
-        name: LOGIN_PAGE_NAME // 跳转到登录页
+        name: LOGIN_PAGE_NAME
       });
     }
+
+  // 如果未登陆且要跳转的页面是登录页
   } else if (!token && to.name === LOGIN_PAGE_NAME) {
-    // 未登陆且要跳转的页面是登录页
-    next(); // 跳转
+    // 跳转
+    next();
+  // 已登录且要跳转的页面是登录页
   } else if (token && to.name === LOGIN_PAGE_NAME) {
-    // 已登录且要跳转的页面是登录页
+    // 跳转到 home 页
     next({
-      name: homeName // 跳转到homeName页
+      name: homeName
     });
   } else {
-    if (store.state.user.hasGetInfo) {
-      next();
-    } else {
-      store.dispatch('getUserInfo').then(user => {
-        next();
-      }).catch(() => {
-        setToken('');
-        next({
-          name: 'login'
-        });
-      });
-    }
+    next();
   }
 });
 

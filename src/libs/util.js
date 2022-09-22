@@ -3,20 +3,24 @@ import config from '@/config';
 
 export const TOKEN_KEY = 'token';
 
+// 设置 token
 export const setToken = (token) => {
   Cookies.set(TOKEN_KEY, token, { expires: config.cookieExpires || 1 });
 };
 
+// 获得 token
 export const getToken = () => {
   const token = Cookies.get(TOKEN_KEY);
   if (token) return token;
   else return false;
 };
 
+// 将数据保存在本地
 export const localSave = (key, value) => {
   localStorage.setItem(key, value);
 };
 
+// 读取保存在本地的数据
 export const localRead = (key) => {
   return localStorage.getItem(key) || '';
 };
