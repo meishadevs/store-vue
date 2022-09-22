@@ -1,6 +1,6 @@
 export default {
 
-  // token在Cookie中存储的天数，默认1天 (测试时设置为4分钟)
+  // token 在 Cookie 中存储的天数，默认 1 天
   cookieExpires: 1,
 
   // api 请求基础路径
