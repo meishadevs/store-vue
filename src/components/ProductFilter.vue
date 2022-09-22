@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
 
@@ -114,7 +114,7 @@ export default {
   ]),
 
   methods: {
-    ...mapActions([
+    ...mapMutations([
       'setBrand',
       'setScreenSize',
       'setOperatingSystem',

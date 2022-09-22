@@ -95,7 +95,7 @@
 
 <script>
 import Vue from 'vue';
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 import SelectAddress from './SelectAddress';
 import SelectColor from './SelectColor';
 import SelectStyle from './SelectStyle';
@@ -177,7 +177,7 @@ export default {
   },
 
   methods: {
-    ...mapActions([
+    ...mapMutations([
       'setProductNum',
       'setProductPrice'
     ])

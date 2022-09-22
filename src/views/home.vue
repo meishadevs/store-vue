@@ -34,7 +34,7 @@ import Banner from '../components/Banner';
 import IndexShowProduct from '../components/IndexShowProduct';
 import SiteFoot from '../components/SiteFoot';
 import GoTop from '../components/GoTop';
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
 
@@ -192,7 +192,7 @@ export default {
   methods: {
 
     // 使用对象展开运算符将此对象混入到外部对象中
-    ...mapActions([
+    ...mapMutations([
 
       // 改变当前选中的导航项的索引
       'changeNavIndex'

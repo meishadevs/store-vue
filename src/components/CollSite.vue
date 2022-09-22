@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
 
@@ -38,7 +38,7 @@ export default {
   methods: {
 
     // 使用对象展开运算符将此对象混入到外部对象中
-    ...mapActions([
+    ...mapMutations([
 
       // 隐藏模板
       'hideMask'

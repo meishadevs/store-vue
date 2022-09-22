@@ -1,6 +1,3 @@
-
-<!-- 商品信息展示页的导航栏组件 -->
-
 <template>
   <nav class="proinfo-nav-bar">
     <ul class="nav clearfix">
@@ -39,7 +36,6 @@ export default {
   },
 
   methods: {
-
     // 改变导航项
     changeNavIndex: function(index) {
       this.curIndex = index;

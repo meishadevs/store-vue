@@ -94,7 +94,7 @@ class="icon-password input-password"
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapMutations } from 'vuex';
 import LoginHead from '../components/LoginHead';
 import SiteFoot from '../components/SiteFoot';
 import { checkUsername, checkPassword } from '@/libs/util';
@@ -155,7 +155,7 @@ export default {
 
   methods: {
 
-    ...mapActions([
+    ...mapMutations([
       'changeLoginStatus',
       'setUsername'
     ]),

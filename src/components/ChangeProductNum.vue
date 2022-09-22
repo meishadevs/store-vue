@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
 
@@ -46,7 +46,7 @@ export default {
   },
 
   methods: {
-    ...mapActions([
+    ...mapMutations([
       'setProductNum'
     ]),
 
@@ -115,7 +115,6 @@ export default {
     background-color: #EFEFEF;
     text-align: center;
     cursor: pointer;
-    moz-user-select: -moz-none;
     -moz-user-select: none;
     -o-user-select:none;
     -khtml-user-select:none;

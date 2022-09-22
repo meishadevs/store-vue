@@ -18,7 +18,7 @@
 
 <script>
 import Vue from 'vue';
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
 
@@ -50,7 +50,7 @@ export default {
 
   methods: {
 
-    ...mapActions([
+    ...mapMutations([
       'changeCheckStatus',
       'setCheckContent'
     ]),

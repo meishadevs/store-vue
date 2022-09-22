@@ -115,7 +115,7 @@ class="input-tel"
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 import SelectAddress from './SelectAddress';
 
 export default {
@@ -179,7 +179,7 @@ export default {
 
   methods: {
 
-    ...mapActions([
+    ...mapMutations([
       'changeReceiveStatus'
     ]),
 
