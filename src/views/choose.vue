@@ -40,18 +40,18 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite';
-import TopBar from '../components/TopBar';
-import SiteHead from '../components/SiteHead';
-import NavBar from '../components/NavBar';
-import UserPosition from '../components/UserPosition';
-import ProductCate from '../components/ProductCate';
-import SelectProductList from '../components/SelectProductList';
-import ProductFilter from '../components/ProductFilter';
-import SelectShowProduct from '../components/SelectShowProduct';
-import ChangePage from '../components/ChangePage';
-import SiteFoot from '../components/SiteFoot';
-import GoTop from '../components/GoTop';
+import CollSite from '@/components/CollSite';
+import TopBar from '@/components/TopBar';
+import SiteHead from '@/components/SiteHead';
+import NavBar from '@/components/NavBar';
+import UserPosition from '@/components/UserPosition';
+import ProductCate from '@/components/ProductCate';
+import SelectProductList from '@/components/SelectProductList';
+import ProductFilter from '@/components/ProductFilter';
+import SelectShowProduct from '@/components/SelectShowProduct';
+import ChangePage from '@/components/ChangePage';
+import SiteFoot from '@/components/SiteFoot';
+import GoTop from '@/components/GoTop';
 
 export default {
 

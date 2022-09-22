@@ -95,8 +95,8 @@ class="icon-password input-password"
 
 <script>
 import { mapMutations } from 'vuex';
-import LoginHead from '../components/LoginHead';
-import SiteFoot from '../components/SiteFoot';
+import LoginHead from '@/components/LoginHead';
+import SiteFoot from '@/components/SiteFoot';
 import { checkUsername, checkPassword } from '@/libs/util';
 
 export default {

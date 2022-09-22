@@ -153,8 +153,8 @@ type="checkbox"
 </template>
 
 <script>
-import RegisterHead from '../components/RegisterHead';
-import SiteFoot from '../components/SiteFoot';
+import RegisterHead from '@/components/RegisterHead';
+import SiteFoot from '@/components/SiteFoot';
 import { checkUsername, checkPassword, checkSecondPassword, checkEmail, checkAccept } from '@/libs/util';
 
 export default {

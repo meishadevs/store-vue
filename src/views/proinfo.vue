@@ -36,19 +36,19 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite';
-import TopBar from '../components/TopBar';
-import SiteHead from '../components/SiteHead';
-import NavBar from '../components/NavBar';
-import ProductPosition from '../components/ProductPosition';
-import ProductImage from '../components/ProductImage';
-import ShowProinfo from '../components/showProinfo';
-import ProinfoProductList from '../components/ProinfoProductList';
-import ProinfoNavBar from '../components/ProinfoNavBar';
-import ProductIntro from '../components/ProductIntro';
-import ProductComment from '../components/ProductComment';
-import SiteFoot from '../components/SiteFoot';
-import GoTop from '../components/GoTop';
+import CollSite from '@/components/CollSite';
+import TopBar from '@/components/TopBar';
+import SiteHead from '@/components/SiteHead';
+import NavBar from '@/components/NavBar';
+import ProductPosition from '@/components/ProductPosition';
+import ProductImage from '@/components/ProductImage';
+import ShowProinfo from '@/components/showProinfo';
+import ProinfoProductList from '@/components/ProinfoProductList';
+import ProinfoNavBar from '@/components/ProinfoNavBar';
+import ProductIntro from '@/components/ProductIntro';
+import ProductComment from '@/components/ProductComment';
+import SiteFoot from '@/components/SiteFoot';
+import GoTop from '@/components/GoTop';
 
 export default {
 

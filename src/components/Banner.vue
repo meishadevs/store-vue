@@ -1,24 +1,29 @@
-
-<!-- 轮播图组件 -->
-
 <template>
   <div class="banner" @mouseenter="stopPlay()" @mouseleave="play()">
     <ul class="banner-list">
-      <li v-for="(item, index) in bannerData" :key="index" :class="{ fadeIn: currentIndex == index + 1 }">
+      <li
+        v-for="(item, index) in bannerData"
+        :key="index"
+        :class="{ fadeIn: currentIndex == index + 1 }"
+      >
         <router-link :to="item.url">
-          <img :src="item.imageUrl" alt="轮播图">
+          <img :src="item.imageUrl" alt="轮播图" />
         </router-link>
       </li>
     </ul>
     <ol class="circle-list">
-      <li v-for="(item, index) in bannerData" :key="index" :class="{ current: currentIndex == index + 1 }" @click="currentIndex = index + 1"></li>
+      <li
+        v-for="(item, index) in bannerData"
+        :key="index"
+        :class="{ current: currentIndex == index + 1 }"
+        @click="currentIndex = index + 1"
+      ></li>
     </ol>
   </div>
 </template>
 
 <script>
 export default {
-
   // 组件名称
   name: 'Banner',
 
@@ -26,7 +31,6 @@ export default {
 
   data() {
     return {
-
       // 当前选中的轮播图索引
       currentIndex: 1,
 
@@ -43,7 +47,6 @@ export default {
   },
 
   methods: {
-
     // 播放轮播图
     play() {
       this.timer = setInterval(() => {
@@ -64,57 +67,57 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .banner {
-    width: 811px;
-    height: 320px;
-    position: relative;
-  }
+.banner {
+  width: 811px;
+  height: 320px;
+  position: relative;
+}
 
-  /* 轮播图 */
-  .banner-list li {
-    z-index: 2;
+/* 轮播图 */
+.banner-list li {
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+}
+
+/* 小圆圈 */
+.circle-list {
+  margin-left: -70px;
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+}
+
+.circle-list li {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  float: left;
+}
+
+.circle-list li.current {
+  background-color: #ff7700;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    position: absolute;
   }
-
-  /* 小圆圈 */
-  .circle-list {
-    margin-left: -70px;
-    z-index: 3;
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
+  100% {
+    opacity: 1;
   }
-
-  .circle-list li {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    float: left;
-  }
-
-  .circle-list li.current {
-    background-color: #ff7700;
-  }
-
-  .fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}
 </style>

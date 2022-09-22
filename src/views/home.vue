@@ -25,15 +25,15 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite';
-import TopBar from '../components/TopBar';
-import SiteHead from '../components/SiteHead';
-import NavBar from '../components/NavBar';
-import ProductCateNav from '../components/ProductCateNav';
-import Banner from '../components/Banner';
-import IndexShowProduct from '../components/IndexShowProduct';
-import SiteFoot from '../components/SiteFoot';
-import GoTop from '../components/GoTop';
+import CollSite from '@/components/CollSite';
+import TopBar from '@/components/TopBar';
+import SiteHead from '@/components/SiteHead';
+import NavBar from '@/components/NavBar';
+import ProductCateNav from '@/components/ProductCateNav';
+import Banner from '@/components/Banner';
+import IndexShowProduct from '@/components/IndexShowProduct';
+import SiteFoot from '@/components/SiteFoot';
+import GoTop from '@/components/GoTop';
 import { mapState, mapMutations } from 'vuex';
 
 export default {
