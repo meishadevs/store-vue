@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -66,7 +66,7 @@ export default {
       'changeNavIndex'
     ])
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

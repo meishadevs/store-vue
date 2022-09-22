@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -62,11 +62,11 @@ export default {
 
     // 退出账户
     exitAccount() {
-      this.exit()
-      this.$router.push('/')
+      this.exit();
+      this.$router.push('/');
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

@@ -25,16 +25,16 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite'
-import TopBar from '../components/TopBar'
-import SiteHead from '../components/SiteHead'
-import NavBar from '../components/NavBar'
-import ProductCateNav from '../components/ProductCateNav'
-import Banner from '../components/Banner'
-import IndexShowProduct from '../components/IndexShowProduct'
-import SiteFoot from '../components/SiteFoot'
-import GoTop from '../components/GoTop'
-import { mapState, mapActions } from 'vuex'
+import CollSite from '../components/CollSite';
+import TopBar from '../components/TopBar';
+import SiteHead from '../components/SiteHead';
+import NavBar from '../components/NavBar';
+import ProductCateNav from '../components/ProductCateNav';
+import Banner from '../components/Banner';
+import IndexShowProduct from '../components/IndexShowProduct';
+import SiteFoot from '../components/SiteFoot';
+import GoTop from '../components/GoTop';
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -165,7 +165,7 @@ export default {
           'url': '/proinfo'
         }
       ]
-    }
+    };
   },
 
   // 引入的外部组件
@@ -202,15 +202,15 @@ export default {
   // 初始化
   mounted() {
     this.$nextTick(function() {
-      document.title = '电商网首页'
-      document.body.style.backgroundColor = '#fff'
-      window.scrollTo(0, 0)
+      document.title = '电商网首页';
+      document.body.style.backgroundColor = '#fff';
+      window.scrollTo(0, 0);
 
       // 改变当前选中的导航项的索引
-      this.changeNavIndex(1)
-    })
+      this.changeNavIndex(1);
+    });
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

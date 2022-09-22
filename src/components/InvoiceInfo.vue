@@ -87,40 +87,40 @@ export default {
       isUseInvoice: false,
 
       isShowResult: false
-    }
+    };
   },
 
   methods: {
 
     // 选择发票的类型
     selectInvoiceType(index) {
-      this.invoiceType = this.invoiceTypeData[index]
-      this.isShowInvoiceType = false
+      this.invoiceType = this.invoiceTypeData[index];
+      this.isShowInvoiceType = false;
     },
 
     // 选择发票抬头
     selectInvoiceHeader(index) {
-      this.invoiceHeader = this.invoiceHeaderData[index]
-      this.isShowInvoiceHeader = false
+      this.invoiceHeader = this.invoiceHeaderData[index];
+      this.isShowInvoiceHeader = false;
     },
 
     // 保存发票信息
     saveInvoiceInfo() {
-      this.isShowResult = true
+      this.isShowResult = true;
 
       setTimeout(() => {
-        this.isShowResult = false
-      }, 3000)
+        this.isShowResult = false;
+      }, 3000);
     },
 
     // 取消使用发票
     cancelUseInvoice() {
-      this.invoiceType = '商业零售发票'
-      this.invoiceHeader = '个人'
-      this.invoiceName = ''
+      this.invoiceType = '商业零售发票';
+      this.invoiceHeader = '个人';
+      this.invoiceName = '';
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

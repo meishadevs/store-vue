@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { mapState, mapActions } from 'vuex'
+import Vue from 'vue';
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       formateMoney: null
-    }
+    };
   },
 
   computed: mapState([
@@ -42,10 +42,10 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      this.formateMoney = Vue.filter('formateMoney')
-      this.changeCheckStatus(0)
-      this.setCheckContent('')
-    })
+      this.formateMoney = Vue.filter('formateMoney');
+      this.changeCheckStatus(0);
+      this.setCheckContent('');
+    });
   },
 
   methods: {
@@ -57,32 +57,32 @@ export default {
 
     // 提交订单
     commitOrder() {
-      window.scrollTo(0, 872)
+      window.scrollTo(0, 872);
 
       // 如果用户没有填写收货信息
       if (!this.isReceive) {
-        this.changeCheckStatus(2)
-        this.setCheckContent('请填写收货信息')
-        return
+        this.changeCheckStatus(2);
+        this.setCheckContent('请填写收货信息');
+        return;
       }
 
       // 如果用户没有选择支付方式
       if (this.payMethod === 0) {
-        this.changeCheckStatus(2)
-        this.setCheckContent('请选择支付方式')
-        return
+        this.changeCheckStatus(2);
+        this.setCheckContent('请选择支付方式');
+        return;
       }
 
-      this.changeCheckStatus(1)
-      this.setCheckContent('订单已提交')
+      this.changeCheckStatus(1);
+      this.setCheckContent('订单已提交');
 
       setTimeout(() => {
-        this.changeCheckStatus(0)
-        this.setCheckContent('')
-      }, 3000)
+        this.changeCheckStatus(0);
+        this.setCheckContent('');
+      }, 3000);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

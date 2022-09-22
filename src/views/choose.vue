@@ -40,18 +40,18 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite'
-import TopBar from '../components/TopBar'
-import SiteHead from '../components/SiteHead'
-import NavBar from '../components/NavBar'
-import UserPosition from '../components/UserPosition'
-import ProductCate from '../components/ProductCate'
-import SelectProductList from '../components/SelectProductList'
-import ProductFilter from '../components/ProductFilter'
-import SelectShowProduct from '../components/SelectShowProduct'
-import ChangePage from '../components/ChangePage'
-import SiteFoot from '../components/SiteFoot'
-import GoTop from '../components/GoTop'
+import CollSite from '../components/CollSite';
+import TopBar from '../components/TopBar';
+import SiteHead from '../components/SiteHead';
+import NavBar from '../components/NavBar';
+import UserPosition from '../components/UserPosition';
+import ProductCate from '../components/ProductCate';
+import SelectProductList from '../components/SelectProductList';
+import ProductFilter from '../components/ProductFilter';
+import SelectShowProduct from '../components/SelectShowProduct';
+import ChangePage from '../components/ChangePage';
+import SiteFoot from '../components/SiteFoot';
+import GoTop from '../components/GoTop';
 
 export default {
 
@@ -88,24 +88,24 @@ export default {
 
       // 当前展示的第几页商品
       curPage: 1
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      document.title = '商品选择页'
-      document.body.style.backgroundColor = '#f0f0f0'
-      window.scrollTo(0, 0)
+      document.title = '商品选择页';
+      document.body.style.backgroundColor = '#f0f0f0';
+      window.scrollTo(0, 0);
 
       // 获得商品的数量
-      this.getProductNum()
+      this.getProductNum();
 
       // 监听翻页组件中传递过来的事件
       this.bus.$on('change-page', (page) => {
-        this.curPage = page
-      })
-    })
+        this.curPage = page;
+      });
+    });
   },
 
   methods: {
@@ -115,18 +115,18 @@ export default {
       // 发送get请求，获得商品数量
       this.jsonp(this.productNumUrl, null, (err, data) => {
         if (err) {
-          console.error('error:', err.message)
+          console.error('error:', err.message);
         } else {
           // 获得商品的总数
-          this.totalProduct = data
+          this.totalProduct = data;
 
           // 计算一共有多少页
-          this.totalPage = this.totalProduct / this.numProduct
+          this.totalPage = this.totalProduct / this.numProduct;
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

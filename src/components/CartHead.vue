@@ -41,7 +41,7 @@ export default {
 
   // 组件名称
   name: 'CartHead'
-}
+};
 </script>
 
 <style lang="less" scoped>

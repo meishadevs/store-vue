@@ -1,8 +1,8 @@
-import config from '@/config'
+import config from '@/config';
 
-const fileUrl = process.env.NODE_ENV === 'development' ? config.fileUrl.dev : config.fileUrl.pro
-const filePath = fileUrl + '/Common/lodop/'
-var CreatedOKLodop7766 = null
+const fileUrl = process.env.NODE_ENV === 'development' ? config.fileUrl.dev : config.fileUrl.pro;
+const filePath = fileUrl + '/Common/lodop/';
+var CreatedOKLodop7766 = null;
 /* eslint-disable */
 // ====判断是否需要安装CLodop云打印服务器:====
 export function needCLodop() {

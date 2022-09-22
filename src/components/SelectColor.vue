@@ -26,19 +26,19 @@ export default {
 
       // 当前选中的颜色的索引
       curIndex: 0
-    }
+    };
   },
 
   methods: {
     // 选择颜色
     selectColor(index) {
-      this.curIndex = index
+      this.curIndex = index;
 
       // 触发selectColor组件的select-color事件
-      this.bus.$emit('select-color', this.productColor[this.curIndex])
+      this.bus.$emit('select-color', this.productColor[this.curIndex]);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -28,7 +28,7 @@ export default {
 
       // 用户在输入框中输入的商品数量
       inputProductNum: 0
-    }
+    };
   },
 
   computed: mapState([
@@ -40,9 +40,9 @@ export default {
     this.$nextTick(() => {
       // 接收商品数量改变的事件
       this.bus.$on('change-num', (num) => {
-        this.inputProductNum = num
-      })
-    })
+        this.inputProductNum = num;
+      });
+    });
   },
 
   methods: {
@@ -53,21 +53,21 @@ export default {
     // 增加商品数量
     addProductNum() {
       if (this.productNum >= this.limitProductNum) {
-        return
+        return;
       }
 
-      this.setProductNum(this.productNum + 1)
-      this.inputProductNum = this.productNum
+      this.setProductNum(this.productNum + 1);
+      this.inputProductNum = this.productNum;
     },
 
     // 减少商品数量
     reduceProductNum() {
       if (this.productNum <= 1) {
-        return
+        return;
       }
 
-      this.setProductNum(this.productNum - 1)
-      this.inputProductNum = this.productNum
+      this.setProductNum(this.productNum - 1);
+      this.inputProductNum = this.productNum;
     },
 
     changeNum: function() {
@@ -80,18 +80,18 @@ export default {
         if (isNaN(this.inputProductNum) ||
             this.inputProductNum === 0 ||
             this.inputProductNum.length === 0) {
-          this.inputProductNum = 1
+          this.inputProductNum = 1;
         }
 
         if (this.inputProductNum >= this.limitProductNum) {
-          this.inputProductNum = this.limitProductNum
+          this.inputProductNum = this.limitProductNum;
         }
 
-        this.setProductNum(this.inputProductNum)
-      }, 2000)
+        this.setProductNum(this.inputProductNum);
+      }, 2000);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

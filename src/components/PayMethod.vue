@@ -37,7 +37,7 @@ class="cash-radio"
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -51,7 +51,7 @@ export default {
 
       // 微信图标
       wxIcon: './static/images/icon/weixin.jpg'
-    }
+    };
   },
 
   computed: mapState([
@@ -66,10 +66,10 @@ export default {
 
     // 改变支付方式
     changePayMethod(pay) {
-      this.setPayMethod(pay)
+      this.setPayMethod(pay);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

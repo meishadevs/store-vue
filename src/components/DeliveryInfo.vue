@@ -72,8 +72,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { mapState, mapActions } from 'vuex'
+import Vue from 'vue';
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -93,13 +93,13 @@ export default {
 
       // 商品图片
       productImage: ['./static/images/pro.jpg', './static/images/pro1.jpg']
-    }
+    };
   },
 
   mounted() {
     this.$nextTick(() => {
-      this.formateMoney = Vue.filter('formateMoney')
-    })
+      this.formateMoney = Vue.filter('formateMoney');
+    });
   },
 
   methods: {
@@ -109,11 +109,11 @@ export default {
     ]),
 
     closeDialog() {
-      this.changeCheckStatus(0)
-      this.setCheckContent('')
+      this.changeCheckStatus(0);
+      this.setCheckContent('');
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

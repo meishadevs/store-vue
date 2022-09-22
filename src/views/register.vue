@@ -153,9 +153,9 @@ type="checkbox"
 </template>
 
 <script>
-import RegisterHead from '../components/RegisterHead'
-import SiteFoot from '../components/SiteFoot'
-import { checkUsername, checkPassword, checkSecondPassword, checkEmail, checkAccept } from '@/libs/util'
+import RegisterHead from '../components/RegisterHead';
+import SiteFoot from '../components/SiteFoot';
+import { checkUsername, checkPassword, checkSecondPassword, checkEmail, checkAccept } from '@/libs/util';
 
 export default {
 
@@ -170,10 +170,10 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      document.title = '注册页'
-      document.body.style.backgroundColor = '#fff'
-      window.scrollTo(0, 0)
-    })
+      document.title = '注册页';
+      document.body.style.backgroundColor = '#fff';
+      window.scrollTo(0, 0);
+    });
   },
 
   data() {
@@ -230,7 +230,7 @@ export default {
       resultStatus: -1,
 
       numTime: 3
-    }
+    };
   },
 
   methods: {
@@ -238,48 +238,48 @@ export default {
     // 注册账号
     registerAccount: function() {
       // 获得用户名的检测结果
-      this.usernameStatus = checkUsername(this.username).usernameStatus
-      this.usernameNotice = checkUsername(this.username).usernameNotice
+      this.usernameStatus = checkUsername(this.username).usernameStatus;
+      this.usernameNotice = checkUsername(this.username).usernameNotice;
 
       // 如果用户名检测失败，不往下执行
       if (!checkUsername(this.username).flag) {
-        return
+        return;
       }
 
       // 获得密码的检测结果
-      this.passwordStatus = checkPassword(this.password).passwordStatus
-      this.passwordNotice = checkPassword(this.password).passwordNotice
+      this.passwordStatus = checkPassword(this.password).passwordStatus;
+      this.passwordNotice = checkPassword(this.password).passwordNotice;
 
       // 如果密码检测失败，不往下执行
       if (!checkPassword(this.password).flag) {
-        return
+        return;
       }
 
       // 获得用户第二次输入的密码的检测结果
-      this.secondPasswordStatus = checkSecondPassword(this.password, this.secondPassword).secondPasswordStatus
-      this.secondPasswordNotice = checkSecondPassword(this.password, this.secondPassword).secondPasswordNotice
+      this.secondPasswordStatus = checkSecondPassword(this.password, this.secondPassword).secondPasswordStatus;
+      this.secondPasswordNotice = checkSecondPassword(this.password, this.secondPassword).secondPasswordNotice;
 
       // 如果用户第二次输入的密码检测失败，不往下执行
       if (!checkSecondPassword(this.password, this.secondPassword).flag) {
-        return
+        return;
       }
 
       // 获得邮箱的检测结果
-      this.emailStatus = checkEmail(this.email).emailStatus
-      this.emailNotice = checkEmail(this.email).emailNotice
+      this.emailStatus = checkEmail(this.email).emailStatus;
+      this.emailNotice = checkEmail(this.email).emailNotice;
 
       // 如果用户输入的邮箱检测失败，不往下执行
       if (!checkEmail(this.email).flag) {
-        return
+        return;
       }
 
       // 获得用户是否接受服务条款的检测结果
-      this.acceptStatus = checkAccept(this.isAccept).acceptStatus
-      this.acceptNotice = checkAccept(this.isAccept).acceptNotice
+      this.acceptStatus = checkAccept(this.isAccept).acceptStatus;
+      this.acceptNotice = checkAccept(this.isAccept).acceptNotice;
 
       // 如果用户没有接受服务条款，不往下执行
       if (!checkAccept(this.isAccept).flag) {
-        return
+        return;
       }
 
       // 使用axios发送post请求实现注册
@@ -297,59 +297,59 @@ export default {
       }).then(res => {
         // 注册成功
         if (res.data === 1) {
-          this.resultStatus = 1
+          this.resultStatus = 1;
           let timer = setInterval(() => {
-            this.numTime--
+            this.numTime--;
 
             if (this.numTime <= 0) {
-              clearInterval(timer)
-              this.$router.push('/login')
+              clearInterval(timer);
+              this.$router.push('/login');
             }
-          }, 1000)
+          }, 1000);
 
           // 注册失败
         } else if (res.data === 0) {
-          this.resultStatus = 0
-          this.resultContent = '注册失败'
+          this.resultStatus = 0;
+          this.resultContent = '注册失败';
 
           // 用户名已存在
         } else if (res.data === 2) {
-          this.resultStatus = 2
-          this.resultContent = '用户名已存在'
+          this.resultStatus = 2;
+          this.resultContent = '用户名已存在';
         }
-      })
+      });
     },
 
     // 恢复状态
     recoverStatus() {
       // 如果用户名检测失败
       if (this.usernameStatus !== 1) {
-        this.usernameStatus = 0
-        this.usernameNotice = ''
+        this.usernameStatus = 0;
+        this.usernameNotice = '';
       }
 
       // 如果密码检测失败
       if (this.passwordStatus !== 1) {
-        this.passwordStatus = 0
-        this.passwordNotice = ''
+        this.passwordStatus = 0;
+        this.passwordNotice = '';
       }
 
       // 如果用户第二次输入的密码检测失败
       if (this.secondPasswordStatus !== 1) {
-        this.secondPasswordStatus = 0
-        this.secondPasswordNotice = ''
+        this.secondPasswordStatus = 0;
+        this.secondPasswordNotice = '';
       }
 
       // 如果邮箱检测失败
       if (this.emailStatus !== 1) {
-        this.emailStatus = 0
-        this.emailNotice = ''
+        this.emailStatus = 0;
+        this.emailNotice = '';
       }
 
-      this.acceptStatus = 0
+      this.acceptStatus = 0;
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

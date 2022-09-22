@@ -94,12 +94,12 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { mapState, mapActions } from 'vuex'
-import SelectAddress from './SelectAddress'
-import SelectColor from './SelectColor'
-import SelectStyle from './SelectStyle'
-import ChangeProductNum from './ChangeProductNum'
+import Vue from 'vue';
+import { mapState, mapActions } from 'vuex';
+import SelectAddress from './SelectAddress';
+import SelectColor from './SelectColor';
+import SelectStyle from './SelectStyle';
+import ChangeProductNum from './ChangeProductNum';
 
 export default {
 
@@ -140,7 +140,7 @@ export default {
 
         formateMoney: null
       }
-    }
+    };
   },
 
   // 计算属性
@@ -155,25 +155,25 @@ export default {
     this.$nextTick(() => {
       // 在showProinfo组件创建的钩子函数中监听select-color事件
       this.bus.$on('select-color', color => {
-        this.productInfo.productColor = color
-      })
+        this.productInfo.productColor = color;
+      });
 
       // 在showProinfo组件创建的钩子函数中监听select-style事件
       this.bus.$on('select-style', style => {
-        this.productInfo.productStyle = style
-      })
+        this.productInfo.productStyle = style;
+      });
 
       // 设置商品的数量
-      this.setProductNum(this.productInfo.productNum)
+      this.setProductNum(this.productInfo.productNum);
 
       // 设置商品的价格
-      this.setProductPrice(this.productInfo.productPrice)
+      this.setProductPrice(this.productInfo.productPrice);
 
-      this.bus.$emit('change-num', this.productNum)
+      this.bus.$emit('change-num', this.productNum);
 
       // 获得已经注册的过滤器
-      this.formateMoney = Vue.filter('formateMoney')
-    })
+      this.formateMoney = Vue.filter('formateMoney');
+    });
   },
 
   methods: {
@@ -182,7 +182,7 @@ export default {
       'setProductPrice'
     ])
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

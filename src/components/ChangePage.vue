@@ -43,14 +43,14 @@ export default {
 
       // 当前展示的是第 indexPage 页数据
       indexPage: 1
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      this.indexPage = this.curPage
-    })
+      this.indexPage = this.curPage;
+    });
   },
 
   // 计算属性
@@ -58,23 +58,23 @@ export default {
 
     // 创建数组,保存分页按钮上的数字
     createArrNum(value, totalPage) {
-      var arr = []
+      var arr = [];
       for (let i = 0; i < totalPage - 1; i++) {
-        arr[i] = value + i
+        arr[i] = value + i;
       }
 
-      return arr
+      return arr;
     },
 
     // 实现翻页逻辑
     changePage(indexPage) {
-      this.indexPage = indexPage
+      this.indexPage = indexPage;
 
       // 触发翻页组件中的事件
-      this.bus.$emit('change-page', this.indexPage)
+      this.bus.$emit('change-page', this.indexPage);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

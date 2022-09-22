@@ -28,25 +28,25 @@ export default {
   data() {
     return {
       curIndex: 0
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      this.curIndex = this.selectIndex
-    })
+      this.curIndex = this.selectIndex;
+    });
   },
 
   methods: {
 
     // 改变导航项
     changeNavIndex: function(index) {
-      this.curIndex = index
-      this.bus.$emit('select-nav', this.curIndex)
+      this.curIndex = index;
+      this.bus.$emit('select-nav', this.curIndex);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

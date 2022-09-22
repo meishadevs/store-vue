@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 
 export default {
   // 组件名称
@@ -100,7 +100,7 @@ export default {
 
       // 保存搜索结果
       arrayResult: []
-    }
+    };
   },
 
   computed: {
@@ -109,11 +109,11 @@ export default {
     proNum() {
       // 如果用户登录了
       if (this.isLogin) {
-        return this.productNum
+        return this.productNum;
 
         // 如果用户没登录
       } else {
-        return 0
+        return 0;
       }
     }
   },
@@ -124,29 +124,29 @@ export default {
       // 发送get请求，搜索商品
       this.jsonp(this.taobaoUrl + this.keyWord, null, (err, data) => {
         if (err) {
-          console.error('error:', err.message)
+          console.error('error:', err.message);
         } else {
-          this.arrayResult = data.result
+          this.arrayResult = data.result;
         }
-      })
+      });
     },
 
     // 设置关键字
     setKeyWord(event) {
       // 获得当前选中的标签的value属性值
-      var currentIndex = event.currentTarget.getAttribute('value')
+      var currentIndex = event.currentTarget.getAttribute('value');
 
       // 重置关键字的值
-      this.keyWord = this.arrayResult[currentIndex][0]
-      this.arrayResult = []
+      this.keyWord = this.arrayResult[currentIndex][0];
+      this.arrayResult = [];
     },
 
     // 搜索数据
     searchData() {
-      window.location = this.baiduUrl + '?wd=' + this.keyWord
+      window.location = this.baiduUrl + '?wd=' + this.keyWord;
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

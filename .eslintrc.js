@@ -5,7 +5,7 @@ module.exports = {
     '@vue/standard'
   ],
   rules: {
-    // allow debugger during development
+    // 在生产环境中不允许使用 debugger
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'vue/no-parsing-error': 0,
     'vue/max-attributes-per-line': [2, {
@@ -16,7 +16,7 @@ module.exports = {
       }
     }],
     'standard/object-curly-even-spacing': 0,
-    // 所有的props参数必须设置默认值，暂时禁用
+    // 所有的 props参数必须设置默认值，暂时禁用
     'vue/require-default-prop': 0,
     // 强制vue组件名称采用PascalCase命名
     // "vue/name-property-casing": ["error", "PascalCase"],
@@ -259,8 +259,8 @@ module.exports = {
       'avoidEscape': true,
       'allowTemplateLiterals': true
     }],
-    // 要求或禁止使用分号代替 ASI
-    'semi': [2, 'never'],
+    // 语句末尾需要加分号
+    'semi': [1, 'always'],
     // 强制分号之前和之后使用一致的空格
     'semi-spacing': [2, {
       'before': false,

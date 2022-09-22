@@ -106,7 +106,7 @@ export default {
       // 大图的位置
       bigLeft: 0,
       bigTop: 0
-    }
+    };
   },
 
   // 初始化
@@ -115,13 +115,13 @@ export default {
       // 获得middle-box到浏览器窗口最左端的距离
       this.boxOffsetLeft = this.getElementLeft(
         document.querySelector('.middle-box')
-      )
+      );
 
       // 获得middle-box到浏览器窗口顶部的距离
       this.boxOffsetTop = this.getElementTop(
         document.querySelector('.middle-box')
-      )
-    })
+      );
+    });
   },
 
   methods: {
@@ -129,57 +129,57 @@ export default {
     moveGlass(event) {
       // 计算放大镜的位置
       // 放大镜的位置 = 鼠标指针的位置 - middle-box在浏览器上的偏移 - 放大镜宽度的一半
-      this.glassLeft = event.pageX - this.boxOffsetLeft - this.glassWidth / 2
-      this.glassTop = event.pageY - this.boxOffsetTop - this.glassHeight / 2
+      this.glassLeft = event.pageX - this.boxOffsetLeft - this.glassWidth / 2;
+      this.glassTop = event.pageY - this.boxOffsetTop - this.glassHeight / 2;
 
       // 放大镜在水平方向上移动的最大距离
-      var maxLeft = this.boxWidth - this.glassWidth
+      var maxLeft = this.boxWidth - this.glassWidth;
 
       // 放大镜在竖直方向上移动的最大距离
-      var maxTop = this.boxHeight - this.glassHeight
+      var maxTop = this.boxHeight - this.glassHeight;
 
       // 限制放大镜在水平方向上的范围
       if (this.glassLeft < 0) {
-        this.glassLeft = 0
+        this.glassLeft = 0;
       } else if (this.glassLeft > maxLeft) {
-        this.glassLeft = maxLeft
+        this.glassLeft = maxLeft;
       }
 
       // 限制放大镜在竖直方向上的范围
       if (this.glassTop < 0) {
-        this.glassTop = 0
+        this.glassTop = 0;
       } else if (this.glassTop > maxTop) {
-        this.glassTop = maxTop
+        this.glassTop = maxTop;
       }
 
       // 计算大图移动的位置
-      this.bigLeft = (-this.glassLeft * this.bigWidth) / this.boxWidth
-      this.bigTop = (-this.glassTop * this.bigHeight) / this.boxHeight
+      this.bigLeft = (-this.glassLeft * this.bigWidth) / this.boxWidth;
+      this.bigTop = (-this.glassTop * this.bigHeight) / this.boxHeight;
     },
 
     // 获得元素最左端到网页最左端的距离
     getElementLeft(element) {
-      var actualLeft = element.offsetLeft
-      var current = element.offsetParent
+      var actualLeft = element.offsetLeft;
+      var current = element.offsetParent;
       while (current !== null) {
-        actualLeft += current.offsetLeft
-        current = current.offsetParent
+        actualLeft += current.offsetLeft;
+        current = current.offsetParent;
       }
-      return actualLeft
+      return actualLeft;
     },
 
     // 获得元素最顶端到网页最顶端的距离
     getElementTop(element) {
-      var actualTop = element.offsetTop
-      var current = element.offsetParent
+      var actualTop = element.offsetTop;
+      var current = element.offsetParent;
       while (current !== null) {
-        actualTop += current.offsetTop
-        current = current.offsetParent
+        actualTop += current.offsetTop;
+        current = current.offsetParent;
       }
-      return actualTop
+      return actualTop;
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

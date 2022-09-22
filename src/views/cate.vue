@@ -24,15 +24,15 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite'
-import TopBar from '../components/TopBar'
-import SiteHead from '../components/SiteHead'
-import NavBar from '../components/NavBar'
-import CateMenu from '../components/CateMenu'
-import Banner from '../components/Banner'
-import CateShowProduct from '../components/CateShowProduct'
-import SiteFoot from '../components/SiteFoot'
-import GoTop from '../components/GoTop'
+import CollSite from '../components/CollSite';
+import TopBar from '../components/TopBar';
+import SiteHead from '../components/SiteHead';
+import NavBar from '../components/NavBar';
+import CateMenu from '../components/CateMenu';
+import Banner from '../components/Banner';
+import CateShowProduct from '../components/CateShowProduct';
+import SiteFoot from '../components/SiteFoot';
+import GoTop from '../components/GoTop';
 
 export default {
 
@@ -199,18 +199,18 @@ export default {
           'url': '/proinfo'
         }
       ]
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(function() {
-      document.title = '商品分类页'
-      document.body.style.backgroundColor = '#fff'
-      window.scrollTo(0, 0)
-    })
+      document.title = '商品分类页';
+      document.body.style.backgroundColor = '#fff';
+      window.scrollTo(0, 0);
+    });
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

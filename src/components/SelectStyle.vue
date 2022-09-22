@@ -33,19 +33,19 @@ export default {
 
       // 当前选中的产品款式的索引
       curIndex: 0
-    }
+    };
   },
 
   methods: {
     // 选择款式
     selectStyle(index) {
-      this.curIndex = index
+      this.curIndex = index;
 
       // 触发selectStyle组件的select-style事件
-      this.bus.$emit('select-style', this.productStyle[this.curIndex])
+      this.bus.$emit('select-style', this.productStyle[this.curIndex]);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

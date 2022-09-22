@@ -60,8 +60,8 @@
 </template>
 
 <script>
-import AdvisoryList from './AdvisoryList'
-import ChangePage from './ChangePage'
+import AdvisoryList from './AdvisoryList';
+import ChangePage from './ChangePage';
 
 export default {
 
@@ -87,20 +87,20 @@ export default {
 
       // 当前展示的第几页商品咨询
       curPage: 1
-    }
+    };
   },
 
   // 初始化
   mounted: function() {
     this.$nextTick(() => {
       // 获得商品咨询的数量
-      this.getAdvisoryNum()
+      this.getAdvisoryNum();
 
       // 监听翻页组件中传递过来的事件
       this.bus.$on('change-page', (page) => {
-        this.curPage = page
-      })
-    })
+        this.curPage = page;
+      });
+    });
   },
 
   methods: {
@@ -110,18 +110,18 @@ export default {
       // 发送get请求，获得商品咨询的数量
       this.jsonp(this.advisoryNumUrl, null, (err, data) => {
         if (err) {
-          console.error('error:', err.message)
+          console.error('error:', err.message);
         } else {
           // 获得商品咨询的数量
-          this.totalAdvisory = data
+          this.totalAdvisory = data;
 
           // 计算一共有多少页
-          this.totalPage = this.totalAdvisory / this.numAdvisory
+          this.totalPage = this.totalAdvisory / this.numAdvisory;
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

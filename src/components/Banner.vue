@@ -32,14 +32,14 @@ export default {
 
       // 定时器
       timer: null
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      this.play()
-    })
+      this.play();
+    });
   },
 
   methods: {
@@ -47,20 +47,20 @@ export default {
     // 播放轮播图
     play() {
       this.timer = setInterval(() => {
-        this.currentIndex++
+        this.currentIndex++;
 
         if (this.currentIndex > this.bannerData.length) {
-          this.currentIndex = 1
+          this.currentIndex = 1;
         }
-      }, 3000)
+      }, 3000);
     },
 
     // 停止播放轮播图
     stopPlay() {
-      clearInterval(this.timer)
+      clearInterval(this.timer);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

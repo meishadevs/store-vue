@@ -58,9 +58,9 @@ export default {
           'productPrice': '205.00'
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

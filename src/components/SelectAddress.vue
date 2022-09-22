@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -65,7 +65,7 @@ export default {
       // li标签的样式
       liStyle: '93px',
       liStyle1: '93px'
-    }
+    };
   },
 
   computed: mapState([
@@ -83,31 +83,31 @@ export default {
       // 获得省的数据
       this.getAddressData(1, this.provinceCode, (err, data) => {
         if (err) {
-          return
+          return;
         }
-        this.provinceData = data
-      })
+        this.provinceData = data;
+      });
 
       // 获得市的数据
       this.getAddressData(2, this.provinceCode, (err, data) => {
         if (err) {
-          return
+          return;
         }
 
-        this.cityData = data
-        this.isShowScroll1()
-      })
+        this.cityData = data;
+        this.isShowScroll1();
+      });
 
       // 获得区的数据
       this.getAddressData(3, this.cityCode, (err, data) => {
         if (err) {
-          return
+          return;
         }
 
-        this.areaData = data
-        this.isShowScroll2()
-      })
-    })
+        this.areaData = data;
+        this.isShowScroll2();
+      });
+    });
   },
 
   // 监听器
@@ -118,14 +118,14 @@ export default {
       // 获得市的数据
       this.getAddressData(2, this.provinceCode, (err, data) => {
         if (err) {
-          return
+          return;
         }
 
-        this.cityData = data
-        this.setCityName(this.cityData[0].name)
-        this.setCityCode(this.cityData[0].code)
-        this.isShowScroll1()
-      })
+        this.cityData = data;
+        this.setCityName(this.cityData[0].name);
+        this.setCityCode(this.cityData[0].code);
+        this.isShowScroll1();
+      });
     },
 
     // 如果cityName的值发生变化，调用这个函数
@@ -133,14 +133,14 @@ export default {
       // 获得区的数据
       this.getAddressData(3, this.cityCode, (err, data) => {
         if (err) {
-          return
+          return;
         }
 
-        this.areaData = data
-        this.setAreaName(this.areaData[0].name)
-        this.setAreaCode(this.areaData[0].code)
-        this.isShowScroll2()
-      })
+        this.areaData = data;
+        this.setAreaName(this.areaData[0].name);
+        this.setAreaCode(this.areaData[0].code);
+        this.isShowScroll2();
+      });
     }
   },
 
@@ -157,36 +157,36 @@ export default {
 
     // 选择省份
     selectProvince(provinceName, provinceCode) {
-      this.setProvinceName(provinceName)
-      this.setProvinceCode(provinceCode)
-      this.isShowProvince = false
+      this.setProvinceName(provinceName);
+      this.setProvinceCode(provinceCode);
+      this.isShowProvince = false;
     },
 
     // 选择市
     selectCity(cityName, cityCode) {
-      this.setCityName(cityName)
-      this.setCityCode(cityCode)
-      this.isShowCity = false
+      this.setCityName(cityName);
+      this.setCityCode(cityCode);
+      this.isShowCity = false;
     },
 
     // 选择区
     selectArea(areaName, areaCode) {
-      this.setAreaName(areaName)
-      this.setAreaCode(areaCode)
-      this.isShowArea = false
+      this.setAreaName(areaName);
+      this.setAreaCode(areaCode);
+      this.isShowArea = false;
     },
 
     // 是否显示滚动条
     isShowScroll1() {
       // 如果市的个数小于6个，不显示竖直滚动条
       if (this.cityData.length < 6) {
-        this.ulStyle = 'inherit'
-        this.liStyle = '100%'
+        this.ulStyle = 'inherit';
+        this.liStyle = '100%';
 
         // 如果市的个数大于或等于6个，显示竖直滚动条
       } else {
-        this.ulStyle = 'scroll'
-        this.liStyle = '93px'
+        this.ulStyle = 'scroll';
+        this.liStyle = '93px';
       }
     },
 
@@ -194,13 +194,13 @@ export default {
     isShowScroll2() {
       // 如果区的个数小于6个，不显示竖直滚动条
       if (this.areaData.length < 6) {
-        this.ulStyle1 = 'inherit'
-        this.liStyle1 = '100%'
+        this.ulStyle1 = 'inherit';
+        this.liStyle1 = '100%';
 
         // 如果区的个数大于或等于6个，显示竖直滚动条
       } else {
-        this.ulStyle1 = 'scroll'
-        this.liStyle1 = '93px'
+        this.ulStyle1 = 'scroll';
+        this.liStyle1 = '93px';
       }
     },
 
@@ -212,13 +212,13 @@ export default {
        */
     getAddressData(flag, addressCode, callback) {
       // 请求参数
-      let param = this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode
+      let param = this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode;
 
       // 发送get请求，获得省份数据
-      this.jsonp(param, null, callback)
+      this.jsonp(param, null, callback);
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

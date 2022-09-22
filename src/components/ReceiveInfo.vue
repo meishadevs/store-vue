@@ -115,8 +115,8 @@ class="input-tel"
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
-import SelectAddress from './SelectAddress'
+import { mapState, mapActions } from 'vuex';
+import SelectAddress from './SelectAddress';
 
 export default {
 
@@ -157,20 +157,20 @@ export default {
       noticeContent5: null,
 
       isShowResult: false
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      document.title = '购物车和结算页'
-      document.body.style.backgroundColor = '#fff'
+      document.title = '购物车和结算页';
+      document.body.style.backgroundColor = '#fff';
 
       // 获得并且处理从SelectAddress组件传递过来的自定义事件
       this.bus.$on('select-address', () => {
-        this.noticeStatus1 = 0
-      })
-    })
+        this.noticeStatus1 = 0;
+      });
+    });
   },
 
   computed: mapState([
@@ -185,56 +185,56 @@ export default {
 
     // 提交收货信息
     submitReceiveInfo() {
-      this.noticeStatus1 = 1
+      this.noticeStatus1 = 1;
 
       // 检测用户输入的收货地址是否正确
       if (!this.checkAddress()) {
-        return
+        return;
       }
 
       // 检测用户输入的收货人的姓名是否正确
       if (!this.checkReceiver()) {
-        return
+        return;
       }
 
       // 检测用户输入的手机号码是否正确
       if (!this.checkPhoneNum()) {
-        return
+        return;
       }
 
       // 检测电话号码
       if (!this.checkTelNumber()) {
-        return
+        return;
       }
 
-      this.isShowResult = true
-      this.changeReceiveStatus(true)
+      this.isShowResult = true;
+      this.changeReceiveStatus(true);
 
       setTimeout(() => {
-        this.isShowResult = false
-      }, 3000)
+        this.isShowResult = false;
+      }, 3000);
     },
 
     // 恢复状态
     recoverStatus() {
       if (this.checkAddress() !== 1) {
-        this.noticeStatus2 = 0
-        this.noticeContent2 = ''
+        this.noticeStatus2 = 0;
+        this.noticeContent2 = '';
       }
 
       if (this.checkReceiver() !== 1) {
-        this.noticeStatus3 = 0
-        this.noticeContent3 = ''
+        this.noticeStatus3 = 0;
+        this.noticeContent3 = '';
       }
 
       if (this.checkPhoneNum() !== 1) {
-        this.noticeStatus4 = 0
-        this.noticeContent4 = ''
+        this.noticeStatus4 = 0;
+        this.noticeContent4 = '';
       }
 
       if (this.checkTelNumber() !== 1) {
-        this.noticeStatus5 = 0
-        this.noticeContent5 = ''
+        this.noticeStatus5 = 0;
+        this.noticeContent5 = '';
       }
     },
 
@@ -242,84 +242,84 @@ export default {
     checkAddress: function() {
       // 如果用户没有输入收货地址
       if (this.address === null || this.address === '') {
-        this.noticeStatus2 = 2
-        this.noticeContent2 = '请填写详细的收货地址'
-        return 0
+        this.noticeStatus2 = 2;
+        this.noticeContent2 = '请填写详细的收货地址';
+        return 0;
       }
 
       // 如果用户输入的收货地址不符合规则
       if (this.address.length < 4 || this.address.length > 26) {
-        this.noticeStatus2 = 2
-        this.noticeContent2 = '收货地址的长度应该为4~26个字符'
-        return 0
+        this.noticeStatus2 = 2;
+        this.noticeContent2 = '收货地址的长度应该为4~26个字符';
+        return 0;
       }
 
-      this.noticeStatus2 = 1
-      this.noticeContent2 = ''
-      return 1
+      this.noticeStatus2 = 1;
+      this.noticeContent2 = '';
+      return 1;
     },
 
     // 检测收货人
     checkReceiver: function() {
       // 如果用户没有输入收货人的姓名
       if (this.receiver === null || this.receiver === '') {
-        this.noticeStatus3 = 2
-        this.noticeContent3 = '请填写收货人的姓名'
-        return 0
+        this.noticeStatus3 = 2;
+        this.noticeContent3 = '请填写收货人的姓名';
+        return 0;
       }
 
       // 如果用户输入的收货人的姓名不符合规则
       if (this.receiver.length < 2 || this.receiver.length > 10) {
-        this.noticeStatus3 = 2
-        this.noticeContent3 = '收货人姓名的长度应该为2~10个字符'
-        return 0
+        this.noticeStatus3 = 2;
+        this.noticeContent3 = '收货人姓名的长度应该为2~10个字符';
+        return 0;
       }
 
-      this.noticeStatus3 = 1
-      this.noticeContent3 = ''
-      return 1
+      this.noticeStatus3 = 1;
+      this.noticeContent3 = '';
+      return 1;
     },
 
     // 检测手机号码
     checkPhoneNum() {
       // 如果用户没有输入手机号码
       if (this.phoneNum === null || this.phoneNum === '') {
-        this.noticeStatus4 = 2
-        this.noticeContent4 = '请输入您的手机号码'
-        return 0
+        this.noticeStatus4 = 2;
+        this.noticeContent4 = '请输入您的手机号码';
+        return 0;
       }
 
       if (!(/^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/.test(this.phoneNum))) {
-        this.noticeStatus4 = 2
-        this.noticeContent4 = '您输入的手机号码的格式不正确'
-        return 0
+        this.noticeStatus4 = 2;
+        this.noticeContent4 = '您输入的手机号码的格式不正确';
+        return 0;
       }
 
-      this.noticeStatus4 = 1
-      this.noticeContent4 = ''
-      return 1
+      this.noticeStatus4 = 1;
+      this.noticeContent4 = '';
+      return 1;
     },
 
     // 检测电话号码
     checkTelNumber() {
       if (this.telNum === null || this.telNum === '') {
-        this.noticeStatus5 = 0
-        this.noticeContent5 = ''
-        return 1
+        this.noticeStatus5 = 0;
+        this.noticeContent5 = '';
+        return 1;
       }
 
       if (this.telNum.length < 7 || isNaN(this.telNum)) {
-        this.noticeStatus5 = 2
-        this.noticeContent5 = '您输入的电话号码的格式不正确'
-        return 0
+        this.noticeStatus5 = 2;
+        this.noticeContent5 = '您输入的电话号码的格式不正确';
+        return 0;
       }
 
-      this.noticeStatus5 = 1
-      this.noticeContent5 = ''
-      return 1
+      this.noticeStatus5 = 1;
+      this.noticeContent5 = '';
+      return 1;
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

@@ -39,7 +39,7 @@ export default {
 
   // 组件名称
   name: 'ProductIntro'
-}
+};
 </script>
 
 <style lang="less" scoped>

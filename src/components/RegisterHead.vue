@@ -19,7 +19,7 @@ export default {
 
   // 组件名称
   name: 'RegisterHead'
-}
+};
 </script>
 
 <style lang="less" scoped>

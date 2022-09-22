@@ -24,17 +24,17 @@
 </template>
 
 <script>
-import CollSite from '../components/CollSite'
-import TopBar from '../components/TopBar'
-import CartHead from '../components/CartHead'
-import ReceiveInfo from '../components/ReceiveInfo'
-import PayMethod from '../components/PayMethod'
-import InvoiceInfo from '../components/InvoiceInfo'
-import DeliveryInfo from '../components/DeliveryInfo'
-import OrderSett from '../components/OrderSett'
-import GoTop from '../components/GoTop'
-import SiteFoot from '../components/SiteFoot'
-import { mapState } from 'vuex'
+import CollSite from '../components/CollSite';
+import TopBar from '../components/TopBar';
+import CartHead from '../components/CartHead';
+import ReceiveInfo from '../components/ReceiveInfo';
+import PayMethod from '../components/PayMethod';
+import InvoiceInfo from '../components/InvoiceInfo';
+import DeliveryInfo from '../components/DeliveryInfo';
+import OrderSett from '../components/OrderSett';
+import GoTop from '../components/GoTop';
+import SiteFoot from '../components/SiteFoot';
+import { mapState } from 'vuex';
 
 export default {
 
@@ -68,17 +68,17 @@ export default {
     // 如果用户没有登录
     if (!this.isLogin) {
       // 进入登录页
-      this.$router.push('/login')
-      return
+      this.$router.push('/login');
+      return;
     }
 
     this.$nextTick(() => {
-      document.title = '购物车和结算页'
-      document.body.style.backgroundColor = '#fff'
-      window.scrollTo(0, 0)
-    })
+      document.title = '购物车和结算页';
+      document.body.style.backgroundColor = '#fff';
+      window.scrollTo(0, 0);
+    });
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

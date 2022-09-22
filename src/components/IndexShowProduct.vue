@@ -52,7 +52,7 @@ export default {
 
   // 获取从父组件中传递过来的数据
   props: ['productInfo']
-}
+};
 </script>
 
 <style lang="less" scoped>

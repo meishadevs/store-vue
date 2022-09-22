@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 
 export default {
 
@@ -91,18 +91,18 @@ export default {
           'content': ['双卡单4G', '双卡双4G', '电信4G', '移动4G', '联通4G']
         }
       ]
-    }
+    };
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      this.setBrand(null)
-      this.setScreenSize(null)
-      this.setOperatingSystem(null)
-      this.setRunningMemory(null)
-      this.setNetworkType(null)
-    })
+      this.setBrand(null);
+      this.setScreenSize(null);
+      this.setOperatingSystem(null);
+      this.setRunningMemory(null);
+      this.setNetworkType(null);
+    });
   },
 
   computed: mapState([
@@ -122,7 +122,7 @@ export default {
       'setNetworkType'
     ])
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

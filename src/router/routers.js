@@ -16,7 +16,7 @@
  */
 
 // 需要权限控制动态加载的路由
-export const routerMap = []
+export const routerMap = [];
 
 // 默认加载的路由（不需要权限控制）
 export const routes = [
@@ -68,7 +68,7 @@ export const routes = [
     path: '/login/:isCart',
     component: r => require.ensure([], () => r(require('@/views/login')), 'login')
   }
-]
+];
 
 // 错误处理页面
 export const page404 = [{
@@ -102,4 +102,4 @@ export const page404 = [{
     hideInMenu: true
   },
   component: () => import('@/views/error-page/404.vue')
-}]
+}];

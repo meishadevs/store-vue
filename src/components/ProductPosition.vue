@@ -24,7 +24,7 @@ export default {
 
   // 组件名称
   name: 'ProductPosition'
-}
+};
 </script>
 
 <style lang="less" scoped>

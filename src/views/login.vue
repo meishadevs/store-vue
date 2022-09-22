@@ -94,10 +94,10 @@ class="icon-password input-password"
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import LoginHead from '../components/LoginHead'
-import SiteFoot from '../components/SiteFoot'
-import { checkUsername, checkPassword } from '@/libs/util'
+import { mapActions } from 'vuex';
+import LoginHead from '../components/LoginHead';
+import SiteFoot from '../components/SiteFoot';
+import { checkUsername, checkPassword } from '@/libs/util';
 
 export default {
 
@@ -113,15 +113,14 @@ export default {
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      document.title = '登录页'
-      document.body.style.backgroundColor = '#fff'
-      this.readUserInfo()
-    })
+      document.title = '登录页';
+      document.body.style.backgroundColor = '#fff';
+      this.readUserInfo();
+    });
   },
 
   data() {
     return {
-
       // 用户名
       username: null,
 
@@ -151,7 +150,7 @@ export default {
       numTime: 3,
 
       content: '网站首页'
-    }
+    };
   },
 
   methods: {
@@ -164,22 +163,24 @@ export default {
     // 登录
     login() {
       // 获得用户名的检测结果
-      this.usernameStatus = checkUsername(this.username).usernameStatus
-      this.usernameNotice = checkUsername(this.username).usernameNotice
+      this.usernameStatus = checkUsername(this.username).usernameStatus;
+      this.usernameNotice = checkUsername(this.username).usernameNotice;
 
       // 如果用户名检测失败，不往下执行
       if (!checkUsername(this.username).flag) {
-        return
+        return;
       }
 
       // 获得密码的检测结果
-      this.passwordStatus = checkPassword(this.password).passwordStatus
-      this.passwordNotice = checkPassword(this.password).passwordNotice
+      this.passwordStatus = checkPassword(this.password).passwordStatus;
+      this.passwordNotice = checkPassword(this.password).passwordNotice;
 
       // 如果密码检测失败，不往下执行
       if (!checkPassword(this.password).flag) {
-        return
+        return;
       }
+
+      console.log('登录');
 
       // 使用axios发送post请求，登录
       this.axios({
@@ -193,95 +194,96 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then(res => {
+        console.log('res:', res);
         // 用户名不存在
         if (res.data === 1) {
-          this.resultStatus = 2
-          this.resultContent = '您输入的用户名不存在'
+          this.resultStatus = 2;
+          this.resultContent = '您输入的用户名不存在';
 
           // 密码错误
         } else if (res.data === 2) {
-          this.resultStatus = 2
-          this.resultContent = '您输入的密码与用户名不匹配'
+          this.resultStatus = 2;
+          this.resultContent = '您输入的密码与用户名不匹配';
 
           // 登录成功
         } else if (res.data === 3) {
           // 记住用户名和密码
           if (this.isRemember) {
-            this.saveUserInfo()
+            this.saveUserInfo();
           }
 
           // 标记登录成功
-          this.resultStatus = 1
+          this.resultStatus = 1;
 
           // 改变登录的状态
-          this.changeLoginStatus(true)
+          this.changeLoginStatus(true);
 
           // 设置用户名
-          this.setUsername(this.username)
+          this.setUsername(this.username);
 
           // 登录成功后是否进入购物车页
-          let isCart = parseInt(this.$route.params.isCart)
+          let isCart = parseInt(this.$route.params.isCart);
 
           // 登录成功后进入购物车页
           if (isCart) {
-            this.content = '购物车和结算页'
+            this.content = '购物车和结算页';
 
             // 登录成功后进入网站首页
           } else {
-            this.content = '网站首页'
+            this.content = '网站首页';
           }
 
           // 创建定时器
           let timer = setInterval(() => {
-            this.numTime--
+            this.numTime--;
 
             if (this.numTime <= 0) {
-              clearInterval(timer)
+              clearInterval(timer);
 
               // 登录成功后进入购物车页
               if (isCart) {
-                this.content = '购物车和结算页'
-                this.$router.push('/cart')
+                this.content = '购物车和结算页';
+                this.$router.push('/cart');
 
                 // 登录成功后进入网站首页
               } else {
-                this.content = '网站首页'
-                this.$router.push('/')
+                this.content = '网站首页';
+                this.$router.push('/');
               }
             }
-          }, 1000)
+          }, 1000);
         }
-      })
+      });
     },
 
     // 恢复状态
     recoverStatus() {
       // 如果用户名检测失败
       if (this.usernameStatus !== 1) {
-        this.usernameStatus = 0
-        this.usernameNotice = ''
+        this.usernameStatus = 0;
+        this.usernameNotice = '';
       }
 
       // 如果密码检测失败
       if (this.passwordStatus !== 1) {
-        this.passwordStatus = 0
-        this.passwordNotice = ''
+        this.passwordStatus = 0;
+        this.passwordNotice = '';
       }
     },
 
     // 保存用户信息
     saveUserInfo() {
-      localStorage.setItem('username', this.username)
-      localStorage.setItem('password', this.password)
+      localStorage.setItem('username', this.username);
+      localStorage.setItem('password', this.password);
     },
 
     // 读取用户信息
     readUserInfo() {
-      this.username = localStorage.getItem('username')
-      this.password = localStorage.getItem('password')
+      this.username = localStorage.getItem('username');
+      this.password = localStorage.getItem('password');
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
