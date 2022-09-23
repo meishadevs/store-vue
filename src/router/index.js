@@ -9,7 +9,7 @@ const { homeName } = config;
 const LOGIN_PAGE_NAME = 'login';
 
 // 不要登录的路由
-const NO_LOGIN_ROUTER = [];
+const NO_LOGIN_ROUTER = ['home', 'cate', 'choose', 'register', 'login', 'error_401', 'error_500', 'build', 'error_404'];
 
 Vue.use(Router);
 
@@ -26,8 +26,6 @@ router.$addRoutes = (params) => {
 router.beforeEach((to, from, next) => {
   // 获得当前用户的 token
   const token = getToken();
-
-  console.log('token:', token);
 
   // 如果当前用户有 token
   if (token) {

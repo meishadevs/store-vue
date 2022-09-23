@@ -71,9 +71,6 @@ export const routes = [
   {
     path: '*',
     name: 'error_404',
-    meta: {
-      hideInMenu: true
-    },
     component: () => import('@/views/error-page/404.vue')
   }
 ];
