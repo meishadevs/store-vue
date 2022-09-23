@@ -5,7 +5,7 @@
   <section class="index-show-product">
     <div class="product-title">
       <div class="product-icon fl">
-        <img :src="productInfo.icon" alt="">
+        <img :src="require(`@/assets/images/${productInfo.icon}`)" alt="">
       </div>
       <h3 class="fl">{{ productInfo.title }}</h3>
       <div class="more fr">
@@ -15,14 +15,14 @@
     <div class="product-content clearfix">
       <div class="left-area fl">
         <router-link to="/proinfo">
-          <img :src="productInfo.leftImage" alt="">
+          <img :src="require(`@/assets/images/${productInfo.leftImage}`)" alt="">
         </router-link>
       </div>
       <div class="right-area">
         <ul class="product-list-top">
           <li class="product-item" v-for="(product, index) in productInfo.topProduct" :key="index">
             <router-link to="/proinfo">
-              <img :src="product.image" alt="手机">
+              <img :src="require(`@/assets/images/${product.image}`)" alt="手机">
               <h3 class="product-name">{{ product.name }}</h3>
               <p class="price">{{ product.price }}元</p>
             </router-link>
@@ -31,7 +31,7 @@
         <ol class="product-list-bottom">
           <li class="product-item" v-for="(product, index) in productInfo.bottomProduct" :key="index">
             <router-link class="fl" to="/proinfo">
-              <img :src="product.image" alt="三星手机">
+              <img :src="require(`@/assets/images/${product.image}`)" alt="三星手机">
               <div class="product-info fl">
                 <p class="name">{{ product.name }}</p>
                 <p class="price">￥<span>{{ product.price }}</span></p>
