@@ -39,7 +39,7 @@ import { mapState, mapMutations } from 'vuex';
 export default {
 
   // 组件名称
-  name: 'index',
+  name: 'home',
 
   data() {
     return {
@@ -183,32 +183,32 @@ export default {
 
   // 计算属性
   computed: mapState([
-
     // 当前选中的导航项的索引
     // 映射 this.currentNavIndex 为 srore.state.currentNavIndex
     'currentNavIndex'
   ]),
 
-  methods: {
-
-    // 使用对象展开运算符将此对象混入到外部对象中
-    ...mapMutations([
-
-      // 改变当前选中的导航项的索引
-      'changeNavIndex'
-    ])
-  },
-
   // 初始化
   mounted() {
-    this.$nextTick(function() {
-      document.title = '电商网首页';
-      document.body.style.backgroundColor = '#fff';
-      window.scrollTo(0, 0);
+  },
 
+  methods: {
+    // 使用对象展开运算符将此对象混入到外部对象中
+    ...mapMutations([
       // 改变当前选中的导航项的索引
-      this.changeNavIndex(1);
-    });
+      'changeNavIndex'
+    ]),
+
+    initData() {
+      this.$nextTick(function() {
+        document.title = '电商网首页';
+        document.body.style.backgroundColor = '#fff';
+        window.scrollTo(0, 0);
+
+        // 改变当前选中的导航项的索引
+        this.changeNavIndex(1);
+      });
+    }
   }
 };
 </script>
