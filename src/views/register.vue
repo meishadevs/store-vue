@@ -1,6 +1,3 @@
-
-<!-- 电商网站的注册页 -->
-
 <template>
   <div class="register">
     <register-head></register-head>
@@ -31,18 +28,25 @@
               </div>
               <div class="input-item">
                 <input
-class="icon-username input-username"
-                       spellcheck="false"
-                       v-model="username"
-                       :class="{error: usernameStatus == 2}"
-                      @click="usernameStatus = 0">
+                  class="icon-username input-username"
+                  spellcheck="false"
+                  v-model="username"
+                  :class="{ error: usernameStatus == 2 }"
+                  @click="usernameStatus = 0"
+                />
               </div>
             </div>
             <!-- 当用户还没有输入用户名时，提示用户名的格式 s -->
-            <div class="tips" v-if="usernameStatus == 0">3~15个字符，可使用字母、数字、下划线，需以字母开头</div>
+            <div class="tips" v-if="usernameStatus == 0">
+              3~15个字符，可使用字母、数字、下划线，需以字母开头
+            </div>
             <!-- 当用户还没有输入用户名时，提示用户名的格式 e -->
             <!-- 显示用户名的检测结果 s -->
-            <div class="notice-info" v-if="usernameStatus != 0" :class="{success: usernameStatus == 1}">
+            <div
+              class="notice-info"
+              v-if="usernameStatus != 0"
+              :class="{ success: usernameStatus == 1 }"
+            >
               <span class="notice-icon"></span>
               <span class="notice-content">{{ usernameNotice }}</span>
             </div>
@@ -58,15 +62,22 @@ class="icon-username input-username"
               </div>
               <div class="input-item">
                 <input
-class="icon-password input-password"
-                       type="password"
-                        v-model="password"
-                        :class="{error: passwordStatus == 2}"
-                        @click="passwordStatus = 0">
+                  class="icon-password input-password"
+                  type="password"
+                  v-model="password"
+                  :class="{ error: passwordStatus == 2 }"
+                  @click="passwordStatus = 0"
+                />
               </div>
             </div>
-            <div class="tips" v-if="passwordStatus == 0">6~16个字符，区分大小写</div>
-            <div class="notice-info" v-if="passwordStatus != 0" :class="{success: passwordStatus == 1}">
+            <div class="tips" v-if="passwordStatus == 0">
+              6~16个字符，区分大小写
+            </div>
+            <div
+              class="notice-info"
+              v-if="passwordStatus != 0"
+              :class="{ success: passwordStatus == 1 }"
+            >
               <span class="notice-icon"></span>
               <span class="notice-content">{{ passwordNotice }}</span>
             </div>
@@ -81,15 +92,22 @@ class="icon-password input-password"
               </div>
               <div class="input-item">
                 <input
-class="icon-password input-second-password"
-type="password"
-                        v-model="secondPassword"
-                        :class="{error: secondPasswordStatus == 2}"
-                        @click="secondPasswordStatus = 0">
+                  class="icon-password input-second-password"
+                  type="password"
+                  v-model="secondPassword"
+                  :class="{ error: secondPasswordStatus == 2 }"
+                  @click="secondPasswordStatus = 0"
+                />
               </div>
             </div>
-            <div class="tips" v-if="secondPasswordStatus == 0">请再次填写密码</div>
-            <div class="notice-info" v-if="secondPasswordStatus != 0" :class="{success: secondPasswordStatus == 1}">
+            <div class="tips" v-if="secondPasswordStatus == 0">
+              请再次填写密码
+            </div>
+            <div
+              class="notice-info"
+              v-if="secondPasswordStatus != 0"
+              :class="{ success: secondPasswordStatus == 1 }"
+            >
               <span class="notice-icon"></span>
               <span class="notice-content">{{ secondPasswordNotice }}</span>
             </div>
@@ -104,15 +122,20 @@ type="password"
               </div>
               <div class="input-item">
                 <input
-class="input-email"
-                       spellcheck="false"
-                        v-model="email"
-                        :class="{error: emailStatus == 2}"
-                        @click="emailStatus = 0">
+                  class="input-email"
+                  spellcheck="false"
+                  v-model="email"
+                  :class="{ error: emailStatus == 2 }"
+                  @click="emailStatus = 0"
+                />
               </div>
             </div>
             <div class="tips" v-if="emailStatus == 0">填写您的邮箱</div>
-            <div class="notice-info" v-if="emailStatus != 0" :class="{success: emailStatus == 1}">
+            <div
+              class="notice-info"
+              v-if="emailStatus != 0"
+              :class="{ success: emailStatus == 1 }"
+            >
               <span class="notice-icon"></span>
               <span class="notice-content">{{ emailNotice }}</span>
             </div>
@@ -123,10 +146,11 @@ class="input-email"
             <div class="item-content clearfix">
               <div class="checkbox-item">
                 <input
-type="checkbox"
-                       id="agree"
-                        v-model="isAccept"
-                        @click="acceptStatus = 0">
+                  type="checkbox"
+                  id="agree"
+                  v-model="isAccept"
+                  @click="acceptStatus = 0"
+                />
                 <label for="agree">我已阅读并同意</label>
                 <a href="javascript:;">《用户注册协议》</a>
               </div>
@@ -140,7 +164,12 @@ type="checkbox"
           <!-- 注册按钮 s -->
           <li class="submit">
             <div class="item-content">
-              <input type="button" value="立即注册" class="buttonRegister" @click.stop="registerAccount()">
+              <input
+                type="button"
+                value="立即注册"
+                class="buttonRegister"
+                @click.stop="registerAccount()"
+              />
             </div>
           </li>
           <!-- 注册按钮 e -->
@@ -155,10 +184,15 @@ type="checkbox"
 <script>
 import RegisterHead from '@/components/RegisterHead';
 import SiteFoot from '@/components/SiteFoot';
-import { checkUsername, checkPassword, checkSecondPassword, checkEmail, checkAccept } from '@/libs/util';
+import {
+  checkUsername,
+  checkPassword,
+  checkSecondPassword,
+  checkEmail,
+  checkAccept
+} from '@/libs/util';
 
 export default {
-
   // 组件名称
   name: 'register',
 
@@ -178,7 +212,6 @@ export default {
 
   data() {
     return {
-
       // 用户名
       username: null,
 
@@ -234,7 +267,6 @@ export default {
   },
 
   methods: {
-
     // 注册账号
     registerAccount: function() {
       // 获得用户名的检测结果
@@ -257,6 +289,7 @@ export default {
 
       // 获得用户第二次输入的密码的检测结果
       this.secondPasswordStatus = checkSecondPassword(this.password, this.secondPassword).secondPasswordStatus;
+
       this.secondPasswordNotice = checkSecondPassword(this.password, this.secondPassword).secondPasswordNotice;
 
       // 如果用户第二次输入的密码检测失败，不往下执行
@@ -294,7 +327,7 @@ export default {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
-      }).then(res => {
+      }).then((res) => {
         // 注册成功
         if (res.data === 1) {
           this.resultStatus = 1;
@@ -353,163 +386,164 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .register-box {
-    width: 628px;
-    padding-top: 10px;
-    margin: 10px auto;
-    border: solid 1px #ccc;
-  }
+.register-box {
+  width: 628px;
+  padding-top: 10px;
+  margin: 10px auto;
+  border: solid 1px #ccc;
+}
 
-  .register li {
-    height: 70px;
-    vertical-align: top;
-  }
+.register li {
+  height: 70px;
+  vertical-align: top;
+}
 
-  .register li:nth-of-type(5) {
-    height: 38px;
-  }
+.register li:nth-of-type(5) {
+  height: 38px;
+}
 
-  .register-item {
-    width: 190px;
-    height: 38px;
-    font: 14px/38px "宋体", "SimSun";
-    color: #999999;
-    text-align: right;
-    float: left;
-  }
+.register-item {
+  width: 190px;
+  height: 38px;
+  font: 14px/38px "宋体", "SimSun";
+  color: #999999;
+  text-align: right;
+  float: left;
+}
 
-  .register-item i {
-    color: #FF0000;
-    font-style: normal;
-  }
+.register-item i {
+  color: #ff0000;
+  font-style: normal;
+}
 
-  .input-item {
-    float: left;
-  }
+.input-item {
+  float: left;
+}
 
-  .input-item input {
-    width: 263px;
-    height: 36px;
-    line-height: 36px;
-    padding-left: 5px;
-    font-size: 16px;
-    border: solid 1px #ccc;
-  }
+.input-item input {
+  width: 263px;
+  height: 36px;
+  line-height: 36px;
+  padding-left: 5px;
+  font-size: 16px;
+  border: solid 1px #ccc;
+}
 
-  .icon-username {
-    background: url("~@/assets/images/icon/user.jpg") 245px center no-repeat;
-  }
+.icon-username {
+  background: url("~@/assets/images/icon/user.jpg") 245px center no-repeat;
+}
 
-  .icon-password {
-    background: url("~@/assets/images/icon/password.jpg") 245px center no-repeat;
-  }
+.icon-password {
+  background: url("~@/assets/images/icon/password.jpg") 245px center no-repeat;
+}
 
-  .checkbox-item {
-    margin-left: 190px;
-  }
+.checkbox-item {
+  margin-left: 190px;
+}
 
-  .checkbox-item input {
-    position: relative;
-    top: 2px;
-  }
+.checkbox-item input {
+  position: relative;
+  top: 2px;
+}
 
-  .checkbox-item label {
-    color: #333333;
-  }
+.checkbox-item label {
+  color: #333333;
+}
 
-  .checkbox-item a {
-    color: #005AA0;
-  }
+.checkbox-item a {
+  color: #005aa0;
+}
 
-  .submit-item {
-    margin-left: 190px;
-  }
+.submit-item {
+  margin-left: 190px;
+}
 
-  .submit input {
-    width: 263px;
-    height: 52px;
-    margin-left: 190px;
-    margin-top: 10px;
-    font: 22px/52px "微软雅黑", "Microsoft YaHei";
-    color: #fff;
-    text-align: center;
-    background: #69b946;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: transparent;
-    cursor: pointer;
-    display: inline-block;
-  }
+.submit input {
+  width: 263px;
+  height: 52px;
+  margin-left: 190px;
+  margin-top: 10px;
+  font: 22px/52px "微软雅黑", "Microsoft YaHei";
+  color: #fff;
+  text-align: center;
+  background: #69b946;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+}
 
-  .tips {
-    height: 14px;
-    line-height: 14px;
-    margin-left: 190px;
-    padding: 2px 0 6px;
-    color: #999;
-  }
+.tips {
+  height: 14px;
+  line-height: 14px;
+  margin-left: 190px;
+  padding: 2px 0 6px;
+  color: #999;
+}
 
-  .notice-info {
-    margin-top: 3px;
-    margin-left: 190px;
-    color: #e22;
-  }
+.notice-info {
+  margin-top: 3px;
+  margin-left: 190px;
+  color: #e22;
+}
 
-  .notice-info .notice-icon {
-    width: 16px;
-    height: 16px;
-    vertical-align: top;
-    background: url("~@/assets/images/icon/warning-icon.png") -17px -100px no-repeat;
-    display: inline-block;
-  }
+.notice-info .notice-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  background: url("~@/assets/images/icon/warning-icon.png") -17px -100px
+    no-repeat;
+  display: inline-block;
+}
 
-  .item-content .error {
-    border-color: #EE2222;
-  }
+.item-content .error {
+  border-color: #ee2222;
+}
 
-  .success .notice-icon {
-    background-position: 0px -117px;
-  }
+.success .notice-icon {
+  background-position: 0px -117px;
+}
 
-  .success .notice-content {
-    color: #3D882D;
-  }
+.success .notice-content {
+  color: #3d882d;
+}
 
-  .show-result {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 16px;
-    background-color: #ff6d28;
-    color: #fff;
-    position: relative;
-  }
+.show-result {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #ff6d28;
+  color: #fff;
+  position: relative;
+}
 
-  .show-result .close-btn {
-    width: 26px;
-    height: 26px;
-    line-height: 24px;
-    background: #f86621;
-    border-radius: 2px;
-    vertical-align: text-bottom;
-    font-size: 18px;
-    color: #ffcbb3;
-    border: 0;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    outline: none;
-    cursor: pointer;
-    position: absolute;
-    right: 30px;
-    top: 7px;
-  }
+.show-result .close-btn {
+  width: 26px;
+  height: 26px;
+  line-height: 24px;
+  background: #f86621;
+  border-radius: 2px;
+  vertical-align: text-bottom;
+  font-size: 18px;
+  color: #ffcbb3;
+  border: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 7px;
+}
 
-  .show-result .time {
-    color: #000;
-  }
+.show-result .time {
+  color: #000;
+}
 </style>
