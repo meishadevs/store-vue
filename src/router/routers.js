@@ -1,6 +1,11 @@
 // 默认加载的路由
 export const routes = [
   {
+    name: '',
+    path: '/',
+    redirect: '/home'
+  },
+  {
     // 跳转到网站首页的路由
     name: 'home',
     path: '/home',

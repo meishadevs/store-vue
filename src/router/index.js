@@ -27,9 +27,11 @@ router.beforeEach((to, from, next) => {
   // 获得当前用户的 token
   const token = getToken();
 
+  console.log('token:', token);
+
   // 如果当前用户有 token
   if (token) {
-    next({ ...to, replace: true });
+    next();
   }
 
   // 如果未登录且要跳转的页面不是登录页
