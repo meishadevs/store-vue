@@ -9,7 +9,7 @@
         <li v-for="(product, index) in productList.content" :key="index">
           <div class="product-image">
             <a href="javascript:;" @click="GoTop()">
-              <img :src="product.productImage" alt="产品">
+              <img :src="require(`@/assets/images/${product.productImage}`)" alt="产品">
             </a>
           </div>
           <p class="product-name">

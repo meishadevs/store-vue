@@ -28,8 +28,8 @@
             :style="{ width: product.numStar * 13 + 'px' }"
           ></span>
           <span
-class="comment-num"
-href="javascript:;"
+            class="comment-num"
+            href="javascript:;"
             >({{ product.numComment }}条)</span
           >
         </p>

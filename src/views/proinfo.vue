@@ -51,7 +51,6 @@ import SiteFoot from '@/components/SiteFoot';
 import GoTop from '@/components/GoTop';
 
 export default {
-
   // 组件名称
   name: 'proinfo',
 
@@ -74,29 +73,28 @@ export default {
 
   data() {
     return {
-
       // 商品列表
       productList: [
         {
           'title': '同价位',
           'content': [
             {
-              'productImage': './static/images/product1.png',
+              'productImage': 'product1.png',
               'productName': 'Samsung 三星 GALAXY Tab 3 8.0 WLAN版本 T310平板电话',
               'productPrice': '3578.00'
             },
             {
-              'productImage': './static/images/product2.png',
+              'productImage': 'product2.png',
               'productName': 'Samsung 三星 GALAXY Tab 3 8.0 WLAN版本 T310平板电话',
               'productPrice': '3588.00'
             },
             {
-              'productImage': './static/images/product3.png',
+              'productImage': 'product3.png',
               'productName': 'Samsung 三星 GALAXY Tab 3 8.0 WLAN版本 T310平板电话',
               'productPrice': '3588.00'
             },
             {
-              'productImage': './static/images/product4.png',
+              'productImage': 'product4.png',
               'productName': 'Samsung 三星 GALAXY Tab 3 8.0 WLAN版本 T310平板电话',
               'productPrice': '3588.00'
             }
@@ -106,17 +104,17 @@ export default {
           'title': '看了最终买',
           'content': [
             {
-              'productImage': './static/images/product5.png',
+              'productImage': 'product5.png',
               'productName': 'Apple 苹果 iPaad mini 配备 Retina 显示屏 ME280CH/A',
               'productPrice': '3578.00'
             },
             {
-              'productImage': './static/images/product6.png',
+              'productImage': 'product6.png',
               'productName': '某某品牌 配备 Retina 显示屏 IPS',
               'productPrice': '3588.00'
             },
             {
-              'productImage': './static/images/product7.png',
+              'productImage': 'product7.png',
               'productName': '某某品牌 配备 Retina 显示屏 IPS',
               'productPrice': '3588.00'
             }
