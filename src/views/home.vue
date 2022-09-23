@@ -190,6 +190,7 @@ export default {
 
   // 初始化
   mounted() {
+    this.initData();
   },
 
   methods: {
