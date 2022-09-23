@@ -149,19 +149,19 @@ export default {
 
       bannerData: [
         {
-          'imageUrl': this.serverUrl + 'images/banner1.jpg',
+          'imageUrl': this.$baseUrl + '/images/banner1.jpg',
           'url': '/proinfo'
         },
         {
-          'imageUrl': this.serverUrl + 'images/banner2.jpg',
+          'imageUrl': this.$baseUrl + '/images/banner2.jpg',
           'url': '/proinfo'
         },
         {
-          'imageUrl': this.serverUrl + 'images/banner3.jpg',
+          'imageUrl': this.$baseUrl + '/images/banner3.jpg',
           'url': '/proinfo'
         },
         {
-          'imageUrl': this.serverUrl + 'images/banner4.jpg',
+          'imageUrl': this.$baseUrl + '/images/banner4.jpg',
           'url': '/proinfo'
         }
       ]
