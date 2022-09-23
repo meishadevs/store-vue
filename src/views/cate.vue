@@ -183,20 +183,20 @@ export default {
 
       bannerData: [
         {
-          'imageUrl': './static/images/banner/banner1.jpg',
-          'url': '/proinfo'
+          imageUrl: this.$baseUrl + '/images/banner1.jpg',
+          url: '/proinfo'
         },
         {
-          'imageUrl': './static/images/banner/banner2.jpg',
-          'url': '/proinfo'
+          imageUrl: this.$baseUrl + '/images/banner2.jpg',
+          url: '/proinfo'
         },
         {
-          'imageUrl': './static/images/banner/banner3.jpg',
-          'url': '/proinfo'
+          imageUrl: this.$baseUrl + '/images/banner3.jpg',
+          url: '/proinfo'
         },
         {
-          'imageUrl': './static/images/banner/banner4.jpg',
-          'url': '/proinfo'
+          imageUrl: this.$baseUrl + '/images/banner4.jpg',
+          url: '/proinfo'
         }
       ]
     };
