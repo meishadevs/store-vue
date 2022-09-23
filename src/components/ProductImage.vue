@@ -6,7 +6,7 @@
     <div class="description-images">
       <div class="big-box" v-if="isShow">
         <img
-          :src="prodImgData.bigImage[curIndex]"
+          :src="require(`@/assets/images/${prodImgData.bigImage[curIndex]}`)"
           :style="{ left: bigLeft + 'px', top: bigTop + 'px' }"
         />
       </div>
@@ -18,7 +18,7 @@
           @mouseleave="isShow = false"
           @mousemove="moveGlass($event)"
         >
-          <img :src="prodImgData.middleImage[curIndex]" alt="" />
+          <img :src="require(`@/assets/images/${prodImgData.middleImage[curIndex]}`)" alt="" />
           <div
             class="glass"
             v-if="isShow"
@@ -38,7 +38,7 @@
           :class="{ active: curIndex == index }"
           @mouseenter="curIndex = index"
         >
-          <img :src="image" alt="" />
+          <img :src="require(`@/assets/images/${image}`)" alt="" />
         </li>
       </ul>
     </div>
@@ -55,25 +55,25 @@ export default {
       // 商品图片数据
       prodImgData: {
         bigImage: [
-          './static/images/bigpad1.jpg',
-          './static/images/bigpad2.jpg',
-          './static/images/bigpad3.jpg',
-          './static/images/bigpad4.jpg',
-          './static/images/bigpad5.jpg'
+          'bigpad1.jpg',
+          'bigpad2.jpg',
+          'bigpad3.jpg',
+          'bigpad4.jpg',
+          'bigpad5.jpg'
         ],
         middleImage: [
-          './static/images/middlepad1.jpg',
-          './static/images/middlepad2.jpg',
-          './static/images/middlepad3.jpg',
-          'static/images/middlepad4.jpg',
-          'static/images/middlepad5.jpg'
+          'middlepad1.jpg',
+          'middlepad2.jpg',
+          'middlepad3.jpg',
+          'middlepad4.jpg',
+          'middlepad5.jpg'
         ],
         smallImage: [
-          './static/images/smallipad1.jpg',
-          './static/images/smallipad2.jpg',
-          './static/images/smallipad3.jpg',
-          './static/images/smallipad4.jpg',
-          './static/images/smallipad5.jpg'
+          'smallipad1.jpg',
+          'smallipad2.jpg',
+          'smallipad3.jpg',
+          'smallipad4.jpg',
+          'smallipad5.jpg'
         ]
       },
 
