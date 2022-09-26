@@ -30,7 +30,7 @@
                 <input
                   class="icon-username input-username"
                   spellcheck="false"
-                  v-model="username"
+                  v-model="userDetail.userName"
                   :class="{ error: usernameStatus == 2 }"
                   @click="usernameStatus = 0"
                 />
@@ -60,7 +60,7 @@
                 <input
                   class="icon-password input-password"
                   type="password"
-                  v-model="password"
+                  v-model="userDetail.password"
                   :class="{ error: passwordStatus == 2 }"
                   @click="passwordStatus = 0"
                 />
@@ -114,9 +114,9 @@ import { mapMutations } from 'vuex';
 import LoginHead from '@/components/LoginHead';
 import SiteFoot from '@/components/SiteFoot';
 import { checkUsername, checkPassword } from '@/libs/util';
+import { login } from '@/api/user';
 
 export default {
-  // 组件名称
   name: 'login',
 
   // 引入的外部组件
@@ -136,23 +136,25 @@ export default {
 
   data() {
     return {
-      // 用户名
-      username: null,
+      userDetail: {
+        // 用户名
+        userName: '',
+
+        // 密码
+        password: ''
+      },
 
       // 用户名的状态 0:还未检测用户名 1:用户名输入正确 2:用户名输入错误
       usernameStatus: 0,
 
       // 检测用户名时显示的提示信息
-      usernameNotice: null,
-
-      // 密码
-      password: null,
+      usernameNotice: '',
 
       // 密码的状态，0:还未检测密码 1:密码输入正确 2:密码输入错误
       passwordStatus: 0,
 
       // 检测密码时显示的提示信息
-      passwordNotice: null,
+      passwordNotice: '',
 
       // 标记是否记住用户名和密码
       isRemember: false,
@@ -174,47 +176,22 @@ export default {
     // 登录
     login() {
       // 获得用户名的检测结果
-      this.usernameStatus = checkUsername(this.username).usernameStatus;
-      this.usernameNotice = checkUsername(this.username).usernameNotice;
-
-      // 如果用户名检测失败，不往下执行
-      if (!checkUsername(this.username).flag) {
-        return;
-      }
+      this.usernameStatus = checkUsername(this.userDetail.userName).usernameStatus;
+      this.usernameNotice = checkUsername(this.userDetail.userName).usernameNotice;
 
       // 获得密码的检测结果
-      this.passwordStatus = checkPassword(this.password).passwordStatus;
-      this.passwordNotice = checkPassword(this.password).passwordNotice;
+      this.passwordStatus = checkPassword(this.userDetail.password).passwordStatus;
+      this.passwordNotice = checkPassword(this.userDetail.password).passwordNotice;
 
       // 如果密码检测失败，不往下执行
-      if (!checkPassword(this.password).flag) {
+      if (!checkUsername(this.userDetail.userName).flag || !checkPassword(this.userDetail.password).flag) {
         return;
       }
 
-      // 使用axios发送post请求，登录
-      this.axios({
-        method: 'post',
-        url: this.loginUrl,
-        data: this.qs.stringify({
-          username: this.username,
-          password: this.password
-        }),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      }).then((res) => {
-        // 用户名不存在
-        if (res.data === 1) {
-          this.resultStatus = 2;
-          this.resultContent = '您输入的用户名不存在';
+      login(this.userDetail)
+        .then(res => {
+          this.$message.success(res.data.message);
 
-          // 密码错误
-        } else if (res.data === 2) {
-          this.resultStatus = 2;
-          this.resultContent = '您输入的密码与用户名不匹配';
-
-          // 登录成功
-        } else if (res.data === 3) {
           // 记住用户名和密码
           if (this.isRemember) {
             this.saveUserInfo();
@@ -227,7 +204,7 @@ export default {
           this.changeLoginStatus(true);
 
           // 设置用户名
-          this.setUsername(this.username);
+          this.setUsername(this.userDetail.userName);
 
           // 登录成功后是否进入购物车页
           let isCart = parseInt(this.$route.params.isCart);
@@ -260,8 +237,10 @@ export default {
               }
             }
           }, 1000);
-        }
-      });
+        })
+        .catch(error => {
+          this.$message.error(error.message);
+        });
     },
 
     // 恢复状态
@@ -281,14 +260,14 @@ export default {
 
     // 保存用户信息
     saveUserInfo() {
-      localStorage.setItem('username', this.username);
-      localStorage.setItem('password', this.password);
+      localStorage.setItem('username', this.userDetail.userName);
+      localStorage.setItem('password', this.userDetail.password);
     },
 
     // 读取用户信息
     readUserInfo() {
-      this.username = localStorage.getItem('username');
-      this.password = localStorage.getItem('password');
+      this.userDetail.userName = localStorage.getItem('username');
+      this.userDetail.password = localStorage.getItem('password');
     }
   }
 };

@@ -1,5 +1,4 @@
 import axios from '@/libs/api.request';
-import qs from 'qs';
 
 // 注册
 export const register = (userDetail) => {
@@ -11,16 +10,11 @@ export const register = (userDetail) => {
 };
 
 // 登录
-export const login = ({ userName, password }) => {
-  const data = {
-    username: userName,
-    password: password
-  };
-
+export const login = (userDetail) => {
   return axios.request({
     url: '/user/login',
     method: 'post',
-    data: qs.stringify(data)
+    data: userDetail
   });
 };
 
