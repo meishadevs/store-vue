@@ -9,7 +9,7 @@ const { homeName } = config;
 const LOGIN_PAGE_NAME = 'login';
 
 // 不要登录的路由
-const NO_LOGIN_ROUTER = ['home', 'cate', 'choose', 'register', 'login', 'error_401', 'error_500', 'build', 'error_404'];
+const NO_LOGIN_ROUTER = ['home', 'cate', 'choose', 'register', 'login', 'proinfo', 'error_401', 'error_500', 'build', 'error_404'];
 
 Vue.use(Router);
 
