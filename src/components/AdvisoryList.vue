@@ -85,7 +85,7 @@ export default {
       this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory;
 
       // 发送get请求，获得商品咨询信息
-      this.jsonp(this.advisoryInfoUrl + this.numAdvisory + '&startIndex=' + this.advisoryFirstIndex, null, (err, data) => {
+      this.$jsonp(this.advisoryInfoUrl + this.numAdvisory + '&startIndex=' + this.advisoryFirstIndex, null, (err, data) => {
         if (err) {
           console.error('error:', err.message);
         } else {

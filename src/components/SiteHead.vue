@@ -122,7 +122,7 @@ export default {
     // 获取搜索结果
     getSearchResult() {
       // 发送get请求，搜索商品
-      this.jsonp(this.taobaoUrl + this.keyWord, null, (err, data) => {
+      this.$jsonp(this.$taobaoUrl + this.keyWord, null, (err, data) => {
         if (err) {
           console.error('error:', err.message);
         } else {

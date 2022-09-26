@@ -76,7 +76,7 @@ export default {
       this.productFirstIndex = (this.indexPage - 1) * this.numProduct;
 
       // 发送get请求，获得商品信息
-      this.jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productFirstIndex, null, (err, data) => {
+      this.$jsonp(this.productInfoUrl + this.numProduct + '&startIndex=' + this.productFirstIndex, null, (err, data) => {
         if (err) {
           console.error('error:', err.message);
         } else {

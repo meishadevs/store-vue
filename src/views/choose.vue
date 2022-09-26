@@ -113,7 +113,7 @@ export default {
     // 获得商品的数量
     getProductNum() {
       // 发送get请求，获得商品数量
-      this.jsonp(this.productNumUrl, null, (err, data) => {
+      this.$jsonp(this.productNumUrl, null, (err, data) => {
         if (err) {
           console.error('error:', err.message);
         } else {

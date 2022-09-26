@@ -215,7 +215,7 @@ export default {
       let param = this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode;
 
       // 发送get请求，获得省份数据
-      this.jsonp(param, null, callback);
+      this.$jsonp(param, null, callback);
     }
   }
 };

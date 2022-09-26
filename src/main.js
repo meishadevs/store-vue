@@ -23,11 +23,14 @@ const baseUrl = process.env.NODE_ENV === 'development' ? config.baseUrl.dev : co
 Vue.config.productionTip = false;
 
 Vue.prototype.qs = qs;
-Vue.prototype.jsonp = jsonp;
+Vue.prototype.$jsonp = jsonp;
 Vue.prototype.bus = new Vue({});
 
 // 全局注册后端基础路径
 Vue.prototype.$baseUrl = baseUrl;
+
+// 淘宝网商品搜索 url
+Vue.prototype.$taobaoUrl = config.taobaoUrl;
 
 /* eslint-disable no-new */
 new Vue({

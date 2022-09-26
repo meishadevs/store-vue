@@ -108,7 +108,7 @@ export default {
     // 获得商品咨询的数量
     getAdvisoryNum() {
       // 发送get请求，获得商品咨询的数量
-      this.jsonp(this.advisoryNumUrl, null, (err, data) => {
+      this.$jsonp(this.advisoryNumUrl, null, (err, data) => {
         if (err) {
           console.error('error:', err.message);
         } else {
