@@ -32,6 +32,9 @@ Vue.prototype.$baseUrl = baseUrl;
 // 淘宝网商品搜索 url
 Vue.prototype.$taobaoUrl = config.taobaoUrl;
 
+// 百度搜索 url
+Vue.prototype.$baiduUrl = config.baiduUrl;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

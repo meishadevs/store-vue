@@ -143,7 +143,7 @@ export default {
 
     // 搜索数据
     searchData() {
-      window.location = this.baiduUrl + '?wd=' + this.keyWord;
+      window.location = this.$baiduUrl + '?wd=' + this.keyWord;
     }
   }
 };

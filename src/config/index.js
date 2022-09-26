@@ -9,7 +9,11 @@ export default {
     pro: 'http://localhost:8002'
   },
 
+  // 淘宝网商品搜索 url
   taobaoUrl: 'https://suggest.taobao.com/sug?q=',
+
+  // 百度搜索 url
+  baiduUrl: 'http://www.baidu.com/s',
 
   // 默认打开的首页的路由name值，默认为 home
   homeName: 'home'
