@@ -99,34 +99,6 @@ export const checkPassword = (password) => {
   };
 };
 
-// 检测用户第二次输入的密码
-export const checkSecondPassword = (password, secondPassword) => {
-  // 如果用户没有输入密码
-  if (secondPassword === null || secondPassword === '') {
-    return {
-      secondPasswordStatus: 2,
-      secondPasswordNotice: '请再次填写密码',
-      flag: false
-    };
-  }
-
-  // 如果用户两次输入的密码不一样
-  if (password !== secondPassword) {
-    return {
-      secondPasswordStatus: 2,
-      secondPasswordNotice: '两次填写的密码不一致',
-      flag: false
-    };
-  }
-
-  // 用户第二次输入的密码验证成功
-  return {
-    secondPasswordStatus: 1,
-    secondPasswordNotice: '您的密码输入正确',
-    flag: true
-  };
-};
-
 // 检测邮箱
 export const checkEmail = (email) => {
   // 如果用户没有输入邮箱

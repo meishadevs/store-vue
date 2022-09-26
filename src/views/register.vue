@@ -1,21 +1,6 @@
 <template>
   <div class="register">
     <register-head></register-head>
-    <!-- 注册成功时，显示注册结果 s -->
-    <div class="show-result" v-if="resultStatus == 1">
-      注册成功
-      <span class="time">{{ numTime }}</span>
-      秒后跳转到登录页
-    </div>
-    <!-- 注册成功时，显示注册结果 e -->
-    <!-- 注册失败或用户名已存在时，显示注册结果 s -->
-    <div class="show-result" v-if="resultStatus == 0 || resultStatus === 2">
-      <span class="text">{{ resultContent }}</span>
-      <button class="close-btn" @click="resultStatus = -1">
-        <i class="fa fa-times"></i>
-      </button>
-    </div>
-    <!-- 注册失败或用户名已存在时，显示注册结果 e -->
     <section class="register-box">
       <form @click.stop="recoverStatus()">
         <ul class="register">
@@ -185,16 +170,14 @@
 import SiteFoot from '@/components/SiteFoot';
 import RegisterHead from '@/components/RegisterHead';
 import {
-  checkUsername,
-  checkPassword,
-  checkSecondPassword,
   checkEmail,
-  checkAccept
+  checkAccept,
+  checkUsername,
+  checkPassword
 } from '@/libs/util';
 import { register } from '@/api/user';
 
 export default {
-  // 组件名称
   name: 'register',
 
   // 引入的外部组件
@@ -247,26 +230,24 @@ export default {
       acceptStatus: 0,
 
       // 检测用户名时显示的提示信息
-      usernameNotice: null,
+      usernameNotice: '',
 
       // 检测密码时显示的提示信息
-      passwordNotice: null,
+      passwordNotice: '',
 
       // 检测用户第二次输入的密码时显示的提示信息
-      secondPasswordNotice: null,
+      secondPasswordNotice: '',
 
       // 检测邮箱时显示的提示信息
-      emailNotice: null,
+      emailNotice: '',
 
       // 检测是否接受服务条款时显示的提示信息
-      acceptNotice: null,
+      acceptNotice: '',
 
-      resultContent: null,
+      resultContent: '',
 
       // 注册的结果 -1:隐藏注册结果 0:注册失败 1:注册成功 2:用户名已存在
-      resultStatus: -1,
-
-      numTime: 3
+      resultStatus: -1
     };
   },
 
@@ -277,75 +258,42 @@ export default {
       this.usernameStatus = checkUsername(this.userDetail.userName).usernameStatus;
       this.usernameNotice = checkUsername(this.userDetail.userName).usernameNotice;
 
-      // 如果用户名检测失败，不往下执行
-      if (!checkUsername(this.userDetail.userName).flag) {
-        return;
-      }
-
       // 获得密码的检测结果
       this.passwordStatus = checkPassword(this.userDetail.password).passwordStatus;
       this.passwordNotice = checkPassword(this.userDetail.password).passwordNotice;
 
-      // 如果密码检测失败，不往下执行
-      if (!checkPassword(this.userDetail.password).flag) {
-        return;
-      }
-
       // 获得用户第二次输入的密码的检测结果
-      this.secondPasswordStatus = checkSecondPassword(this.userDetail.password, this.userDetail.secondPassword).secondPasswordStatus;
-
-      this.secondPasswordNotice = checkSecondPassword(this.userDetail.password, this.userDetail.secondPassword).secondPasswordNotice;
-
-      // 如果用户第二次输入的密码检测失败，不往下执行
-      if (!checkSecondPassword(this.userDetail.password, this.userDetail.secondPassword).flag) {
-        return;
-      }
+      this.secondPasswordStatus = checkPassword(this.userDetail.secondPassword).passwordStatus;
+      this.secondPasswordNotice = checkPassword(this.userDetail.secondPassword).passwordNotice;
 
       // 获得邮箱的检测结果
       this.emailStatus = checkEmail(this.userDetail.email).emailStatus;
       this.emailNotice = checkEmail(this.userDetail.email).emailNotice;
 
-      // 如果用户输入的邮箱检测失败，不往下执行
-      if (!checkEmail(this.userDetail.email).flag) {
-        return;
-      }
-
       // 获得用户是否接受服务条款的检测结果
       this.acceptStatus = checkAccept(this.userDetail.isAccept).acceptStatus;
       this.acceptNotice = checkAccept(this.userDetail.isAccept).acceptNotice;
 
-      // 如果用户没有接受服务条款，不往下执行
-      if (!checkAccept(this.userDetail.isAccept).flag) {
+      if (
+        !checkUsername(this.userDetail.userName).flag ||
+        !checkPassword(this.userDetail.password).flag ||
+        !checkPassword(this.userDetail.secondPassword).flag ||
+        !checkEmail(this.userDetail.email).flag ||
+        !checkAccept(this.userDetail.isAccept).flag
+      ) {
         return;
       }
 
       register(this.userDetail)
         .then(res => {
-          // 注册成功
-          if (res.data === 1) {
-            this.resultStatus = 1;
-            let timer = setInterval(() => {
-              this.numTime--;
+          this.$message.success(res.data.message);
 
-              if (this.numTime <= 0) {
-                clearInterval(timer);
-                this.$router.push('/login');
-              }
-            }, 1000);
-
-          // 注册失败
-          } else if (res.data === 0) {
-            this.resultStatus = 0;
-            this.resultContent = '注册失败';
-
-          // 用户名已存在
-          } else if (res.data === 2) {
-            this.resultStatus = 2;
-            this.resultContent = '用户名已存在';
-          }
+          this.$router.push({
+            name: 'home'
+          });
         })
         .catch(error => {
-          console.log('error:', error);
+          this.$message.error(error.message);
         });
     },
 

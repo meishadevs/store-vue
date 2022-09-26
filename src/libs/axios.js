@@ -34,7 +34,12 @@ class HttpRequest {
     // 响应拦截
     instance.interceptors.response.use(async(response) => {
       this.destroy(url);
-      return response;
+
+      if (response.data.code === 200) {
+        return response;
+      } else {
+        return Promise.reject(new Error(response.data.message));
+      }
     }, error => {
       // 错误的请求结果处理
       this.destroy(url);
