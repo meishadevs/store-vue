@@ -2,17 +2,11 @@ import axios from '@/libs/api.request';
 import qs from 'qs';
 
 // 注册
-export const register = ({ userName, password, email }) => {
-  const data = {
-    userName,
-    password,
-    email
-  };
-
+export const register = (userDetail) => {
   return axios.request({
     url: '/user/register',
     method: 'post',
-    data: qs.stringify(data)
+    data: userDetail
   });
 };
 

@@ -30,7 +30,7 @@
                 <input
                   class="icon-username input-username"
                   spellcheck="false"
-                  v-model="username"
+                  v-model="userDetail.userName"
                   :class="{ error: usernameStatus == 2 }"
                   @click="usernameStatus = 0"
                 />
@@ -64,7 +64,7 @@
                 <input
                   class="icon-password input-password"
                   type="password"
-                  v-model="password"
+                  v-model="userDetail.password"
                   :class="{ error: passwordStatus == 2 }"
                   @click="passwordStatus = 0"
                 />
@@ -94,7 +94,7 @@
                 <input
                   class="icon-password input-second-password"
                   type="password"
-                  v-model="secondPassword"
+                  v-model="userDetail.secondPassword"
                   :class="{ error: secondPasswordStatus == 2 }"
                   @click="secondPasswordStatus = 0"
                 />
@@ -124,7 +124,7 @@
                 <input
                   class="input-email"
                   spellcheck="false"
-                  v-model="email"
+                  v-model="userDetail.email"
                   :class="{ error: emailStatus == 2 }"
                   @click="emailStatus = 0"
                 />
@@ -148,7 +148,7 @@
                 <input
                   type="checkbox"
                   id="agree"
-                  v-model="isAccept"
+                  v-model="userDetail.isAccept"
                   @click="acceptStatus = 0"
                 />
                 <label for="agree">我已阅读并同意</label>
@@ -168,7 +168,7 @@
                 type="button"
                 value="立即注册"
                 class="buttonRegister"
-                @click.stop="registerAccount()"
+                @click.stop="handleSubmit()"
               />
             </div>
           </li>
@@ -182,8 +182,8 @@
 </template>
 
 <script>
-import RegisterHead from '@/components/RegisterHead';
 import SiteFoot from '@/components/SiteFoot';
+import RegisterHead from '@/components/RegisterHead';
 import {
   checkUsername,
   checkPassword,
@@ -191,6 +191,7 @@ import {
   checkEmail,
   checkAccept
 } from '@/libs/util';
+import { register } from '@/api/user';
 
 export default {
   // 组件名称
@@ -212,20 +213,23 @@ export default {
 
   data() {
     return {
-      // 用户名
-      username: null,
+      // 用户详情
+      userDetail: {
+        // 用户名
+        userName: '',
 
-      // 密码
-      password: null,
+        // 密码
+        password: '',
 
-      // 用户第二次输入的密码
-      secondPassword: null,
+        // 用户第二次输入的密码
+        secondPassword: '',
 
-      // 邮箱
-      email: null,
+        // 邮箱
+        email: '',
 
-      // 是否接受服务条款
-      isAccept: false,
+        // 是否接受服务条款
+        isAccept: false
+      },
 
       // 用户名的状态，0:还未检测用户名 1:用户名输入正确 2用户名输入错误
       usernameStatus: 0,
@@ -268,89 +272,81 @@ export default {
 
   methods: {
     // 注册账号
-    registerAccount: function() {
+    handleSubmit() {
       // 获得用户名的检测结果
-      this.usernameStatus = checkUsername(this.username).usernameStatus;
-      this.usernameNotice = checkUsername(this.username).usernameNotice;
+      this.usernameStatus = checkUsername(this.userDetail.userName).usernameStatus;
+      this.usernameNotice = checkUsername(this.userDetail.userName).usernameNotice;
 
       // 如果用户名检测失败，不往下执行
-      if (!checkUsername(this.username).flag) {
+      if (!checkUsername(this.userDetail.userName).flag) {
         return;
       }
 
       // 获得密码的检测结果
-      this.passwordStatus = checkPassword(this.password).passwordStatus;
-      this.passwordNotice = checkPassword(this.password).passwordNotice;
+      this.passwordStatus = checkPassword(this.userDetail.password).passwordStatus;
+      this.passwordNotice = checkPassword(this.userDetail.password).passwordNotice;
 
       // 如果密码检测失败，不往下执行
-      if (!checkPassword(this.password).flag) {
+      if (!checkPassword(this.userDetail.password).flag) {
         return;
       }
 
       // 获得用户第二次输入的密码的检测结果
-      this.secondPasswordStatus = checkSecondPassword(this.password, this.secondPassword).secondPasswordStatus;
+      this.secondPasswordStatus = checkSecondPassword(this.userDetail.password, this.userDetail.secondPassword).secondPasswordStatus;
 
-      this.secondPasswordNotice = checkSecondPassword(this.password, this.secondPassword).secondPasswordNotice;
+      this.secondPasswordNotice = checkSecondPassword(this.userDetail.password, this.userDetail.secondPassword).secondPasswordNotice;
 
       // 如果用户第二次输入的密码检测失败，不往下执行
-      if (!checkSecondPassword(this.password, this.secondPassword).flag) {
+      if (!checkSecondPassword(this.userDetail.password, this.userDetail.secondPassword).flag) {
         return;
       }
 
       // 获得邮箱的检测结果
-      this.emailStatus = checkEmail(this.email).emailStatus;
-      this.emailNotice = checkEmail(this.email).emailNotice;
+      this.emailStatus = checkEmail(this.userDetail.email).emailStatus;
+      this.emailNotice = checkEmail(this.userDetail.email).emailNotice;
 
       // 如果用户输入的邮箱检测失败，不往下执行
-      if (!checkEmail(this.email).flag) {
+      if (!checkEmail(this.userDetail.email).flag) {
         return;
       }
 
       // 获得用户是否接受服务条款的检测结果
-      this.acceptStatus = checkAccept(this.isAccept).acceptStatus;
-      this.acceptNotice = checkAccept(this.isAccept).acceptNotice;
+      this.acceptStatus = checkAccept(this.userDetail.isAccept).acceptStatus;
+      this.acceptNotice = checkAccept(this.userDetail.isAccept).acceptNotice;
 
       // 如果用户没有接受服务条款，不往下执行
-      if (!checkAccept(this.isAccept).flag) {
+      if (!checkAccept(this.userDetail.isAccept).flag) {
         return;
       }
 
-      // 使用axios发送post请求实现注册
-      this.axios({
-        method: 'post',
-        url: this.registerUrl,
-        data: this.qs.stringify({
-          username: this.username,
-          password: this.password,
-          email: this.email
-        }),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      }).then((res) => {
-        // 注册成功
-        if (res.data === 1) {
-          this.resultStatus = 1;
-          let timer = setInterval(() => {
-            this.numTime--;
+      register(this.userDetail)
+        .then(res => {
+          // 注册成功
+          if (res.data === 1) {
+            this.resultStatus = 1;
+            let timer = setInterval(() => {
+              this.numTime--;
 
-            if (this.numTime <= 0) {
-              clearInterval(timer);
-              this.$router.push('/login');
-            }
-          }, 1000);
+              if (this.numTime <= 0) {
+                clearInterval(timer);
+                this.$router.push('/login');
+              }
+            }, 1000);
 
           // 注册失败
-        } else if (res.data === 0) {
-          this.resultStatus = 0;
-          this.resultContent = '注册失败';
+          } else if (res.data === 0) {
+            this.resultStatus = 0;
+            this.resultContent = '注册失败';
 
           // 用户名已存在
-        } else if (res.data === 2) {
-          this.resultStatus = 2;
-          this.resultContent = '用户名已存在';
-        }
-      });
+          } else if (res.data === 2) {
+            this.resultStatus = 2;
+            this.resultContent = '用户名已存在';
+          }
+        })
+        .catch(error => {
+          console.log('error:', error);
+        });
     },
 
     // 恢复状态

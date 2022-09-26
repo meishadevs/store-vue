@@ -3,34 +3,36 @@ import { getToken, localRead } from '@/libs/util';
 import refreshToken from '@/api/refreshToken';
 
 let isLock = true;
+
 class HttpRequest {
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
     this.queue = {};
   }
+
   getInsideConfig() {
     const config = {
       baseURL: this.baseUrl
     };
     return config;
   }
+
   destroy(url) {
     delete this.queue[url];
   }
+
+  // 请求连接
   interceptors(instance, url) {
-    // 请求拦截
     instance.interceptors.request.use(request => {
-      if (!request.url.includes('/oauth/token') && !request.url.includes('/user/check_password')) {
-        request.headers['Content-type'] = 'application/json;charset=UTF-8';
-        request.headers['X-URL-PATH'] = location.pathname;
-        request.headers['Authorization'] = 'Bearer ' + getToken();
-      }
+      request.headers['Content-type'] = 'application/json;charset=UTF-8';
+
       this.queue[url] = true;
       return request;
     }, error => {
       this.destroy(url);
       return Promise.reject(error);
     });
+
     // 响应拦截
     instance.interceptors.response.use(async(response) => {
       let data = {};

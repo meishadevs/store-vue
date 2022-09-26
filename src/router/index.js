@@ -36,7 +36,6 @@ router.beforeEach((to, from, next) => {
   if (!token && to.name !== LOGIN_PAGE_NAME) {
     // 如果要跳转的页面不需要登录，并且要跳转的页面是首页
     if (NO_LOGIN_ROUTER.includes(to.name) || to.path.includes('home')) {
-      console.log('to.path:', to.path);
       // 跳转
       next();
     } else {

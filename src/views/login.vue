@@ -191,8 +191,6 @@ export default {
         return;
       }
 
-      console.log('登录');
-
       // 使用axios发送post请求，登录
       this.axios({
         method: 'post',
@@ -205,7 +203,6 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then((res) => {
-        console.log('res:', res);
         // 用户名不存在
         if (res.data === 1) {
           this.resultStatus = 2;
