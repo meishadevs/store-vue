@@ -42,6 +42,7 @@ class HttpRequest {
       } else {
         error.message = '链接服务器失败';
       }
+
       return Promise.reject(error.message);
     });
   }
