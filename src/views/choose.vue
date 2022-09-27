@@ -99,7 +99,7 @@ export default {
       window.scrollTo(0, 0);
 
       // 获得商品的数量
-      this.getProductNum();
+      // this.getProductNum();
 
       // 监听翻页组件中传递过来的事件
       this.bus.$on('change-page', (page) => {
