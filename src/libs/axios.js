@@ -36,7 +36,7 @@ class HttpRequest {
       this.destroy(url);
 
       if (response.data.code === 200) {
-        return response;
+        return Promise.resolve(response);
       } else {
         return Promise.reject(new Error(response.data.message));
       }
