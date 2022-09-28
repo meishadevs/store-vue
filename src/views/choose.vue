@@ -55,8 +55,6 @@ import GoTop from '@/components/GoTop';
 import { productCount } from '@/api/product';
 
 export default {
-
-  // 组件名称
   name: 'choose',
 
   // 引入的外部组件
@@ -77,7 +75,6 @@ export default {
 
   data() {
     return {
-
       // 商品总数
       totalProduct: 0,
 

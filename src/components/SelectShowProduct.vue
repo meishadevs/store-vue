@@ -37,7 +37,7 @@ export default {
 
       listQuery: {
         pageNumber: 1,
-        pageSize: 9
+        pageSize: 6
       }
     };
   },
