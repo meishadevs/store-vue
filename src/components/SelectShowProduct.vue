@@ -73,7 +73,6 @@ export default {
     getProductList() {
       productList(this.listQuery)
         .then(res => {
-          console.log('data:', res.data);
           this.productList = res.data.list;
         })
         .catch(error => {
