@@ -1,29 +1,64 @@
-
-<!-- 地址选择组件 -->
-
 <template>
   <div class="select-address">
-    <div class="select" @mouseenter="isShowProvince = true" @mouseleave="isShowProvince = false">
+    <div
+      class="select"
+      @mouseenter="isShowProvince = true"
+      @mouseleave="isShowProvince = false"
+    >
       <h3 class="select-name">{{ provinceName }}</h3>
       <span class="select-triangle"></span>
       <ul class="select-options" v-if="isShowProvince">
-        <li v-for="(province, index) in provinceData" :key="index" @click="selectProvince(province.name, province.code)">
-          {{ province.name }}
+        <li
+          v-for="(item, index) in provinceData"
+          :key="index"
+          @click="selectProvince(item.provinceName, item.provinceCode)"
+        >
+          {{ item.provinceName }}
         </li>
       </ul>
     </div>
-    <div class="select" @mouseenter="isShowCity = true" @mouseleave="isShowCity = false">
+    <div
+      class="select"
+      @mouseenter="isShowCity = true"
+      @mouseleave="isShowCity = false"
+    >
       <h3 class="select-name">{{ cityName }}</h3>
       <span class="select-triangle"></span>
-      <ul class="select-options" v-if="isShowCity" :style="{overflowY: ulStyle }">
-        <li v-for="(city, index) in cityData" :key="index" :style="{width: liStyle }" @click="selectCity(city.name, city.code)">{{ city.name }}</li>
+      <ul
+        class="select-options"
+        v-if="isShowCity"
+        :style="{ overflowY: ulStyle }"
+      >
+        <li
+          v-for="(city, index) in cityData"
+          :key="index"
+          :style="{ width: liStyle }"
+          @click="selectCity(city.name, city.code)"
+        >
+          {{ city.name }}
+        </li>
       </ul>
     </div>
-    <div class="select" @mouseenter="isShowArea = true" @mouseleave="isShowArea = false">
+    <div
+      class="select"
+      @mouseenter="isShowArea = true"
+      @mouseleave="isShowArea = false"
+    >
       <h3 class="select-name">{{ areaName }}</h3>
       <span class="select-triangle"></span>
-      <ul class="select-options" v-if="isShowArea" :style="{overflowY: ulStyle1 }">
-        <li v-for="(area, index) in areaData" :key="index" :style="{width: liStyle1 }" @click="selectArea(area.name, area.code)">{{ area.name }}</li>
+      <ul
+        class="select-options"
+        v-if="isShowArea"
+        :style="{ overflowY: ulStyle1 }"
+      >
+        <li
+          v-for="(area, index) in areaData"
+          :key="index"
+          :style="{ width: liStyle1 }"
+          @click="selectArea(area.name, area.code)"
+        >
+          {{ area.name }}
+        </li>
       </ul>
     </div>
   </div>
@@ -31,15 +66,13 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
+import { provinceList } from '@/api/region';
 
 export default {
-
-  // 组件名称
   name: 'SelectAddress',
 
   data() {
     return {
-
       // 省的数据
       provinceData: [],
 
@@ -81,39 +114,13 @@ export default {
   mounted() {
     this.$nextTick(() => {
       // 获得省的数据
-      this.getAddressData(1, this.provinceCode, (err, data) => {
-        if (err) {
-          return;
-        }
-        this.provinceData = data;
-      });
-
-      // 获得市的数据
-      this.getAddressData(2, this.provinceCode, (err, data) => {
-        if (err) {
-          return;
-        }
-
-        this.cityData = data;
-        this.isShowScroll1();
-      });
-
-      // 获得区的数据
-      this.getAddressData(3, this.cityCode, (err, data) => {
-        if (err) {
-          return;
-        }
-
-        this.areaData = data;
-        this.isShowScroll2();
-      });
+      this.getProvincList();
+      this.isShowScroll2();
     });
   },
 
   // 监听器
   watch: {
-
-    // 如果provinceName的值发生变化，调用这个函数
     provinceName() {
       // 获得市的数据
       this.getAddressData(2, this.provinceCode, (err, data) => {
@@ -145,7 +152,6 @@ export default {
   },
 
   methods: {
-
     ...mapMutations([
       'setProvinceName',
       'setCityName',
@@ -154,6 +160,17 @@ export default {
       'setCityCode',
       'setAreaCode'
     ]),
+
+    // 获得省份数据
+    getProvincList() {
+      provinceList()
+        .then((res) => {
+          this.provinceData = res.data.list;
+        })
+        .catch((error) => {
+          this.$message.error(error.message);
+        });
+    },
 
     // 选择省份
     selectProvince(provinceName, provinceCode) {
@@ -205,14 +222,15 @@ export default {
     },
 
     /**
-       * 获得地址数据
-       * @param flag 标记位，1表示省，2表示市，3表示区
-       * @param addressCode 地址编码
-       * @param callback 回调函数
-       */
+     * 获得地址数据
+     * @param flag 标记位，1表示省，2表示市，3表示区
+     * @param addressCode 地址编码
+     * @param callback 回调函数
+     */
     getAddressData(flag, addressCode, callback) {
       // 请求参数
-      let param = this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode;
+      let param =
+        this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode;
 
       // 发送get请求，获得省份数据
       this.$jsonp(param, null, callback);
@@ -222,66 +240,65 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.select {
+  height: 24px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  cursor: pointer;
+  text-align: left;
+  z-index: 2;
+  float: left;
+  position: relative;
+}
 
-  .select {
-    height: 24px;
-    margin-right: 10px;
-    background-color: #fff;
-    border:solid 1px #ccc;
-    cursor: pointer;
-    text-align: left;
-    z-index: 2;
-    float: left;
-    position: relative;
-  }
+.select-name {
+  width: 89px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 24px 0 7px;
+  font-size: 12px;
+  font-weight: normal;
+  overflow: hidden;
+}
 
-  .select-name {
-    width: 89px;
-    height: 24px;
-    line-height: 24px;
-    padding: 0 24px 0 7px;
-    font-size: 12px;
-    font-weight: normal;
-    overflow: hidden;
-  }
+.select-triangle {
+  width: 0;
+  height: 0;
+  border-width: 4px;
+  border-style: solid dashed dashed;
+  border-color: rgb(80, 174, 248) transparent transparent;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+}
 
-  .select-triangle {
-    width: 0;
-    height: 0;
-    border-width: 4px;
-    border-style: solid dashed dashed;
-    border-color: rgb(80, 174, 248) transparent transparent;
-    overflow: hidden;
-    position: absolute;
-    top: 10px;
-    right: 8px;
-  }
+.select .select-options {
+  min-width: 120px;
+  max-height: 122px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  font-size: 12px;
+  position: absolute;
+  left: -1px;
+  top: 23px;
+}
 
-  .select .select-options {
-    min-width: 120px;
-    max-height: 122px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    border: solid 1px #ccc;
-    background-color: #fff;
-    font-size: 12px;
-    position: absolute;
-    left: -1px;
-    top: 23px;
-  }
+.select-options li {
+  width: 93px;
+  height: 24px;
+  line-height: 24px;
+  padding-left: 10px;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
 
-  .select-options li {
-    width: 93px;
-    height: 24px;
-    line-height: 24px;
-    padding-left: 10px;
-    overflow: hidden;
-    z-index: 2;
-    position: relative;
-  }
-
-  .select-options li:hover {
-    background-color: green;
-    color: #fff;
-  }
+.select-options li:hover {
+  background-color: green;
+  color: #fff;
+}
 </style>

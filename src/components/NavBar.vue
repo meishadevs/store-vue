@@ -1,6 +1,3 @@
-
-<!-- 导航栏组件 -->
-
 <template>
   <nav class="nav-bar">
 
@@ -38,7 +35,6 @@
 
     </div>
     <!-- 版心 e -->
-
   </nav>
 </template>
 
@@ -46,8 +42,6 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-
-  // 组件名称
   name: 'NavBar',
 
   computed: mapState([

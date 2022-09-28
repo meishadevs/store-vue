@@ -102,8 +102,6 @@ import SelectStyle from './SelectStyle';
 import ChangeProductNum from './ChangeProductNum';
 
 export default {
-
-  // 组件名称
   name: 'ShowProinfo',
 
   // 引入外部组件
@@ -116,10 +114,8 @@ export default {
 
   data() {
     return {
-
       // 商品信息
       productInfo: {
-
         // 商品的名称
         productName: '全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生产批次不同混合发货',
 
