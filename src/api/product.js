@@ -8,3 +8,11 @@ export const productList = (query) => {
     params: query
   });
 };
+
+// 获得商品个数
+export const productCount = () => {
+  return axios.request({
+    url: '/product/count',
+    method: 'get'
+  });
+};

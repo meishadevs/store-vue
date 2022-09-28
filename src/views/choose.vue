@@ -52,6 +52,7 @@ import SelectShowProduct from '@/components/SelectShowProduct';
 import ChangePage from '@/components/ChangePage';
 import SiteFoot from '@/components/SiteFoot';
 import GoTop from '@/components/GoTop';
+import { productCount } from '@/api/product';
 
 export default {
 
@@ -99,7 +100,7 @@ export default {
       window.scrollTo(0, 0);
 
       // 获得商品的数量
-      // this.getProductNum();
+      this.getProductCount();
 
       // 监听翻页组件中传递过来的事件
       this.bus.$on('change-page', (page) => {
@@ -109,20 +110,15 @@ export default {
   },
 
   methods: {
+    // 获得商品数量
+    getProductCount() {
+      productCount().then(res => {
+        this.totalProduct = res.data.count;
 
-    // 获得商品的数量
-    getProductNum() {
-      // 发送get请求，获得商品数量
-      this.$jsonp(this.productNumUrl, null, (err, data) => {
-        if (err) {
-          console.error('error:', err.message);
-        } else {
-          // 获得商品的总数
-          this.totalProduct = data;
-
-          // 计算一共有多少页
-          this.totalPage = this.totalProduct / this.numProduct;
-        }
+        // 计算一共有多少页
+        this.totalPage = this.totalProduct / this.numProduct;
+      }).catch(error => {
+        this.$message.error(error.message);
       });
     }
   }
