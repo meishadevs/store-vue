@@ -32,7 +32,7 @@ export default {
       // 每页第一条商品信息的下标
       productFirstIndex: 0,
 
-      // 当前展示的是第indexPage页商品信息
+      // 当前展示的是第 indexPage 页商品信息
       indexPage: 0,
 
       listQuery: {
@@ -61,9 +61,8 @@ export default {
 
   // 监听器
   watch: {
-    // 如果indexPage发生改变，这个函数就会调用
     indexPage() {
-      // 获得商品信息
+      this.listQuery.pageNumber = this.indexPage;
       this.getProductList();
     }
   },
