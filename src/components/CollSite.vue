@@ -28,12 +28,11 @@ export default {
   // 组件名称
   name: 'CollSite',
 
-  computed: mapState([
-
-    // 是否显示蒙版
-    // 映射 this.isShowMask 为 store.state.isShowMask
-    'isShowMask'
-  ]),
+  computed: {
+    ...mapState({
+      isShowMask: state => state.user.isShowMask
+    })
+  },
 
   methods: {
 

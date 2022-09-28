@@ -101,14 +101,16 @@ export default {
     };
   },
 
-  computed: mapState([
-    'provinceName',
-    'cityName',
-    'areaName',
-    'provinceCode',
-    'cityCode',
-    'areaCode'
-  ]),
+  computed: {
+    ...mapState({
+      provinceName: state => state.user.provinceName,
+      cityName: state => state.user.cityName,
+      areaName: state => state.user.areaName,
+      provinceCode: state => state.user.provinceCode,
+      cityCode: state => state.user.cityCode,
+      areaCode: state => state.user.areaCode
+    })
+  },
 
   // 初始化
   mounted() {

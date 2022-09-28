@@ -31,14 +31,16 @@ export default {
     };
   },
 
-  computed: mapState([
-    'productNum',
-    'productPrice',
-    'isReceive',
-    'payMethod',
-    'checkStatus',
-    'checkContent'
-  ]),
+  computed: {
+    ...mapState({
+      productNum: state => state.user.productNum,
+      productPrice: state => state.user.productPrice,
+      isReceive: state => state.user.isReceive,
+      payMethod: state => state.user.payMethod,
+      checkStatus: state => state.user.checkStatus,
+      checkContent: state => state.user.checkContent
+    })
+  },
 
   mounted() {
     this.$nextTick(() => {

@@ -54,12 +54,13 @@ export default {
     };
   },
 
-  computed: mapState([
-    'payMethod'
-  ]),
+  computed: {
+    ...mapState({
+      payMethod: state => state.user.payMethod
+    })
+  },
 
   methods: {
-
     ...mapMutations([
       'setPayMethod'
     ]),

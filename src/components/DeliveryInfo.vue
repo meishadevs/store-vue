@@ -76,16 +76,16 @@ import Vue from 'vue';
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-
-  // 组件名称
   name: 'DeliveryInfo',
 
-  computed: mapState([
-    'productNum',
-    'productPrice',
-    'checkStatus',
-    'checkContent'
-  ]),
+  computed: {
+    ...mapState({
+      productNum: state => state.user.productNum,
+      productPrice: state => state.user.productPrice,
+      checkStatus: state => state.user.checkStatus,
+      checkContent: state => state.user.checkContent
+    })
+  },
 
   data() {
     return {

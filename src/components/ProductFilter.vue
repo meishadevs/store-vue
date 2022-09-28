@@ -105,13 +105,15 @@ export default {
     });
   },
 
-  computed: mapState([
-    'brand',
-    'screenSize',
-    'operatingSystem',
-    'runningMemory',
-    'networkType'
-  ]),
+  computed: {
+    ...mapState({
+      brand: state => state.user.brand,
+      screenSize: state => state.user.screenSize,
+      operatingSystem: state => state.user.operatingSystem,
+      runningMemory: state => state.user.runningMemory,
+      networkType: state => state.user.networkType
+    })
+  },
 
   methods: {
     ...mapMutations([

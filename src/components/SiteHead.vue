@@ -104,7 +104,10 @@ export default {
   },
 
   computed: {
-    ...mapState(['productNum', 'isLogin']),
+    ...mapState({
+      productNum: state => state.user.productNum,
+      isLogin: state => state.user.isLogin
+    }),
 
     proNum() {
       // 如果用户登录了

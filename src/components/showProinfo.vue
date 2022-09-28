@@ -139,12 +139,13 @@ export default {
     };
   },
 
-  // 计算属性
-  computed: mapState([
-    'productNum',
-    'productPrice',
-    'isLogin'
-  ]),
+  computed: {
+    ...mapState({
+      productNum: state => state.user.productNum,
+      productPrice: state => state.user.productPrice,
+      isLogin: state => state.user.isLogin
+    })
+  },
 
   // 初始化
   mounted() {

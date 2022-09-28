@@ -55,13 +55,11 @@ export default {
     SiteFoot
   },
 
-  // 计算属性
-  computed: mapState([
-
-    // 用户是否登录
-    // 映射 this.isLogin 为 srore.state.isLogin
-    'isLogin'
-  ]),
+  computed: {
+    ...mapState({
+      isLogin: state => state.user.isLogin
+    })
+  },
 
   // 初始化
   mounted() {

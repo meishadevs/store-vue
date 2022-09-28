@@ -181,12 +181,11 @@ export default {
     GoTop
   },
 
-  // 计算属性
-  computed: mapState([
-    // 当前选中的导航项的索引
-    // 映射 this.currentNavIndex 为 srore.state.currentNavIndex
-    'currentNavIndex'
-  ]),
+  computed: {
+    ...mapState({
+      currentNavIndex: state => state.user.currentNavIndex
+    })
+  },
 
   // 初始化
   mounted() {

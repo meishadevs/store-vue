@@ -173,12 +173,13 @@ export default {
     });
   },
 
-  computed: mapState([
-    'isReceive'
-  ]),
+  computed: {
+    ...mapState({
+      isReceive: state => state.user.isReceive
+    })
+  },
 
   methods: {
-
     ...mapMutations([
       'changeReceiveStatus'
     ]),

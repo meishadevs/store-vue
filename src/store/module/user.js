@@ -16,7 +16,7 @@ export default {
     isShowMask: false,
 
     // 用户名
-    username: null,
+    username: '',
 
     // 商品的数量
     productNum: 0,
@@ -28,19 +28,19 @@ export default {
     currentNavIndex: 1,
 
     // 品牌
-    brand: null,
+    brand: '',
 
     // 屏幕尺寸
-    screenSize: null,
+    screenSize: '',
 
     // 操作系统
-    operatingSystem: null,
+    operatingSystem: '',
 
     // 运行内存
-    runningMemory: null,
+    runningMemory: '',
 
     // 网络类型
-    networkType: null,
+    networkType: '',
 
     // 标记是否设置了收货信息
     isReceive: false,
@@ -205,16 +205,10 @@ export default {
 
   actions: {
     // 登录
-    handleLogin({ commit }, { userName, password, generateKey, captchaCode }) {
+    handleLogin({ commit }, { userName, password }) {
       userName = userName.trim();
       return new Promise((resolve, reject) => {
-        login({
-          userName,
-          password,
-          generateKey,
-          captchaCode
-        }).then(res => {
-          window.localStorage.removeItem('tagNaveList');
+        login({ userName, password }).then(res => {
           commit('setToken', res.access_token);
           commit('setRefreshToken', res.refresh_token);
           resolve(res);
@@ -228,7 +222,6 @@ export default {
     handleLogOut({ state, commit }) {
       return new Promise((resolve, reject) => {
         logout().then(() => {
-          window.localStorage.removeItem('tagNaveList');
           window.localStorage.removeItem('refreshToken');
           commit('setToken', '');
           commit('setHasGetInfo', false);

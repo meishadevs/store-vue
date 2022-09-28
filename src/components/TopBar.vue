@@ -30,21 +30,16 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-
-  // 组件名称
   name: 'TopBar',
 
-  computed: mapState([
-
-    // 用户名
-    'username',
-
-    // 是否登录了
-    'isLogin'
-  ]),
+  computed: {
+    ...mapState({
+      username: state => state.user.username,
+      isLogin: state => state.user.isLogin
+    })
+  },
 
   methods: {
-
     // 使用对象展开运算符将此对象混入到外部对象中
     ...mapMutations([
 

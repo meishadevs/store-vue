@@ -31,9 +31,11 @@ export default {
     };
   },
 
-  computed: mapState([
-    'productNum'
-  ]),
+  computed: {
+    ...mapState({
+      productNum: state => state.user.productNum
+    })
+  },
 
   // 初始化
   mounted() {

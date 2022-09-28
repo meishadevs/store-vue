@@ -44,11 +44,11 @@ import { mapState, mapMutations } from 'vuex';
 export default {
   name: 'NavBar',
 
-  computed: mapState([
-    // 当前选中的导航项的索引
-    // 映射 this.currentNavIndex 为 store.state.currentNavIndex
-    'currentNavIndex'
-  ]),
+  computed: {
+    ...mapState({
+      currentNavIndex: state => state.user.currentNavIndex
+    })
+  },
 
   methods: {
     // 使用对象展开运算符将此对象混入到外部对象中
