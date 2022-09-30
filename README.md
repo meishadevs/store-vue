@@ -7,8 +7,8 @@
 ## 技术栈
 - **前端：** vue + vuex + vue-router + axios + ESLint + ES6
 - **构建工具：** Webpack
-- **服务器端：** PHP
-- **数据库：** MySQL
+- **服务器端：** Node.js
+- **数据库：** MongoDB
 
 ## 运行项目
 
@@ -31,11 +31,20 @@ npm run build
 
 ## 项目的目录结构
 
-```
-├── build                          // 项目构建相关的代码       
-├── config                         // 项目开发环境相关配置                   
-├── src                            // 源码目录   
-│   ├── components                 // Vue公共组件
+```  
+├── public                         // 不需要打包的文件               
+├── src                            // 源码目录
+|   |── api                        // api 接口文件
+│   │   ├── advisory.js            // 咨询相关的 api 接口
+│   │   ├── product.js             // 产品相关的 api 接口
+│   │   ├── region.js              // 地址相关的 api 接口
+│   │   ├── token.js               // token 相关的 api 接口
+│   │   ├── user.js                // 用户相关的 api 接口
+|   |── assets                     // 资源文件
+│   │   ├── css                    // CSS 样式
+│   │   ├── font                   // 字体
+│   │   ├── images                 // 图片
+│   ├── components                 // 公共组件
 │   │   ├── AdvisoryList.vue       // 商品咨询列表组件
 │   │   ├── Banner.vue             // 轮播图组件
 │   │   ├── CartHead.vue           // 购物车页上的头部组件
@@ -72,15 +81,32 @@ npm run build
 │   │   ├── SiteFoot.vue           // 脚部组件
 │   │   ├── SiteHead.vue           // 头部组件
 │   │   ├── TopBar.vue             // 顶部通栏组件
-│   │ 	└── UserPosition.vue       // 用户位置组件  
-│   ├── css                        // 网站的CSS样式
-│   │   └── reset.css              // 重置标签的CSS样式
-│   ├── filter                     // 过滤器
-│   │   └── index.js               // 创建的一些全局过滤器
-│   ├── js                         // js脚本
-│   │   ├── config.js              // 网站与服务器端交互的Url
-│   │   └── Util.js                // 一些通用代码
-│   ├── pages                      // 网站的页面
+│   │ 	└── UserPosition.vue       // 用户位置组件 
+|   |── config
+|   │ 	└── index.js               // 配置文件
+|   |── filter                  
+|   │ 	└── index.js              // 过滤器文件
+|   |── libs      
+│   │   ├── api.request.js         // api 请求
+│   │   ├── axios.js               // axios 配置              
+|   │ 	└── util.js                // 常用功能
+│   ├── router                    
+│   │   ├── index.js
+│   │ 	└── routers.js             // 项目路由
+│   ├── store                  
+│   │   ├── module   
+│   │   │   └── user.js            // 用户状态     
+│   │   ├── getters.js              
+│   │ 	└── index.js               // 状态管理
+│   ├── views
+│   │   ├── error-page             // 错误页
+│   │   │   ├── 401.vue 
+│   │   │   ├── 404.vue 
+│   │   │   ├── 500.vue 
+│   │   │   ├── back-btn-group.vue
+│   │   │   ├── build.vue
+│   │   │   ├── error-content.vue
+│   │   │ 	└── error.less
 │   │   ├── cart.vue               // 购物车和商品结算页
 │   │   ├── cate.vue               // 商品分类页
 │   │   ├── index.vue              // 网站首页
@@ -88,18 +114,9 @@ npm run build
 │   │   ├── proinfo.vue            // 商品信息展示页
 │   │   ├── register.vue           // 注册页
 │   │ 	└── select.vue             // 商品选择页
-│   ├── router                     // vue-router路由
-│   │ 	└── index.js               // 项目的路由
-│   ├── store                      // vuex状态管理器
-│   │   ├── action.js              // 加载各种action模块
-│   │   ├── index.vue              // 记录网站的状态
-│   │ 	└── mutations.js           // 加载各种mutations模块
-│   ├── App.vue                    // 页面入口文件
-│   └── index.js                   // 程序入口文件
-├── static                         // 存放一些静态文件
-│    ├── fonts	                   // 存放网站的字体
-│    ├── images                    // 存放网站的图片
-│    └── .gitkee                   // 只是一个占位符，一个假文件
+│   ├── App.vue
+│   ├── main.js
+├── tests                          // 自动化测试
 ├── .babelrc                       // babel编译的配置
 ├── .editorconfig                  // 编辑器的配置
 ├── .eslintignore                  // 设置忽略做语法检查的文件
@@ -114,45 +131,27 @@ npm run build
 网站服务器端配置请移步到电商网后台项目：[https://github.com/meishadevs/store-node](https://github.com/meishadevs/store-node)
 
 ## 特别说明
-当你的服务器地址和我设置的服务器端地址不同时，可以修改dswz\src\js下的config.js文件
+当你的服务器地址和我设置的服务器端地址不同时，可以修改 \src\config 下的 index.js 文件
 
 ```
-/**
- * 一些全局参数
- */
-
 export default {
-  install(Vue, option) {
 
-    //服务器端的url
-    Vue.prototype.serverUrl = 'http://localhost/dswzServer/';
+  // token 在 Cookie 中存储的天数，默认 1 天
+  cookieExpires: 1,
 
-    //获得省、市、区数据的url
-    Vue.prototype.addressUrl = Vue.prototype.serverUrl + 'place.php';
+  // api 请求基础路径
+  baseUrl: {
+    dev: 'http://localhost:8002',
+    pro: 'http://localhost:8002'
+  },
 
-    //获得商品数量的url
-    Vue.prototype.productNumUrl = Vue.prototype.serverUrl + 'product.php?flag=1';
+  // 淘宝网商品搜索 url
+  taobaoUrl: 'https://suggest.taobao.com/sug?q=',
 
-    //获得商品信息的url
-    Vue.prototype.productInfoUrl = Vue.prototype.serverUrl + 'product.php?flag=2&amount=';
+  // 百度搜索 url
+  baiduUrl: 'http://www.baidu.com/s',
 
-    //获得商品咨询信息的数量的url
-    Vue.prototype.advisoryNumUrl = Vue.prototype.serverUrl + 'advisory.php?flag=1';
-
-    //获得商品咨询信息的url
-    Vue.prototype.advisoryInfoUrl = Vue.prototype.serverUrl + 'advisory.php?flag=2&amount=';
-
-    //注册账号的url
-    Vue.prototype.registerUrl = Vue.prototype.serverUrl + 'register.php';
-
-    //登录账号的url
-    Vue.prototype.loginUrl = Vue.prototype.serverUrl + 'login.php';
-
-    //淘宝搜索的url
-    Vue.prototype.taobaoUrl = 'https://suggest.taobao.com/sug?q=';
-
-    //百度搜索的url
-    Vue.prototype.baiduUrl = 'http://www.baidu.com/s';
-  }
+  // 默认打开的首页的路由name值，默认为 home
+  homeName: 'home'
 };
 ```
