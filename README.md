@@ -135,7 +135,6 @@ npm run build
 
 ```
 export default {
-
   // token 在 Cookie 中存储的天数，默认 1 天
   cookieExpires: 1,
 
