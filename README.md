@@ -111,7 +111,7 @@ npm run build
 ```
 
 ## 配置网站的服务器
-网站服务器端配置请移步到 store-node：[https://github.com/meishadevs/store-node](https://github.com/meishadevs/store-node)
+网站服务器端配置请移步到电商网后台项目：[https://github.com/meishadevs/store-node](https://github.com/meishadevs/store-node)
 
 ## 特别说明
 当你的服务器地址和我设置的服务器端地址不同时，可以修改dswz\src\js下的config.js文件
