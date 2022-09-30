@@ -2,7 +2,7 @@
 > 整个网站使用 vue、vuex、vue-router、axios、ESLint、ES6 等搭建，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品简介、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
 
 ## 在线访问
-**[http://meishadevs.github.io/dswz/index.html#/](http://meishadevs.github.io/dswz/index.html#/)**  
+**[http://meishadevs.github.io/store-vue/index.html#/](http://meishadevs.github.io/store-vue/index.html#/)**  
 
 ## 技术栈
 - **前端：** vue + vuex + vue-router + axios + ESLint + ES6
@@ -14,10 +14,10 @@
 
 ```
 # 将项目克隆到本地
-git clone https://github.com/meishadevs/dswz.git
+git clone https://github.com/meishadevs/store-vue.git
 
-# 进入dswz目录下
-cd dswz
+# 进入store-vue目录下
+cd store-vue
 
 # 安装依赖
 npm install
@@ -111,7 +111,7 @@ npm run build
 ```
 
 ## 配置网站的服务器
-网站服务器端配置请移步到server分支：[https://github.com/meishadevs/dswz/tree/server](https://github.com/meishadevs/dswz/tree/server)
+网站服务器端配置请移步到server分支：[https://github.com/meishadevs/store-vue/tree/server](https://github.com/meishadevs/store-vue/tree/server)
 
 ## 特别说明
 当你的服务器地址和我设置的服务器端地址不同时，可以修改dswz\src\js下的config.js文件
