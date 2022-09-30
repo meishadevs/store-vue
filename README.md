@@ -5,8 +5,8 @@
 **[http://meishadevs.github.io/store-vue/index.html#/](http://meishadevs.github.io/store-vue/index.html#/)**  
 
 ## 技术栈
-- **前端：** vue + vuex + vue-router + axios + ESLint + ES6
-- **构建工具：** Webpack
+- **前端：** vue + vuex + vue-router + axios + ESLint + ES6 + element-ui
+- **构建工具：** vue-cli
 - **服务器端：** Node.js
 - **数据库：** MongoDB
 
