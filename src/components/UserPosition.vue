@@ -1,6 +1,3 @@
-
-<!-- 用户位置组件 -->
-
 <template>
   <section class="user-position">
     <div class="wrapper clearfix">
@@ -92,14 +89,6 @@ export default {
   .running-memory,
   .network-type {
     float: left;
-  }
-
-  .brand,
-  .screen-size,
-  .operating-system,
-  .running-memory,
-  .network-type {
-    /*display: none;*/
   }
 
   .user-position a:hover {
