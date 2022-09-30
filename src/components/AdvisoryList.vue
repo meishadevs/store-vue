@@ -2,18 +2,18 @@
   <ul class="advisory-list">
     <li
       class="clearfix"
-      v-for="(advisory, index) in advisoryListData"
+      v-for="(advisory, index) in advisoryList"
       :key="index"
     >
       <div class="member-info">
         <div class="member-image">
           <img
-            :src="serverUrl + 'images/advisoryimages/' + advisory.memberimage"
+            :src="`${$baseUrl}/images/advisoryimages/${advisory.memberImage}`"
             alt=""
           />
         </div>
-        <p class="member-name">{{ advisory.membernum }}</p>
-        <p class="member-grade">{{ advisory.membergrade }}</p>
+        <p class="member-name">{{ advisory.memberName }}</p>
+        <p class="member-grade">{{ advisory.memberGrade }}</p>
       </div>
       <div class="shop-advisory">
         <div class="top clearfix">
@@ -33,22 +33,28 @@
 </template>
 
 <script>
+import { advisoryList } from '@/api/advisory';
+
 export default {
   name: 'AdvisoryList',
 
-  // 获取从父组件中传递过来的数据
   props: ['curPage', 'numAdvisory'],
 
   data() {
     return {
       // 商品咨询列表
-      advisoryListData: [],
+      advisoryList: [],
 
       // 每页第一条商品咨询信息的下标
       advisoryFirstIndex: 0,
 
       // 当前展示的是第 indexPage 页商品咨询信息
-      indexPage: 0
+      indexPage: 0,
+
+      listQuery: {
+        pageNumber: 1,
+        pageSize: 6
+      }
     };
   },
 
@@ -59,7 +65,7 @@ export default {
       this.indexPage = this.curPage;
 
       // 获得商品咨询信息
-      this.getAdvisoryInfo();
+      this.getAdvisoryList();
 
       // 监听翻页组件中传递过来的事件
       this.bus.$on('change-page', (page) => {
@@ -73,27 +79,23 @@ export default {
   watch: {
     indexPage() {
       // 获得商品咨询信息
-      this.getAdvisoryInfo();
+      this.getAdvisoryList();
     }
   },
 
   methods: {
-    // 获得商品咨询信息
-    getAdvisoryInfo() {
+    // 获得商品咨询列表
+    getAdvisoryList() {
       // 计算每页展示的第一条商品咨询信息的下标
       this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory;
 
-      // 发送get请求，获得商品咨询信息
-      this.$jsonp(this.advisoryInfoUrl + this.numAdvisory + '&startIndex=' + this.advisoryFirstIndex, null,
-        (err, data) => {
-          if (err) {
-            console.error('error:', err.message);
-          } else {
-            // 获得商品咨询列表数据
-            this.advisoryListData = data;
-          }
-        }
-      );
+      advisoryList(this.listQuery)
+        .then((res) => {
+          this.advisoryList = res.data.list;
+        })
+        .catch((error) => {
+          this.$message.error(error.message);
+        });
     }
   }
 };
