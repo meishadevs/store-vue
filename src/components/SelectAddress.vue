@@ -9,7 +9,7 @@
       <span class="select-triangle"></span>
       <ul class="select-options" v-if="isShowProvince">
         <li
-          v-for="(item, index) in provinceData"
+          v-for="(item, index) in provinceList"
           :key="index"
           @click="selectProvince(item.provinceName, item.provinceCode)"
         >
@@ -30,34 +30,34 @@
         :style="{ overflowY: ulStyle }"
       >
         <li
-          v-for="(city, index) in cityData"
+          v-for="(city, index) in cityList"
           :key="index"
           :style="{ width: liStyle }"
-          @click="selectCity(city.name, city.code)"
+          @click="selectCity(city.cityName, city.cityCode)"
         >
-          {{ city.name }}
+          {{ city.cityName }}
         </li>
       </ul>
     </div>
     <div
       class="select"
-      @mouseenter="isShowArea = true"
-      @mouseleave="isShowArea = false"
+      @mouseenter="isShowDistrict = true"
+      @mouseleave="isShowDistrict = false"
     >
-      <h3 class="select-name">{{ areaName }}</h3>
+      <h3 class="select-name">{{ districtName }}</h3>
       <span class="select-triangle"></span>
       <ul
         class="select-options"
-        v-if="isShowArea"
+        v-if="isShowDistrict"
         :style="{ overflowY: ulStyle1 }"
       >
         <li
-          v-for="(area, index) in areaData"
+          v-for="(district, index) in districtList"
           :key="index"
           :style="{ width: liStyle1 }"
-          @click="selectArea(area.name, area.code)"
+          @click="selectDistrict(district.districtName, district.districtCode)"
         >
-          {{ area.name }}
+          {{ district.districtName }}
         </li>
       </ul>
     </div>
@@ -66,21 +66,21 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex';
-import { provinceList } from '@/api/region';
+import { provinceList, cityList, DistrictList } from '@/api/region';
 
 export default {
   name: 'SelectAddress',
 
   data() {
     return {
-      // 省的数据
-      provinceData: [],
+      // 省份数据
+      provinceList: [],
 
       // 市的数据
-      cityData: [],
+      cityList: [],
 
       // 区的数据
-      areaData: [],
+      districtList: [],
 
       // 是否显示省份列表
       isShowProvince: false,
@@ -89,7 +89,7 @@ export default {
       isShowCity: false,
 
       // 是否显示区列表
-      isShowArea: false,
+      isShowDistrict: false,
 
       // ul标签的样式
       ulStyle: 'scroll',
@@ -105,18 +105,19 @@ export default {
     ...mapState({
       provinceName: state => state.user.provinceName,
       cityName: state => state.user.cityName,
-      areaName: state => state.user.areaName,
+      districtName: state => state.user.districtName,
       provinceCode: state => state.user.provinceCode,
       cityCode: state => state.user.cityCode,
-      areaCode: state => state.user.areaCode
+      districtCode: state => state.user.districtCode
     })
   },
 
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      // 获得省的数据
       this.getProvincList();
+      this.getCityList();
+      this.geDistrictList();
       this.isShowScroll2();
     });
   },
@@ -124,32 +125,11 @@ export default {
   // 监听器
   watch: {
     provinceName() {
-      // 获得市的数据
-      this.getAddressData(2, this.provinceCode, (err, data) => {
-        if (err) {
-          return;
-        }
-
-        this.cityData = data;
-        this.setCityName(this.cityData[0].name);
-        this.setCityCode(this.cityData[0].code);
-        this.isShowScroll1();
-      });
+      this.getCityList();
     },
 
-    // 如果cityName的值发生变化，调用这个函数
     cityName() {
-      // 获得区的数据
-      this.getAddressData(3, this.cityCode, (err, data) => {
-        if (err) {
-          return;
-        }
-
-        this.areaData = data;
-        this.setAreaName(this.areaData[0].name);
-        this.setAreaCode(this.areaData[0].code);
-        this.isShowScroll2();
-      });
+      this.geDistrictList();
     }
   },
 
@@ -157,17 +137,47 @@ export default {
     ...mapMutations([
       'setProvinceName',
       'setCityName',
-      'setAreaName',
+      'setDistrictName',
       'setProvinceCode',
       'setCityCode',
-      'setAreaCode'
+      'setDistrictCode'
     ]),
 
     // 获得省份数据
     getProvincList() {
       provinceList()
         .then((res) => {
-          this.provinceData = res.data.list;
+          this.provinceList = res.data.list;
+          this.setProvinceName(this.provinceList[0].provinceName);
+          this.setProvinceCode(this.provinceList[0].provinceCode);
+        })
+        .catch((error) => {
+          this.$message.error(error.message);
+        });
+    },
+
+    // 获得市数据
+    getCityList() {
+      cityList(this.provinceCode)
+        .then((res) => {
+          this.cityList = res.data.list;
+          this.setCityName(this.cityList[0].cityName);
+          this.setCityCode(this.cityList[0].cityCode);
+          this.isShowScroll1();
+        })
+        .catch((error) => {
+          this.$message.error(error.message);
+        });
+    },
+
+    // 获得区数据
+    geDistrictList() {
+      DistrictList(this.cityCode)
+        .then((res) => {
+          this.districtList = res.data.list;
+          this.setDistrictName(this.districtList[0].districtName);
+          this.setDistrictCode(this.districtList[0].districtCode);
+          this.isShowScroll1();
         })
         .catch((error) => {
           this.$message.error(error.message);
@@ -189,16 +199,16 @@ export default {
     },
 
     // 选择区
-    selectArea(areaName, areaCode) {
-      this.setAreaName(areaName);
-      this.setAreaCode(areaCode);
-      this.isShowArea = false;
+    selectDistrict(districtName, districtCode) {
+      this.setDistrictName(districtName);
+      this.setDistrictCode(districtCode);
+      this.isShowDistrict = false;
     },
 
     // 是否显示滚动条
     isShowScroll1() {
       // 如果市的个数小于6个，不显示竖直滚动条
-      if (this.cityData.length < 6) {
+      if (this.cityList.length < 6) {
         this.ulStyle = 'inherit';
         this.liStyle = '100%';
 
@@ -212,7 +222,7 @@ export default {
     // 是否显示滚动条
     isShowScroll2() {
       // 如果区的个数小于6个，不显示竖直滚动条
-      if (this.areaData.length < 6) {
+      if (this.districtList.length < 6) {
         this.ulStyle1 = 'inherit';
         this.liStyle1 = '100%';
 
@@ -221,21 +231,6 @@ export default {
         this.ulStyle1 = 'scroll';
         this.liStyle1 = '93px';
       }
-    },
-
-    /**
-     * 获得地址数据
-     * @param flag 标记位，1表示省，2表示市，3表示区
-     * @param addressCode 地址编码
-     * @param callback 回调函数
-     */
-    getAddressData(flag, addressCode, callback) {
-      // 请求参数
-      let param =
-        this.addressUrl + '?flag=' + flag + '&citycode=' + addressCode;
-
-      // 发送get请求，获得省份数据
-      this.$jsonp(param, null, callback);
     }
   }
 };

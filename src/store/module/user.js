@@ -64,7 +64,7 @@ export default {
     cityCode: '110100',
 
     // 当前显示的区的编码
-    areaCode: '110101',
+    districtCode: '110101',
 
     // 当前显示的省的名称
     provinceName: '北京市',
@@ -73,7 +73,7 @@ export default {
     cityName: '北京市',
 
     // 当前显示的区的名称
-    areaName: '东城区'
+    districtName: '东城区'
   },
 
   mutations: {
@@ -186,8 +186,8 @@ export default {
       state.cityName = cityName;
     },
 
-    setAreaName(state, areaName) {
-      state.areaName = areaName;
+    setDistrictName(state, districtName) {
+      state.districtName = districtName;
     },
 
     setProvinceCode(state, provinceCode) {
@@ -198,8 +198,8 @@ export default {
       state.cityCode = cityCode;
     },
 
-    setAreaCode(state, areaCode) {
-      state.areaCode = areaCode;
+    setDistrictCode(state, districtCode) {
+      state.districtCode = districtCode;
     }
   },
 
