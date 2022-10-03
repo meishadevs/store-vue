@@ -6,8 +6,7 @@
 
 ## 技术栈
 - **前端：** vue + vuex + vue-router + axios + element-ui + ESLint + ES6
-- **构建工具：** vue-cli
-- **服务器端：** Node.js
+- **后端：** Node.js + Express + MongoDB + Mongoose + ES6
 - **数据库：** MongoDB
 
 ## 运行项目
