@@ -122,8 +122,9 @@ npm run build
 ├── .eslintrc.js                   // 设置ESLint语法检查的规则
 ├── .gitignore                     // 提交到git上时，忽略提交的文件和文件夹
 ├── .postcssrc.js                  // 自动加载配置为PostCSS
-├── index.html                     // 入口HTML文件
-└── package.json                   // 项目配置文件
+├── package-lock.json        
+├── package.json                   // 项目配置文件
+└── vue.config.js                  // vue 配置文件
 ```
 
 ## 配置网站的服务器
