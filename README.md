@@ -15,7 +15,7 @@
 # 将项目克隆到本地
 git clone https://github.com/meishadevs/store-vue.git
 
-# 进入store-vue目录下
+# 进入 store-vue 目录下
 cd store-vue
 
 # 安装依赖
