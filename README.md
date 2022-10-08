@@ -149,7 +149,7 @@ export default {
   // 百度搜索 url
   baiduUrl: 'http://www.baidu.com/s',
 
-  // 默认打开的首页的路由name值，默认为 home
+  // 默认打开的首页的路由 name 值，默认为 home
   homeName: 'home'
 };
 ```
