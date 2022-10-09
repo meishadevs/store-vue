@@ -53,7 +53,7 @@ export default {
 
       listQuery: {
         pageNumber: 1,
-        pageSize: 6
+        pageSize: 10
       }
     };
   },
