@@ -36,11 +36,14 @@ class HttpRequest {
       this.destroy(url);
 
       if (response.data.code === 200) {
-        return Promise.resolve(response);
+        return Promise.resolve(response.data);
       } else {
         return Promise.reject(new Error(response.data.message));
       }
-    }, error => {
+    },
+
+    // 响应错误
+    error => {
       // 错误的请求结果处理
       this.destroy(url);
       if (error && error.response) {

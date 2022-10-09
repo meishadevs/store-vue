@@ -286,7 +286,7 @@ export default {
 
       register(this.userDetail)
         .then(res => {
-          this.$message.success(res.data.message);
+          this.$message.success(res.message);
 
           this.$router.push({
             name: 'home'
