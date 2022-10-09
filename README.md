@@ -15,7 +15,7 @@
 # 将项目克隆到本地
 git clone https://github.com/meishadevs/store-vue.git
 
-# 进入store-vue目录下
+# 进入 store-vue 目录下
 cd store-vue
 
 # 安装依赖
@@ -122,8 +122,9 @@ npm run build
 ├── .eslintrc.js                   // 设置ESLint语法检查的规则
 ├── .gitignore                     // 提交到git上时，忽略提交的文件和文件夹
 ├── .postcssrc.js                  // 自动加载配置为PostCSS
-├── index.html                     // 入口HTML文件
-└── package.json                   // 项目配置文件
+├── package-lock.json        
+├── package.json                   // 项目配置文件
+└── vue.config.js                  // vue 配置文件
 ```
 
 ## 配置网站的服务器
@@ -149,7 +150,7 @@ export default {
   // 百度搜索 url
   baiduUrl: 'http://www.baidu.com/s',
 
-  // 默认打开的首页的路由name值，默认为 home
+  // 默认打开的首页的路由 name 值，默认为 home
   homeName: 'home'
 };
 ```
