@@ -1,21 +1,31 @@
 <template>
   <div class="change-page">
     <span
-      class="page-prev"
-      @click="changePage(--curPage)"
+      class="page-item"
+      :class="{
+        'disabled': curPage <= 1
+      }"
+      @click="handlePreChange"
     >
       &lt;&lt;上一页
     </span>
     <span
-      v-for="page in createArrNum(1, curPage)"
+      v-for="page in totalPage"
       :key="page"
+      class="page-item"
+      :class="{
+        'page-current': page === curPage
+      }"
       @click="changePage(page)"
     >
       {{ page }}
     </span>
     <span
-      class="page-next"
-      @click="changePage(++curPage)"
+      class="page-item"
+      :class="{
+        'disabled': curPage >= totalPage
+      }"
+      @click="handleNextPage"
     >
       下一页&gt;&gt;
     </span>
@@ -62,17 +72,25 @@ export default {
 
   methods: {
     initData() {
+      // 当前页数
       this.curPage = this.currentPage;
+
+      // 计算总页数
+      this.totalPage = Math.ceil(this.total / this.pageSize);
     },
 
-    // 创建数组,保存分页按钮上的数字
-    createArrNum(value, totalPage) {
-      var arr = [];
-      for (let i = 0; i < totalPage - 1; i++) {
-        arr[i] = value + i;
+    // 上一页
+    handlePreChange() {
+      if (this.curPage > 1) {
+        this.curPage -= 1;
       }
+    },
 
-      return arr;
+    // 下一页
+    handleNextPage() {
+      if (this.curPage < this.totalPage) {
+        this.curPage += 1;
+      }
     },
 
     // 实现翻页逻辑
@@ -91,41 +109,43 @@ export default {
   font-family: tahoma, arial, sans-serif;
   text-align: center;
   font-size: 0;
-}
 
-.change-page .page-prev {
-  border-width: 1px;
-}
+  .page-item {
+    height: 27px;
+    line-height: 27px;
+    padding: 5px 14px;
+    margin-right: 5px;
+    background-color: #fff;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    border-width: 1px 1px 1px 1px;
+    vertical-align: top;
+    user-select: none;
+    color: #2953a6;
+    display: inline-block;
+    cursor: pointer;
 
-.change-page span {
-  height: 27px;
-  line-height: 27px;
-  padding: 5px 14px;
-  margin-right: 5px;
-  background-color: #fff;
-  font-size: 14px;
-  border: 1px solid #e5e5e5;
-  border-width: 1px 1px 1px 1px;
-  vertical-align: top;
-  user-select: none;
-  user-select: none;
-  color: #2953a6;
-  display: inline-block;
-}
+    &:hover {
+      color: #fff;
+      background-color: #f40;
+    }
+  }
 
-.change-page span {
-  color: #fff;
-  background-color: #f40;
-}
+  .page-current {
+     color: #fff;
+     background-color: #f40;
+     cursor: default;
+  }
 
-.change-page span.page-prev,
-.change-page span.page-next {
-  color: #ccc;
-  background-color: #efefef;
-}
+  .disabled {
+    color: #ccc;
+    background-color: #efefef;
+    cursor: not-allowed;
 
-.change-page a:hover {
-  color: #f40;
-  border: solid 1px #f40;
+    &:hover {
+      color: #ccc;
+      background-color: #efefef;
+    }
+  }
 }
 </style>
