@@ -31,7 +31,10 @@
         <change-page
           :total="totalProduct"
           :pageSize="listQuery.pageSize"
-          :currentPage="listQuery.pageNumber"
+          :currentPage.sync="listQuery.pageNumber"
+          @prev-click="getProductList"
+          @next-click="getProductList"
+          @current-change="getProductList"
           v-if="totalProduct > 0"
         />
       </div>
@@ -110,6 +113,8 @@ export default {
   methods: {
     // 获得商品列表
     getProductList() {
+      window.scrollTo(0, 0);
+
       productList(this.listQuery)
         .then((res) => {
           this.list = res.data.list;

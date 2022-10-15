@@ -66,6 +66,13 @@ export default {
     };
   },
 
+  watch: {
+    curPage() {
+      this.$emit('update:currentPage', this.curPage);
+      this.$emit('current-change', this.curPage);
+    }
+  },
+
   created() {
     this.initData();
   },
@@ -83,6 +90,7 @@ export default {
     handlePreChange() {
       if (this.curPage > 1) {
         this.curPage -= 1;
+        this.$emit('prev-click', this.curPage);
       }
     },
 
@@ -90,6 +98,7 @@ export default {
     handleNextPage() {
       if (this.curPage < this.totalPage) {
         this.curPage += 1;
+        this.$emit('next-click', this.curPage);
       }
     },
 
