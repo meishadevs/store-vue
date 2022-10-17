@@ -127,11 +127,11 @@ npm run build
 └── vue.config.js                  // vue 配置文件
 ```
 
-## 配置网站的服务器
-网站服务器端配置请移步到电商网后台项目：[https://github.com/meishadevs/store-node](https://github.com/meishadevs/store-node)
+## 配置网站的服务端
+网站服务端配置请移步到电商网服务端项目：[https://github.com/meishadevs/store-node](https://github.com/meishadevs/store-node)
 
 ## 特别说明
-当你的服务器地址和我设置的服务器端地址不同时，可以修改 \src\config 下的 index.js 文件
+当你的服务端地址和我设置的服务端地址不同时，可以修改 \src\config 下的 index.js 文件
 
 ```
 export default {
