@@ -31,9 +31,9 @@
         <div class="all">
           <a
             href="javascript:;"
-            >全部咨询(<i class="appra-num">{{ totalAdvisory }}</i
-            >)</a
           >
+            全部咨询(<i class="appra-num">{{ totalAdvisory }}</i>)
+          </a>
         </div>
         <div class="send">
           <a href="javascript:;">发表咨询</a>
@@ -43,14 +43,17 @@
         提示:因厂家更改产品包装、产地或者更换随机附件等没有任何提前通知，且每位咨询者购买情况、提问时间等不同，为此以下回复信息仅供参考！若由此给您带来不便请多多谅解，谢谢！
       </div>
       <advisory-list
-        :curPage="curPage"
-        :numAdvisory="numAdvisory"
+        :list="advisoryList"
       />
       <div class="page-box">
         <change-page
-          :totalPage="totalPage"
-          :curPage="curPage"
-          v-if="totalPage > 0"
+          v-if="totalAdvisory > 0"
+          :total="totalAdvisory"
+          :pageSize="listQuery.pageSize"
+          :currentPage.sync="listQuery.pageNumber"
+          @prev-click="getAdvisoryList"
+          @next-click="getAdvisoryList"
+          @current-change="getAdvisoryList"
         />
       </div>
     </div>
@@ -60,7 +63,7 @@
 <script>
 import AdvisoryList from './AdvisoryList';
 import ChangePage from './ChangePage';
-import { advisoryCount } from '@/api/advisory';
+import { advisoryList } from '@/api/advisory';
 
 export default {
   name: 'ProductComment',
@@ -75,40 +78,30 @@ export default {
       // 商品咨询的总数
       totalAdvisory: 0,
 
-      // 每页展示的商品咨询数
-      numAdvisory: 5,
+      advisoryList: [],
 
-      // 一共有多少页商品咨询
-      totalPage: 0,
-
-      // 当前展示的第几页商品咨询
-      curPage: 1
+      listQuery: {
+        pageNumber: 1,
+        pageSize: 5
+      }
     };
   },
 
-  // 初始化
-  mounted: function() {
-    this.$nextTick(() => {
-      this.getAdvisoryNum();
-
-      // 监听翻页组件中传递过来的事件
-      this.bus.$on('change-page', (page) => {
-        this.curPage = page;
-      });
-    });
+  created() {
+    this.getAdvisoryList();
   },
 
   methods: {
-    // 获得商品咨询的数量
-    getAdvisoryNum() {
-      advisoryCount().then((res) => {
-        this.totalAdvisory = res.data.count;
-
-        // 计算一共有多少页
-        this.totalPage = this.totalAdvisory / this.numAdvisory;
-      }).catch((error) => {
-        this.$message.error(error.message);
-      });
+    // 获得商品咨询列表
+    getAdvisoryList() {
+      advisoryList(this.listQuery)
+        .then((res) => {
+          this.advisoryList = res.data.list;
+          this.totalAdvisory = res.data.count;
+        })
+        .catch((error) => {
+          this.$message.error(error.message);
+        });
     }
   }
 };

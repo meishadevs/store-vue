@@ -27,15 +27,17 @@
             </div>
           </div>
         </div>
-        <product-list :productList="list" />
+        <product-list
+          :productList="list"
+        />
         <change-page
+          v-if="totalProduct > 0"
           :total="totalProduct"
           :pageSize="listQuery.pageSize"
           :currentPage.sync="listQuery.pageNumber"
           @prev-click="getProductList"
           @next-click="getProductList"
           @current-change="getProductList"
-          v-if="totalProduct > 0"
         />
       </div>
     </section>

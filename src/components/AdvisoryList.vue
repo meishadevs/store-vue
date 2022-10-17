@@ -2,7 +2,7 @@
   <ul class="advisory-list">
     <li
       class="clearfix"
-      v-for="(advisory, index) in advisoryList"
+      v-for="(advisory, index) in list"
       :key="index"
     >
       <div class="member-info">
@@ -33,69 +33,16 @@
 </template>
 
 <script>
-import { advisoryList } from '@/api/advisory';
 
 export default {
   name: 'AdvisoryList',
 
-  props: ['curPage', 'numAdvisory'],
-
-  data() {
-    return {
-      // 商品咨询列表
-      advisoryList: [],
-
-      // 每页第一条商品咨询信息的下标
-      advisoryFirstIndex: 0,
-
-      // 当前展示的是第 indexPage 页商品咨询信息
-      indexPage: 0,
-
-      listQuery: {
-        pageNumber: 1,
-        pageSize: 10
+  props: {
+    list: {
+      type: Array,
+      default: () => {
+        return [];
       }
-    };
-  },
-
-  // 初始化
-  mounted() {
-    this.$nextTick(() => {
-      // 获得当前展示的是第几页商品信息
-      this.indexPage = this.curPage;
-
-      // 获得商品咨询信息
-      this.getAdvisoryList();
-
-      // 监听翻页组件中传递过来的事件
-      this.bus.$on('change-page', (page) => {
-        window.scrollTo(0, 1050);
-        this.indexPage = page;
-      });
-    });
-  },
-
-  // 监听器
-  watch: {
-    indexPage() {
-      // 获得商品咨询信息
-      this.getAdvisoryList();
-    }
-  },
-
-  methods: {
-    // 获得商品咨询列表
-    getAdvisoryList() {
-      // 计算每页展示的第一条商品咨询信息的下标
-      this.advisoryFirstIndex = (this.indexPage - 1) * this.numAdvisory;
-
-      advisoryList(this.listQuery)
-        .then((res) => {
-          this.advisoryList = res.data.list;
-        })
-        .catch((error) => {
-          this.$message.error(error.message);
-        });
     }
   }
 };

@@ -1,6 +1,3 @@
-
-<!-- 商品信息展示页 -->
-
 <template>
   <div id="proinfo">
     <coll-site></coll-site>
@@ -51,10 +48,8 @@ import SiteFoot from '@/components/SiteFoot';
 import GoTop from '@/components/GoTop';
 
 export default {
-  // 组件名称
   name: 'proinfo',
 
-  // 引入的外部组件
   components: {
     CollSite,
     TopBar,
