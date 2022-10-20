@@ -51,11 +51,6 @@ export const routes = [
     component: () => import('@/views/error-page/500')
   },
   {
-    path: '/build',
-    name: 'build',
-    component: () => import('@/views/error-page/build')
-  },
-  {
     path: '*',
     name: 'error_404',
     component: () => import('@/views/error-page/404.vue')
