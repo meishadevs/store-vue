@@ -7,7 +7,7 @@ import router from '@/router';
 import store from '@/store';
 import config from '@/config';
 import filter from '@/filter';
-import '@/assets/css/reset.css';
+import '@/assets/less/reset.less';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
