@@ -40,7 +40,7 @@ npm run build
 │   │   ├── token.js               // token 相关的 api 接口
 │   │   ├── user.js                // 用户相关的 api 接口
 |   |── assets                     // 资源文件
-│   │   ├── css                    // CSS 样式
+│   │   ├── less                   // Less 文件
 │   │   ├── font                   // 字体
 │   │   ├── images                 // 图片
 │   ├── components                 // 公共组件
@@ -99,13 +99,12 @@ npm run build
 │   │ 	└── index.js               // 状态管理
 │   ├── views
 │   │   ├── error-page             // 错误页
-│   │   │   ├── 401.vue 
-│   │   │   ├── 404.vue 
-│   │   │   ├── 500.vue 
+│   │   │   ├── 401.vue            // 401 页
+│   │   │   ├── 404.vue            // 404 页
+│   │   │   ├── 500.vue            // 500 页
 │   │   │   ├── back-btn-group.vue
-│   │   │   ├── build.vue
 │   │   │   ├── error-content.vue
-│   │   │ 	└── error.less
+│   │   │ 	└── error.less         // 错误页的样式
 │   │   ├── cart.vue               // 购物车和商品结算页
 │   │   ├── cate.vue               // 商品分类页
 │   │   ├── index.vue              // 网站首页
