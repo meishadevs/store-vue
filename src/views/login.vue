@@ -190,7 +190,7 @@ export default {
 
       login(this.userDetail)
         .then(res => {
-          this.$message.success(res.message);
+          this.$message.success(res.msg);
 
           // 记住用户名和密码
           if (this.isRemember) {

@@ -211,7 +211,8 @@ export default {
         email: '',
 
         // 是否接受服务条款
-        isAccept: false
+        isAccept: false,
+        isAgree: 0
       },
 
       // 用户名的状态，0:还未检测用户名 1:用户名输入正确 2用户名输入错误
@@ -284,9 +285,11 @@ export default {
         return;
       }
 
+      this.userDetail.isAgree = this.userDetail.isAccept ? 1 : 0;
+
       register(this.userDetail)
         .then(res => {
-          this.$message.success(res.message);
+          this.$message.success(res.msg);
 
           this.$router.push({
             name: 'home'
