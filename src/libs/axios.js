@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 class HttpRequest {
+  // 构造函数
   constructor(baseUrl) {
     this.baseUrl = baseUrl;
     this.queue = {};
@@ -38,7 +39,7 @@ class HttpRequest {
       if (response.data.code === 200) {
         return Promise.resolve(response.data);
       } else {
-        return Promise.reject(new Error(response.data.message));
+        return Promise.reject(new Error(response.data.msg));
       }
     },
 
@@ -51,7 +52,7 @@ class HttpRequest {
         error.message = '链接服务器失败';
       }
 
-      return Promise.reject(error.message);
+      return Promise.reject(error.msg);
     });
   }
 
