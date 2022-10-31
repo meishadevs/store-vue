@@ -4,7 +4,6 @@
  */
 
 $(function () {
-
     //隐藏筛选项
     hideFilterItem();
 
@@ -159,12 +158,11 @@ function showPage(data) {
 
 //获得商品信息
 function getProductInfo() {
-
     //发送get请求，获得商品信息
     var param = {"flag": 2, "startIndex": config.productStartIndex, "amount": config.productAmount};
-    getData(config.productUrl, 'get', 'jsonp', param, showProductInfo);
+    getData(config.productUrl, 'get', null, param, showProductInfo);
 
     //发送get请求，获得商品信息的条数
     param = {"flag": 1};
-    getData(config.productUrl, 'get', 'jsonp', param, showPage);
+    getData(config.productUrl, 'get', null, param, showPage);
 }

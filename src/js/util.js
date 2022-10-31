@@ -19,11 +19,11 @@ function setBanner() {
     var timer = null;
 
     //如果点击了某个小圆点
-    $circleLis.on("click", function() {
+    $circleLis.on("click", function () {
 
         //如果当前鼠标点击的小圆点的下标不是当前正在展示的图片的下标
         //展示当前鼠标点击的小圆点下标对应的图片
-        if($(this).index() != thatIndex) {
+        if ($(this).index() != thatIndex) {
 
             //将当前鼠标点击的小圆点的下标设为需要播放的轮播图图的下标
             thatIndex = $(this).index();
@@ -40,7 +40,7 @@ function setBanner() {
             //播放轮播图
             $banner.addClass("active");
             $banner.css("opacity", "0");
-            animate($banner[0], {opacity : 100}, 40);
+            animate($banner[0], { opacity: 100 }, 40);
         }
     });
 
@@ -48,12 +48,12 @@ function setBanner() {
     timer = setInterval(autoPlayBanner, 3000);
 
     //当鼠标放在轮播图上，暂停播放轮播图
-    $(".banner-list").mouseenter(function() {
+    $(".banner-list").mouseenter(function () {
         clearInterval(timer);
     });
 
     //当鼠标离开轮播图，继续播放轮播图
-    $(".banner-list").mouseleave(function() {
+    $(".banner-list").mouseleave(function () {
         timer = setInterval(autoPlayBanner, 3000);
     });
 
@@ -76,7 +76,7 @@ function setBanner() {
         //播放轮播图
         $banner.addClass("active");
         $banner.css("opacity", "0");
-        animate($banner[0], {opacity : 100}, 40);
+        animate($banner[0], { opacity: 100 }, 40);
     }
 }
 
@@ -95,8 +95,7 @@ function getData(url, method, dataType, parem, callback) {
         type: method,
         dataType: dataType,
         data: parem,
-        success:callback,
-
+        success: callback
     });
 }
 
@@ -113,7 +112,7 @@ function setAddress(id, data, flag, callback) {
     $("#" + id + " .select-options").children("li").remove();
 
     //遍历json数组
-    $.each(data, function(index, obj) {
+    $.each(data, function (index, obj) {
         var $li = $("<li></li>").html(obj.name).attr("value", obj.code);
         $("#" + id + " .select-options").append($li);
     });
@@ -122,8 +121,8 @@ function setAddress(id, data, flag, callback) {
     var name = $("#" + id + " .select-options").children("li:eq(0)")[0].innerHTML;
     $("#" + id + " .select-name").html(name);
 
-    if(flag != null) {
-        var parem = {"citycode": code, "flag": flag};
+    if (flag != null) {
+        var parem = { "citycode": code, "flag": flag };
         getData(config.addressUrl, 'get', 'jsonp', parem, callback);
     }
 }
@@ -137,23 +136,23 @@ function setAddress(id, data, flag, callback) {
  */
 function changeAddress(id, flag, callback) {
 
-    $("#" + id).mouseenter(function() {
+    $("#" + id).mouseenter(function () {
         $("#" + id + " .select-options").show();
     });
 
-    $("#" + id).mouseleave(function() {
+    $("#" + id).mouseleave(function () {
         $("#" + id + "  .select-options").hide();
     });
 
-    $("#" + id + " .select-options li").click(function() {
+    $("#" + id + " .select-options li").click(function () {
         $("#" + id + " .select-name").html($(this)[0].innerHTML);
         $("#" + id + " .select-options").hide();
 
         var code = $(this).attr("value");
 
-        if(flag != null) {
+        if (flag != null) {
             var code = $(this).attr("value");
-            var parem = {"citycode": code, "flag": flag};
+            var parem = { "citycode": code, "flag": flag };
             getData(config.addressUrl, 'get', 'jsonp', parem, callback);
         }
     });
@@ -170,7 +169,7 @@ function setOverflowY(id) {
     var $li = $("#" + id + " .select-options li")
     var height = $dom.height();
 
-    if(height < 122) {
+    if (height < 122) {
         $dom.css("overflow-y", "inherit");
         $li.css("width", "100%");
     } else {
@@ -202,7 +201,7 @@ function createPage(num, amount, startIndex, className, callback) {
     var tag = "<div class='rate-page'>";
 
     //如果当前显示的是第1页的商品信息
-    if(pageIndex == 1) {
+    if (pageIndex == 1) {
 
         //不能点击上一页按钮
         tag += "<span class='page-prev'>&lt;&lt;上一页</span>";
@@ -215,8 +214,8 @@ function createPage(num, amount, startIndex, className, callback) {
     }
 
     //创建分页按钮
-    for(var i = 1; i <= totalPage; i++) {
-        if(i == pageIndex) {
+    for (var i = 1; i <= totalPage; i++) {
+        if (i == pageIndex) {
             tag += "<span>" + i + "</span>";
         } else {
             tag += "<a href='javascript:;'>" + i + "</a>";
@@ -224,7 +223,7 @@ function createPage(num, amount, startIndex, className, callback) {
     }
 
     //如果当前显示的是最后一页商品咨询信息
-    if(pageIndex == totalPage) {
+    if (pageIndex == totalPage) {
 
         //不能点击下一页按钮
         tag += "<span class='page-next'>下一页&gt;&gt;</span>";
@@ -242,46 +241,46 @@ function createPage(num, amount, startIndex, className, callback) {
     $("." + className).append($(tag))
 
     //上一页按钮
-    $(".page-prev").click(function() {
+    $(".page-prev").click(function () {
 
         //如果上一页按钮可以点击
-        if(this.nodeName == "A") {
+        if (this.nodeName == "A") {
 
             //向上翻一页
             pageIndex--;
             startIndex = amount * pageIndex - amount;
-            var param = {"flag": 2, "startIndex": startIndex, "amount": amount};
+            var param = { "flag": 2, "startIndex": startIndex, "amount": amount };
             getData(config.productUrl, 'get', 'jsonp', param, callback);
         }
     });
 
     //下一页按钮
-    $(".page-next").click(function() {
+    $(".page-next").click(function () {
 
         //如果下一页按钮可以点击
-        if(this.nodeName == "A") {
+        if (this.nodeName == "A") {
 
             //向下翻一页
             pageIndex++;
             startIndex = amount * pageIndex - amount;
 
-            var param = {"flag": 2, "startIndex": startIndex, "amount": amount};
+            var param = { "flag": 2, "startIndex": startIndex, "amount": amount };
             getData(config.productUrl, 'get', 'jsonp', param, callback);
 
-            param = {"flag": 1};
+            param = { "flag": 1 };
             getData(config.productUrl, 'get', 'jsonp', param, createPage);
         }
     });
 
     //点击数字，翻页
     var childrens = $(".rate-page")[0].children;
-    for(var i = 1; i < childrens.length - 1; i++) {
+    for (var i = 1; i < childrens.length - 1; i++) {
 
-        $(childrens[i]).click(function() {
-            if(this.nodeName == "A") {
+        $(childrens[i]).click(function () {
+            if (this.nodeName == "A") {
                 pageIndex = this.innerHTML;
                 startIndex = amount * pageIndex - amount;
-                var param = {"flag": 2, "startIndex": startIndex, "amount": amount};
+                var param = { "flag": 2, "startIndex": startIndex, "amount": amount };
                 getData(config.productUrl, 'get', 'jsonp', param, callback);
             }
         });
@@ -312,7 +311,7 @@ function resetData(className) {
 function showCheckResult(className, inputClassName, flag, text) {
 
     //如果输入的信息验证失败
-    if(flag == 0) {
+    if (flag == 0) {
 
         $("." + className + " .notice-info").css("display", "inline-block");
 
@@ -322,16 +321,16 @@ function showCheckResult(className, inputClassName, flag, text) {
 
         $("." + className + " .notice-content").css("color", "#e22");
         $("." + className + " .notice-icon").css({
-            "background-position" : "-17px -100px"
+            "background-position": "-17px -100px"
         });
 
         //如果输入的信息验证成功
-    } else if(flag == 1) {
+    } else if (flag == 1) {
 
         $("." + className + " .notice-info").css("display", "inline-block");
         $("." + className + " .notice-content").css("color", "#3D882D");
         $("." + className + " .notice-icon").css({
-            "background-position" : "0px -117px"
+            "background-position": "0px -117px"
         });
     }
 
@@ -421,7 +420,7 @@ function showUsernameResult() {
     hideNotice("username");
     var flag = checkUsername();
 
-    if (flag ==  1) {
+    if (flag == 1) {
         showCheckResult("username", "input-username", 0, "请填写用户名");
         return false;
     } else if (flag == 2) {
@@ -430,7 +429,7 @@ function showUsernameResult() {
     } else if (flag == 3) {
         showCheckResult("username", "input-username", 0, "用户名必需以英文字母开头");
         return false;
-    } else if (flag == 4){
+    } else if (flag == 4) {
         showCheckResult("username", "input-username", 0, "用户名需由字母、数字或下划线组成");
         return false;
     } else if (flag == 5) {

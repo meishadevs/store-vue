@@ -4,25 +4,24 @@
  */
 
 //服务器端的url
-var serverUrl = 'http://localhost/dswzServer/';
+var serverUrl = 'http://localhost:8002';
 
 //存放一些网站的配置信息
 var config = {
-
     //获得省、市、区数据的url
     'addressUrl': serverUrl + 'place.php',
 
     //获得商品咨询信息的url
-    'advisoryUrl': serverUrl + 'advisory.php',
+    'advisoryUrl': serverUrl + '/advisory/list',
 
     //获得商品信息的url
-    'productUrl': serverUrl + 'product.php',
+    'productUrl': serverUrl + '/product/list',
 
     //注册账号的url
-    'registerUrl': serverUrl + 'register.php',
+    'registerUrl': serverUrl + '/user/register',
 
     //登录账号的url
-    'loginUrl': serverUrl + 'login.php',
+    'loginUrl': serverUrl + '/user/login',
 
     //淘宝搜索的url
     'taobaoUrl': 'https://suggest.taobao.com/sug',
