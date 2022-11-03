@@ -188,7 +188,6 @@ export default {
 
   mounted() {
     this.$nextTick(() => {
-      document.title = '注册页';
       document.body.style.backgroundColor = '#fff';
       window.scrollTo(0, 0);
     });

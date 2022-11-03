@@ -24,6 +24,8 @@ router.$addRoutes = (params) => {
 };
 
 router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title} - 电商网`;
+
   // 获得当前用户的 token
   const token = getToken();
 

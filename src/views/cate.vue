@@ -1,6 +1,3 @@
-
-<!-- 商品分类页 -->
-
 <template>
   <div id="cate">
     <coll-site></coll-site>
@@ -205,7 +202,6 @@ export default {
   // 初始化
   mounted() {
     this.$nextTick(function() {
-      document.title = '商品分类页';
       document.body.style.backgroundColor = '#fff';
       window.scrollTo(0, 0);
     });

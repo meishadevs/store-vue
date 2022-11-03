@@ -1,5 +1,3 @@
-<!-- 网站首页 -->
-
 <template>
   <div id="index">
     <coll-site></coll-site>
@@ -37,8 +35,6 @@ import GoTop from '@/components/GoTop';
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-
-  // 组件名称
   name: 'home',
 
   data() {
@@ -201,7 +197,6 @@ export default {
 
     initData() {
       this.$nextTick(function() {
-        document.title = '电商网首页';
         document.body.style.backgroundColor = '#fff';
         window.scrollTo(0, 0);
 

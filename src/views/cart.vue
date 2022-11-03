@@ -71,7 +71,6 @@ export default {
     }
 
     this.$nextTick(() => {
-      document.title = '购物车和结算页';
       document.body.style.backgroundColor = '#fff';
       window.scrollTo(0, 0);
     });

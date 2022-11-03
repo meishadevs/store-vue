@@ -163,7 +163,6 @@ export default {
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      document.title = '购物车和结算页';
       document.body.style.backgroundColor = '#fff';
 
       // 获得并且处理从SelectAddress组件传递过来的自定义事件

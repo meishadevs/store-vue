@@ -128,7 +128,6 @@ export default {
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      document.title = '登录页';
       document.body.style.backgroundColor = '#fff';
       this.readUserInfo();
     });

@@ -106,7 +106,6 @@ export default {
   // 初始化
   mounted() {
     this.$nextTick(() => {
-      document.title = '商品选择页';
       document.body.style.backgroundColor = '#f0f0f0';
       window.scrollTo(0, 0);
     });
