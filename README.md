@@ -104,7 +104,7 @@ npm run build
 │   │   │   ├── 500.vue            // 500 页
 │   │   │   ├── back-btn-group.vue
 │   │   │   ├── error-content.vue
-│   │   │ 	└── error.less         // 错误页的样式
+│   │   │ 	└── error.less       // 错误页的样式
 │   │   ├── cart.vue               // 购物车和商品结算页
 │   │   ├── cate.vue               // 商品分类页
 │   │   ├── index.vue              // 网站首页
