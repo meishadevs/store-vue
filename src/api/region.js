@@ -3,7 +3,7 @@ import axios from '@/libs/api.request';
 // 获得省份列表
 export const provinceList = () => {
   return axios.request({
-    url: '/region/provinceList',
+    url: '/province/all',
     method: 'get'
   });
 };
@@ -11,7 +11,7 @@ export const provinceList = () => {
 // 根据省份编码获得省份下面的市数据
 export const cityList = (provinceCode) => {
   return axios.request({
-    url: '/region/cityList',
+    url: '/city/all',
     method: 'get',
     params: {
       provinceCode
@@ -22,7 +22,7 @@ export const cityList = (provinceCode) => {
 // 根据市编码获得市下面的区数据
 export const DistrictList = (cityCode) => {
   return axios.request({
-    url: '/region/DistrictList',
+    url: '/district/all',
     method: 'get',
     params: {
       cityCode
