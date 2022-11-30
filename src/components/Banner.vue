@@ -7,7 +7,7 @@
         :class="{ fadeIn: currentIndex == index + 1 }"
       >
         <router-link :to="item.url">
-          <img :src="item.imageUrl" alt="轮播图" />
+          <img :src="item.imageUrl" :alt="item.bannerName" />
         </router-link>
       </li>
     </ul>
@@ -24,10 +24,16 @@
 
 <script>
 export default {
-  // 组件名称
   name: 'Banner',
 
-  props: ['bannerData'],
+  props: {
+    bannerData: {
+      type: Array,
+      default: () => {
+        return [];
+      }
+    }
+  },
 
   data() {
     return {

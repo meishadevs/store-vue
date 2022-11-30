@@ -10,7 +10,7 @@
           <product-cate-nav></product-cate-nav>
         </div>
         <div class="banner-box">
-          <banner :bannerData="bannerData"></banner>
+          <banner :bannerData="bannerList"></banner>
         </div>
       </section>
       <index-show-product :productInfo="indexProductList[0]"></index-show-product>
@@ -33,12 +33,15 @@ import IndexShowProduct from '@/components/IndexShowProduct';
 import SiteFoot from '@/components/SiteFoot';
 import GoTop from '@/components/GoTop';
 import { mapState, mapMutations } from 'vuex';
+import { getPublishBanner } from '@/api/banner';
 
 export default {
   name: 'home',
 
   data() {
     return {
+      bannerList: [],
+
       // 网站首页的商品列表
       indexProductList: [
         {
@@ -141,25 +144,6 @@ export default {
             }
           ]
         }
-      ],
-
-      bannerData: [
-        {
-          'imageUrl': this.$baseUrl + '/images/banner1.jpg',
-          'url': '/proinfo'
-        },
-        {
-          'imageUrl': this.$baseUrl + '/images/banner2.jpg',
-          'url': '/proinfo'
-        },
-        {
-          'imageUrl': this.$baseUrl + '/images/banner3.jpg',
-          'url': '/proinfo'
-        },
-        {
-          'imageUrl': this.$baseUrl + '/images/banner4.jpg',
-          'url': '/proinfo'
-        }
       ]
     };
   },
@@ -183,6 +167,10 @@ export default {
     })
   },
 
+  created() {
+    this.getPublishBanner();
+  },
+
   // 初始化
   mounted() {
     this.initData();
@@ -203,6 +191,17 @@ export default {
         // 改变当前选中的导航项的索引
         this.changeNavIndex(1);
       });
+    },
+
+    // 获得已发布的轮播图
+    getPublishBanner() {
+      getPublishBanner()
+        .then((res) => {
+          this.bannerList = res.data.list;
+        })
+        .catch((error) => {
+          this.$message.error(error.message);
+        });
     }
   }
 };
