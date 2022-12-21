@@ -2,7 +2,7 @@
 > 整个网站使用 vue、vuex、vue-router、axios、ESLint、ES6 等搭建，整个网站由网站首页、商品分类页、注册页、登录页、商品信息展示页、商品筛选页、购物车及结算页组成，整个网站包含了将网页添加到收藏夹、关键字搜索、图片轮播、商品分类菜单切换、商品筛选、商品简介、商品咨询、省市区三级联动、放大镜、注册、登录等功能。
 
 ## 在线访问
-**[http://meishadevs.github.io/store-vue/index.html#/](http://meishadevs.github.io/store-vue/index.html#/)**  
+**[http://meishadevs.com/store-vue/#/](http://meishadevs.com/store-vue/#/)**  
 
 ## 技术栈
 - **前端：** vue + vuex + vue-router + axios + element-ui + ESLint + ES6
