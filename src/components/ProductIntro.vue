@@ -29,7 +29,7 @@
     </div>
     <div class="hr-45"></div>
     <div class="image-info">
-      <img src="`~@/assets/images/sy.jpg`" alt="">
+      <img :src="require(`@/assets/images/sy.jpg`)" alt="">
     </div>
   </div>
 </template>
