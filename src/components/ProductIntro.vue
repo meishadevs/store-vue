@@ -5,7 +5,7 @@
   <div class="product-intro">
     <div class="image">
       <a href="javascript:;">
-        <img src="`~@/assets/images/intro.jpg`" alt="" />
+        <img :src="require(`@/assets/images/intro.jpg`)" alt="" />
       </a>
     </div>
     <div class="text-info">
