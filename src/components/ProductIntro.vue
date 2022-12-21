@@ -5,7 +5,7 @@
   <div class="product-intro">
     <div class="image">
       <a href="javascript:;">
-        <img src="`~@/assets/images/intro.jpg`" alt="">
+        <img src="`~@/assets/images/intro.jpg`" alt="" />
       </a>
     </div>
     <div class="text-info">
@@ -23,63 +23,63 @@
         <h3>精美图片</h3>
       </div>
       <p class="info-content">
-        苹果iPad7.9 英寸显示屏可带来新的iPad体验，绚丽的显示屏，在每一寸画面中呈现灵动鲜活的美妙影像。
+        苹果iPad7.9
+        英寸显示屏可带来新的iPad体验，绚丽的显示屏，在每一寸画面中呈现灵动鲜活的美妙影像。
         苹果miniMD528CH/A采用500 万像素 iSight 摄像头，清晰记录每一次的幸福。
       </p>
     </div>
     <div class="hr-45"></div>
     <div class="image-info">
-      <img :src="require(`@/assets/images/sy.jpg`)" alt="">
+      <img :src="require(`@/assets/images/sy.jpg`)" alt="" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
-  // 组件名称
   name: 'ProductIntro'
 };
 </script>
 
 <style lang="less" scoped>
-
-  .product-intro .image {
+.product-intro {
+  .image {
     margin: 30px 0;
     text-align: center;
   }
 
-  .product-intro .text-info {
+  .text-info {
     padding: 15px;
   }
 
-  .product-intro .info-title {
+  .info-title {
     border-bottom: solid 2px #ccc;
+
+    h3 {
+      width: 73px;
+      line-height: 36px;
+      margin-bottom: -2px;
+      border-bottom: solid 2px #2457a6;
+      font-size: 18px;
+      color: #2457a6;
+      float: left;
+    }
+
+    h4 {
+      padding: 12px 0 0 5px;
+      color: #666666;
+      float: left;
+    }
   }
 
-  .product-intro .info-title h3 {
-    width: 73px;
-    line-height: 36px;
-    margin-bottom: -2px;
-    border-bottom: solid 2px #2457A6;
-    font-size: 18px;
-    color: #2457A6;
-    float: left;
-  }
-
-  .product-intro .info-title h4 {
-    padding: 12px 0 0 5px;
-    color: #666666;
-    float: left;
-  }
-
-  .product-intro .info-content {
-    margin-top: 16px;
-    font: 14px/22px "宋体", "SimSun";
-    color: #656565;
-  }
-
-  .product-intro .image-info {
+  .image-info {
     margin-left: 23px;
   }
+}
+
+.info-content {
+  margin-top: 16px;
+  font: 14px/22px "宋体", "SimSun";
+  color: #656565;
+}
 </style>
