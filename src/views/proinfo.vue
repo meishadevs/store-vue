@@ -33,19 +33,19 @@
 </template>
 
 <script>
-import CollSite from '@/components/CollSite';
-import TopBar from '@/components/TopBar';
-import SiteHead from '@/components/SiteHead';
-import NavBar from '@/components/NavBar';
-import ProductPosition from '@/components/ProductPosition';
-import ProductImage from '@/components/ProductImage';
-import ShowProinfo from '@/components/showProinfo';
-import ProinfoProductList from '@/components/ProinfoProductList';
-import ProinfoNavBar from '@/components/ProinfoNavBar';
-import ProductIntro from '@/components/ProductIntro';
-import ProductComment from '@/components/ProductComment';
-import SiteFoot from '@/components/SiteFoot';
-import GoTop from '@/components/GoTop';
+import CollSite from '_c/CollSite';
+import TopBar from '_c/TopBar';
+import SiteHead from '_c/SiteHead';
+import NavBar from '_c/NavBar';
+import ProductPosition from '_c/ProductPosition';
+import ProductImage from '_c/ProductImage';
+import ShowProinfo from '_c/showProinfo';
+import ProinfoProductList from '_c/ProinfoProductList';
+import ProinfoNavBar from '_c/ProinfoNavBar';
+import ProductIntro from '_c/ProductIntro';
+import ProductComment from '_c/ProductComment';
+import SiteFoot from '_c/SiteFoot';
+import GoTop from '_c/GoTop';
 
 export default {
   name: 'proinfo',

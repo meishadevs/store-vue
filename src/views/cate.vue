@@ -27,15 +27,15 @@
 </template>
 
 <script>
-import CollSite from '@/components/CollSite';
-import TopBar from '@/components/TopBar';
-import SiteHead from '@/components/SiteHead';
-import NavBar from '@/components/NavBar';
-import CateMenu from '@/components/CateMenu';
-import Banner from '@/components/Banner';
-import CateShowProduct from '@/components/CateShowProduct';
-import SiteFoot from '@/components/SiteFoot';
-import GoTop from '@/components/GoTop';
+import CollSite from '_c/CollSite';
+import TopBar from '_c/TopBar';
+import SiteHead from '_c/SiteHead';
+import NavBar from '_c/NavBar';
+import CateMenu from '_c/CateMenu';
+import Banner from '_c/Banner';
+import CateShowProduct from '_c/CateShowProduct';
+import SiteFoot from '_c/SiteFoot';
+import GoTop from '_c/GoTop';
 import { getPublishBanner } from '@/api/banner';
 
 export default {

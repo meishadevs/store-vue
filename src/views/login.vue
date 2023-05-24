@@ -111,8 +111,8 @@
 
 <script>
 import { mapMutations } from 'vuex';
-import LoginHead from '@/components/LoginHead';
-import SiteFoot from '@/components/SiteFoot';
+import LoginHead from '_c/LoginHead';
+import SiteFoot from '_c/SiteFoot';
 import { checkUsername, checkPassword } from '@/libs/util';
 import { login } from '@/api/user';
 

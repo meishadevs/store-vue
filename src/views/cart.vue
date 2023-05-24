@@ -24,16 +24,16 @@
 </template>
 
 <script>
-import CollSite from '@/components/CollSite';
-import TopBar from '@/components/TopBar';
-import CartHead from '@/components/CartHead';
-import ReceiveInfo from '@/components/ReceiveInfo';
-import PayMethod from '@/components/PayMethod';
-import InvoiceInfo from '@/components/InvoiceInfo';
-import DeliveryInfo from '@/components/DeliveryInfo';
-import OrderSett from '@/components/OrderSett';
-import GoTop from '@/components/GoTop';
-import SiteFoot from '@/components/SiteFoot';
+import CollSite from '_c/CollSite';
+import TopBar from '_c/TopBar';
+import CartHead from '_c/CartHead';
+import ReceiveInfo from '_c/ReceiveInfo';
+import PayMethod from '_c/PayMethod';
+import InvoiceInfo from '_c/InvoiceInfo';
+import DeliveryInfo from '_c/DeliveryInfo';
+import OrderSett from '_c/OrderSett';
+import GoTop from '_c/GoTop';
+import SiteFoot from '_c/SiteFoot';
 import { mapState } from 'vuex';
 
 export default {

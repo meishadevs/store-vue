@@ -48,18 +48,18 @@
 </template>
 
 <script>
-import CollSite from '@/components/CollSite';
-import TopBar from '@/components/TopBar';
-import SiteHead from '@/components/SiteHead';
-import NavBar from '@/components/NavBar';
-import UserPosition from '@/components/UserPosition';
-import ProductCate from '@/components/ProductCate';
-import SelectProductList from '@/components/SelectProductList';
-import ProductFilter from '@/components/ProductFilter';
-import ProductList from '@/components/ProductList';
-import ChangePage from '@/components/ChangePage';
-import SiteFoot from '@/components/SiteFoot';
-import GoTop from '@/components/GoTop';
+import CollSite from '_c/CollSite';
+import TopBar from '_c/TopBar';
+import SiteHead from '_c/SiteHead';
+import NavBar from '_c/NavBar';
+import UserPosition from '_c/UserPosition';
+import ProductCate from '_c/ProductCate';
+import SelectProductList from '_c/SelectProductList';
+import ProductFilter from '_c/ProductFilter';
+import ProductList from '_c/ProductList';
+import ChangePage from '_c/ChangePage';
+import SiteFoot from '_c/SiteFoot';
+import GoTop from '_c/GoTop';
 import { productList } from '@/api/product';
 
 export default {

@@ -167,8 +167,8 @@
 </template>
 
 <script>
-import SiteFoot from '@/components/SiteFoot';
-import RegisterHead from '@/components/RegisterHead';
+import SiteFoot from '_c/SiteFoot';
+import RegisterHead from '_c/RegisterHead';
 import {
   checkEmail,
   checkAccept,
