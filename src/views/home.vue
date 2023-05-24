@@ -208,8 +208,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .product-cate-banner .product-cate-box,
-  .product-cate-banner .banner-box {
+.product-cate-banner {
+  .product-cate-box,
+  .banner-box {
     float: left;
   }
+}
 </style>

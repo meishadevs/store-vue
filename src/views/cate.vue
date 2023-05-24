@@ -218,13 +218,13 @@ export default {
 <style lang="less" scoped>
 .wrapper {
   margin-top: 17px;
-}
 
-.wrapper .left-area {
-  float: left;
-}
+  .left-area {
+    float: left;
+  }
 
-.wrapper .right-area {
-  float: right;
+  .right-area {
+    float: right;
+  }
 }
 </style>
